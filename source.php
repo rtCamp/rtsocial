@@ -97,46 +97,30 @@ function rtsocial_admin_fn()
 						<input value='vertical' id='display_vertical_input' name='rtsocial_plugin_options[display_options_set]' type='radio' <?php echo ($options['display_options_set']== "vertical") ? ' checked="checked" ' : '';?>/>
 					</td>
 					<td id='display_vertical'>
-						<label for='display_vertical_input'>
-							<span id='rtsocial-display-vertical-twitter-sample' class='vertical-box'>
-								<span id='rtsocial-display-vertical-twitter-sample-count'>
-								</span>
-								
-								<span id='rtsocial-display-vertical-twitter-sample-button' class='rtsocial-twitter-button'>
-								</span>
-							</span>
-							
-							<span id='rtsocial-display-vertical-facebook-sample' class='vertical-box'>
-								<span id='rtsocial-display-vertical-facebook-sample-count'>
-								</span>
-								
-								<span id='rtsocial-display-vertical-facebook-sample-button' class='rtsocial-facebook-button'>
-								</span>
-							</span>
-							
-						</label>
+						<div id='rtsocial-display-vertical-sample' class= 'rtsocial-vertical rtsocial-container-align-none'>
+							<div id='rtsocial-twitter-vertical'>
+								<div class='rtsocial-vertical-count'><span class='rtsocial-twitter-count'></span> </div> <div class='rtsocial-vertical-notch'></div> <div class='rtsocial-twitter-vertical-button'><a class='rtsocial-twitter-button' href= 'http://twitter.com/share?via=<?php echo $options['tw_handle']."&related=".$options['tw_related_handle']."&text=".esc_attr("rtSocial... share fast!")."&url=http://wpveda.com/plugins/rt-social"; ?>' target="_blank"></a></div>
+							</div>
+
+							<div id='rtsocial-fb-vertical'>
+								<div class='rtsocial-vertical-count'><span class='rtsocial-fb-count'></span></div> <div class='rtsocial-vertical-notch' ></div> <div class='rtsocial-fb-vertical-button'><a class='rtsocial-fb-button rtsocial-fb-like-light' href="http://www.facebook.com/sharer.php?u=http://wpveda.com/plugins/rt-social" target="_blank" ></a></div>
+							</div>
+						</div>
 					</td>
-					
+
 					<td>
 					<input value='horizontal' id='display_horizontal_input' name='rtsocial_plugin_options[display_options_set]' type='radio' <?php echo ($options['display_options_set']== "horizontal") ? ' checked="checked" ' : '';?>/>
 					</td>
 					<td id='display_horizontal'>
-						<label for='display_horizontal_input'>
-							<span id='rtsocial-display-horizontal-twitter-sample' class='vertical-box'>
-								<span id='rtsocial-display-horizontal-twitter-sample-button' class='rtsocial-twitter-button'>
-								</span>
-								<span id='rtsocial-display-horizontal-twitter-sample-count'>
-								</span>
-							</span>
-							
-							<span id='rtsocial-display-horizontal-facebook-sample' class='vertical-box'>
-								<span id='rtsocial-display-horizontal-facebook-sample-button' class='rtsocial-facebook-button'>
-								</span>
-								<span id='rtsocial-display-horizontal-facebook-sample-count'>
-								</span>							
-							</span>
-							
-						</label>
+						<div id='rtsocial-display-horizontal-sample'>
+							<div id='rtsocial-twitter-horizontal'>
+								<div class='rtsocial-twitter-horizontal-button'><a class='rtsocial-twitter-button' href= 'http://twitter.com/share?via=<?php echo $options['tw_handle']."&related=".$options['tw_related_handle']."&text=".esc_attr("rtSocial... share fast!")."&url=http://wpveda.com/plugins/rt-social"; ?>' target=\"_blank\" ></a></div> <div class='rtsocial-horizontal-notch'></div> <div class='rtsocial-horizontal-count'><span class='rtsocial-twitter-count'></span> </div>
+							</div>
+
+							<div id='rtsocial-fb-horizontal'>
+								<div class='rtsocial-fb-horizontal-button'><a class='rtsocial-fb-button rtsocial-fb-like-light' href="http://www.facebook.com/sharer.php?u=http://wpveda.com/plugins/rt-social" target="_blank" ></a></div> <div class='rtsocial-horizontal-notch'></div> <div class='rtsocial-horizontal-count'><span class='rtsocial-fb-count'></span> </div>
+							</div>
+						</div>
 					</td>
 				</tr>
 			</table>
@@ -145,14 +129,14 @@ function rtsocial_admin_fn()
 				<th>
 					Select Alignment:
 				</th>
-				<td>
-					<input value='right' name='rtsocial_plugin_options[alignment_options_set]' id='align_right_check' type='radio' <?php echo ($options['alignment_options_set'] == 'right') ? ' checked="checked" ' : ''; ?> />&nbsp;&nbsp;&nbsp;&nbsp;<label for='align_right_check'>Right</label>
-				</td>
-				<td>	
+                                <td>
 					<input value='left' name='rtsocial_plugin_options[alignment_options_set]' id='align_left_check' type='radio' <?php echo ($options['alignment_options_set'] == 'left') ? ' checked="checked" ' : ''; ?> />&nbsp;&nbsp;&nbsp;&nbsp;<label for='align_left_check'>Left</label>
 				</td>
-				<td>	
+				<td>
 					<input value='center' name='rtsocial_plugin_options[alignment_options_set]' id='align_center_check' type='radio' <?php echo ($options['alignment_options_set']== 'center') ? ' checked="checked" ' : ''; ?> />&nbsp;&nbsp;&nbsp;&nbsp;<label for='align_center_check'>Center</label>
+                                </td>
+				<td>
+					<input value='right' name='rtsocial_plugin_options[alignment_options_set]' id='align_right_check' type='radio' <?php echo ($options['alignment_options_set'] == 'right') ? ' checked="checked" ' : ''; ?> />&nbsp;&nbsp;&nbsp;&nbsp;<label for='align_right_check'>Right</label>
 				</td>
 				<td>	
 					<input  value='none' name='rtsocial_plugin_options[alignment_options_set]' id='align_none_check' type='radio' <?php echo ($options['alignment_options_set']== 'none') ? ' checked="checked" ' : ''; ?> />&nbsp;&nbsp;&nbsp;&nbsp;<label for='align_none_check'>None</label>

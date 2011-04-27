@@ -23,18 +23,27 @@ h3.positioning_title{ margin:0; }
 #rtsocial .postbox-container{ width: 98%; }
 
 #rtsocial-display-vertical-twitter-sample{display: block; float: left; height: 100px; margin-right: 15px; width: 50px;}
-#rtsocial-display-vertical-twitter-sample span#rtsocial-display-vertical-twitter-sample-count{ float: left; background: url("../images/rtsocial-sprite.png") no-repeat scroll 0 -520px transparent; display: block; float: left; height: 55px; margin: 0; padding: 0; width: 62px;}
+#rtsocial-display-vertical-twitter-sample span#rtsocial-display-vertical-twitter-sample-count{ background: url("../images/rtsocial-sprite.png") no-repeat scroll 0 -520px transparent; color: #2A7090; display: block; float: left; font: bold 16px/34px Arial,Helvetica,sans-serif; height: 43px; margin: 0; padding: 12px 0 0 27px; width: 35px;}
 #rtsocial-display-vertical-twitter-sample span#rtsocial-display-vertical-twitter-sample-button{	float: left; background: url("../images/rtsocial-sprite.png") no-repeat scroll 3px 1px transparent; display: block; float: left; height: 22px; margin: 0; padding: 0; width: 58px; }
 #rtsocial-display-vertical-twitter-sample span#rtsocial-display-vertical-twitter-sample-button:hover{background: url("../images/rtsocial-sprite.png") no-repeat scroll 3px -31px transparent; display: block; float: left; height: 22px; margin: 0; padding: 0; width: 58px;}
 
 #rtsocial-display-vertical-facebook-sample{display: block; height: 100px; width: 50px; float:left;}
-#rtsocial-display-vertical-facebook-sample span#rtsocial-display-vertical-facebook-sample-count{ background: url("../images/rtsocial-sprite.png") no-repeat scroll 0 -440px transparent; display: block; float: left; height: 55px; margin: 0; padding: 0; width: 62px;}
+#rtsocial-display-vertical-facebook-sample span#rtsocial-display-vertical-facebook-sample-count{ background: url("../images/rtsocial-sprite.png") no-repeat scroll 0 -440px transparent;
+display: block;
+float: left;
+font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+font-size: 22px;
+font-weight: normal;
+height: 36px;
+margin: 0;
+padding: 19px 0 0 25px;
+width: 37px;}
 #rtsocial-display-vertical-facebook-sample span#rtsocial-display-vertical-facebook-sample-button{	background: url("../images/rtsocial-sprite.png") no-repeat scroll 6px -159px transparent; display: block; float: left; height: 24px; margin: 0; padding: 0; width: 58px; }
 #rtsocial-display-vertical-facebook-sample span#rtsocial-display-vertical-facebook-sample-button:hover{background: url("../images/rtsocial-sprite.png") no-repeat scroll 6px -193px transparent; display: block; float: left; height: 24px; margin: 0; padding: 0; width: 58px;}
 
 
 #rtsocial-display-horizontal-twitter-sample{display: block; float: left; height: 25px; margin-right: 5px; width: 111px;}
-#rtsocial-display-horizontal-twitter-sample span#rtsocial-display-horizontal-twitter-sample-count{ background: url("../images/rtsocial-sprite.png") no-repeat scroll -58px -645px transparent; display: block; float: left; height: 24px; margin: 0; padding: 0; width: 52px;} 
+#rtsocial-display-horizontal-twitter-sample span#rtsocial-display-horizontal-twitter-sample-count{ background: url("../images/rtsocial-sprite.png") no-repeat scroll -58px -645px transparent; display: block; float: left; height: 23px; margin: 0; padding: 1px 0 0 25px; width: 26px;}
 #rtsocial-display-horizontal-twitter-sample span#rtsocial-display-horizontal-twitter-sample-button{	background: url("../images/rtsocial-sprite.png") no-repeat scroll 3px 1px transparent; display: block; float: left; height: 22px; margin: 0; padding: 0; width: 58px;}
 #rtsocial-display-horizontal-twitter-sample span#rtsocial-display-horizontal-twitter-sample-button:hover{background: url("../images/rtsocial-sprite.png") no-repeat scroll 3px -31px transparent; display: block; float: left; height: 22px; margin: 0; padding: 0; width: 58px;}
 
@@ -46,18 +55,19 @@ h3.positioning_title{ margin:0; }
 .rtsocial-display-horizontal{text-align:center;}
 div.rtsocial-horizontal{ height:22px; min-width:179px; padding:5px 0; }
 #rtsocial-fb-horizontal .rtsocial-horizontal-count { background: none repeat scroll 0 0 #E8EBF2; min-width: 15px; height: 20px; float: left; border: 1px solid #B0B9EC; margin-right: 5px; text-align: center; padding: 0 4px; -moz-border-radius:3px; border-radius: 3px; webkit-border-radius: 3px;}
-#rtsocial-fb-horizontal .rtsocial-horizontal-count span{ display: block; font-size: 10px; font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-weight: bold; line-height: 20px;}
+#rtsocial-fb-horizontal .rtsocial-horizontal-count span{ display: block; font-size: 10px; font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-weight: bold; line-height: 20px; font-style: normal;}
 #rtsocial-fb-horizontal .rtsocial-horizontal-notch{border-width:5px 5px 5px 0; border-style:solid; border-color: transparent #B0B9EC transparent transparent; height:1px; width:1px; float: left; margin-top:5px;}
 .rtsocial-fb-horizontal-button{ float: left;}
-	
+
 #rtsocial-twitter-horizontal .rtsocial-horizontal-count{ min-width: 15px; height: 20px; float: left; border: 1px solid #9dc6e1; text-align: center; padding: 0 4px; -moz-border-radius:3px; border-radius: 3px; webkit-border-radius: 3px;}
 #rtsocial-twitter-horizontal .rtsocial-horizontal-count span{ color: #2a7090; font:bold 12px/20px Arial, Helvetica, sans-serif; display: block; }
 #rtsocial-twitter-horizontal .rtsocial-horizontal-notch { border-width:5px 5px 5px 0; border-style:solid; border-color: transparent #9dc6e1 transparent transparent; height:1px; width:1px; float: left; margin-top:5px; }
 .rtsocial-twitter-horizontal-button{ float: left;}
 
+
 #rtsocial-fb-vertical .rtsocial-vertical-count{ background: none repeat scroll 0 0 #E8EBF2; border: 1px solid #B0B9EC; height: 26px; margin: 0 auto; max-width: 55px; min-width: 55px; padding: 8px 0 2px; text-align: center; -moz-border-radius:3px; border-radius: 3px; webkit-border-radius: 3px;}
-#rtsocial-fb-vertical .rtsocial-vertical-notch { border-color: #B0B9EC transparent transparent; border-style: solid; border-width: 5px 5px 0; height: 1px; margin: 0 auto; width: 1px;}	
-#rtsocial-fb-vertical .rtsocial-vertical-count span{ display: block; font-size: 22px; font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-weight: normal; line-height: 18px; }
+#rtsocial-fb-vertical .rtsocial-vertical-notch { border-color: #B0B9EC transparent transparent; border-style: solid; border-width: 5px 5px 0; height: 1px; margin: 0 auto; width: 1px;}
+#rtsocial-fb-vertical .rtsocial-vertical-count span{ display: block; font-size: 22px; font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-weight: normal; line-height: 18px;  font-style: normal;}
 .rtsocial-fb-vertical-button{ text-align: center;}
 
 
@@ -75,10 +85,10 @@ div.rtsocial-horizontal{ height:22px; min-width:179px; padding:5px 0; }
 .rtsocial-fb-like-dark:hover{ background-position: 5px -126px; height: 24px; width: 55px;}
 
 .rtsocial-fb-like-light{ background-position: 4px -159px; height: 24px; width: 55px;}
-.rtsocial-fb-like-light:hover{ background-position: 4px -193px; height: 24px; width: 55px;} 
+.rtsocial-fb-like-light:hover{ background-position: 4px -193px; height: 24px; width: 55px;}
 
 .rtsocial-fb-horizontal-button .rtsocial-fb-like-light{ background-position: 5px -159px; height: 24px; width: 55px;}
-.rtsocial-fb-horizontal-button .rtsocial-fb-like-light:hover{ background-position: 5px -193px; height: 24px; width: 55px;} 
+.rtsocial-fb-horizontal-button .rtsocial-fb-like-light:hover{ background-position: 5px -193px; height: 24px; width: 55px;}
 
 .rtsocial-fb-recommend-light{ background-position: 0 -295px; height:24px; width:95px; }
 .rtsocial-fb-recommend-light:hover{ background-position: 0 -329px; height:24px; width:95px; }
