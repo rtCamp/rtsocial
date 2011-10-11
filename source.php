@@ -452,3 +452,14 @@ function rtsocial_plugin_redirect() {
         wp_redirect( admin_url( 'options-general.php?page=rtsocial-options' ) );
     }
 }
+
+add_action( 'wp_footer', 'rtsocial_ie_fix' );
+function rtsocial_ie_fix() { ?>
+<!--[if lte IE 7]>
+<style type="text/css">
+    .rtsocial-container-align-center #rtsocial-fb-vertical, .rtsocial-container-align-center #rtsocial-twitter-vertical, .rtsocial-container-align-none #rtsocial-fb-vertical, #btowp_img, #btowp_title, .rtsocial-container-align-center #rtsocial-twitter-horizontal, .rtsocial-container-align-center #rtsocial-fb-horizontal, .rtsocial-fb-like-dark, .rtsocial-fb-like-light, .rtsocial-fb-recommend-light, .rtsocial-fb-recommend-dark, .rt-social-connect a { *display: inline; }
+    #rtsocial-twitter-vertical { max-width: 58px; } 
+    #rtsocial-fb-vertical { max-width: 96px; }
+</style>
+<![endif]-->
+<?php }

@@ -11,7 +11,7 @@
 .rtsocial-container-align-right #rtsocial-twitter-vertical,
 .rtsocial-container-align-right #rtsocial-fb-vertical,
 .rtsocial-container-align-none #rtsocial-twitter-vertical,
-.rtsocial-container-align-none #rtsocial-fb-vertical { float: left; margin: 0 10px 0 0; position: relative; }
+.rtsocial-container-align-none #rtsocial-fb-vertical { float: left;margin: 0 10px 0 0;overflow: hidden;position: relative; }
 .rtsocial-container-align-center #rtsocial-twitter-vertical,
 .rtsocial-container-align-center #rtsocial-fb-vertical { overflow: hidden;display: inline-block;margin: 0 10px 0 0;position: relative; }
 .rtsocial-container-align-none #rtsocial-twitter-vertical,
@@ -115,6 +115,11 @@ h3.positioning_title { margin: 0 }
 .rt-social-connect a.rt-sidebar-facebook { background-position: -123px -52px; }
 .rt-social-connect a.rt-sidebar-twitter { background-position: -121px 0; margin: 0 20px; }
 .rt-social-connect a.rt-sidebar-rss { background-position: -123px -104px; }
+#rtsocial-display-vertical-sample { overflow: hidden; float: left; }
+#rtsocial-display-vertical-sample #rtsocial-twitter-vertical { float: left; overflow: hidden; display: block; }
+#rtsocial-display-vertical-sample .rtsocial-vertical-count { float: left; }
+#rtsocial-display-vertical-sample .rtsocial-twitter-vertical-button,
+#rtsocial-display-vertical-sample .rtsocial-fb-vertical-button { float:left; clear: both; overflow: hidden; }
 /**
  * End of rtSocial Plugin Style
  */
