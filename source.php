@@ -238,6 +238,7 @@ function rtsocial_get_errors() {
 //=====================================================================================================
 //Inject the widget in the posts================================================================
 add_filter( 'the_content', 'rtsocial_counter' );
+add_filter( 'get_the_excerpt', 'rtsocial_counter' );
 
 function rtsocial_counter( $content = '' ) {
     $options = get_option( 'rtsocial_plugin_options' );
@@ -433,4 +434,3 @@ function rtsocial_actlinks( $links, $file ) {
     return $links;
 }
 add_filter( 'plugin_action_links', 'rtsocial_actlinks', 10, 2 );
-?>

@@ -12,7 +12,7 @@ jQuery( document ).ready( function() {
             jQuery.getJSON( rtsocial_twiturl,function( twitres ) {
                 url += '&url=' + twitres['url'];
                 jQuery( '.rtsocial-twitter-button', paNode ).attr( 'href', url );
-                jQuery( '.rtsocial-twitter-share .rtsocial-twitter-count', paNode ).text( ( twitres['count'] ) ? ( twitres['count'] ) : '0' );
+                jQuery( '.rtsocial-twitter-count', paNode ).text( ( twitres['count'] ) ? ( twitres['count'] ) : '0' );
             } );
         } );
     } //end of "each"
@@ -107,12 +107,12 @@ jQuery( '#tw_chk' ).click( function() {
 
 //Removing Facebook block if Facebook is unchecked
 jQuery( '#fb_chk' ).click( function() {
-    if ( jQuery( '#fb_chk' ).attr( 'checked' ) == false ) {
-        jQuery( '.fb_row' ).fadeOut( 'slow' );
-        jQuery( '.fb_row input[type="radio"]' ).attr( 'checked', false );
+    if ( jQuery( '#fb_chk' ).attr('checked') == false ) {
+        jQuery('.fb_row').fadeOut('slow');
+        jQuery('.fb_row input[type="radio"]').attr('checked', false);
     } else {
-        jQuery( '.fb_row input[value="like_light"]' ).attr( 'checked', true );
-        jQuery( '.fb_row' ).fadeIn( 'slow' );
+        jQuery('.fb_row input[value="like_light"]' ).attr('checked', true);
+        jQuery('.fb_row' ).fadeIn('slow');
     }
 } );
 jQuery( '.fb_color' ).live( 'click', function() {
