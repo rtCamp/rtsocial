@@ -89,7 +89,7 @@ h3.positioning_title { margin: 0 }
 .rtsocial-twitter-button { background: url("../images/rtsocial-sprite-image.png") no-repeat scroll 0 -557px transparent; display: block; float: left; height: 21px; margin: 0; padding: 0; width: 57px; }
 .rtsocial-twitter-button:hover { background-position: 0 -517px; }
 .rtsocial-fb-share { background: url("../images/rtsocial-sprite-image.png") no-repeat 0 -479px scroll transparent; display: block; float: left; padding: 0; }
-.rtsocial-fb-share { font-size: 0;height: 20px;line-height: 0;overflow: hidden;text-indent: -9999px;width: 57px; }
+.rtsocial-fb-share { font-size: 0;height: 20px;line-height: 0;overflow: hidden;margin: 0 0 4px;text-indent: -9999px;width: 57px; }
 #display_manual_th { vertical-align: middle }
 #rtsocial-twitter { background: url("../images/rtsocial-sprite-image.png") no-repeat scroll 0 -599px transparent;display: block;float: left;height: 34px;overflow: hidden;width: 122px; }
 #rtsocial-facebook { background: url("../images/rtsocial-sprite-image.png") no-repeat scroll 0 -653px transparent;display: block;float: left;height: 34px;overflow: hidden;width: 122px; }
