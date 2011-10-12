@@ -1,4 +1,4 @@
-=== rtSocial Share ===
+=== rtSocial ===
 Contributors: rahul286, rutwick
 Donate link: http://rtcamp.com/
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, social share, social sharing

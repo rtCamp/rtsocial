@@ -86,7 +86,7 @@ h3.positioning_title { margin: 0 }
 .rtsocial-fb-recommend-dark, .rtsocial-fb-recommend-dark:link, .rtsocial-fb-recommend-dark:active, .rtsocial-fb-recommend-dark:visited { background-color: #D7D7D7; color: #333333;background-position: 4px -91px;border: 1px solid #CAD4E7; text-decoration: none; }
 .rtsocial-fb-recommend-dark:hover { background-color: #D9D9D9; color: #333333; background-position: 4px -91px; border: 1px solid #E9E9E9; text-decoration: none; }
 .rtsocial-twitter-vertical-button { text-align: center }
-.rtsocial-twitter-button { background: url("../images/rtsocial-sprite-image.png") no-repeat scroll 0 -557px transparent; display: block; float: left; height: 21px; margin: 0; padding: 0; width: 57px; }
+.rtsocial-twitter-button { background: url("../images/rtsocial-sprite-image.png") no-repeat scroll 0 -557px transparent; display: block; float: left; height: 21px; margin: 0; padding: 0; width: 55px; }
 .rtsocial-twitter-button:hover { background-position: 0 -517px; }
 .rtsocial-fb-share { background: url("../images/rtsocial-sprite-image.png") no-repeat 0 -479px scroll transparent; display: block; float: left; padding: 0; }
 .rtsocial-fb-share { font-size: 0;height: 20px;line-height: 0;overflow: hidden;margin: 0 0 4px;text-indent: -9999px;width: 57px; }
