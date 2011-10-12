@@ -28,6 +28,10 @@ Yes you can. Use the function call __<?php if ( function_exists( 'rtsocial' ) ) 
 
 No. Right now you cannot!
 
+== Upgrade Notice ==
+
+First release
+
 == Changelog ==
 
 = 1.0 =
