@@ -65,8 +65,8 @@ function rtsocial_admin_fn() { ?>
                                             <td><input value="vertical" id="display_vertical_input" name='rtsocial_plugin_options[display_options_set]' type="radio" <?php echo ($options['display_options_set'] == "vertical") ? ' checked="checked" ' : ''; ?> /></td>
                                             <td id="display_vertical">
                                                 <div id="rtsocial-display-vertical-sample" class= "rtsocial-vertical rtsocial-container-align-none">
-                                                    <div id="rtsocial-twitter-vertical"><div class="rtsocial-vertical-count"><span class="rtsocial-twitter-count"></span></div><div class="rtsocial-twitter-vertical-button"><div class="rtsocial-vertical-notch"></div><a class="rtsocial-twitter-button" href= 'http://twitter.com/share?via=<?php echo $options['tw_handle'] . "&related=" . $options['tw_related_handle'] . "&text=" . esc_attr( "rtSocial... Share Fast!" ) . "&url=http://wpveda.com/plugins/rt-social"; ?>' target="_blank"></a></div></div>
-                                                    <div id="rtsocial-fb-vertical"><div class="rtsocial-vertical-count"><span class="rtsocial-fb-count"></span></div><div class="rtsocial-fb-vertical-button"><div class="rtsocial-vertical-notch"></div><a class="rtsocial-fb-button rtsocial-fb-like-light" href="http://www.facebook.com/sharer.php?u=http://wpveda.com/plugins/rt-social" target="_blank">Like</a></div></div>
+                                                    <div id="rtsocial-twitter-vertical"><div class="rtsocial-vertical-count"><span class="rtsocial-twitter-count"></span></div><div class="rtsocial-twitter-vertical-button"><div class="rtsocial-vertical-notch"></div><a class="rtsocial-twitter-button" href= 'http://twitter.com/share?via=<?php echo $options['tw_handle'] . "&related=" . $options['tw_related_handle'] . "&text=" . esc_attr( "rtSocial... Share Fast!" ) . "&url=http://rtpanel.com/support/forum/plugin/"; ?>' target="_blank"></a></div></div>
+                                                    <div id="rtsocial-fb-vertical"><div class="rtsocial-vertical-count"><span class="rtsocial-fb-count"></span></div><div class="rtsocial-fb-vertical-button"><div class="rtsocial-vertical-notch"></div><a class="rtsocial-fb-button rtsocial-fb-like-light" href="http://www.facebook.com/sharer.php?u=http://rtpanel.com/support/forum/plugin/" target="_blank">Like</a></div></div>
                                                 </div>
                                             </td>
                                             <td width="130">&nbsp;</td>
@@ -74,10 +74,10 @@ function rtsocial_admin_fn() { ?>
                                             <td id="display_horizontal">
                                                 <div id="rtsocial-display-horizontal-sample">
                                                     <div id="rtsocial-fb-horizontal">
-                                                        <div class="rtsocial-fb-horizontal-button"><a class="rtsocial-fb-button rtsocial-fb-like-light" href="http://www.facebook.com/sharer.php?u=http://wpveda.com/plugins/rt-social" target="_blank">Like</a></div><div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-fb-count"></span></div>
+                                                        <div class="rtsocial-fb-horizontal-button"><a class="rtsocial-fb-button rtsocial-fb-like-light" href="http://www.facebook.com/sharer.php?u=http://rtpanel.com/support/forum/plugin/" target="_blank">Like</a></div><div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-fb-count"></span></div>
                                                     </div>
                                                     <div id="rtsocial-twitter-horizontal">
-                                                        <div class="rtsocial-twitter-horizontal-button"><a class="rtsocial-twitter-button" href= 'http://twitter.com/share?via=<?php echo $options['tw_handle'] . "&related=" . $options['tw_related_handle'] . "&text=" . esc_attr( "rtSocial... Share Fast!" ) . "&url=http://wpveda.com/plugins/rt-social"; ?>' target=\"_blank\" ></a></div><div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-twitter-count"></span></div>
+                                                        <div class="rtsocial-twitter-horizontal-button"><a class="rtsocial-twitter-button" href= 'http://twitter.com/share?via=<?php echo $options['tw_handle'] . "&related=" . $options['tw_related_handle'] . "&text=" . esc_attr( "rtSocial... Share Fast!" ) . "&url=http://rtpanel.com/support/forum/plugin/"; ?>' target=\"_blank\" ></a></div><div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-twitter-count"></span></div>
                                                     </div>
                                                 </div>
                                             </td>
@@ -159,9 +159,9 @@ function rtsocial_admin_fn() { ?>
                         <div title="Click to toggle" class="handlediv"><br /></div>
                         <h3 class="hndle"><span><strong class="red">Getting Social is Good</strong></span></h3>
                         <div class="inside rt-social-connect">
-                            <a href="http://www.facebook.com/BloggertoWordpress" target="_blank" title="Become a fan on Facebook" class="rt-sidebar-facebook">Facebook</a>
-                            <a href="http://twitter.com/bloggertowp" target="_blank" title="Follow us on Twitter" class="rt-sidebar-twitter">Twitter</a>
-                            <a href="http://feeds.feedburner.com/Blogger-to-Wordpress" target="_blank" title="Subscribe to our Feeds" class="rt-sidebar-rss">RSS</a>
+                            <a href="http://www.facebook.com/rtPanel" target="_blank" title="Become a fan on Facebook" class="rt-sidebar-facebook">Facebook</a>
+                            <a href="http://twitter.com/#!/rtpanel" target="_blank" title="Follow us on Twitter" class="rt-sidebar-twitter">Twitter</a>
+                            <a href="http://feeds.feedburner.com/rtpanel" target="_blank" title="Subscribe to our Feeds" class="rt-sidebar-rss">RSS</a>
                         </div>
                     </div>
                     <div class="postbox" id="donations">
@@ -174,7 +174,7 @@ function rtsocial_admin_fn() { ?>
                                     <input type="hidden" name="cmd" value="_donations" />
                                     <input type="hidden" name="business" value="paypal@rtcamp.com" />
                                     <input type="hidden" name="lc" value="US" />
-                                    <input type="hidden" name="item_name" value="Blogger To WordPress Migration" />
+                                    <input type="hidden" name="item_name" value="rtSocial" />
                                     <input type="hidden" name="no_note" value="0" />
                                     <input type="hidden" name="currency_code" value="USD" />
                                     <input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest" />
@@ -184,10 +184,10 @@ function rtsocial_admin_fn() { ?>
                             </div>
                             <div class="rtsocial-share" style="text-align:center; width: 127px; margin: 2px auto">
                                 <div class="rt-facebook" style="float:left; margin-right:5px;">	
-                                    <a style=" text-align:center;" name="fb_share" type="box_count" title="Blogger To Wordpress Redirection Plugin" share_url="http://bloggertowp.org/blogger-to-wordpress-redirection-plugin/"></a>
+                                    <a style=" text-align:center;" name="fb_share" type="box_count" title="rtPanel WordPress Theme Framework" share_url="http://rtpanel.com/"></a>
                                 </div>
                                 <div class="rt-twitter" style="">	
-                                    <a href="http://twitter.com/share" title="Blogger to WordPress Redirection Plugin" class="twitter-share-button" data-text="Blogger to WordPress Redirection Plugin"  data-url="http://bloggertowp.org/blogger-to-wordpress-redirection-plugin/" data-count="vertical" data-via="bloggertowp">Tweet</a> 
+                                    <a href="http://twitter.com/share" title="rtPanel WordPress Theme Framework" class="twitter-share-button" data-text="rtPanel WordPress Theme Framework"  data-url="http://rtpanel.com/" data-count="vertical" data-via="rtPanel">Tweet</a>
                                     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
                                 </div>
                                 <div class="clear"></div>							
@@ -197,7 +197,7 @@ function rtsocial_admin_fn() { ?>
                     <div class="postbox" id="support">
                         <div title="Click to toggle" class="handlediv"><br /></div>
                         <h3 class="hndle"><span><strong class="red">Free Support</strong></span></h3>
-                        <div class="inside">If you have any problems with this plugin or good ideas for improvements, please talk about them in the <a href="http://forum.bloggertowp.org/" target="_blank" title="Support forums">Support forums</a>.</div>
+                        <div class="inside">If you have any problems with this plugin or good ideas for improvements, please talk about them in the <a href="http://rtpanel.com/support/forum/plugin/" target="_blank" title="Support forums">Support forums</a>.</div>
                     </div>
                 </div>
             </div>
