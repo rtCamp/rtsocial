@@ -213,8 +213,8 @@ function rtsocial_options_init_fn() {
 function rtsocial_check( $args ) {
     if ( isset( $args['tw_chk'] ) && $args['tw_chk'] != '' ) {
         if ( $args['tw_handle'] == '' || ctype_space( $args['tw_handle'] ) ) {
-            add_settings_error( 'rtsocial_plugin_options', 'tw_handle_blank', 'Twitter handle blank. Using default = <strong>devils_workshop</strong>', $type = 'error' );
-            $args['tw_handle'] = 'devils_workshop';
+            add_settings_error( 'rtsocial_plugin_options', 'tw_handle_blank', 'Twitter handle blank. Using default = <strong>rtPanel</strong>', $type = 'error' );
+            $args['tw_handle'] = 'rtPanel';
         }
 
         if ( $args['tw_related_handle'] == '' || ctype_space( $args['tw_related_handle'] ) ) {
@@ -225,7 +225,7 @@ function rtsocial_check( $args ) {
     if ( !isset( $args['tw_chk'] ) && !isset( $args['fb_chk'] ) ) {
         add_settings_error( 'rtsocial_plugin_options', 'tw_fb_off', 'No Network Specified. Using both with default settings.', $type = 'error' );
         $args['tw_chk'] = 'on';
-        $args['tw_handle'] = 'devils_workshop';
+        $args['tw_handle'] = 'rtPanel';
         $args['tw_related_handle'] = 'rtCamp';
         $args['fb_chk'] = 'on';
         $args['fb_style'] = 'like_light';
@@ -376,7 +376,7 @@ function rtsocial_set_defaults() {
         'tw_auto'               => 'on',
         'fb_chk'                => 'on',
         'fb_style'              => 'like_light',
-        'tw_handle'             => 'devils_workshop',
+        'tw_handle'             => 'rtPanel',
         'tw_related_handle'     => 'rtCamp',
         'placement_options_set' => 'bottom',
         'display_options_set'   => 'horizontal',
