@@ -263,7 +263,7 @@ function rtsocial_counter( $content = '' ) {
     $class = '';
     $rt_fb_style = '';
     if ( isset( $options['fb_chk'] ) ) {
-        $path = plugins_url( 'rtsocial/images/' );
+        $path = plugins_url( 'images/', __FILE__ );
         if ( $options['fb_style'] == 'like_dark' ) {
             $class = 'rtsocial-fb-like-dark';
             $rt_fb_style = 'fb-dark';
@@ -318,7 +318,7 @@ function rtsocial() {
     $class = '';
     $rt_fb_style = '';
     if ( isset( $options['fb_chk'] ) ) {
-        $path = plugins_url( 'rtsocial/images/' );
+        $path = plugins_url( 'images/', __FILE__ );
         if ( $options['fb_style'] == 'like_dark' ) {
             $class = 'rtsocial-fb-like-dark';
             $rt_fb_style = 'fb-dark';
