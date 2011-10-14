@@ -392,8 +392,8 @@ function rtsocial_reset_defaults() {
 add_action( 'wp_print_styles', 'rtsocial_stylesheet' );
 
 function rtsocial_stylesheet() {
-    $styleUrl = WP_PLUGIN_URL . '/rt-social/styles/style.css';
-    $styleFile = WP_PLUGIN_DIR . '/rt-social/styles/style.css';
+    $styleUrl = plugins_url('styles/style.css', __FILE__);
+    $styleFile = WP_PLUGIN_DIR . "/" . dirname(plugin_basename(__FILE__))."/styles/style.css";
     if ( file_exists( $styleFile ) ) {
         wp_register_style( 'styleSheet', $styleUrl );
         wp_enqueue_style( 'styleSheet' );
@@ -402,8 +402,8 @@ function rtsocial_stylesheet() {
 add_action( 'admin_print_styles', 'rtsocial_admin_stylesheet' );
 
 function rtsocial_admin_stylesheet() {
-    $styleUrl = WP_PLUGIN_URL . '/rt-social/styles/style.css';
-    $styleFile = WP_PLUGIN_DIR . '/rt-social/styles/style.css';
+    $styleUrl = plugins_url('styles/style.css', __FILE__);
+    $styleFile = WP_PLUGIN_DIR . "/" . dirname(plugin_basename(__FILE__))."/styles/style.css";
     if ( file_exists( $styleFile ) ) {
         wp_register_style( 'styleSheet', $styleUrl );
         wp_enqueue_style( 'styleSheet' );
@@ -422,7 +422,7 @@ if ( isset( $options['tw_chk'] ) && $options['tw_chk'] == 'on' ) {
 if ( isset( $options['fb_chk'] ) && $options['fb_chk'] == 'on' ) {
     $args['facebook'] = true;
 }
-$args['path'] = plugins_url( '/rt-social/images/' );
+$args['path'] = plugins_url( 'images/', __FILE__ );
 wp_localize_script( 'rtss-main', 'args', $args );
 
 /* Place in Option List on Settings > Plugins page */
