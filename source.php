@@ -46,7 +46,7 @@ function rtsocial_admin_fn() { ?>
                                         <tr>
                                             <td><input value="manual" name='rtsocial_plugin_options[placement_options_set]' id="rtsocial-manual-display" type="radio" <?php echo ( $options['placement_options_set'] == 'manual' ) ? ' checked="checked" ' : ''; ?> /></td>
                                             <th id="display_manual_th"><label for="rtsocial-manual-display">Manual</label></th>
-                                            <td>For manual placement, please use this function call in your template: <br /><span><strong>&lt;?php if ( function_exists( 'rtsocial' ) ) { echo rtsocial(); } ?&gt;</strong></span></td>
+                                            <td>For manual placement, please use this function call in your template: <br /><span class="rtsocial-manual-code"><strong>&lt;?php if ( function_exists( 'rtsocial' ) ) { echo rtsocial(); } ?&gt;</strong></span></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -112,7 +112,6 @@ function rtsocial_admin_fn() { ?>
                                     </table>
                                 </div>
                             </div>
-                            <?php //echo "<td><input type='checkbox' id='tw_handle_usermeta'/>&nbsp;&nbsp;&nbsp;<label for='tw_handle_usermeta'>This is the name of usermeta key</label></td>";  ?>
                             <div class="postbox">
                                 <div title="Click to toggle" class="handlediv"><br /></div>
                                 <h3 class="hndle"> Facebook Button Settings </h3>
@@ -147,7 +146,7 @@ function rtsocial_admin_fn() { ?>
                 </div>
             </form>
         </div>
-        <div id="ads_block" class="metabox-holder align_left">
+        <div id="rtsocial_ads_block" class="metabox-holder align_left">
             <div class="postbox-container">
                 <div class="meta-box-sortables ui-sortable">
                     <div class="postbox" id="social">
