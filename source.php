@@ -12,11 +12,6 @@ add_action( 'admin_menu', 'rtsocial_admin' );
 register_activation_hook( __FILE__, 'rtsocial_set_defaults' );
 register_deactivation_hook( __FILE__, 'rtsocial_reset_defaults' );
 
-function my_media( $context ) {
-    $test = '<a href=\'www.google.com\'>Google it</a>';
-    return $context . $test;
-}
-
 function rtsocial_admin() {
     add_options_page( 'rtSocial Options Page', 'rtSocial Options', 'manage_options', 'rtsocial-options', 'rtsocial_admin_fn' );
 }
