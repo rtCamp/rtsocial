@@ -1,6 +1,6 @@
 /**
  * Start of rtSocial Plugin Style
- */ 
+ */
 .rtsocial-container { overflow: hidden; padding: 5px 0; }
     .rtsocial-container p { margin: 0; }
 .rtsocial-container-align-left { float: left;margin: 0 5px 0 0;text-align: left; }
@@ -71,7 +71,7 @@ h3.positioning_title { margin: 0 }
 .rtsocial-horizontal-notch { background: url("../images/rtsocial-sprite-image.png") no-repeat scroll 0 0 transparent;display: block;height: 7px;left: 63px;margin: 0;position: absolute;top: 7px;width: 5px;z-index: 20; }
     #rtsocial-twitter-horizontal .rtsocial-horizontal-notch { background-position: -149px -181px; left: -5px; }
     #rtsocial-fb-horizontal .rtsocial-horizontal-notch { background-position: -138px -181px; left: -5px; }
-.rtsocial-container .fb-dark .rtsocial-vertical-count, 
+.rtsocial-container .fb-dark .rtsocial-vertical-count,
 .rtsocial-container .fb-dark .rtsocial-horizontal-count { background: none repeat scroll 0 0 #D7D7D7; border: 1px solid #D7D7D7; }
 .rtsocial-container .fb-dark .rtsocial-horizontal-notch { background-position: -137px -196px !important; }
 .rtsocial-container .fb-dark .rtsocial-vertical-notch { background-position: -146px -197px !important; }

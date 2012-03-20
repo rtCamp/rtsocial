@@ -20,7 +20,7 @@ jQuery( document ).ready( function() {
         } );
     }
     /* End of Twitter */
-    
+
     /**
      * If Facebook is checked, get Facebook Shares
      */
@@ -43,7 +43,7 @@ jQuery( document ).ready( function() {
         /* End of Callback function in JSON */
     }
     /* End of Facebook */
-    
+
     /*
      * Hide Twitter Section on Load if checkbox is unchecked
      */
@@ -54,7 +54,7 @@ jQuery( document ).ready( function() {
             jQuery( '#tw_related_handle' ).attr( 'value', '' );
         }
     } );
-    
+
     /*
      * Hide Facebook Section on Load if checkbox is unchecked
      */
@@ -98,7 +98,7 @@ jQuery( document ).ready( function() {
         } );
     }
 
-} ); 
+} );
 /* End of document.ready */
 
 /* Facebook Count Update */
@@ -109,9 +109,9 @@ function rtsocial_update_fbcount( rtsocial_fbcounts ) {
         url += 'u=' + key;
         jQuery( this ).find( '.rtsocial-fb-button' ).attr( 'href', url );
         jQuery( this ).find( '.rtsocial-fb-count' ).text( ( ( rtsocial_fbcounts[key] ) ? ( rtsocial_fbcounts[key] ) : '0' ) );
-    } ); 
+    } );
     /* End of "each" */
-} 
+}
 /* End of Function */
 
 /*

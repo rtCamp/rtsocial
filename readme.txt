@@ -4,9 +4,9 @@ Donate link: http://rtcamp.com/
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, social share, social sharing
 Requires at least: 3.0
 Tested up to: 3.2.1
-Stable tag: 1.0
+Stable tag: 1.0.2
 
-This plugin uses non-blocking JavaScript to display facebook, twitter, etc social media sharing counter on posts/pages. 
+This plugin uses non-blocking JavaScript to display facebook, twitter, etc social media sharing counter on posts/pages.
 
 == Description ==
 Normally social sharing codes provided by facebook, twitter, etc renders iframes at run-time. These iframes increases page-size and slow-down your website (on client-side).
@@ -25,7 +25,7 @@ With just 1 image (CSS-sprite), 1 javascript and 1 css file loaded from WordPres
 2. Alternatively you can download the plugin from the repository. Unzip it and upload it to the plugins folder of your WordPress installation. wp-content > plugins. Activate it through the 'Plugins' section.
 3. Adjust the plugin settings from the settings section. Settings > rtSocial Options.
 
-== Screenshots == 
+== Screenshots ==
 
 Please check [rtSocial Plugin's Homepage](http://rtpanel.com/plugins/rtsocial/).
 
@@ -33,16 +33,17 @@ Please check [rtSocial Plugin's Homepage](http://rtpanel.com/plugins/rtsocial/).
 
 = Can I use the plugin anywhere in the theme? =
 
-Yes you can. Use the function call 
-`<?php 
-if ( function_exists( 'rtsocial' ) ) { 
-       echo rtsocial(); 
-} 
+Yes you can. Use the function call
+`<?php
+if ( function_exists( 'rtsocial' ) ) {
+       echo rtsocial();
+}
 ?>`
+
 
 = Can I modify the images/icons used? =
 
-No. Right now you cannot. 
+No. Right now you cannot.
 
 
 == Changelog ==
@@ -51,4 +52,10 @@ No. Right now you cannot.
 
 Initial release.
 
+= 1.0.1 =
 
+Fixed minor CSS issue.
+
+= 1.0.2 =
+
+URL Encode Improved.
