@@ -1,12 +1,12 @@
 <?php
 /*
-  Plugin Name: rtSocial
-  Author: rtCamp, rahul286, rutwick
-  Author URI: http://rtcamp.com
-  Version: 1.0.2
-  Description: It is the lightest social sharing plugin, uses non-blocking Javascript and a single sprite to get rid of all the clutter that comes along with the sharing buttons.
-  Tags: rtcamp, social, sharing, share, social links, twitter, facebook, social share, social sharing
- */
+Plugin Name: rtSocial
+Author: rtCamp, rahul286, rutwick
+Author URI: http://rtcamp.com
+Version: 1.0.2
+Description: It is the lightest social sharing plugin, uses non-blocking Javascript and a single sprite to get rid of all the clutter that comes along with the sharing buttons.
+Tags: rtcamp, social, sharing, share, social links, twitter, facebook, social share, social sharing
+*/
 
 add_action( 'admin_menu', 'rtsocial_admin' );
 register_activation_hook( __FILE__, 'rtsocial_set_defaults' );
