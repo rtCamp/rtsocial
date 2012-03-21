@@ -1,0 +1,125 @@
+/**
+ * Start of rtSocial Plugin Style
+ */ 
+.rtsocial-container { overflow: hidden; padding: 5px 0; }
+    .rtsocial-container p { margin: 0; }
+.rtsocial-container-align-left { float: left;margin: 0 5px 0 0;text-align: left; }
+.rtsocial-container-align-center { text-align: center; }
+.rtsocial-container-align-right { margin: 0 0 0 5px; float: right;text-align: right; }
+.rtsocial-container-align-left #rtsocial-twitter-vertical,
+.rtsocial-container-align-left #rtsocial-fb-vertical,
+.rtsocial-container-align-right #rtsocial-twitter-vertical,
+.rtsocial-container-align-right #rtsocial-fb-vertical,
+.rtsocial-container-align-none #rtsocial-twitter-vertical,
+.rtsocial-container-align-none #rtsocial-fb-vertical { float: left;margin: 0 10px 0 0;overflow: hidden;position: relative; }
+.rtsocial-container-align-center #rtsocial-twitter-vertical,
+.rtsocial-container-align-center #rtsocial-fb-vertical { overflow: hidden;display: inline-block;margin: 0 10px 0 0;position: relative; }
+.rtsocial-container-align-none #rtsocial-twitter-vertical,
+.rtsocial-container-align-center #rtsocial-twitter-vertical { margin-bottom: 3px; }
+.rtsocial-container-align-none #rtsocial-twitter-vertical,
+.rtsocial-container-align-none #rtsocial-fb-vertical { display: inline-block; }
+#display_vertical .rtsocial-container-align-none #rtsocial-twitter-vertical,
+#display_vertical .rtsocial-container-align-none #rtsocial-fb-vertical {  }
+.rtsocial-container-align-left #rtsocial-fb-vertical,
+.rtsocial-container-align-right #rtsocial-fb-vertical,
+.rtsocial-container-align-none #rtsocial-fb-vertical,
+.rtsocial-container-align-center #rtsocial-fb-vertical { margin: 0; }
+div#content_block form { padding-left: 25px; }
+div#content_block { width: 70%; }
+#btowp_img { margin: 18px 8px 0 0; float: left; vertical-align: bottom; display: inline-block; }
+#btowp_title { float: left; display: inline-block; }
+#ads_block { width: 30%; }
+    #ads_block > div { width: 80%; }
+.inside { font-family: "Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif; line-height: 1.2; }
+    .inside span { font-style: italic; font-weight: bold; }
+.align_left, .alignleft { float: left; }
+.aligncenter { display:block; margin:0 auto; text-align: center; }
+.alignright { float:right; }
+#error_msg { color: #CC0000 }
+#b2wr_notice_block > p { font-size: 12px; font-weight: bold; letter-spacing: 0.9px; padding: 0px; }
+#b2wr_notice_block span { padding-left: 6px }
+.blue_color { color: #21759B !important }
+h3.positioning_title { margin: 0 }
+.template_tag { margin: 5px 0 5px 0; border: #bbb; background-color: #eee; }
+.fb_row input[type='radio'] { margin-right: 5px }
+.fb_row img { margin-bottom: -6px; margin-right: 10px; }
+.fb_title img { margin-bottom: -6px }
+.perma-link { display: none; }
+#rtsocial { width: 100%; }
+    #rtsocial .postbox-container { width: 98%; }
+.rtsocial-display-horizontal { text-align: center; }
+.rtsocial-fb-horizontal-button { float: left }
+    .rtsocial-fb-horizontal-button .rtsocial-fb-like-light { height: 18px; width: 29px; }
+    .rtsocial-fb-horizontal-button .rtsocial-fb-like-light:hover { height: 18px; width: 29px; }
+    #display_horizontal .rtsocial-fb-horizontal-button .rtsocial-fb-like-light { height: 18px; width: 29px; }
+    #display_horizontal .rtsocial-fb-horizontal-button .rtsocial-fb-like-light:hover { height: 18px; width: 29px; }
+.rtsocial-twitter-horizontal-button { float: left; }
+#rtsocial-twitter-horizontal, #rtsocial-fb-horizontal { float: left;margin: 0 10px 0 0;position: relative; }
+.rtsocial-container-align-center #rtsocial-twitter-horizontal, .rtsocial-container-align-center #rtsocial-fb-horizontal { float: none; display: inline-block; margin: 0 10px 0 0;position: relative; }
+.rtsocial-vertical-count { background: none repeat scroll 0 0 #FFFFFF;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;height: 37px;margin: 0 auto 5px;max-width: 55px;min-width: 55px;padding: 0;text-align: center;position: relative; }
+.rtsocial-horizontal-count { background: none repeat scroll 0 0 #FFFFFF;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;float: left;height: 20px;margin: 0 0 0 10px;max-width: 150px;min-width: 30px;padding: 0;text-align: center;position: relative; }
+    .rtsocial-vertical-count span { display: block;font-family: Arial,Helvetica,sans-serif;font-style: normal;font-size: 16px;font-weight: bold;margin: 6px 3px 5px;height: 70%;overflow: hidden;text-align: center; }
+    .rtsocial-horizontal-count span { display: block;font-family: Arial,Helvetica,sans-serif;font-style: normal;font-size: 12px;font-weight: bold;line-height: 164%;margin: 0;overflow: hidden;padding: 0 5px;text-align: center; }
+#rtsocial-twitter-vertical .rtsocial-vertical-count, #rtsocial-twitter-horizontal .rtsocial-horizontal-count { border: 1px solid #CFE3F0; }
+    #rtsocial-twitter-vertical .rtsocial-vertical-count span, #rtsocial-twitter-horizontal .rtsocial-horizontal-count span { color: #0099CC; }
+#rtsocial-fb-vertical .rtsocial-vertical-count, #rtsocial-fb-horizontal .rtsocial-horizontal-count { border: 1px solid #D3D3D3; }
+    #rtsocial-fb-vertical .rtsocial-vertical-count span, #rtsocial-fb-horizontal .rtsocial-horizontal-count span { color: #333333; }
+.rtsocial-vertical-notch { background: url("../images/rtsocial-sprite-image.png") no-repeat scroll 0 0 transparent;display: block; height: 5px;left: 45%;position: absolute;top: 38px;width: 8px;z-index: 10; }
+    #rtsocial-fb-vertical .rtsocial-vertical-notch { background-position: -138px -189px; }
+    #rtsocial-twitter-vertical .rtsocial-vertical-notch { background-position: -147px -189px; }
+.rtsocial-horizontal-notch { background: url("../images/rtsocial-sprite-image.png") no-repeat scroll 0 0 transparent;display: block;height: 7px;left: 63px;margin: 0;position: absolute;top: 7px;width: 5px;z-index: 20; }
+    #rtsocial-twitter-horizontal .rtsocial-horizontal-notch { background-position: -149px -181px; left: -5px; }
+    #rtsocial-fb-horizontal .rtsocial-horizontal-notch { background-position: -138px -181px; left: -5px; }
+.rtsocial-container .fb-dark .rtsocial-vertical-count, 
+.rtsocial-container .fb-dark .rtsocial-horizontal-count { background: none repeat scroll 0 0 #D7D7D7; border: 1px solid #D7D7D7; }
+.rtsocial-container .fb-dark .rtsocial-horizontal-notch { background-position: -137px -196px !important; }
+.rtsocial-container .fb-dark .rtsocial-vertical-notch { background-position: -146px -197px !important; }
+.rtsocial-fb-vertical-button { text-align: center }
+.rtsocial-fb-like-dark, .rtsocial-fb-like-light { background: url("../images/rtsocial-sprite-image.png") no-repeat scroll 0 0 transparent;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 11px; line-height: 17px; display: inline-block;height: 18px;margin: 0 auto;padding: 2px 2px 2px 22px;width: 29px;text-align: left; }
+.rtsocial-fb-recommend-light, .rtsocial-fb-recommend-dark { background: url("../images/rtsocial-sprite-image.png") no-repeat scroll 0 0 transparent;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 11px; line-height: 17px; display: inline-block;height: 18px;margin: 0 auto;padding: 2px 2px 2px 22px;width: 69px;text-align: left; }
+.rtsocial-fb-like-light, .rtsocial-fb-like-light:link, .rtsocial-fb-like-light:active, .rtsocial-fb-like-light:visited { background-color: #ECEEF5; color: #3B5998;background-position: 4px -59px;border: 1px solid #CAD4E7; text-decoration: none; }
+.rtsocial-fb-like-light:hover { border: 1px solid #9DACCE; color: #3B5998; text-decoration: none; }
+.rtsocial-fb-recommend-light, .rtsocial-fb-recommend-light:link, .rtsocial-fb-recommend-light:active, .rtsocial-fb-recommend-light:visited { background-color: #ECEEF5; color: #3B5998;background-position: 4px -59px;border: 1px solid #CAD4E7; text-decoration: none; }
+.rtsocial-fb-recommend-light:hover { border: 1px solid #9DACCE; color: #3B5998; text-decoration: none; }
+.rtsocial-fb-like-dark, .rtsocial-fb-like-dark:link, .rtsocial-fb-like-dark:active, .rtsocial-fb-like-dark:visited { background-color: #D7D7D7; color: #333333;background-position: 4px -91px;border: 1px solid #CAD4E7; text-decoration: none; }
+.rtsocial-fb-like-dark:hover { background-color: #D9D9D9; color: #333333; background-position: 4px -91px; border: 1px solid #E9E9E9; text-decoration: none; }
+.rtsocial-fb-recommend-dark, .rtsocial-fb-recommend-dark:link, .rtsocial-fb-recommend-dark:active, .rtsocial-fb-recommend-dark:visited { background-color: #D7D7D7; color: #333333;background-position: 4px -91px;border: 1px solid #CAD4E7; text-decoration: none; }
+.rtsocial-fb-recommend-dark:hover { background-color: #D9D9D9; color: #333333; background-position: 4px -91px; border: 1px solid #E9E9E9; text-decoration: none; }
+.rtsocial-twitter-vertical-button { text-align: center }
+.rtsocial-twitter-button { background: url("../images/rtsocial-sprite-image.png") no-repeat scroll 0 -557px transparent; display: block; float: left; height: 21px; margin: 0; padding: 0; width: 55px; }
+.rtsocial-twitter-button:hover { background-position: 0 -517px; }
+.rtsocial-fb-share { background: url("../images/rtsocial-sprite-image.png") no-repeat 0 -479px scroll transparent; display: block; float: left; padding: 0; }
+.rtsocial-fb-share { font-size: 0;height: 20px;line-height: 0;overflow: hidden;margin: 0 0 4px;text-indent: -9999px;width: 57px; }
+#display_manual_th { vertical-align: middle }
+#rtsocial-twitter { background: url("../images/rtsocial-sprite-image.png") no-repeat scroll 0 -599px transparent;display: block;float: left;height: 34px;overflow: hidden;width: 122px; }
+#rtsocial-facebook { background: url("../images/rtsocial-sprite-image.png") no-repeat scroll 0 -653px transparent;display: block;float: left;height: 34px;overflow: hidden;width: 122px; }
+.fb_row input#rtsocial-like-light-input { float: left; margin: 6px 6px 0 0; }
+#rtsocial-like-light { background: url("../images/rtsocial-sprite-image.png") no-repeat scroll 0 -172px transparent; display: block; height: 24px; width: 52px; float: left; }
+#rtsocial-like-light:hover { background-position: 0 -128px; }
+.fb_row input#rtsocial-like-dark-input { float: left; margin: 6px 6px 0 0; }
+#rtsocial-like-dark { background: url("../images/rtsocial-sprite-image.png") no-repeat scroll 0 -260px transparent; display: block; height: 24px; width: 52px; float: left; }
+#rtsocial-like-dark:hover { background-position: 0 -216px; }
+.fb_row input#rtsocial-recommend-light-input { float: left; margin: 6px 6px 0 0; }
+#rtsocial-recommend-light { background: url("../images/rtsocial-sprite-image.png") no-repeat scroll 0 -436px transparent; display: block; height: 24px; width: 97px; float: left; }
+#rtsocial-recommend-light:hover { background-position: 0 -392px; }
+.fb_row input#rtsocial-recommend-dark-input { float: left; margin: 6px 6px 0 0; }
+#rtsocial-recommend-dark { background: url("../images/rtsocial-sprite-image.png") no-repeat scroll 0 -348px transparent; display: block; height: 24px; width: 97px; float: left; }
+#rtsocial-recommend-dark:hover { background-position: 0 -304px; }
+.fb_row input#rtsocial-share-input { float: left; margin: 6px 6px 0 0; }
+#rtsocial-share-plain { background: url("../images/rtsocial-sprite-image.png") no-repeat scroll 0 -478px transparent; display: block; height: 20px; width: 59px; float: left; }
+.clear { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix:before, .clearfix:after { content: "."; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.rt-social-connect { text-align: center; overflow: hidden; }
+.rt-social-connect a { background: url("../images/rtsocial-sprite-image.png") no-repeat scroll 0 0 transparent;display: inline-block;font-size: 0;height: 32px;line-height: 0;overflow: hidden;text-indent: -9999px;text-transform: uppercase;width: 32px; }
+.rt-social-connect a.rt-sidebar-facebook { background-position: -123px -52px; }
+.rt-social-connect a.rt-sidebar-twitter { background-position: -121px 0; margin: 0 20px; }
+.rt-social-connect a.rt-sidebar-rss { background-position: -123px -104px; }
+#rtsocial-display-vertical-sample { overflow: hidden; float: left; }
+#rtsocial-display-vertical-sample #rtsocial-twitter-vertical { float: left; overflow: hidden; display: block; }
+#rtsocial-display-vertical-sample .rtsocial-vertical-count { float: left; }
+#rtsocial-display-vertical-sample .rtsocial-twitter-vertical-button,
+#rtsocial-display-vertical-sample .rtsocial-fb-vertical-button { float:left; clear: both; overflow: hidden; }
+/**
+ * End of rtSocial Plugin Style
+ */
