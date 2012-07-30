@@ -1,10 +1,10 @@
 === rtSocial ===
 Contributors: rtcamp, rahul286, rutwick
 Donate link: http://rtcamp.com/
-Tags: rtcamp, social, sharing, share, social links, twitter, facebook, social share, social sharing
+Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
 Requires at least: 3.0
-Tested up to: 3.2.1
-Stable tag: 1.0.2
+Tested up to: 3.4.1
+Stable tag: 2.0
 
 This plugin uses non-blocking JavaScript to display facebook, twitter, etc social media sharing counter on posts/pages.
 
@@ -16,8 +16,8 @@ The power of this plugin lies in non-blocking JavaScript. Normally social sharin
 With just 1 image (CSS-sprite), 1 javascript and 1 css file loaded from WordPress-running server; counts are fetched using AJAX request for sites like facebook/twitter after page loading finishes.
 
 = Useful Links =
-* [rtSocial Plugin's Homepage](http://rtpanel.com/plugins/rtsocial/)
-* [Support Forum](http://rtpanel.com/support/forum/plugins/rtsocial/)
+* [rtSocial Plugin's Homepage](http://rtcamp.com/rtsocial/)
+* [Support Forum](http://rtcamp.com/support/forum/rtsocial/)
 
 == Installation ==
 
@@ -27,7 +27,7 @@ With just 1 image (CSS-sprite), 1 javascript and 1 css file loaded from WordPres
 
 == Screenshots ==
 
-Please check [rtSocial Plugin's Homepage](http://rtpanel.com/plugins/rtsocial/).
+Please check [rtSocial Plugin's Homepage](http://rtcamp.com/rtsocial/).
 
 == Frequently Asked Questions ==
 
@@ -48,14 +48,19 @@ No. Right now you cannot.
 
 == Changelog ==
 
-= 1.0 =
+= 2.0 =
+* Added support for Google Plus, LinkedIn and Pinterest
+* Fixed minor bugs
+* Enhanced Options Page
 
-Initial release.
-
-= 1.0.1 =
-
-Fixed minor CSS issue.
+= 1.0.3 =
+* Custom URL Encode function, Updated Scripts and Styles enqueue code
 
 = 1.0.2 =
+* URL Encode Improved
 
-URL Encode Improved.
+= 1.0.1 =
+* Fixed minor CSS issue
+
+= 1.0 =
+* Initial Release

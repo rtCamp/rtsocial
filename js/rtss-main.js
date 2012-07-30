@@ -6,7 +6,7 @@ jQuery( document ).ready( function() {
     /**
      * If Twitter is checked, get Twitter Counts
      */
-    if ( args.twitter == 1 ) {
+    if ( args.twitter == 1 && args.button_style != 'icon') {
         jQuery( '.rtsocial-container' ).each( function() {
             var paNode = this;
             var key = jQuery( this ).find( '.perma-link' ).attr( 'href' );
@@ -24,7 +24,7 @@ jQuery( document ).ready( function() {
     /**
      * If Facebook is checked, get Facebook Shares
      */
-    if ( args.facebook == 1 ) {
+    if ( args.facebook == 1 && args.button_style != 'icon') {
         var rtsocial_urls = []; /* create an array of urls */
         jQuery( '.rtsocial-container' ).each( function() {
             rtsocial_urls.push( jQuery( 'a.perma-link', this ).attr( 'href' ) );
@@ -37,33 +37,52 @@ jQuery( document ).ready( function() {
         var rtsocial_fburl =  'https://graph.facebook.com/?ids=' + rtsocial_urls.join() + '&callback=?';
         var rtsocial_fbcounts = new Array();
         jQuery.getJSON( rtsocial_fburl, function( fbres ) {
-            jQuery.each( fbres, function( key, value ) { rtsocial_fbcounts[key] = ( value['shares'] ) ? value['shares'] : 0; } );
+            jQuery.each( fbres, function( key, value ) {rtsocial_fbcounts[key] = ( value['shares'] ) ? value['shares'] : 0;} );
             rtsocial_update_fbcount( rtsocial_fbcounts );
         } );
         /* End of Callback function in JSON */
     }
     /* End of Facebook */
 
-    /*
-     * Hide Twitter Section on Load if checkbox is unchecked
-     */
-    jQuery( '#tw_chk' ).ready( function() {
-        if ( jQuery( 'input#tw_chk:checked' ).length === 0 ) {
-            jQuery( '.tw_row' ).fadeOut( 'slow' );
-            jQuery( '#tw_handle' ).attr( 'value', '' );
-            jQuery( '#tw_related_handle' ).attr( 'value', '' );
-        }
-    } );
-
-    /*
-     * Hide Facebook Section on Load if checkbox is unchecked
-     */
-    jQuery( '#fb_chk' ).ready( function() {
-        if ( jQuery( 'input#fb_chk:checked' ).length === 0 ) {
-            jQuery( '.fb_row' ).fadeOut( 'slow' );
-            jQuery( '.fb_row input[type="radio"]' ).attr( 'checked', false );
-        }
-    } );
+    /* Pinterest */
+    if ( args.pinterest == 1 && args.button_style != 'icon') {
+        jQuery( '.rtsocial-container' ).each( function() {
+            var paNode = this;
+            var rtsocial_pinurl = jQuery( this ).find( '.perma-link' ).attr( 'href' );
+            var rtsocial_pincount_url = 'https://api.pinterest.com/v1/urls/count.json?callback=?&url='+rtsocial_pinurl;
+            jQuery.getJSON( rtsocial_pincount_url, function( pinres ) {
+                jQuery('.rtsocial-pinterest-count', paNode).text( ( pinres['count'] ) ? ( pinres['count'] ) : '0' );
+            });
+        });
+    }
+    
+    /* LinkedIn */
+    if ( args.linkedin == 1 && args.button_style != 'icon') {
+        jQuery( '.rtsocial-container' ).each( function() {
+            var paNode = this;
+            var rtsocial_linurl = jQuery( this ).find( '.perma-link' ).attr( 'href' );
+            var rtsocial_lincount_url = 'http://www.linkedin.com/countserv/count/share?callback=?&url='+rtsocial_linurl;
+            jQuery.getJSON( rtsocial_lincount_url, function( pinres ) {
+                jQuery('.rtsocial-linkedin-count', paNode).text( ( pinres['count'] ) ? ( pinres['count'] ) : '0' );
+            });
+        });
+    }
+    
+    /* G+ Share */
+    if ( args.gplus == 1 && args.button_style != 'icon') {
+        jQuery( '.rtsocial-container' ).each( function() {
+            var paNode = this;
+            var rtsocial_gplusurl = jQuery( this ).find( '.perma-link' ).attr( 'href' );
+            var rtsocial_gplusdata = {
+                action: 'rtsocial_gplus',
+                url: rtsocial_gplusurl
+            };
+            
+            jQuery.post( ajaxurl, rtsocial_gplusdata, function( gplusres ) {
+                jQuery('.rtsocial-gplus-count', paNode).text( ( gplusres ) ? ( gplusres ) : '0' );
+            });
+        });
+    }
 
     /*
      * Showing the Tweet Count in the Admin Panel
@@ -97,7 +116,33 @@ jQuery( document ).ready( function() {
             } );
         } );
     }
-
+    
+    /* Sortable Stuff */
+    
+    if(jQuery('.connectedSortable').length > 0){
+        jQuery( "#rtsocial-sorter-active, #rtsocial-sorter-inactive" ).sortable({
+            connectWith: ".connectedSortable",
+            cursor: 'pointer',
+            dropOnEmpty: true,
+            revert: true,
+            update: function(event, ui){
+                var ord = jQuery(this).sortable('toArray');
+                //came from active
+                if(ui.item.parent().attr('id') == 'rtsocial-sorter-inactive'){
+                    if(ord.length == 0){
+                        jQuery(this).sortable('cancel');
+                    }
+                    ui.item.find('input').attr('name', 'rtsocial_plugin_options[inactive][]');
+                }
+                //came from inactive
+                else if(ui.item.parent().attr('id') == 'rtsocial-sorter-active') {
+                    ui.item.find('input').attr('name', 'rtsocial_plugin_options[active][]');
+                }
+            }
+        }).disableSelection();
+        /* End of Sortable */
+    }
+    
 } );
 /* End of document.ready */
 
