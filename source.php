@@ -4,7 +4,7 @@ Plugin Name: rtSocial
 Plugin URI: http://rtcamp.com/rtsocial/
 Author: rtCamp, rahul286, rutwick
 Author URI: http://rtcamp.com/
-Version: 2.0
+Version: 2.0.1
 Description: It is the lightest social sharing plugin, uses non-blocking Javascript and a single sprite to get rid of all the clutter that comes along with the sharing buttons.
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
 */
@@ -272,18 +272,18 @@ function rtsocial_admin_fn() { ?>
                 <div class="meta-box-sortables ui-sortable">
                     <div class="postbox" id="social">
                         <div title="Click to toggle" class="handlediv"><br /></div>
-                        <h3 class="hndle"><span><strong class="red">Getting Social is Good</strong></span></h3>
+                        <h3 class="hndle"><span><strong>Getting Social is Good</strong></span></h3>
                         <div class="inside rt-social-connect">
-                            <a href="http://www.facebook.com/rtPanel" target="_blank" title="Become a fan on Facebook" class="rt-sidebar-facebook">Facebook</a>
-                            <a href="http://twitter.com/#!/rtpanel" target="_blank" title="Follow us on Twitter" class="rt-sidebar-twitter">Twitter</a>
-                            <a href="http://feeds.feedburner.com/rtpanel" target="_blank" title="Subscribe to our Feeds" class="rt-sidebar-rss">RSS</a>
+                            <a href="http://www.facebook.com/rtCamp.solutions" target="_blank" title="Become a fan on Facebook" class="rt-sidebar-facebook">Facebook</a>
+                            <a href="https://twitter.com/rtcamp" target="_blank" title="Follow us on Twitter" class="rt-sidebar-twitter">Twitter</a>
+                            <a href="http://feeds.feedburner.com/rtcamp" target="_blank" title="Subscribe to our Feeds" class="rt-sidebar-rss">RSS</a>
                         </div>
                     </div>
                     <div class="postbox" id="donations">
                         <div title="Click to toggle" class="handlediv"><br /></div>
-                        <h3 class="hndle"><span><strong class="red">Promote, Donate, Share...</strong></span></h3>
+                        <h3 class="hndle"><span><strong>Promote, Donate, Share...</strong></span></h3>
                         <div class="inside">
-                            A lot of time and effort goes into the development of this plugin. If you find it useful, please consider making a donation, or a review on your blog or sharing this with your friends to help us.<br/><br/>
+                            Buy coffee/beer for team behind <a href="http://rtcamp.com/rtsocial/" title="rtSocial Plugin">rtSocial</a>.<br/><br/>
                             <div class="rt-paypal" style="text-align:center">
                                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
                                     <input type="hidden" name="cmd" value="_donations" />
@@ -299,10 +299,10 @@ function rtsocial_admin_fn() { ?>
                             </div>
                             <div class="rtsocial-share" style="text-align:center; width: 127px; margin: 2px auto">
                                 <div class="rt-facebook" style="float:left; margin-right:5px;">
-                                    <a style=" text-align:center;" name="fb_share" type="box_count" title="rtPanel WordPress Theme Framework" share_url="http://rtpanel.com/"></a>
+                                    <a style=" text-align:center;" name="fb_share" type="box_count" title="rtSocial: Simple, Smarter & Swifter Social Sharing WordPress Plugin" share_url="http://rtcamp.com/rtsocial/"></a>
                                 </div>
                                 <div class="rt-twitter" style="">
-                                    <a href="http://twitter.com/share" title="rtPanel WordPress Theme Framework" class="twitter-share-button" data-text="rtPanel WordPress Theme Framework"  data-url="http://rtpanel.com/" data-count="vertical" data-via="rtPanel">Tweet</a>
+                                    <a href="http://twitter.com/share" title="rtSocial: Simple, Smarter & Swifter Social Sharing WordPress Plugin" class="twitter-share-button" data-text="rtSocial: Simple, Smarter & Swifter Social Sharing #WordPress #Plugin" data-url="http://rtcamp.com/rtsocial/" data-count="vertical" data-via="rtCamp">Tweet</a>
                                     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
                                 </div>
                                 <div class="clear"></div>
@@ -311,8 +311,13 @@ function rtsocial_admin_fn() { ?>
                     </div>
                     <div class="postbox" id="support">
                         <div title="Click to toggle" class="handlediv"><br /></div>
-                        <h3 class="hndle"><span><strong class="red">Free Support</strong></span></h3>
-                        <div class="inside">If you have any problems with this plugin or good ideas for improvements, please talk about them in the <a href="http://rtpanel.com/support/forum/plugin/" target="_blank" title="Support forums">Support forums</a>.</div>
+                        <h3 class="hndle"><span><strong>Free Support</strong></span></h3>
+                        <div class="inside">If you have any problems with this plugin or good ideas for improvements, please talk about them in the <a href="http://rtcamp.com/support/forum/rtsocial/" target="_blank" title="free support forums">free support forums</a>.</div>
+                    </div>
+                    <div class="postbox" id="latest_news">
+                        <div title="Click to toggle" class="handlediv"><br /></div>
+                        <h3 class="hndle"><span><strong>Latest News</strong></span></h3>
+                        <div class="inside"><?php rtsocial_get_feeds(); ?></div>
                     </div>
                 </div>
             </div>
@@ -748,6 +753,7 @@ function rtsocial_assets() {
         wp_enqueue_script( 'dashboard' );
         wp_enqueue_style( 'dashboard' );
         wp_enqueue_script( 'jquery-ui-sortable' );
+        wp_enqueue_script( 'rt-fb-share', ('http://static.ak.fbcdn.net/connect.php/js/FB.Share'), '', '', true );
     }
 
     //Plugin CSS
@@ -845,9 +851,9 @@ function rtsocial_ie_fix() { ?>
  * Function to replace the functionality of PHP's rawurlencode to support titles with special characters in Twitter and Facebook
  */
 function rt_url_encode($string) {
-    $entities = array( '%26%23038%3B','%26%238211%3B','%26%238221%3B','%26%238216%3B','%26%238217%3B','%26%238220%3B');
-    $replacements = array( '%26','%2D','%22','%27','%27','%22');
-    return str_replace($entities, $replacements, rawurlencode($string));
+    $entities = array('%26%23038%3B','%26%238211%3B','%26%238221%3B','%26%238216%3B','%26%238217%3B','%26%238220%3B');
+    $replacements = array('%26','%2D','%22','%27','%27','%22');
+    return str_replace($entities, $replacements, rawurlencode(str_replace(array('&lsquo;','&rsquo;','&ldquo;','&rdquo;'), array('\'','\'','"','"'), $string)));
 }
 
 /*
@@ -885,4 +891,38 @@ function rtsocial_gplus_handler(){
         die(1);
     }
 }
+
+/*
+ * Google Plus shares count handled via CURL
+ */
+function rtsocial_get_feeds($feed_url = 'http://rtcamp.com/blog/category/rtsocial/feed/') {
+	// Get RSS Feed(s)
+	require_once( ABSPATH . WPINC . '/feed.php' );
+	$maxitems = 0;
+	// Get a SimplePie feed object from the specified feed source.
+	$rss = fetch_feed($feed_url);
+	if (!is_wp_error($rss)) { // Checks that the object is created correctly
+		// Figure out how many total items there are, but limit it to 5.
+		$maxitems = $rss->get_item_quantity(5);
+
+		// Build an array of all the items, starting with element 0 (first element).
+		$rss_items = $rss->get_items(0, $maxitems);
+	}
+	?>
+	<ul><?php
+	if ($maxitems == 0) {
+		echo '<li>' . __('No items', 'bp-media') . '.</li>';
+	} else {
+		// Loop through each feed item and display each item as a hyperlink.
+		foreach ($rss_items as $item) {
+			?>
+				<li>
+					<a href='<?php echo $item->get_permalink(); ?>' title='<?php echo __('Posted ', 'bp-media') . $item->get_date('j F Y | g:i a'); ?>'><?php echo $item->get_title(); ?></a>
+				</li><?php
+		}
+	}
+	?>
+	</ul><?php
+}
+
 //The php closing tag is absent on purpose! Please don't add it
