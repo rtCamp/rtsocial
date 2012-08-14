@@ -461,18 +461,18 @@ function rtsocial_counter( $content = '' ) {
         }
 
         //Set Pinterest description
-        $description = (strlen($post->post_content) > 100) ? wp_html_excerpt($post->post_content, 100) : $post->post_content;
+        $title = $post->post_title;
 
         $pin_layout = '<div class="rtsocial-pinterest-' . $options['display_options_set'] . '">';
         if($options['display_options_set'] == 'horizontal'){
-            $pin_layout .= '<div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><a class="rtsocial-pinterest-button" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$description.'" target="_blank" ></a></div><div class="rtsocial-' . $options['display_options_set'] . '-count"><div class="rtsocial-' . $options['display_options_set'] . '-notch"></div><span class="rtsocial-pinterest-count"></span></div>';
+            $pin_layout .= '<div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><a class="rtsocial-pinterest-button" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" target="_blank" ></a></div><div class="rtsocial-' . $options['display_options_set'] . '-count"><div class="rtsocial-' . $options['display_options_set'] . '-notch"></div><span class="rtsocial-pinterest-count"></span></div>';
         } else if( $options['display_options_set'] == 'vertical' ){
-            $pin_layout .= ' <div class="rtsocial-' . $options['display_options_set'] . '-count"><span class="rtsocial-pinterest-count"></span></div><div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><div class="rtsocial-' . $options['display_options_set'] . '-notch"></div><a class="rtsocial-pinterest-button" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$description.'" target="_blank"></a></div>';
+            $pin_layout .= ' <div class="rtsocial-' . $options['display_options_set'] . '-count"><span class="rtsocial-pinterest-count"></span></div><div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><div class="rtsocial-' . $options['display_options_set'] . '-notch"></div><a class="rtsocial-pinterest-button" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" target="_blank"></a></div>';
         } else if( $options['display_options_set'] == 'icon' ) {
-            $pin_layout .= ' <div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><a title="' . rt_url_encode( get_the_title( $id ) ) . '" class="rtsocial-pinterest-icon-link" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$description.'" target= "_blank"></a></div>';
+            $pin_layout .= ' <div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><a title="' . rt_url_encode( get_the_title( $id ) ) . '" class="rtsocial-pinterest-icon-link" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" target= "_blank"></a></div>';
         } else if( $options['display_options_set'] == 'icon-count' ) {
             $pin_layout = '<div class="rtsocial-pinterest-icon">';
-            $pin_layout .= ' <div class="rtsocial-pinterest-icon-button"><a title="' . rt_url_encode( get_the_title( $id ) ) . '" class="rtsocial-pinterest-icon-link" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$description.'" target= "_blank"></a></div><div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-pinterest-count">0</span></div>';
+            $pin_layout .= ' <div class="rtsocial-pinterest-icon-button"><a title="' . rt_url_encode( get_the_title( $id ) ) . '" class="rtsocial-pinterest-icon-link" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" target= "_blank"></a></div><div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-pinterest-count">0</span></div>';
         }
         $pin_layout .= '</div>';
         $active_services[$pin] = $pin_layout;
