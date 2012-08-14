@@ -360,7 +360,7 @@ function rtsocial_get_errors() {
  * Inject the widget in the posts
  */
 add_filter( 'the_content', 'rtsocial_counter' );
-add_filter( 'get_the_excerpt', 'rtsocial_counter' );
+add_filter( 'the_excerpt', 'rtsocial_counter' );
 
 function rtsocial_counter( $content = '' ) {
     //Working issue on attachment page
@@ -528,11 +528,12 @@ function rtsocial_counter( $content = '' ) {
     
     //Rest of the stuff
     $layout = '<div class="rtsocial-container rtsocial-container-align-' . $options['alignment_options_set'] . ' rtsocial-' . $options['display_options_set'] . '" >';
-        //Append the ordered buttons
-        $layout .= $active_services;
+        
+    //Append the ordered buttons
+    $layout .= $active_services;
         
     //Hidden permalink
-    $layout .= '<a title="' . esc_attr( get_the_title( $id ) ) . '" rel="nofollow" class="perma-link" href="' . get_permalink( $id ) . '" title="' . esc_attr( get_the_title( $id ) ) . '"></a></div>';
+    $layout .= '<a title="' . esc_attr( get_the_title( $id ) ) . '" rel="nofollow" class="perma-link" href="' . get_permalink( $id ) . '"></a></div>';
     if ( $options['placement_options_set'] == 'top' ) {
         return $layout . $content;
     } else if ( $options['placement_options_set'] == 'bottom' ) {
@@ -544,13 +545,15 @@ function rtsocial_counter( $content = '' ) {
 
 /*
  * Function for manual layout
+ * Possible options
+ * 'active' = array('tw', 'fb', 'lin', 'pin', 'gplus');
+ * 'display_options_set' = 'horizontal', 'vertical', 'icon', 'icon-count'
+ * 'alignment_options_set' = 'left', 'right', 'center', 'none'
+ * 'tw_handle' = 'whateveryouwant'
+ * 'tw_related_handle' = 'whateveryouwant'
+ * 'fb_style' = 'like_light', 'like_dark', 'recommend_light', 'recommend_dark', 'share'
  */
 function rtsocial($args=array()) {
-    
-    //Possible options
-    //'active' = array('tw', 'fb', 'lin', 'pin', 'gplus');
-    //'display_options_set' = 'horizontal', 'vertical', 'icon', 'icon-count'
-    //'alignment_options_set' = 'left', 'right', 'center', 'none'
     //Working issue on attachment page
     if(is_attachment())
         return;
@@ -558,6 +561,10 @@ function rtsocial($args=array()) {
     $options = get_option( 'rtsocial_plugin_options' );
 	$options = wp_parse_args($args, $options);
 
+    //If manual mode is selected then avoid this code
+    if($options['placement_options_set'] != 'manual')
+        return;
+    
     global $post, $id;
     
     //Ordered buttons
@@ -722,7 +729,7 @@ function rtsocial($args=array()) {
         $layout .= $active_services;
         
     //Hidden permalink
-    $layout .= '<a title="' . esc_attr( get_the_title( $id ) ) . '" rel="nofollow" class="perma-link" href="' . get_permalink( $id ) . '" title="' . esc_attr( get_the_title( $id ) ) . '"></a></div>';
+    $layout .= '<a title="' . esc_attr( get_the_title( $id ) ) . '" rel="nofollow" class="perma-link" href="' . get_permalink( $id ) . '"></a></div>';
     
     return $layout;
 }
