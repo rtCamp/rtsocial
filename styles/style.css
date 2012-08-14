@@ -10,41 +10,41 @@
 .rtsocial-container-align-right { margin: 0 0 0 5px; float: right; text-align: right; }
 .rtsocial-container-align-center { text-align: center }
 
-.rtsocial-container-align-right #rtsocial-twitter-vertical,
-.rtsocial-container-align-right #rtsocial-fb-vertical,
-.rtsocial-container-align-right #rtsocial-pinterest-vertical,
-.rtsocial-container-align-right #rtsocial-linkedin-vertical,
-.rtsocial-container-align-right #rtsocial-gplus-vertical,
-.rtsocial-container-align-left #rtsocial-twitter-vertical,
-.rtsocial-container-align-left #rtsocial-fb-vertical,
-.rtsocial-container-align-left #rtsocial-pinterest-vertical,
-.rtsocial-container-align-left #rtsocial-linkedin-vertical,
-.rtsocial-container-align-left #rtsocial-gplus-vertical,
-.rtsocial-container-align-none #rtsocial-twitter-vertical,
-.rtsocial-container-align-none #rtsocial-fb-vertical,
-.rtsocial-container-align-none #rtsocial-linkedin-vertical,
-.rtsocial-container-align-none #rtsocial-gplus-vertical,
-.rtsocial-container-align-none #rtsocial-pinterest-vertical { float: left; margin: 0 10px 0 0; overflow: hidden; position: relative; }
+.rtsocial-container-align-right .rtsocial-twitter-vertical,
+.rtsocial-container-align-right .rtsocial-fb-vertical,
+.rtsocial-container-align-right .rtsocial-pinterest-vertical,
+.rtsocial-container-align-right .rtsocial-linkedin-vertical,
+.rtsocial-container-align-right .rtsocial-gplus-vertical,
+.rtsocial-container-align-left .rtsocial-twitter-vertical,
+.rtsocial-container-align-left .rtsocial-fb-vertical,
+.rtsocial-container-align-left .rtsocial-pinterest-vertical,
+.rtsocial-container-align-left .rtsocial-linkedin-vertical,
+.rtsocial-container-align-left .rtsocial-gplus-vertical,
+.rtsocial-container-align-none .rtsocial-twitter-vertical,
+.rtsocial-container-align-none .rtsocial-fb-vertical,
+.rtsocial-container-align-none .rtsocial-linkedin-vertical,
+.rtsocial-container-align-none .rtsocial-gplus-vertical,
+.rtsocial-container-align-none .rtsocial-pinterest-vertical { float: left; margin: 0 10px 0 0; overflow: hidden; position: relative; }
 
-#rtsocial-pinterest-vertical { margin-right: 0; }
+.rtsocial-pinterest-vertical { margin-right: 0; }
 
-.rtsocial-container-align-center #rtsocial-twitter-vertical,
-.rtsocial-container-align-center #rtsocial-pinterest-vertical,
-.rtsocial-container-align-center #rtsocial-fb-vertical { overflow: hidden; display: inline-block; margin: 0 10px 0 0; position: relative; }
+.rtsocial-container-align-center .rtsocial-twitter-vertical,
+.rtsocial-container-align-center .rtsocial-pinterest-vertical,
+.rtsocial-container-align-center .rtsocial-fb-vertical { overflow: hidden; display: inline-block; margin: 0 10px 0 0; position: relative; }
 
-.rtsocial-container-align-none #rtsocial-twitter-vertical,
-.rtsocial-container-align-center #rtsocial-twitter-vertical { margin-bottom: 3px }
+.rtsocial-container-align-none .rtsocial-twitter-vertical,
+.rtsocial-container-align-center .rtsocial-twitter-vertical { margin-bottom: 3px }
 
-.rtsocial-container-align-none #rtsocial-twitter-vertical,
-.rtsocial-container-align-none #rtsocial-fb-vertical { display: inline-block }
+.rtsocial-container-align-none .rtsocial-twitter-vertical,
+.rtsocial-container-align-none .rtsocial-fb-vertical { display: inline-block }
 
-#display_vertical .rtsocial-container-align-none #rtsocial-twitter-vertical,
-#display_vertical .rtsocial-container-align-none #rtsocial-fb-vertical { }
+#display_vertical .rtsocial-container-align-none .rtsocial-twitter-vertical,
+#display_vertical .rtsocial-container-align-none .rtsocial-fb-vertical { }
 
-.rtsocial-container-align-left #rtsocial-fb-vertical,
-.rtsocial-container-align-right #rtsocial-fb-vertical,
-.rtsocial-container-align-none #rtsocial-fb-vertical,
-.rtsocial-container-align-center #rtsocial-fb-vertical { margin-right: 10px; }
+.rtsocial-container-align-left .rtsocial-fb-vertical,
+.rtsocial-container-align-right .rtsocial-fb-vertical,
+.rtsocial-container-align-none .rtsocial-fb-vertical,
+.rtsocial-container-align-center .rtsocial-fb-vertical { margin-right: 10px; }
 
 /* 
  * B2W branding styles
@@ -113,19 +113,19 @@ div#content_block { width: 70% }
 .rtsocial-gplus-icon-button,
 .rtsocial-pinterest-icon-button{ float: left }
 
-#rtsocial-twitter-horizontal,
-#rtsocial-fb-horizontal,
-#rtsocial-gplus-horizontal,
-#rtsocial-pinterest-horizontal,
-#rtsocial-linkedin-horizontal,
-#rtsocial-twitter-icon,
-#rtsocial-fb-icon,
-#rtsocial-pinterest-icon,
-#rtsocial-linkedin-icon,
-#rtsocial-gplus-icon{ float: left; margin: 0 10px 0 0; position: relative; }
+.rtsocial-twitter-horizontal,
+.rtsocial-fb-horizontal,
+.rtsocial-gplus-horizontal,
+.rtsocial-pinterest-horizontal,
+.rtsocial-linkedin-horizontal,
+.rtsocial-twitter-icon,
+.rtsocial-fb-icon,
+.rtsocial-pinterest-icon,
+.rtsocial-linkedin-icon,
+.rtsocial-gplus-icon{ float: left; margin: 0 10px 0 0; position: relative; }
 
-.rtsocial-container-align-center #rtsocial-twitter-horizontal,
-.rtsocial-container-align-center #rtsocial-fb-horizontal { float: none; display: inline-block; margin: 0 10px 0 0; position: relative; }
+.rtsocial-container-align-center .rtsocial-twitter-horizontal,
+.rtsocial-container-align-center .rtsocial-fb-horizontal { float: none; display: inline-block; margin: 0 10px 0 0; position: relative; }
 
 /* Counts display styles */
 .rtsocial-vertical-count { background: #FFF; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; height: 37px; margin: 0 auto 5px; max-width: 55px; min-width: 55px; padding: 0; text-align: center; position: relative; }
@@ -133,34 +133,34 @@ div#content_block { width: 70% }
 .rtsocial-vertical-count span { display: block; font-family: Arial,Helvetica,sans-serif; font-style: normal; font-size: 16px; font-weight: bold; margin: 6px 3px 5px; height: 70%; overflow: hidden; text-align: center; }
 .rtsocial-horizontal-count span { display: block; font-family: Arial,Helvetica,sans-serif; font-style: normal; font-size: 12px; font-weight: bold; line-height: 164%; margin: 0; overflow: hidden; padding: 0 5px; text-align: center; }
 
-#rtsocial-twitter-vertical .rtsocial-vertical-count,
-#rtsocial-twitter-horizontal .rtsocial-horizontal-count,
-#rtsocial-twitter-icon .rtsocial-horizontal-count,
-#rtsocial-linkedin-vertical .rtsocial-vertical-count,
-#rtsocial-linkedin-horizontal .rtsocial-horizontal-count,
-#rtsocial-linkedin-icon .rtsocial-horizontal-count { border: 1px solid #CFE3F0; }
+.rtsocial-twitter-vertical .rtsocial-vertical-count,
+.rtsocial-twitter-horizontal .rtsocial-horizontal-count,
+.rtsocial-twitter-icon .rtsocial-horizontal-count,
+.rtsocial-linkedin-vertical .rtsocial-vertical-count,
+.rtsocial-linkedin-horizontal .rtsocial-horizontal-count,
+.rtsocial-linkedin-icon .rtsocial-horizontal-count { border: 1px solid #CFE3F0; }
 
-#rtsocial-twitter-vertical .rtsocial-vertical-count span,
-#rtsocial-twitter-horizontal .rtsocial-horizontal-count span,
-#rtsocial-twitter-icon .rtsocial-horizontal-count span { color: #0099CC; }
+.rtsocial-twitter-vertical .rtsocial-vertical-count span,
+.rtsocial-twitter-horizontal .rtsocial-horizontal-count span,
+.rtsocial-twitter-icon .rtsocial-horizontal-count span { color: #0099CC; }
 
-#rtsocial-linkedin-vertical .rtsocial-vertical-count span,
-#rtsocial-linkedin-horizontal .rtsocial-horizontal-count span,
-#rtsocial-linkedin-icon .rtsocial-horizontal-count span { color: #04558B; }
+.rtsocial-linkedin-vertical .rtsocial-vertical-count span,
+.rtsocial-linkedin-horizontal .rtsocial-horizontal-count span,
+.rtsocial-linkedin-icon .rtsocial-horizontal-count span { color: #04558B; }
 
-#rtsocial-fb-vertical .rtsocial-vertical-count,
-#rtsocial-fb-horizontal .rtsocial-horizontal-count,
-#rtsocial-fb-icon .rtsocial-horizontal-count { border: 1px solid #D3D3D3; }
+.rtsocial-fb-vertical .rtsocial-vertical-count,
+.rtsocial-fb-horizontal .rtsocial-horizontal-count,
+.rtsocial-fb-icon .rtsocial-horizontal-count { border: 1px solid #D3D3D3; }
 
-#rtsocial-fb-vertical .rtsocial-vertical-count span,
-#rtsocial-fb-horizontal .rtsocial-horizontal-count span { color: #333333; }
+.rtsocial-fb-vertical .rtsocial-vertical-count span,
+.rtsocial-fb-horizontal .rtsocial-horizontal-count span { color: #333333; }
 
-#rtsocial-pinterest-vertical .rtsocial-vertical-count,
-#rtsocial-pinterest-horizontal .rtsocial-horizontal-count,
-#rtsocial-pinterest-icon .rtsocial-horizontal-count,
-#rtsocial-gplus-vertical .rtsocial-vertical-count,
-#rtsocial-gplus-horizontal .rtsocial-horizontal-count,
-#rtsocial-gplus-icon .rtsocial-horizontal-count{ border: 1px solid #D3D3D3; }
+.rtsocial-pinterest-vertical .rtsocial-vertical-count,
+.rtsocial-pinterest-horizontal .rtsocial-horizontal-count,
+.rtsocial-pinterest-icon .rtsocial-horizontal-count,
+.rtsocial-gplus-vertical .rtsocial-vertical-count,
+.rtsocial-gplus-horizontal .rtsocial-horizontal-count,
+.rtsocial-gplus-icon .rtsocial-horizontal-count{ border: 1px solid #D3D3D3; }
 
 /* Image sprite */
 .rtsocial-vertical-notch,
@@ -170,11 +170,11 @@ div#content_block { width: 70% }
 .rtsocial-pinterest-button,
 .rtsocial-linkedin-button,
 .rtsocial-gplus-button,
-.rtsocial-fb-icon,
-.rtsocial-twitter-icon,
-.rtsocial-pinterest-icon,
-.rtsocial-linkedin-icon,
-.rtsocial-gplus-icon,
+.rtsocial-fb-icon-link,
+.rtsocial-twitter-icon-link,
+.rtsocial-pinterest-icon-link,
+.rtsocial-linkedin-icon-link,
+.rtsocial-gplus-icon-link,
 #rtsocial-twitter,
 #rtsocial-facebook,
 #rtsocial-pinterest,
@@ -194,24 +194,27 @@ div#content_block { width: 70% }
 
 /*Count bubble notches styles */
 .rtsocial-vertical-notch { display: block; height: 5px; left: 45%; position: absolute; top: 38px; width: 8px; z-index: 10; }
-#rtsocial-fb-vertical .rtsocial-vertical-notch { background-position: -138px -189px }
-#rtsocial-pinterest-vertical .rtsocial-vertical-notch { background-position: -138px -189px }
-#rtsocial-gplus-vertical .rtsocial-vertical-notch { background-position: -138px -189px }
-#rtsocial-twitter-vertical .rtsocial-vertical-notch { background-position: -147px -189px }
-#rtsocial-linkedin-vertical .rtsocial-vertical-notch { background-position: -147px -189px }
+
+.rtsocial-fb-vertical .rtsocial-vertical-notch { background-position: -138px -189px }
+.rtsocial-pinterest-vertical .rtsocial-vertical-notch { background-position: -138px -189px }
+.rtsocial-gplus-vertical .rtsocial-vertical-notch { background-position: -138px -189px }
+.rtsocial-twitter-vertical .rtsocial-vertical-notch { background-position: -147px -189px }
+.rtsocial-linkedin-vertical .rtsocial-vertical-notch { background-position: -147px -189px }
 
 .rtsocial-horizontal-notch { display: block; height: 7px; left: 63px; margin: 0; position: absolute; top: 7px; width: 5px; z-index: 20; }
-#rtsocial-twitter-horizontal .rtsocial-horizontal-notch { background-position: -149px -181px; left: -5px; }
-#rtsocial-fb-horizontal .rtsocial-horizontal-notch { background-position: -138px -181px; left: -5px; }
-#rtsocial-pinterest-horizontal .rtsocial-horizontal-notch{ background-position: -138px -181px; left: -5px; }
-#rtsocial-linkedin-horizontal .rtsocial-horizontal-notch{ background-position: -138px -181px; left: -5px; }
-#rtsocial-gplus-horizontal .rtsocial-horizontal-notch{ background-position: -138px -181px; left: -5px; }
 
-#rtsocial-fb-icon .rtsocial-horizontal-notch{ background-position: -138px -181px; left: -5px; }
-#rtsocial-twitter-icon .rtsocial-horizontal-notch { background-position: -149px -181px; left: -5px; }
-#rtsocial-pinterest-icon .rtsocial-horizontal-notch{ background-position: -138px -181px; left: -5px; }
-#rtsocial-linkedin-icon .rtsocial-horizontal-notch{ background-position: -138px -181px; left: -5px; }
-#rtsocial-gplus-icon .rtsocial-horizontal-notch{ background-position: -138px -181px; left: -5px; }
+.rtsocial-twitter-horizontal .rtsocial-horizontal-notch { background-position: -149px -181px; left: -5px; }
+.rtsocial-fb-horizontal .rtsocial-horizontal-notch { background-position: -138px -181px; left: -5px; }
+.rtsocial-pinterest-horizontal .rtsocial-horizontal-notch{ background-position: -138px -181px; left: -5px; }
+.rtsocial-linkedin-horizontal .rtsocial-horizontal-notch{ background-position: -138px -181px; left: -5px; }
+.rtsocial-gplus-horizontal .rtsocial-horizontal-notch{ background-position: -138px -181px; left: -5px; }
+
+
+.rtsocial-fb-icon .rtsocial-horizontal-notch{ background-position: -138px -181px; left: -5px; }
+.rtsocial-twitter-icon .rtsocial-horizontal-notch { background-position: -149px -181px; left: -5px; }
+.rtsocial-pinterest-icon .rtsocial-horizontal-notch{ background-position: -138px -181px; left: -5px; }
+.rtsocial-linkedin-icon .rtsocial-horizontal-notch{ background-position: -138px -181px; left: -5px; }
+.rtsocial-gplus-icon .rtsocial-horizontal-notch{ background-position: -138px -181px; left: -5px; }
 
 .rtsocial-container .fb-dark .rtsocial-vertical-count,
 .rtsocial-container .fb-dark .rtsocial-horizontal-count { background: none repeat scroll 0 0 #D7D7D7; border: 1px solid #D7D7D7; }
@@ -336,23 +339,23 @@ div#content_block { width: 70% }
 /*
 *Icons style
 */
-.rtsocial-twitter-icon,
-.rtsocial-fb-icon,
-.rtsocial-linkedin-icon,
-.rtsocial-gplus-icon,
-.rtsocial-pinterest-icon{ display: block; height: 24px; text-indent: -9999px; width: 24px; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px;}
+.rtsocial-twitter-icon-link,
+.rtsocial-fb-icon-link,
+.rtsocial-linkedin-icon-link,
+.rtsocial-gplus-icon-link,
+.rtsocial-pinterest-icon-link{ display: block; height: 24px; text-indent: -9999px; width: 24px; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px;}
 
-.rtsocial-twitter-icon{ background-position: -130px -484px; border: 1px solid #CFE3F0; }
-.rtsocial-twitter-icon:hover{ border: 1px solid #AACDE4; }
+.rtsocial-twitter-icon-link{ background-position: -130px -484px; border: 1px solid #CFE3F0; }
+.rtsocial-twitter-icon-link:hover{ border: 1px solid #AACDE4; }
 
-.rtsocial-fb-icon{ background-position: -130px -310px; }
+.rtsocial-fb-icon-link{ background-position: -130px -310px; }
 
-.rtsocial-pinterest-icon{ background-position: -130px -442px; }
+.rtsocial-pinterest-icon-link{ background-position: -130px -442px; }
 
-.rtsocial-linkedin-icon{ background-position: -130px -398px; }
+.rtsocial-linkedin-icon-link{ background-position: -130px -398px; }
 
-.rtsocial-gplus-icon{ background-position: -114px -222px; width: 40px; }
-.rtsocial-gplus-icon:hover{ background-position: -114px -266px; }
+.rtsocial-gplus-icon-link{ background-position: -114px -222px; width: 40px; }
+.rtsocial-gplus-icon-link:hover{ background-position: -114px -266px; }
 
 /**
  * End of rtSocial Plugin Style
