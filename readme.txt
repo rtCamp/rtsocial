@@ -4,7 +4,7 @@ Donate link: http://rtcamp.com/
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
 Requires at least: 3.0
 Tested up to: 3.4.1
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 
 This plugin uses non-blocking JavaScript to display social media sharing counters on posts/pages
 
@@ -56,6 +56,12 @@ No. Right now you cannot.
 
 
 == Changelog ==
+
+= 2.0.2 =
+* Added fallback image for Pinterest
+* Added functionality to over-ride options (Manual Mode)
+* Fixed ID conflicts
+* Changed default text for Pinterest to post title
 
 = 2.0.1 =
 * Fixed few issues reported by users

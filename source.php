@@ -4,7 +4,7 @@ Plugin Name: rtSocial
 Plugin URI: http://rtcamp.com/rtsocial/
 Author: rtCamp, rahul286, rutwick
 Author URI: http://rtcamp.com/
-Version: 2.0.1
+Version: 2.0.2
 Description: It is the lightest social sharing plugin, uses non-blocking Javascript and a single sprite to get rid of all the clutter that comes along with the sharing buttons.
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
 */
@@ -545,13 +545,14 @@ function rtsocial_counter( $content = '' ) {
 
 /*
  * Function for manual layout
+ * 
  * Possible options
- * 'active' = array('tw', 'fb', 'lin', 'pin', 'gplus');
- * 'display_options_set' = 'horizontal', 'vertical', 'icon', 'icon-count'
- * 'alignment_options_set' = 'left', 'right', 'center', 'none'
- * 'tw_handle' = 'whateveryouwant'
- * 'tw_related_handle' = 'whateveryouwant'
- * 'fb_style' = 'like_light', 'like_dark', 'recommend_light', 'recommend_dark', 'share'
+ *  'active' = array('tw', 'fb', 'lin', 'pin', 'gplus');
+ *  'display_options_set' = 'horizontal', 'vertical', 'icon', 'icon-count'
+ *  'alignment_options_set' = 'left', 'right', 'center', 'none'
+ *  'tw_handle' = 'whateveryouwant'
+ *  'tw_related_handle' = 'whateveryouwant'
+ *  'fb_style' = 'like_light', 'like_dark', 'recommend_light', 'recommend_dark', 'share'
  */
 function rtsocial($args=array()) {
     //Working issue on attachment page
@@ -658,18 +659,18 @@ function rtsocial($args=array()) {
         }
 
         //Set Pinterest description
-        $description = (strlen($post->post_content) > 100) ? wp_html_excerpt($post->post_content, 100) : $post->post_content;
+        $title = $post->post_title;
 
         $pin_layout = '<div class="rtsocial-pinterest-' . $options['display_options_set'] . '">';
         if($options['display_options_set'] == 'horizontal'){
-            $pin_layout .= '<div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><a class="rtsocial-pinterest-button" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$description.'" target="_blank" ></a></div><div class="rtsocial-' . $options['display_options_set'] . '-count"><div class="rtsocial-' . $options['display_options_set'] . '-notch"></div><span class="rtsocial-pinterest-count"></span></div>';
+            $pin_layout .= '<div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><a class="rtsocial-pinterest-button" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" target="_blank" ></a></div><div class="rtsocial-' . $options['display_options_set'] . '-count"><div class="rtsocial-' . $options['display_options_set'] . '-notch"></div><span class="rtsocial-pinterest-count"></span></div>';
         } else if( $options['display_options_set'] == 'vertical' ){
-            $pin_layout .= ' <div class="rtsocial-' . $options['display_options_set'] . '-count"><span class="rtsocial-pinterest-count"></span></div><div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><div class="rtsocial-' . $options['display_options_set'] . '-notch"></div><a class="rtsocial-pinterest-button" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$description.'" target="_blank"></a></div>';
+            $pin_layout .= ' <div class="rtsocial-' . $options['display_options_set'] . '-count"><span class="rtsocial-pinterest-count"></span></div><div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><div class="rtsocial-' . $options['display_options_set'] . '-notch"></div><a class="rtsocial-pinterest-button" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" target="_blank"></a></div>';
         } else if( $options['display_options_set'] == 'icon' ) {
-            $pin_layout .= ' <div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><a title="' . rt_url_encode( get_the_title( $id ) ) . '" class="rtsocial-pinterest-icon-link" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$description.'" target= "_blank"></a></div>';
+            $pin_layout .= ' <div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><a title="' . rt_url_encode( get_the_title( $id ) ) . '" class="rtsocial-pinterest-icon-link" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" target= "_blank"></a></div>';
         } else if( $options['display_options_set'] == 'icon-count' ) {
             $pin_layout = '<div class="rtsocial-pinterest-icon">';
-            $pin_layout .= ' <div class="rtsocial-pinterest-icon-button"><a title="' . rt_url_encode( get_the_title( $id ) ) . '" class="rtsocial-pinterest-icon-link" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$description.'" target= "_blank"></a></div><div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-pinterest-count">0</span></div>';
+            $pin_layout .= ' <div class="rtsocial-pinterest-icon-button"><a title="' . rt_url_encode( get_the_title( $id ) ) . '" class="rtsocial-pinterest-icon-link" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" target= "_blank"></a></div><div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-pinterest-count">0</span></div>';
         }
         $pin_layout .= '</div>';
         $active_services[$pin] = $pin_layout;
