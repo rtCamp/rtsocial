@@ -6,7 +6,7 @@ jQuery( document ).ready( function() {
     /**
      * If Twitter is checked, get Twitter Counts
      */
-    if ( args.twitter == 1 && args.button_style != 'icon') {
+    if ( args.twitter == 1 && args.button_style != 'icon' && args.hide_count != 1) {
         jQuery( '.rtsocial-container' ).each( function() {
             var paNode = this;
             var key = jQuery( this ).find( '.perma-link' ).attr( 'href' );
@@ -24,7 +24,7 @@ jQuery( document ).ready( function() {
     /**
      * If Facebook is checked, get Facebook Shares
      */
-    if ( args.facebook == 1 && args.button_style != 'icon') {
+    if ( args.facebook == 1 && args.button_style != 'icon' && args.hide_count != 1) {
         var rtsocial_urls = []; /* create an array of urls */
         jQuery( '.rtsocial-container' ).each( function() {
             rtsocial_urls.push( jQuery( 'a.perma-link', this ).attr( 'href' ) );
@@ -45,7 +45,7 @@ jQuery( document ).ready( function() {
     /* End of Facebook */
 
     /* Pinterest */
-    if ( args.pinterest == 1 && args.button_style != 'icon') {
+    if ( args.pinterest == 1 && args.button_style != 'icon' && args.hide_count != 1) {
         jQuery( '.rtsocial-container' ).each( function() {
             var paNode = this;
             var rtsocial_pinurl = jQuery( this ).find( '.perma-link' ).attr( 'href' );
@@ -57,7 +57,7 @@ jQuery( document ).ready( function() {
     }
     
     /* LinkedIn */
-    if ( args.linkedin == 1 && args.button_style != 'icon') {
+    if ( args.linkedin == 1 && args.button_style != 'icon' && args.hide_count != 1) {
         jQuery( '.rtsocial-container' ).each( function() {
             var paNode = this;
             var rtsocial_linurl = jQuery( this ).find( '.perma-link' ).attr( 'href' );
@@ -69,7 +69,7 @@ jQuery( document ).ready( function() {
     }
     
     /* G+ Share */
-    if ( args.gplus == 1 && args.button_style != 'icon') {
+    if ( args.gplus == 1 && args.button_style != 'icon' && args.hide_count != 1) {
         jQuery( '.rtsocial-container' ).each( function() {
             var paNode = this;
             var rtsocial_gplusurl = jQuery( this ).find( '.perma-link' ).attr( 'href' );
