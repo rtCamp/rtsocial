@@ -4,7 +4,7 @@
 
 * **License:** [GPL v2 or later] ( http://www.gnu.org/licenses/gpl-2.0.html)
 
-Donate Link: http://rtcamp.com/donate/
+* **Donate link:** http://rtcamp.com/donate/
 
 
 This plugin uses non-blocking JavaScript to display social media sharing counters on posts/pages
