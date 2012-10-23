@@ -1,10 +1,13 @@
 === rtSocial ===
-Contributors: rtcamp, rahul286, rutwick
-Donate link: http://rtcamp.com/
-Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
+Contributors: rtcamp, rahul286, rutwick, saurabhshukla
+Tags: nginx, cache, purge, nginx map, nginx cache, maps, fastcgi, proxy, rewrite, permalinks
 Requires at least: 3.0
-Tested up to: 3.4.1
-Stable tag: 2.0.2
+Tested up to: 3.4.2
+Stable tag: 2.1
+License: GPLv2 or later (of-course)
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Donate Link: http://rtcamp.com/donate/
+
 
 This plugin uses non-blocking JavaScript to display social media sharing counters on posts/pages
 
@@ -56,6 +59,10 @@ No. Right now you cannot.
 
 
 == Changelog ==
+= 2.1 =
+* Added rel nofollow to all buttons.
+* Fixed bug where unnecessary slashes were added to _blank. Thanks to Vinity http://rtcamp.com/support/topic/minor-html-code-flaw-suggestions/ for pointing this out
+* Added titles to all buttons
 
 = 2.0.2 =
 * Added fallback image for Pinterest
@@ -80,3 +87,8 @@ No. Right now you cannot.
 
 = 1.0 =
 * Initial Release
+
+== Upgrade Notice ==
+
+= 2.1 =
+Important bug fixes and enhancements.

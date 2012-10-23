@@ -38,7 +38,7 @@
 .rtsocial-container-align-center .rtsocial-gplus-horizontal,
 .rtsocial-container-align-center .rtsocial-linkedin-horizontal,
 .rtsocial-container-align-center .rtsocial-pinterest-horizontal,
-.rtsocial-container-align-center .rtsocial-fb-horizontal { float: none; display: inline-block; margin: 0 10px 0 0; position: relative; }
+.rtsocial-container-align-center .rtsocial-fb-horizontal { float: none; display: inline-block; margin: 0 10px 0 0; position: relative;min-height:24px; }
 
 
 /*.rtsocial-container-align-none .rtsocial-twitter-vertical,
