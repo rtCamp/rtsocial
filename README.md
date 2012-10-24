@@ -4,7 +4,7 @@
 
 * **License:** [GPL v2 or later] ( http://www.gnu.org/licenses/gpl-2.0.html)
 
-* **Donate link:** http://rtcamp.com/donate/
+* **Donate Link:** http://rtcamp.com/donate/
 
 
 This plugin uses non-blocking JavaScript to display social media sharing counters on posts/pages
@@ -86,5 +86,5 @@ No. Right now you cannot.
 #### 1.0 ####
 * Initial Release
 
-#### 2.1 ####
-Important bug fixes and enhancements.
+#### 2.1.1 ####
+Improved title output

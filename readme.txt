@@ -91,4 +91,4 @@ No. Right now you cannot.
 == Upgrade Notice ==
 
 = 2.1.1 =
-Improved title output.
+Improved title output
