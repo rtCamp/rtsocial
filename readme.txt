@@ -3,7 +3,7 @@ Contributors: rtcamp, rahul286, rutwick, saurabhshukla
 Tags: nginx, cache, purge, nginx map, nginx cache, maps, fastcgi, proxy, rewrite, permalinks
 Requires at least: 3.0
 Tested up to: 3.4.2
-Stable tag: 2.1
+Stable tag: 2.1.1
 License: GPLv2 or later (of-course)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate Link: http://rtcamp.com/donate/
@@ -90,5 +90,5 @@ No. Right now you cannot.
 
 == Upgrade Notice ==
 
-= 2.1 =
-Important bug fixes and enhancements.
+= 2.1.1 =
+Improved title output.
