@@ -1,3 +1,5 @@
+![alt text](https://plugins.svn.wordpress.org/rtsocial/assets/banner-772x250.jpg)
+
 # rtSocial #
 
 * **Contributors:** [rtcamp] (http://profiles.wordpress.org/rtcamp), [rahul286] (http://profiles.wordpress.org/rahul286), [rutwick] (http://profiles.wordpress.org/rutwick), [saurabhshukla] (http://profiles.wordpress.org/saurabhshukla),
