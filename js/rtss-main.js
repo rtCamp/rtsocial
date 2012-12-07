@@ -34,11 +34,15 @@ jQuery( document ).ready( function() {
         /**
          * Facebook Data
          */
-        var rtsocial_fburl =  'https://graph.facebook.com/?ids=' + rtsocial_urls.join() + '&callback=?';
+        var rtsocial_fburl =  'https://api.facebook.com/method/fql.query?query=select%20%20share_count%20from%20link_stat%20where%20url="'+ rtsocial_urls.join() +'"&format=json';
         var rtsocial_fbcounts = new Array();
         jQuery.getJSON( rtsocial_fburl, function( fbres ) {
-            jQuery.each( fbres, function( key, value ) {rtsocial_fbcounts[key] = ( value['shares'] ) ? value['shares'] : 0;} );
+            jQuery.each( fbres, function( key, value ) {
+                jQuery.each( value, function( sub_key, sub_value ) {
+                    rtsocial_fbcounts[rtsocial_urls.join()] = sub_value;
+                } );
             rtsocial_update_fbcount( rtsocial_fbcounts );
+            } );
         } );
         /* End of Callback function in JSON */
     }
