@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: rtSocial H
+Plugin Name: rtSocial
 Plugin URI: http://rtcamp.com/rtsocial/
 Author: rtCamp, rahul286, rutwick, saurabhshukla
 Author URI: http://rtcamp.com/
