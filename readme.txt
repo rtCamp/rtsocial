@@ -1,9 +1,9 @@
 === rtSocial ===
-Contributors: rtcamp, rahul286, rutwick, saurabhshukla
+Contributors: rtcamp, rahul286, rutwick, saurabhshukla, harishchaudhari
 Tags: nginx, cache, purge, nginx map, nginx cache, maps, fastcgi, proxy, rewrite, permalinks
 Requires at least: 3.0
 Tested up to: 3.4.2
-Stable tag: 2.1.1
+Stable tag: 2.1.2
 License: GPLv2 or later (of-course)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate Link: http://rtcamp.com/donate/
@@ -59,6 +59,13 @@ No. Right now you cannot.
 
 
 == Changelog ==
+= 2.1.2 =
+* Fixed LinkedIn share button
+* Updated facebook button because the earlier graph url won't give counts anymore
+
+= 2.1.1 =
+* Improved title output
+
 = 2.1 =
 * Added rel nofollow to all buttons.
 * Fixed bug where unnecessary slashes were added to _blank. Thanks to Vinity http://rtcamp.com/support/topic/minor-html-code-flaw-suggestions/ for pointing this out
@@ -90,5 +97,5 @@ No. Right now you cannot.
 
 == Upgrade Notice ==
 
-= 2.1.1 =
-Improved title output
+= 2.1.2 =
+Updated facebook and linkedin buttons
