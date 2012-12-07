@@ -1,8 +1,8 @@
-![alt text](https://plugins.svn.wordpress.org/rtsocial/assets/banner-772x250.jpg)
+![alt text](https://plugins.svn.wordpress.org/rtsocial//assets/banner-772x250.jpg)
 
 # rtSocial #
 
-* **Contributors:** [rtcamp] (http://profiles.wordpress.org/rtcamp), [rahul286] (http://profiles.wordpress.org/rahul286), [rutwick] (http://profiles.wordpress.org/rutwick), [saurabhshukla] (http://profiles.wordpress.org/saurabhshukla),
+* **Contributors:** [rtcamp] (http://profiles.wordpress.org/rtcamp), [rahul286] (http://profiles.wordpress.org/rahul286), [rutwick] (http://profiles.wordpress.org/rutwick), [saurabhshukla] (http://profiles.wordpress.org/saurabhshukla), [harishchaudhari] (http://profiles.wordpress.org/harishchaudhari),
 
 * **License:** [GPL v2 or later] ( http://www.gnu.org/licenses/gpl-2.0.html)
 
@@ -59,6 +59,13 @@ No. Right now you cannot.
 
 
 ## Changelog ##
+#### 2.1.2 ####
+* Fixed LinkedIn share button
+* Updated facebook button because the earlier graph url won't give counts anymore
+
+#### 2.1.1 ####
+* Improved title output
+
 #### 2.1 ####
 * Added rel nofollow to all buttons.
 * Fixed bug where unnecessary slashes were added to _blank. Thanks to Vinity http://rtcamp.com/support/topic/minor-html-code-flaw-suggestions/ for pointing this out
@@ -88,5 +95,5 @@ No. Right now you cannot.
 #### 1.0 ####
 * Initial Release
 
-#### 2.1.1 ####
-Improved title output
+#### 2.1.2 ####
+Updated facebook and linkedin buttons
