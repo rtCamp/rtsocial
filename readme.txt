@@ -1,6 +1,6 @@
 === rtSocial ===
-Contributors: rtcamp, rahul286, rutwick, saurabhshukla, harishchaudhari
-Tags: nginx, cache, purge, nginx map, nginx cache, maps, fastcgi, proxy, rewrite, permalinks
+Contributors: rtcamp, rahul286, rutwick, saurabhshukla, HarishChaudhari
+Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
 Requires at least: 3.0
 Tested up to: 3.4.2
 Stable tag: 2.1.2
