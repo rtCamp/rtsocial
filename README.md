@@ -2,7 +2,7 @@
 
 # rtSocial #
 
-* **Contributors:** [rtcamp] (http://profiles.wordpress.org/rtcamp), [rahul286] (http://profiles.wordpress.org/rahul286), [rutwick] (http://profiles.wordpress.org/rutwick), [saurabhshukla] (http://profiles.wordpress.org/saurabhshukla), [HarishChaudhari] (http://profiles.wordpress.org/HarishChaudhari),
+* **Contributors:** [rtcamp] (http://profiles.wordpress.org/rtcamp), [rahul286] (http://profiles.wordpress.org/rahul286), [rutwick] (http://profiles.wordpress.org/rutwick), [saurabhshukla] (http://profiles.wordpress.org/saurabhshukla), [HarishChaudhari] (http://profiles.wordpress.org/HarishChaudhari), [faishal] (http://profiles.wordpress.org/faishal),
 
 * **License:** [GPL v2 or later] ( http://www.gnu.org/licenses/gpl-2.0.html)
 
@@ -59,6 +59,9 @@ No. Right now you cannot.
 
 
 ## Changelog ##
+#### 2.1.3 ####
+* Fixed bug on archive pages
+
 #### 2.1.2 ####
 * Fixed LinkedIn share button
 * Updated facebook button because the earlier graph url won't give counts anymore
@@ -95,5 +98,5 @@ No. Right now you cannot.
 #### 1.0 ####
 * Initial Release
 
-#### 2.1.2 ####
-Updated facebook and linkedin buttons
+#### 2.1.3 ####
+Fixed facebook count on archive pages
