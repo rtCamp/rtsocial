@@ -25,24 +25,28 @@ jQuery( document ).ready( function() {
      * If Facebook is checked, get Facebook Shares
      */
     if ( args.facebook == 1 && args.button_style != 'icon' && args.hide_count != 1) {
-        var rtsocial_urls = []; /* create an array of urls */
+        var rtsocial_urls = {}; /* create an associative array of url as key and counts*/
+        var rtsocial_fburl =  'https://api.facebook.com/method/fql.query?query=select url,share_count from link_stat where url in(';
+        var sep='"'; // URL separatore initial value  
+        var tempFbUrl=""; // temp variable for url 
+        // Genrating fql query for url and also creat associative array with initial value 0 for particular url
         jQuery( '.rtsocial-container' ).each( function() {
-            rtsocial_urls.push( jQuery( 'a.perma-link', this ).attr( 'href' ) );
+            tempFbUrl= jQuery( 'a.perma-link', this ).attr( 'href' );
+            rtsocial_urls[tempFbUrl] = 0;
+            rtsocial_fburl += sep + tempFbUrl;
+            sep='","';
         } );
+        rtsocial_fburl += '")&format=json'; // ending part fql query 
         /* End of .rtsocial-container */
 
         /**
          * Facebook Data
          */
-        var rtsocial_fburl =  'https://api.facebook.com/method/fql.query?query=select%20%20share_count%20from%20link_stat%20where%20url="'+ rtsocial_urls.join() +'"&format=json';
-        var rtsocial_fbcounts = new Array();
         jQuery.getJSON( rtsocial_fburl, function( fbres ) {
-            jQuery.each( fbres, function( key, value ) {
-                jQuery.each( value, function( sub_key, sub_value ) {
-                    rtsocial_fbcounts[rtsocial_urls.join()] = sub_value;
-                } );
-            rtsocial_update_fbcount( rtsocial_fbcounts );
+            jQuery.each( fbres, function( key, value ) { //processing fql response 
+                rtsocial_urls[value.url] = value.share_count; // adding value of cout in associative array
             } );
+            rtsocial_update_fbcount( rtsocial_urls ); // passing count for update
         } );
         /* End of Callback function in JSON */
     }
