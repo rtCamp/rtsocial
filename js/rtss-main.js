@@ -26,7 +26,7 @@ jQuery( document ).ready( function() {
      */
     if ( args.facebook == 1 && args.button_style != 'icon' && args.hide_count != 1) {
         var rtsocial_urls = {}; /* create an associative array of url as key and counts*/
-        var rtsocial_fburl =  'https://api.facebook.com/method/fql.query?query=select url,share_count from link_stat where url in(';
+        var rtsocial_fburl =  'https://api.facebook.com/method/fql.query?callback=?&query=select url,share_count from link_stat where url in(';
         var sep='"'; // URL separatore initial value  
         var tempFbUrl=""; // temp variable for url 
         // Genrating fql query for url and also creat associative array with initial value 0 for particular url

@@ -59,6 +59,10 @@ No. Right now you cannot.
 
 
 ## Changelog ##
+
+#### 2.1.4 ####
+* Fixed bug with facebook counts on IE.
+
 #### 2.1.3 ####
 * Fixed bug on archive pages
 
@@ -98,5 +102,5 @@ No. Right now you cannot.
 #### 1.0 ####
 * Initial Release
 
-#### 2.1.3 ####
-Fixed facebook count on archive pages
+#### 2.1.4 ####
+Fixed facebook count on IE
