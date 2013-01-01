@@ -4,7 +4,7 @@ Plugin Name: rtSocial
 Plugin URI: http://rtcamp.com/rtsocial/
 Author: rtCamp, rahul286, rutwick, saurabhshukla, HarishChaudhari, faishal
 Author URI: http://rtcamp.com/
-Version: 2.1.4
+Version: 2.1.5
 Description: It is the lightest social sharing plugin, uses non-blocking Javascript and a single sprite to get rid of all the clutter that comes along with the sharing buttons.
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
 */
@@ -370,9 +370,17 @@ function rtsocial_get_errors() {
 /*
  * Inject the widget in the posts
  */
-add_filter( 'the_content', 'rtsocial_counter' );
+
+add_filter( 'the_content', 'rtsocial_dyna' );
 add_filter( 'the_excerpt', 'rtsocial_counter' );
 
+function rtsocial_dyna($content){
+	if(is_single()){
+	 	return rtsocial_counter($content);
+	}else{
+		return $content;
+	}
+}
 function rtsocial_counter( $content = '' ) {
     //Working issue on attachment page
     if(is_attachment())
@@ -558,10 +566,11 @@ function rtsocial_counter( $content = '' ) {
         
     //Hidden permalink
     $layout .= '<a rel="nofollow" class="perma-link" href="' . get_permalink( $post->ID ) . '" title="'. esc_attr( get_the_title( $post->ID ) ) .'"></a></div>';
+$test = 'asap';
     if ( $options['placement_options_set'] == 'top' ) {
-        return $layout . $content;
+        return $test.$layout . $content;
     } else if ( $options['placement_options_set'] == 'bottom' ) {
-        return $content . $layout;
+        return $content . $layout. $test;
     } else {
         return $content;
     }

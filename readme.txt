@@ -3,7 +3,7 @@ Contributors: rtcamp, rahul286, rutwick, saurabhshukla, HarishChaudhari, faishal
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
 Requires at least: 3.0
 Tested up to: 3.5
-Stable tag: 2.1.4
+Stable tag: 2.1.5
 License: GPLv2 or later (of-course)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate Link: http://rtcamp.com/donate/
@@ -60,8 +60,11 @@ No. Right now you cannot.
 
 == Changelog ==
 
+= 2.1.5 =
+* Fixed bug with post excerpts on archive pages. Thanks to [iseroma](http://profiles.wordpress.org/iseroma/) for reporting this.
+
 = 2.1.4 =
-* Fixed bug with facebook counts on IE.
+* Fixed bug with facebook counts on IE. Thanks to [ward00](http://profiles.wordpress.org/ward00/) for reporting this.
 
 = 2.1.3 =
 * Fixed bug on archive pages
@@ -75,7 +78,7 @@ No. Right now you cannot.
 
 = 2.1 =
 * Added rel nofollow to all buttons.
-* Fixed bug where unnecessary slashes were added to _blank. Thanks to Vinity http://rtcamp.com/support/topic/minor-html-code-flaw-suggestions/ for pointing this out
+* Fixed bug where unnecessary slashes were added to _blank. Thanks to [Vinity](http://rtcamp.com/support/topic/minor-html-code-flaw-suggestions/) for pointing this out
 * Added titles to all buttons
 
 = 2.0.2 =
@@ -104,5 +107,5 @@ No. Right now you cannot.
 
 == Upgrade Notice ==
 
-= 2.1.4 =
-Fixed facebook count on IE
+= 2.1.5 =
+Fixed bug with archive and feed pages.
