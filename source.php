@@ -4,7 +4,7 @@ Plugin Name: rtSocial
 Plugin URI: http://rtcamp.com/rtsocial/
 Author: rtCamp, rahul286, rutwick, saurabhshukla, HarishChaudhari, faishal
 Author URI: http://rtcamp.com/
-Version: 2.1.6
+Version: 2.1.7
 Description: It is the lightest social sharing plugin, uses non-blocking Javascript and a single sprite to get rid of all the clutter that comes along with the sharing buttons.
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
 */
@@ -22,7 +22,7 @@ register_deactivation_hook( __FILE__, 'rtsocial_reset_defaults' );
 function rtsocial_admin() {
     //Add settings page
     $hook = add_options_page( 'rtSocial Options Page', 'rtSocial Options', 'manage_options', 'rtsocial-options', 'rtsocial_admin_fn' );
-    
+
     //Enqueue CSS and JS for the options page
     add_action('admin_print_scripts-'.$hook, 'rtsocial_assets');
 }
@@ -72,7 +72,7 @@ function rtsocial_admin_fn() { ?>
                                                 </fieldset>
                                             </td>
                                         </tr>
-                                        
+
                                         <tr>
                                             <th scope="row">Button Style:</th>
                                             <td>
@@ -88,12 +88,12 @@ function rtsocial_admin_fn() { ?>
                                                             </div>
                                                         </td>
                                                     </tr>
-                                                    
+
                                                     <tr>
                                                         <td>
                                                             <input value="horizontal" id="display_horizontal_input" name='rtsocial_plugin_options[display_options_set]' type="radio" <?php echo ($options['display_options_set'] == "horizontal") ? ' checked="checked" ' : ''; ?> />
                                                         </td>
-                                                        
+
                                                         <td>
                                                             <div id="rtsocial-display-horizontal-sample">
                                                                 <div class="rtsocial-fb-horizontal">
@@ -105,7 +105,7 @@ function rtsocial_admin_fn() { ?>
                                                             </div>
                                                         </td>
                                                     </tr>
-                                                    
+
                                                     <tr>
                                                         <td>
                                                             <input value="icon" id="display_icon_input" name='rtsocial_plugin_options[display_options_set]' type="radio" <?php echo ($options['display_options_set'] == "icon") ? ' checked="checked" ' : ''; ?> />
@@ -115,7 +115,7 @@ function rtsocial_admin_fn() { ?>
                                                                 <div class="rtsocial-fb-icon">
                                                                     <div class="rtsocial-fb-icon-button"><a class="rtsocial-fb-icon-link" href="http://www.facebook.com/sharer.php?u=http://rtpanel.com/support/forum/plugin/" rel="nofollow" target="_blank">Like</a></div>
                                                                 </div>
-                                                                
+
                                                                 <div class="rtsocial-twitter-icon">
                                                                     <div class="rtsocial-twitter-icon-button"><a class="rtsocial-twitter-icon-link" href= "http://twitter.com/share?via=<?php echo $options['tw_handle'] . "&related=" . $options['tw_related_handle'] . "&text=" . esc_attr( "rtSocial... Share Fast!" ) . "&url=http://rtpanel.com/support/forum/plugin/"; ?>" rel="nofollow" target="_blank">Tweet</a></div>
                                                                 </div>
@@ -132,7 +132,7 @@ function rtsocial_admin_fn() { ?>
                                                                 <div class="rtsocial-fb-icon">
                                                                     <div class="rtsocial-fb-icon-button"><a class="rtsocial-fb-icon-link" href="http://www.facebook.com/sharer.php?u=http://rtpanel.com/support/forum/plugin/" rel="nofollow" target="_blank">Like</a></div><div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-fb-count">0</span></div>
                                                                 </div>
-                                                                
+
                                                                 <div class="rtsocial-twitter-icon">
                                                                     <div class="rtsocial-twitter-icon-button"><a class="rtsocial-twitter-icon-link" href= "http://twitter.com/share?via=<?php echo $options['tw_handle'] . "&related=" . $options['tw_related_handle'] . "&text=" . esc_attr( "rtSocial... Share Fast!" ) . "&url=http://rtpanel.com/support/forum/plugin/"; ?>" rel="nofollow" target="_blank">Tweet</a></div><div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-twitter-count">0</span></div>
                                                                 </div>
@@ -142,7 +142,7 @@ function rtsocial_admin_fn() { ?>
                                                 </table>
                                             </td>
                                         </tr>
-                                        
+
                                         <tr>
                                             <th scope="row">Alignment Settings:</th>
                                             <td>
@@ -169,7 +169,7 @@ function rtsocial_admin_fn() { ?>
                                                 </fieldset>
                                             </td>
                                         </tr>
-                                        
+
                                         <tr>
                                             <th scope="row">Active Buttons <sup>#</sup>:</th>
                                             <td>
@@ -183,16 +183,16 @@ function rtsocial_admin_fn() { ?>
                                                 </ul>
                                             </td>
                                         </tr>
-                                        
+
                                         <tr>
                                             <td colspan="2"><span class="description"># Drag buttons around to reorder them OR drop them into 'Inactive' list to disable them. <strong>All buttons cannot be disabled!</strong></span></td>
                                         </tr>
-                                        
+
                                         <tr>
                                             <th scope="row">Inactive Buttons <sup>*</sup>:</th>
                                             <td>
                                                 <ul id="rtsocial-sorter-inactive" class="connectedSortable">
-                                                    <?php 
+                                                    <?php
                                                         if(isset($options['inactive']) && !empty($options['inactive'])){
                                                             foreach ($options['inactive'] as $inactive) {
                                                                 echo '<li id="rtsocial-ord-'.$inactive.'" style="cursor: pointer;"><input id="rtsocial-act-'.$inactive.'" style="display: none;" type="checkbox" name="rtsocial_plugin_options[inactive][]" value="'.$inactive.'" checked="checked" /><label for="rtsocial-act-'.$inactive.'">'.$labels[$inactive].'</label></li>';
@@ -201,11 +201,11 @@ function rtsocial_admin_fn() { ?>
                                                 </ul>
                                             </td>
                                         </tr>
-                                        
+
                                         <tr>
                                             <td colspan="2"><span class="description">* Drop buttons back to 'Active' list to re-enable them.</span></td>
                                         </tr>
-                                        
+
                                         <tr>
                                             <th scope="row">Hide counts:</th>
                                             <td>
@@ -220,7 +220,7 @@ function rtsocial_admin_fn() { ?>
                                     </table>
                                 </div>
                             </div>
-                            
+
                             <!--Twitter-->
                             <div class="postbox" id="tw_box">
                                 <div title="Click to toggle" class="handlediv"><br /></div>
@@ -243,7 +243,7 @@ function rtsocial_admin_fn() { ?>
                                     </table>
                                 </div>
                             </div>
-                            
+
                             <!--Facebook-->
                             <div class="postbox">
                                 <div title="Click to toggle" class="handlediv"><br /></div>
@@ -271,7 +271,7 @@ function rtsocial_admin_fn() { ?>
                                     </table>
                                 </div>
                             </div>
-                            
+
                             <p class="submit"><input type="submit" name="save" class="button-primary" value="<?php esc_attr_e( 'Save Changes' ); ?>" /></p>
                         </div>
                     </div>
@@ -355,8 +355,7 @@ function rtsocial_check( $args ) {
         $args['active'] = array('tw', 'fb', 'lin', 'pin', 'gplus');
         $args['inactive'] = array();
     }
-    
-    return $args;
+	return $args;
 }
 
 /*
@@ -371,7 +370,7 @@ function rtsocial_get_errors() {
  * Inject the widget in the posts
  */
 
-add_filter( 'the_content', 'rtsocial_dyna' );
+add_filter( 'the_content', 'rtsocial_counter' );
 add_filter( 'the_excerpt', 'rtsocial_counter' );
 
 function rtsocial_dyna($content){
@@ -383,26 +382,27 @@ function rtsocial_dyna($content){
 }
 function rtsocial_counter( $content = '' ) {
     //Working issue on attachment page
+
     if(is_attachment())
         return;
-    
+
     $options = get_option( 'rtsocial_plugin_options' );
     global $post;
     $rtstitle = rt_url_encode( get_the_title( $post->ID ) );
     $rtatitle   = get_the_title( $post->ID );
-    
+
     //Ordered buttons array
     $active_services = array();
-    
+
     //Twitter
     if(in_array('tw', $options['active'])){
         $tw = array_search('tw', $options['active']);
         $tw_count = (!isset($options['hide_count']) || $options['hide_count'] != 1) ? '<div class="rtsocial-' . $options['display_options_set'] . '-count"><div class="rtsocial-' . $options['display_options_set'] . '-notch"></div><span class="rtsocial-twitter-count">0</span></div>' : '';
-        
+
         $handle_string = '';
         $handle_string .= (isset($options['tw_handle']) && $options['tw_handle'] != '') ? '&via='.$options['tw_handle'] : '';
         $handle_string .= (isset($options['tw_related_handle']) && $options['tw_related_handle'] != '') ? '&related='.$options['tw_related_handle'] : '';
-        
+
         $tw_layout = '<div class="rtsocial-twitter-' . $options['display_options_set'] . '">';
         if ( $options['display_options_set'] == 'horizontal' ) {
             $tw_layout .= '<div class="rtsocial-twitter-' . $options['display_options_set'] . '-button"><a title= "Tweet: ' . $rtatitle . '" class="rtsocial-twitter-button" href= "http://twitter.com/share?text=' . $rtstitle . $handle_string.'" rel="nofollow" target="_blank"></a></div>'.$tw_count;
@@ -419,7 +419,7 @@ function rtsocial_counter( $content = '' ) {
         $active_services[$tw] = $tw_layout;
     }
     //Twitter End
-    
+
     //Facebook
     if(in_array('fb', $options['active'])){
         $fb = array_search('fb', $options['active']);
@@ -444,7 +444,7 @@ function rtsocial_counter( $content = '' ) {
             $class = 'rtsocial-fb-like-light';
             $rt_fb_style = 'fb-light';
         }
-        
+
         $fb_layout = '<div class="rtsocial-fb-' . $options['display_options_set'] . ' ' . $rt_fb_style . '">';
         $rt_social_text = '';
         if ( $options['fb_style'] == 'like_light' || $options['fb_style'] == 'like_dark' ) {
@@ -470,16 +470,16 @@ function rtsocial_counter( $content = '' ) {
         $active_services[$fb] = $fb_layout;
     }
     //Facebook End
-    
+
     //Pinterest
     if(in_array('pin', $options['active'])){
         $pin = array_search('pin', $options['active']);
         $pin_count = (!isset($options['hide_count']) || $options['hide_count'] != 1) ? '<div class="rtsocial-' . $options['display_options_set'] . '-count"><div class="rtsocial-' . $options['display_options_set'] . '-notch"></div><span class="rtsocial-pinterest-count">0</span></div>':'';
-        
+
         //Set Pinterest media image
         if ( has_post_thumbnail($post->ID) ) {
             //Use post thumbnail if set
-            $thumb_details = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail' );                    
+            $thumb_details = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail' );
             $thumb_src = $thumb_details[0];
         } else {
             //Else use a default image
@@ -505,12 +505,12 @@ function rtsocial_counter( $content = '' ) {
         $active_services[$pin] = $pin_layout;
     }
     //Pinterest End
-    
+
     //LinkedIn
     if(in_array('lin', $options['active'])){
         $lin = array_search('lin', $options['active']);
         $lin_count = (!isset($options['hide_count']) || $options['hide_count'] != 1) ? '<div class="rtsocial-' . $options['display_options_set'] . '-count"><div class="rtsocial-' . $options['display_options_set'] . '-notch"></div><span class="rtsocial-linkedin-count">0</span></div>':'';
-        
+
         $lin_summary = (strlen($post->post_content) > 100) ? wp_html_excerpt($post->post_content, 100) : $post->post_content;
         $summary = strip_tags($lin_summary);
         $lin_layout = '<div class="rtsocial-linkedin-' . $options['display_options_set'] . '">';
@@ -529,12 +529,12 @@ function rtsocial_counter( $content = '' ) {
         $active_services[$lin] = $lin_layout;
     }
     //Linked In End
-    
+
     //G+ Share Button
     if(in_array('gplus', $options['active'])){
         $gplus = array_search('gplus', $options['active']);
         $gplus_count = (!isset($options['hide_count']) || $options['hide_count'] != 1) ? '<div class="rtsocial-' . $options['display_options_set'] . '-count"><div class="rtsocial-' . $options['display_options_set'] . '-notch"></div><span class="rtsocial-gplus-count">0</span></div>':'';
-        
+
         $gplus_layout = '<div class="rtsocial-gplus-' . $options['display_options_set'] . '">';
         if($options['display_options_set'] == 'horizontal'){
             $gplus_layout .= '<div class="rtsocial-gplus-' . $options['display_options_set'] . '-button"><a class="rtsocial-gplus-button" href= "https://plus.google.com/share?url='.urlencode(get_permalink($post->ID)).'" rel="nofollow" target="_blank" title="+1: '. $rtatitle .'"></a></div>'.$gplus_count;
@@ -551,25 +551,25 @@ function rtsocial_counter( $content = '' ) {
         $active_services[$gplus] = $gplus_layout;
     }
     //G+ Share Button End
-    
+
     //Sort by indexes
     ksort($active_services);
-    
+
     //Form the ordered buttons markup
     $active_services = implode('', $active_services);
-    
+
     //Rest of the stuff
     $layout = '<div class="rtsocial-container rtsocial-container-align-' . $options['alignment_options_set'] . ' rtsocial-' . $options['display_options_set'] . '">';
-        
+
     //Append the ordered buttons
     $layout .= $active_services;
-        
+
     //Hidden permalink
     $layout .= '<a rel="nofollow" class="perma-link" href="' . get_permalink( $post->ID ) . '" title="'. esc_attr( get_the_title( $post->ID ) ) .'"></a></div>';
     if ( $options['placement_options_set'] == 'top' ) {
-        return $layout . $content;
+        return $layout.$echo_txt . $content;
     } else if ( $options['placement_options_set'] == 'bottom' ) {
-        return $content . $layout;
+        return $content . $layout.$echo_txt;
     } else {
         return $content;
     }
@@ -577,7 +577,7 @@ function rtsocial_counter( $content = '' ) {
 
 /*
  * Function for manual layout
- * 
+ *
  * Possible options
  *  'active' = array('tw', 'fb', 'lin', 'pin', 'gplus');
  *  'display_options_set' = 'horizontal', 'vertical', 'icon', 'icon-count'
@@ -590,30 +590,30 @@ function rtsocial($args=array()) {
     //Working issue on attachment page
     if(is_attachment())
         return;
-    
+
     $options = get_option( 'rtsocial_plugin_options' );
 	$options = wp_parse_args($args, $options);
 
     //If manual mode is selected then avoid this code
     if($options['placement_options_set'] != 'manual')
         return;
-    
+
     global $post;
     $rtstitle = rt_url_encode( get_the_title( $post->ID ) );
     $rtatitle   = get_the_title( $post->ID );
-       
+
     //Ordered buttons
     $active_services = array();
-    
+
     //Twitter
     if(in_array('tw', $options['active'])){
         $tw = array_search('tw', $options['active']);
         $tw_count = (!isset($options['hide_count']) || $options['hide_count'] != 1) ? '<div class="rtsocial-' . $options['display_options_set'] . '-count"><div class="rtsocial-' . $options['display_options_set'] . '-notch"></div><span class="rtsocial-twitter-count">0</span></div>' : '';
-        
+
         $handle_string = '';
         $handle_string .= (isset($options['tw_handle']) && $options['tw_handle'] != '') ? '&via='.$options['tw_handle'] : '';
         $handle_string .= (isset($options['tw_related_handle']) && $options['tw_related_handle'] != '') ? '&related='.$options['tw_related_handle'] : '';
-        
+
         $tw_layout = '<div class="rtsocial-twitter-' . $options['display_options_set'] . '">';
         if ( $options['display_options_set'] == 'horizontal' ) {
             $tw_layout .= '<div class="rtsocial-twitter-' . $options['display_options_set'] . '-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-button" href= "http://twitter.com/share?text=' . $rtstitle . $handle_string.'" rel="nofollow" target="_blank"></a></div>'.$tw_count;
@@ -630,7 +630,7 @@ function rtsocial($args=array()) {
         $active_services[$tw] = $tw_layout;
     }
     //Twitter End
-    
+
     //Facebook
     if(in_array('fb', $options['active'])){
         $fb = array_search('fb', $options['active']);
@@ -655,7 +655,7 @@ function rtsocial($args=array()) {
             $class = 'rtsocial-fb-like-light';
             $rt_fb_style = 'fb-light';
         }
-        
+
         $fb_layout = '<div class="rtsocial-fb-' . $options['display_options_set'] . ' ' . $rt_fb_style . '">';
         $rt_social_text = '';
         if ( $options['fb_style'] == 'like_light' || $options['fb_style'] == 'like_dark' ) {
@@ -681,16 +681,16 @@ function rtsocial($args=array()) {
         $active_services[$fb] = $fb_layout;
     }
     //Facebook End
-    
+
     //Pinterest
     if(in_array('pin', $options['active'])){
         $pin = array_search('pin', $options['active']);
         $pin_count = (!isset($options['hide_count']) || $options['hide_count'] != 1) ? '<div class="rtsocial-' . $options['display_options_set'] . '-count"><div class="rtsocial-' . $options['display_options_set'] . '-notch"></div><span class="rtsocial-pinterest-count">0</span></div>':'';
-        
+
         //Set Pinterest media image
         if ( has_post_thumbnail($post->ID) ) {
             //Use post thumbnail if set
-            $thumb_details = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail' );                    
+            $thumb_details = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail' );
             $thumb_src = $thumb_details[0];
         } else {
             //Else use a default image
@@ -716,12 +716,12 @@ function rtsocial($args=array()) {
         $active_services[$pin] = $pin_layout;
     }
     //Pinterest End
-    
+
     //LinkedIn
     if(in_array('lin', $options['active'])){
         $lin = array_search('lin', $options['active']);
         $lin_count = (!isset($options['hide_count']) || $options['hide_count'] != 1) ? '<div class="rtsocial-' . $options['display_options_set'] . '-count"><div class="rtsocial-' . $options['display_options_set'] . '-notch"></div><span class="rtsocial-linkedin-count">0</span></div>':'';
-        
+
         $lin_summary = (strlen($post->post_content) > 100) ? wp_html_excerpt($post->post_content, 100) : $post->post_content;
         $summary = strip_tags($lin_summary);
         $lin_layout = '<div class="rtsocial-linkedin-' . $options['display_options_set'] . '">';
@@ -740,12 +740,12 @@ function rtsocial($args=array()) {
         $active_services[$lin] = $lin_layout;
     }
     //Linked In End
-    
+
     //G+ Share Button
     if(in_array('gplus', $options['active'])){
         $gplus = array_search('gplus', $options['active']);
         $gplus_count = (!isset($options['hide_count']) || $options['hide_count'] != 1) ? '<div class="rtsocial-' . $options['display_options_set'] . '-count"><div class="rtsocial-' . $options['display_options_set'] . '-notch"></div><span class="rtsocial-gplus-count">0</span></div>':'';
-        
+
         $gplus_layout = '<div class="rtsocial-gplus-' . $options['display_options_set'] . '">';
         if($options['display_options_set'] == 'horizontal'){
             $gplus_layout .= '<div class="rtsocial-gplus-' . $options['display_options_set'] . '-button"><a class="rtsocial-gplus-button" href= "https://plus.google.com/share?url='.urlencode(get_permalink($post->ID)).'" rel="nofollow" target="_blank" title="+1: '. $rtatitle .'"></a></div>'.$gplus_count;
@@ -762,21 +762,21 @@ function rtsocial($args=array()) {
         $active_services[$gplus] = $gplus_layout;
     }
     //G+ Share Button End
-    
+
     //Sort by indexes
     ksort($active_services);
-    
+
     //Form the ordered buttons markup
     $active_services = implode('', $active_services);
-    
+
     //Rest of the stuff
     $layout = '<div class="rtsocial-container rtsocial-container-align-' . $options['alignment_options_set'] . ' rtsocial-' . $options['display_options_set'] . '">';
         //Append the ordered buttons
         $layout .= $active_services;
-        
+
     //Hidden permalink
     $layout .= '<a title="' . esc_attr( get_the_title( $post->ID ) ) . '" rel="nofollow" class="perma-link" href="' . get_permalink( $post->ID ) . '"></a></div>';
-    
+
     return $layout;
 }
 
@@ -834,34 +834,34 @@ function rtsocial_assets() {
  * Localize JS with custom args
  */
 function rtsocial_localize_script($handle){
-    
+
     //Passing arguments to Plugin JS
     $options = get_option( 'rtsocial_plugin_options' );
     $args = array();
-    
+
     $args['button_style'] = $options['display_options_set'];
     $args['hide_count'] = (isset($options['hide_count']) && $options['hide_count'] == 1) ? 1:0;
-    
+
     if(in_array('tw', $options['active'])){
         $args['twitter'] = true;
     }
-    
+
     if(in_array('fb', $options['active'])){
         $args['facebook'] = true;
     }
-    
+
     if(in_array('pin', $options['active'])){
         $args['pinterest'] = true;
     }
-    
+
     if(in_array('lin', $options['active'])){
         $args['linkedin'] = true;
     }
-    
+
     if(in_array('gplus', $options['active'])){
         $args['gplus'] = true;
     }
-    
+
     $args['path'] = plugins_url( 'images/', __FILE__ );
     wp_localize_script( $handle, 'args', $args );
 }
@@ -951,7 +951,7 @@ function rtsocial_gplus_handler(){
         curl_close ($curl);
 
         $json = json_decode($curl_results, true);
-        
+
         echo intval( $json[0]['result']['metadata']['globalCounts']['count'] );
         die(1);
     }

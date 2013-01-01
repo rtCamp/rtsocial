@@ -32,8 +32,8 @@ With just 1 image (CSS-sprite), 1 JavaScript and 1 CSS file loaded from WordPres
 ## Installation ##
 Install rtSocial plugin from the 'Plugins' section in your dashboard (Plugins > Add New > Search for rtSocial).
 
-Alternatively you can [download latest version](http://downloads.wordpress.org/plugin/rtsocial.2.0.1.zip) of rtSocial plugin from the repository. Unzip it and upload it to the plugins folder of your WordPress installation (wp-content/plugins/ directory of your WordPress installation).  
-  
+Alternatively you can [download latest version](http://downloads.wordpress.org/plugin/rtsocial.2.0.1.zip) of rtSocial plugin from the repository. Unzip it and upload it to the plugins folder of your WordPress installation (wp-content/plugins/ directory of your WordPress installation).
+
 Activate it through the 'Plugins' section.
 
 Adjust the plugin settings from the settings section (Settings > rtSocial Options).
@@ -60,8 +60,11 @@ No. Right now you cannot.
 
 ## Changelog ##
 
+#### 2.1.7 ####
+* Reverted excerpt function. Fixed non-display of rtsocial.
+
 #### 2.1.6 ####
-* Fixed inadvertant typo.
+* Fixed inadvertent typo.
 
 #### 2.1.5 ####
 * Fixed bug with post excerpts on archive pages. Thanks to [iseroma](http://profiles.wordpress.org/iseroma/) for reporting this.
@@ -108,5 +111,5 @@ No. Right now you cannot.
 #### 1.0 ####
 * Initial Release
 
-#### 2.1.6 ####
-Fixed a typo.
+#### 2.1.7 ####
+Fixed non-display of rtsocial.
