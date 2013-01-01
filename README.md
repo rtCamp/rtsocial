@@ -60,6 +60,9 @@ No. Right now you cannot.
 
 ## Changelog ##
 
+#### 2.1.6 ####
+* Fixed inadvertant typo.
+
 #### 2.1.5 ####
 * Fixed bug with post excerpts on archive pages. Thanks to [iseroma](http://profiles.wordpress.org/iseroma/) for reporting this.
 
@@ -105,5 +108,5 @@ No. Right now you cannot.
 #### 1.0 ####
 * Initial Release
 
-#### 2.1.5 ####
-Fixed bug with archive and feed pages.
+#### 2.1.6 ####
+Fixed a typo.
