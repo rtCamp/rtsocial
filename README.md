@@ -2,7 +2,7 @@
 
 # rtSocial #
 
-* **Contributors:** [rtcamp] (http://profiles.wordpress.org/rtcamp), [rahul286] (http://profiles.wordpress.org/rahul286), [rutwick] (http://profiles.wordpress.org/rutwick), [saurabhshukla] (http://profiles.wordpress.org/saurabhshukla), [HarishChaudhari] (http://profiles.wordpress.org/HarishChaudhari), [faishal] (http://profiles.wordpress.org/faishal), [5um17] (http://profiles.wordpress.org/5um17),
+* **Contributors:** [rtcamp] (http://profiles.wordpress.org/rtcamp), [rahul286] (http://profiles.wordpress.org/rahul286), [rutwick] (http://profiles.wordpress.org/rutwick), [saurabhshukla] (http://profiles.wordpress.org/saurabhshukla), [HarishChaudhari] (http://profiles.wordpress.org/HarishChaudhari), [faishal] (http://profiles.wordpress.org/faishal), [5um17] (http://profiles.wordpress.org/5um17), [JoshuaAbenazer] (http://profiles.wordpress.org/JoshuaAbenazer),
 
 * **License:** [GPL v2 or later] ( http://www.gnu.org/licenses/gpl-2.0.html)
 
@@ -60,6 +60,9 @@ No. Right now you cannot.
 
 ## Changelog ##
 
+#### 2.1.9 ####
+* Fixed bug where 0's turned up in RSS entries
+
 #### 2.1.8 ####
 * Removed page summary from Linked in share. It was too undependable and unpredictable.
 
@@ -114,5 +117,5 @@ No. Right now you cannot.
 #### 1.0 ####
 * Initial Release
 
-#### 2.1.8 ####
-Fixed Linked in share by removing summary from share.
+#### 2.1.9 ####
+Fixed RSS entry issue.

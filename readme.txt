@@ -1,9 +1,9 @@
 === rtSocial ===
-Contributors: rtcamp, rahul286, rutwick, saurabhshukla, HarishChaudhari, faishal, 5um17
+Contributors: rtcamp, rahul286, rutwick, saurabhshukla, HarishChaudhari, faishal, 5um17, JoshuaAbenazer
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
 Requires at least: 3.0
 Tested up to: 3.5
-Stable tag: 2.1.8
+Stable tag: 2.1.9
 License: GPLv2 or later (of-course)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate Link: http://rtcamp.com/donate/
@@ -59,6 +59,9 @@ No. Right now you cannot.
 
 
 == Changelog ==
+
+= 2.1.9 =
+* Fixed bug where 0's turned up in RSS entries
 
 = 2.1.8 =
 * Removed page summary from Linked in share. It was too undependable and unpredictable.
@@ -116,5 +119,5 @@ No. Right now you cannot.
 
 == Upgrade Notice ==
 
-= 2.1.8 =
-Fixed Linked in share by removing summary from share.
+= 2.1.9 =
+Fixed RSS entry issue.
