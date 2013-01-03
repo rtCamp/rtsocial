@@ -567,9 +567,9 @@ function rtsocial_counter( $content = '' ) {
     //Hidden permalink
     $layout .= '<a rel="nofollow" class="perma-link" href="' . get_permalink( $post->ID ) . '" title="'. esc_attr( get_the_title( $post->ID ) ) .'"></a></div>';
     if ( $options['placement_options_set'] == 'top' ) {
-        return $layout. $content;
+        return $layout.$echo_txt . $content;
     } else if ( $options['placement_options_set'] == 'bottom' ) {
-        return $content . $layout;
+        return $content . $layout.$echo_txt;
     } else {
         return $content;
     }
