@@ -211,7 +211,7 @@ function rtsocial_admin_fn() { ?>
                                             <td>
                                                 <fieldset>
                                                     <label>
-                                                        <input value="1" name='rtsocial_plugin_options[hide_count]' id="hide_count_check" type="checkbox" <?php echo ($options['hide_count'] == 1 ) ? ' checked="checked" ' : ''; ?> />
+                                                        <input value="1" name='rtsocial_plugin_options[hide_count]' id="hide_count_check" type="checkbox" <?php echo (isset($options['hide_count']) && ($options['hide_count'] == 1) ) ? ' checked="checked" ' : ''; ?> />
                                                         <span>Yes</span>
                                                     </label>
                                                 </fieldset>
@@ -390,7 +390,7 @@ function rtsocial_counter( $content = '' ) {
     global $post;
     $rtstitle = rt_url_encode( get_the_title( $post->ID ) );
     $rtatitle   = get_the_title( $post->ID );
-
+    
     //Ordered buttons array
     $active_services = array();
 
@@ -511,19 +511,17 @@ function rtsocial_counter( $content = '' ) {
         $lin = array_search('lin', $options['active']);
         $lin_count = (!isset($options['hide_count']) || $options['hide_count'] != 1) ? '<div class="rtsocial-' . $options['display_options_set'] . '-count"><div class="rtsocial-' . $options['display_options_set'] . '-notch"></div><span class="rtsocial-linkedin-count">0</span></div>':'';
 
-        $lin_summary = (strlen($post->post_content) > 100) ? wp_html_excerpt($post->post_content, 100) : $post->post_content;
-        $summary = strip_tags($lin_summary);
         $lin_layout = '<div class="rtsocial-linkedin-' . $options['display_options_set'] . '">';
         if($options['display_options_set'] == 'horizontal'){
-            $lin_layout .= '<div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-button" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'&summary='.$summary.'" rel="nofollow" target="_blank" title="Share: '. $rtatitle .'"></a></div>'.$lin_count;
+            $lin_layout .= '<div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-button" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" rel="nofollow" target="_blank" title="Share: '. $rtatitle .'"></a></div>'.$lin_count;
         } else if( $options['display_options_set'] == 'vertical' ) {
-            $lin_layout .= $lin_count.' <div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-button" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'&summary='.$summary.'" rel="nofollow" target="_blank" title="Share: '. $rtatitle .'"></a></div>';
+            $lin_layout .= $lin_count.' <div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-button" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" rel="nofollow" target="_blank" title="Share: '. $rtatitle .'"></a></div>';
         } else if( $options['display_options_set'] == 'icon' ) {
-            $lin_layout .= ' <div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-icon-link" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'&summary='.$summary.'" target= "_blank" title="Share: '. $rtatitle .'"></a></div>';
+            $lin_layout .= ' <div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-icon-link" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" target= "_blank" title="Share: '. $rtatitle .'"></a></div>';
         } else if( $options['display_options_set'] == 'icon-count' ) {
             $lin_layout = '<div class="rtsocial-linkedin-icon">';
             $lin_count = (!isset($options['hide_count']) || $options['hide_count'] != 1) ? '<div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-linkedin-count">0</span></div>' : '';
-            $lin_layout .= ' <div class="rtsocial-linkedin-icon-button"><a class="rtsocial-linkedin-icon-link" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'&summary='.$summary.'" target= "_blank" title="Share: '. $rtatitle .'"></a></div>'.$lin_count;
+            $lin_layout .= ' <div class="rtsocial-linkedin-icon-button"><a class="rtsocial-linkedin-icon-link" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" target= "_blank" title="Share: '. $rtatitle .'"></a></div>'.$lin_count;
         }
         $lin_layout .= '</div>';
         $active_services[$lin] = $lin_layout;
@@ -567,9 +565,9 @@ function rtsocial_counter( $content = '' ) {
     //Hidden permalink
     $layout .= '<a rel="nofollow" class="perma-link" href="' . get_permalink( $post->ID ) . '" title="'. esc_attr( get_the_title( $post->ID ) ) .'"></a></div>';
     if ( $options['placement_options_set'] == 'top' ) {
-        return $layout.$echo_txt . $content;
+        return $layout . $content;
     } else if ( $options['placement_options_set'] == 'bottom' ) {
-        return $content . $layout.$echo_txt;
+        return $content . $layout;
     } else {
         return $content;
     }
@@ -722,19 +720,17 @@ function rtsocial($args=array()) {
         $lin = array_search('lin', $options['active']);
         $lin_count = (!isset($options['hide_count']) || $options['hide_count'] != 1) ? '<div class="rtsocial-' . $options['display_options_set'] . '-count"><div class="rtsocial-' . $options['display_options_set'] . '-notch"></div><span class="rtsocial-linkedin-count">0</span></div>':'';
 
-        $lin_summary = (strlen($post->post_content) > 100) ? wp_html_excerpt($post->post_content, 100) : $post->post_content;
-        $summary = strip_tags($lin_summary);
         $lin_layout = '<div class="rtsocial-linkedin-' . $options['display_options_set'] . '">';
         if($options['display_options_set'] == 'horizontal'){
-            $lin_layout .= '<div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-button" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'&summary='.$summary.'" rel="nofollow" target="_blank" title="Share: '. $rtatitle .'"></a></div>'.$lin_count;
+            $lin_layout .= '<div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-button" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" rel="nofollow" target="_blank" title="Share: '. $rtatitle .'"></a></div>'.$lin_count;
         } else if( $options['display_options_set'] == 'vertical' ) {
-            $lin_layout .= $lin_count.' <div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-button" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'&summary='.$summary.'" rel="nofollow" target="_blank" title="Share: '. $rtatitle .'"></a></div>';
+            $lin_layout .= $lin_count.' <div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-button" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" rel="nofollow" target="_blank" title="Share: '. $rtatitle .'"></a></div>';
         } else if( $options['display_options_set'] == 'icon' ) {
-            $lin_layout .= ' <div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-icon-link" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'&summary='.$summary.'" target= "_blank" title="Share: '. $rtatitle .'"></a></div>';
+            $lin_layout .= ' <div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-icon-link" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" target= "_blank" title="Share: '. $rtatitle .'"></a></div>';
         } else if( $options['display_options_set'] == 'icon-count' ) {
             $lin_layout = '<div class="rtsocial-linkedin-icon">';
             $lin_count = (!isset($options['hide_count']) || $options['hide_count'] != 1) ? '<div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-linkedin-count">0</span></div>' : '';
-            $lin_layout .= ' <div class="rtsocial-linkedin-icon-button"><a class="rtsocial-linkedin-icon-link" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'&summary='.$summary.'" target= "_blank" title="Share: '. $rtatitle .'"></a></div>'.$lin_count;
+            $lin_layout .= ' <div class="rtsocial-linkedin-icon-button"><a class="rtsocial-linkedin-icon-link" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" target= "_blank" title="Share: '. $rtatitle .'"></a></div>'.$lin_count;
         }
         $lin_layout .= '</div>';
         $active_services[$lin] = $lin_layout;
