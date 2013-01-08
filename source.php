@@ -456,9 +456,9 @@ function rtsocial_counter( $content = '' ) {
         }
 
         if ( $options['display_options_set'] == 'horizontal' ) {
-            $fb_layout .= '<div class="rtsocial-fb-' . $options['display_options_set'] . '-button"><a title="' . $rt_social_text .': '. $rtatitle . '" class="rtsocial-fb-button ' . $class . '" href="http://www.facebook.com/sharer.php?" rel="nofollow" target="_blank"></a></div>'.$fb_count;
+            $fb_layout .= '<div class="rtsocial-fb-' . $options['display_options_set'] . '-button"><a title="' . $rt_social_text .': '. $rtatitle . '" class="rtsocial-fb-button ' . $class . '" href="http://www.facebook.com/sharer.php?u='.(urlencode(get_permalink($post->ID))).'" rel="nofollow" target="_blank"></a></div>'.$fb_count;
         } else if ( $options['display_options_set'] == 'vertical' ) {
-            $fb_layout .= $fb_count.'<div class="rtsocial-fb-' . $options['display_options_set'] . '-button"><a title="' . $rt_social_text  .': '. $rtatitle . '" class="rtsocial-fb-button ' . $class . '" href="http://www.facebook.com/sharer.php?" rel="nofollow" target="_blank"></a></div>';
+            $fb_layout .= $fb_count.'<div class="rtsocial-fb-' . $options['display_options_set'] . '-button"><a title="' . $rt_social_text  .': '. $rtatitle . '" class="rtsocial-fb-button ' . $class . '" href="http://www.facebook.com/sharer.php?u='.(urlencode(get_permalink($post->ID))).'" rel="nofollow" target="_blank"></a></div>';
         } else if( $options['display_options_set'] == 'icon' ) {
             $fb_layout .= ' <div class="rtsocial-fb-' . $options['display_options_set'] . '-button"><a title="' . $rt_social_text .': '. $rtatitle . '" class="rtsocial-fb-icon-link" href="http://www.facebook.com/sharer.php?u='.(urlencode(get_permalink($post->ID))).'" target= "_blank"></a></div>';
         } else if( $options['display_options_set'] == 'icon-count' ) {
@@ -665,9 +665,9 @@ function rtsocial($args=array()) {
         }
 
         if ( $options['display_options_set'] == 'horizontal' ) {
-            $fb_layout .= '<div class="rtsocial-fb-' . $options['display_options_set'] . '-button"><a title="' . $rt_social_text .': '. $rtatitle . '" class="rtsocial-fb-button ' . $class . '" href="http://www.facebook.com/sharer.php?" rel="nofollow" target="_blank"></a></div>'.$fb_count;
+            $fb_layout .= '<div class="rtsocial-fb-' . $options['display_options_set'] . '-button"><a title="' . $rt_social_text .': '. $rtatitle . '" class="rtsocial-fb-button ' . $class . '" href="http://www.facebook.com/sharer.php?u='.(urlencode(get_permalink($post->ID))).'" rel="nofollow" target="_blank"></a></div>'.$fb_count;
         } else if ( $options['display_options_set'] == 'vertical' ) {
-            $fb_layout .= $fb_count.'<div class="rtsocial-fb-' . $options['display_options_set'] . '-button"><a title="' . $rt_social_text .': '.  $rtatitle . '" class="rtsocial-fb-button ' . $class . '" href="http://www.facebook.com/sharer.php?" rel="nofollow" target="_blank"></a></div>';
+            $fb_layout .= $fb_count.'<div class="rtsocial-fb-' . $options['display_options_set'] . '-button"><a title="' . $rt_social_text .': '.  $rtatitle . '" class="rtsocial-fb-button ' . $class . '" href="http://www.facebook.com/sharer.php?u='.(urlencode(get_permalink($post->ID))).'" rel="nofollow" target="_blank"></a></div>';
         } else if( $options['display_options_set'] == 'icon' ) {
             $fb_layout .= ' <div class="rtsocial-fb-' . $options['display_options_set'] . '-button"><a title="' . $rt_social_text .': '. $rtatitle . '" class="rtsocial-fb-icon-link" href="http://www.facebook.com/sharer.php?u='.(urlencode(get_permalink($post->ID))).'" target= "_blank"></a></div>';
         } else if( $options['display_options_set'] == 'icon-count' ) {

@@ -158,9 +158,9 @@ jQuery( document ).ready( function() {
 function rtsocial_update_fbcount( rtsocial_fbcounts ) {
     jQuery( '.rtsocial-container' ).each( function() {
         key = jQuery( this ).find( 'a.perma-link' ).attr( 'href' );
-        var url = jQuery( this ).find( '.rtsocial-fb-button' ).attr( 'href' );
-        url += 'u=' + key;
-        jQuery( this ).find( '.rtsocial-fb-button' ).attr( 'href', url );
+//        var url = jQuery( this ).find( '.rtsocial-fb-button' ).attr( 'href' );
+//        url += 'u=' + key;
+//        jQuery( this ).find( '.rtsocial-fb-button' ).attr( 'href', url );
         jQuery( this ).find( '.rtsocial-fb-count' ).text( ( ( rtsocial_fbcounts[key] ) ? ( rtsocial_fbcounts[key] ) : '0' ) );
     } );
     /* End of "each" */
