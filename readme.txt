@@ -3,7 +3,7 @@ Contributors: rtcamp, rahul286, rutwick, saurabhshukla, HarishChaudhari, faishal
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
 Requires at least: 3.0
 Tested up to: 3.5
-Stable tag: 2.1.9
+Stable tag: 2.1.10
 License: GPLv2 or later (of-course)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate Link: http://rtcamp.com/donate/
@@ -59,6 +59,9 @@ No. Right now you cannot.
 
 
 == Changelog ==
+
+= 2.1.10 =
+* Fixed facebook share button.
 
 = 2.1.9 =
 * Fixed bug where 0's turned up in RSS entries
@@ -119,5 +122,5 @@ No. Right now you cannot.
 
 == Upgrade Notice ==
 
-= 2.1.9 =
-Fixed RSS entry issue.
+= 2.1.10 =
+Fixed Facebook Share.

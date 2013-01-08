@@ -60,6 +60,9 @@ No. Right now you cannot.
 
 ## Changelog ##
 
+#### 2.1.10 ####
+* Fixed facebook share button.
+
 #### 2.1.9 ####
 * Fixed bug where 0's turned up in RSS entries
 
@@ -117,5 +120,5 @@ No. Right now you cannot.
 #### 1.0 ####
 * Initial Release
 
-#### 2.1.9 ####
-Fixed RSS entry issue.
+#### 2.1.10 ####
+Fixed Facebook Share.
