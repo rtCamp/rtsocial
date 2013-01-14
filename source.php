@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: rtSocial
-Plugin URI: http://rtcamp.com/rtsocial/
+Plugin URI: https://rtcamp.com/rtsocial/
 Author: rtCamp, rahul286, rutwick, saurabhshukla, HarishChaudhari, faishal, 5um17, JoshuaAbenazer
-Author URI: http://rtcamp.com/
-Version: 2.1.11
+Author URI: https://rtcamp.com/
+Version: 2.1.12
 Description: It is the lightest social sharing plugin, uses non-blocking Javascript and a single sprite to get rid of all the clutter that comes along with the sharing buttons.
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
 */
@@ -83,8 +83,8 @@ function rtsocial_admin_fn() { ?>
                                                         </td>
                                                         <td>
                                                             <div id="rtsocial-display-vertical-sample" class= "rtsocial-vertical rtsocial-container-align-none">
-                                                                <div class="rtsocial-twitter-vertical"><div class="rtsocial-vertical-count"><span class="rtsocial-twitter-count"></span><div class="rtsocial-vertical-notch"></div></div><div class="rtsocial-twitter-vertical-button"><a class="rtsocial-twitter-button" href= 'http://twitter.com/share?via=<?php echo $options['tw_handle'] . "&related=" . $options['tw_related_handle'] . "&text=" . esc_attr( "rtSocial... Share Fast!" ) . "&url=http://rtpanel.com/support/forum/plugin/"; ?>' rel="nofollow" target="_blank"></a></div></div>
-                                                                <div class="rtsocial-fb-vertical"><div class="rtsocial-vertical-count"><span class="rtsocial-fb-count"></span><div class="rtsocial-vertical-notch"></div></div><div class="rtsocial-fb-vertical-button"><a class="rtsocial-fb-button rtsocial-fb-like-light" href="http://www.facebook.com/sharer.php?u=http://rtpanel.com/support/forum/plugin/" rel="nofollow" target="_blank">Like</a></div></div>
+                                                                <div class="rtsocial-twitter-vertical"><div class="rtsocial-vertical-count"><span class="rtsocial-twitter-count"></span><div class="rtsocial-vertical-notch"></div></div><div class="rtsocial-twitter-vertical-button"><a class="rtsocial-twitter-button" href= 'https://twitter.com/share?via=<?php echo $options['tw_handle'] . "&related=" . $options['tw_related_handle'] . "&text=" . esc_attr( "rtSocial... Share Fast!" ) . "&url=https://rtpanel.com/support/forum/plugin/"; ?>' rel="nofollow" target="_blank"></a></div></div>
+                                                                <div class="rtsocial-fb-vertical"><div class="rtsocial-vertical-count"><span class="rtsocial-fb-count"></span><div class="rtsocial-vertical-notch"></div></div><div class="rtsocial-fb-vertical-button"><a class="rtsocial-fb-button rtsocial-fb-like-light" href="https://www.facebook.com/sharer.php?u=https://rtpanel.com/support/forum/plugin/" rel="nofollow" target="_blank">Like</a></div></div>
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -97,10 +97,10 @@ function rtsocial_admin_fn() { ?>
                                                         <td>
                                                             <div id="rtsocial-display-horizontal-sample">
                                                                 <div class="rtsocial-fb-horizontal">
-                                                                    <div class="rtsocial-fb-horizontal-button"><a class="rtsocial-fb-button rtsocial-fb-like-light" href="http://www.facebook.com/sharer.php?u=http://rtpanel.com/support/forum/plugin/" rel="nofollow" target="_blank">Like</a></div><div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-fb-count"></span></div>
+                                                                    <div class="rtsocial-fb-horizontal-button"><a class="rtsocial-fb-button rtsocial-fb-like-light" href="https://www.facebook.com/sharer.php?u=https://rtpanel.com/support/forum/plugin/" rel="nofollow" target="_blank">Like</a></div><div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-fb-count"></span></div>
                                                                 </div>
                                                                 <div class="rtsocial-twitter-horizontal">
-                                                                    <div class="rtsocial-twitter-horizontal-button"><a class="rtsocial-twitter-button" href= "http://twitter.com/share?via=<?php echo $options['tw_handle'] . "&related=" . $options['tw_related_handle'] . "&text=" . esc_attr( "rtSocial... Share Fast!" ) . "&url=http://rtpanel.com/support/forum/plugin/"; ?>" rel="nofollow" target="_blank"></a></div><div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-twitter-count"></span></div>
+                                                                    <div class="rtsocial-twitter-horizontal-button"><a class="rtsocial-twitter-button" href= "https://twitter.com/share?via=<?php echo $options['tw_handle'] . "&related=" . $options['tw_related_handle'] . "&text=" . esc_attr( "rtSocial... Share Fast!" ) . "&url=https://rtpanel.com/support/forum/plugin/"; ?>" rel="nofollow" target="_blank"></a></div><div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-twitter-count"></span></div>
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -113,11 +113,11 @@ function rtsocial_admin_fn() { ?>
                                                         <td>
                                                             <div id="rtsocial-display-icon-sample">
                                                                 <div class="rtsocial-fb-icon">
-                                                                    <div class="rtsocial-fb-icon-button"><a class="rtsocial-fb-icon-link" href="http://www.facebook.com/sharer.php?u=http://rtpanel.com/support/forum/plugin/" rel="nofollow" target="_blank">Like</a></div>
+                                                                    <div class="rtsocial-fb-icon-button"><a class="rtsocial-fb-icon-link" href="https://www.facebook.com/sharer.php?u=https://rtpanel.com/support/forum/plugin/" rel="nofollow" target="_blank">Like</a></div>
                                                                 </div>
 
                                                                 <div class="rtsocial-twitter-icon">
-                                                                    <div class="rtsocial-twitter-icon-button"><a class="rtsocial-twitter-icon-link" href= "http://twitter.com/share?via=<?php echo $options['tw_handle'] . "&related=" . $options['tw_related_handle'] . "&text=" . esc_attr( "rtSocial... Share Fast!" ) . "&url=http://rtpanel.com/support/forum/plugin/"; ?>" rel="nofollow" target="_blank">Tweet</a></div>
+                                                                    <div class="rtsocial-twitter-icon-button"><a class="rtsocial-twitter-icon-link" href= "https://twitter.com/share?via=<?php echo $options['tw_handle'] . "&related=" . $options['tw_related_handle'] . "&text=" . esc_attr( "rtSocial... Share Fast!" ) . "&url=https://rtpanel.com/support/forum/plugin/"; ?>" rel="nofollow" target="_blank">Tweet</a></div>
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -130,11 +130,11 @@ function rtsocial_admin_fn() { ?>
                                                         <td>
                                                             <div id="rtsocial-display-icon-count-sample">
                                                                 <div class="rtsocial-fb-icon">
-                                                                    <div class="rtsocial-fb-icon-button"><a class="rtsocial-fb-icon-link" href="http://www.facebook.com/sharer.php?u=http://rtpanel.com/support/forum/plugin/" rel="nofollow" target="_blank">Like</a></div><div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-fb-count"></span></div>
+                                                                    <div class="rtsocial-fb-icon-button"><a class="rtsocial-fb-icon-link" href="https://www.facebook.com/sharer.php?u=https://rtpanel.com/support/forum/plugin/" rel="nofollow" target="_blank">Like</a></div><div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-fb-count"></span></div>
                                                                 </div>
 
                                                                 <div class="rtsocial-twitter-icon">
-                                                                    <div class="rtsocial-twitter-icon-button"><a class="rtsocial-twitter-icon-link" href= "http://twitter.com/share?via=<?php echo $options['tw_handle'] . "&related=" . $options['tw_related_handle'] . "&text=" . esc_attr( "rtSocial... Share Fast!" ) . "&url=http://rtpanel.com/support/forum/plugin/"; ?>" rel="nofollow" target="_blank">Tweet</a></div><div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-twitter-count"></span></div>
+                                                                    <div class="rtsocial-twitter-icon-button"><a class="rtsocial-twitter-icon-link" href= "https://twitter.com/share?via=<?php echo $options['tw_handle'] . "&related=" . $options['tw_related_handle'] . "&text=" . esc_attr( "rtSocial... Share Fast!" ) . "&url=https://rtpanel.com/support/forum/plugin/"; ?>" rel="nofollow" target="_blank">Tweet</a></div><div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-twitter-count"></span></div>
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -285,16 +285,16 @@ function rtsocial_admin_fn() { ?>
                         <div title="Click to toggle" class="handlediv"><br /></div>
                         <h3 class="hndle"><span><strong>Getting Social is Good</strong></span></h3>
                         <div class="inside rt-social-connect">
-                            <a href="http://www.facebook.com/rtCamp.solutions" rel="nofollow" target="_blank" title="Become a fan on Facebook" class="rt-sidebar-facebook">Facebook</a>
+                            <a href="https://www.facebook.com/rtCamp.solutions" rel="nofollow" target="_blank" title="Become a fan on Facebook" class="rt-sidebar-facebook">Facebook</a>
                             <a href="https://twitter.com/rtcamp" rel="nofollow" target="_blank" title="Follow us on Twitter" class="rt-sidebar-twitter">Twitter</a>
-                            <a href="http://feeds.feedburner.com/rtcamp" rel="nofollow" target="_blank" title="Subscribe to our Feeds" class="rt-sidebar-rss">RSS</a>
+                            <a href="https://feeds.feedburner.com/rtcamp" rel="nofollow" target="_blank" title="Subscribe to our Feeds" class="rt-sidebar-rss">RSS</a>
                         </div>
                     </div>
                     <div class="postbox" id="donations">
                         <div title="Click to toggle" class="handlediv"><br /></div>
                         <h3 class="hndle"><span><strong>Promote, Donate, Share...</strong></span></h3>
                         <div class="inside">
-                            Buy coffee/beer for team behind <a href="http://rtcamp.com/rtsocial/" title="rtSocial Plugin">rtSocial</a>.<br/><br/>
+                            Buy coffee/beer for team behind <a href="https://rtcamp.com/rtsocial/" title="rtSocial Plugin">rtSocial</a>.<br/><br/>
                             <div class="rt-paypal" style="text-align:center">
                                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
                                     <input type="hidden" name="cmd" value="_donations" />
@@ -310,11 +310,11 @@ function rtsocial_admin_fn() { ?>
                             </div>
                             <div class="rtsocial-share" style="text-align:center; width: 127px; margin: 2px auto">
                                 <div class="rt-facebook" style="float:left; margin-right:5px;">
-                                    <a style=" text-align:center;" name="fb_share" type="box_count" title="rtSocial: Simple, Smarter & Swifter Social Sharing WordPress Plugin" share_url="http://rtcamp.com/rtsocial/"></a>
+                                    <a style=" text-align:center;" name="fb_share" type="box_count" title="rtSocial: Simple, Smarter & Swifter Social Sharing WordPress Plugin" share_url="https://rtcamp.com/rtsocial/"></a>
                                 </div>
                                 <div class="rt-twitter" style="">
-                                    <a href="http://twitter.com/share" title="rtSocial: Simple, Smarter & Swifter Social Sharing WordPress Plugin" class="twitter-share-button" data-text="rtSocial: Simple, Smarter & Swifter Social Sharing #WordPress #Plugin" data-url="http://rtcamp.com/rtsocial/" data-count="vertical" data-via="rtCamp">Tweet</a>
-                                    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+                                    <a href="https://twitter.com/share" title="rtSocial: Simple, Smarter & Swifter Social Sharing WordPress Plugin" class="twitter-share-button" data-text="rtSocial: Simple, Smarter & Swifter Social Sharing #WordPress #Plugin" data-url="https://rtcamp.com/rtsocial/" data-count="vertical" data-via="rtCamp">Tweet</a>
+                                    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
                                 </div>
                                 <div class="clear"></div>
                             </div>
@@ -323,7 +323,7 @@ function rtsocial_admin_fn() { ?>
                     <div class="postbox" id="support">
                         <div title="Click to toggle" class="handlediv"><br /></div>
                         <h3 class="hndle"><span><strong>Free Support</strong></span></h3>
-                        <div class="inside">If you have any problems with this plugin or good ideas for improvements, please talk about them in the <a href="http://rtcamp.com/support/forum/rtsocial/" rel="nofollow" target="_blank" title="free support forums">free support forums</a>.</div>
+                        <div class="inside">If you have any problems with this plugin or good ideas for improvements, please talk about them in the <a href="https://rtcamp.com/support/forum/rtsocial/" rel="nofollow" target="_blank" title="free support forums">free support forums</a>.</div>
                     </div>
                     <div class="postbox" id="latest_news">
                         <div title="Click to toggle" class="handlediv"><br /></div>
@@ -406,15 +406,15 @@ function rtsocial_counter( $content = '' ) {
 
         $tw_layout = '<div class="rtsocial-twitter-' . $options['display_options_set'] . '">';
         if ( $options['display_options_set'] == 'horizontal' ) {
-            $tw_layout .= '<div class="rtsocial-twitter-' . $options['display_options_set'] . '-button"><a title= "Tweet: ' . $rtatitle . '" class="rtsocial-twitter-button" href= "http://twitter.com/share?text=' . $rtstitle . $handle_string.'" rel="nofollow" target="_blank"></a></div>'.$tw_count;
+            $tw_layout .= '<div class="rtsocial-twitter-' . $options['display_options_set'] . '-button"><a title= "Tweet: ' . $rtatitle . '" class="rtsocial-twitter-button" href= "https://twitter.com/share?text=' . $rtstitle . $handle_string.'&url='.$rtslink.'" rel="nofollow" target="_blank"></a></div>'.$tw_count;
         } else if ( $options['display_options_set'] == 'vertical' ) {
-            $tw_layout .= $tw_count.'<div class="rtsocial-twitter-' . $options['display_options_set'] . '-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-button" href= "http://twitter.com/share?text=' . $rtstitle . $handle_string.'" target= "_blank"></a></div>';
+            $tw_layout .= $tw_count.'<div class="rtsocial-twitter-' . $options['display_options_set'] . '-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-button" href= "https://twitter.com/share?text=' . $rtstitle . $handle_string.'&url='.$rtslink.'" target= "_blank"></a></div>';
         } else if ( $options['display_options_set'] == 'icon' ) {
-            $tw_layout .= ' <div class="rtsocial-twitter-' . $options['display_options_set'] . '-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-icon-link" href= "http://twitter.com/share?text=' . $rtstitle . $handle_string.'" target= "_blank"></a></div>';
+            $tw_layout .= ' <div class="rtsocial-twitter-' . $options['display_options_set'] . '-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-icon-link" href= "https://twitter.com/share?text=' . $rtstitle . $handle_string.'&url='.$rtslink.'" target= "_blank"></a></div>';
         } else if ( $options['display_options_set'] == 'icon-count' ) {
             $tw_layout = '<div class="rtsocial-twitter-icon">';
             $tw_count = (!isset($options['hide_count']) || $options['hide_count'] != 1) ? '<div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-twitter-count"></span></div>' : '';
-            $tw_layout .= ' <div class="rtsocial-twitter-icon-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-icon-link" href= "http://twitter.com/share?text=' . $rtstitle . $handle_string.'&url='.$rtslink.'" target= "_blank"></a></div>'.$tw_count;
+            $tw_layout .= ' <div class="rtsocial-twitter-icon-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-icon-link" href= "https://twitter.com/share?text=' . $rtstitle . $handle_string.'&url='.$rtslink.'" target= "_blank"></a></div>'.$tw_count;
         }
         $tw_layout .= '</div>';
         $active_services[$tw] = $tw_layout;
@@ -457,15 +457,15 @@ function rtsocial_counter( $content = '' ) {
         }
 
         if ( $options['display_options_set'] == 'horizontal' ) {
-            $fb_layout .= '<div class="rtsocial-fb-' . $options['display_options_set'] . '-button"><a title="' . $rt_social_text .': '. $rtatitle . '" class="rtsocial-fb-button ' . $class . '" href="http://www.facebook.com/sharer.php?u='.(urlencode(get_permalink($post->ID))).'" rel="nofollow" target="_blank"></a></div>'.$fb_count;
+            $fb_layout .= '<div class="rtsocial-fb-' . $options['display_options_set'] . '-button"><a title="' . $rt_social_text .': '. $rtatitle . '" class="rtsocial-fb-button ' . $class . '" href="https://www.facebook.com/sharer.php?u='.(urlencode(get_permalink($post->ID))).'" rel="nofollow" target="_blank"></a></div>'.$fb_count;
         } else if ( $options['display_options_set'] == 'vertical' ) {
-            $fb_layout .= $fb_count.'<div class="rtsocial-fb-' . $options['display_options_set'] . '-button"><a title="' . $rt_social_text  .': '. $rtatitle . '" class="rtsocial-fb-button ' . $class . '" href="http://www.facebook.com/sharer.php?u='.(urlencode(get_permalink($post->ID))).'" rel="nofollow" target="_blank"></a></div>';
+            $fb_layout .= $fb_count.'<div class="rtsocial-fb-' . $options['display_options_set'] . '-button"><a title="' . $rt_social_text  .': '. $rtatitle . '" class="rtsocial-fb-button ' . $class . '" href="https://www.facebook.com/sharer.php?u='.(urlencode(get_permalink($post->ID))).'" rel="nofollow" target="_blank"></a></div>';
         } else if( $options['display_options_set'] == 'icon' ) {
-            $fb_layout .= ' <div class="rtsocial-fb-' . $options['display_options_set'] . '-button"><a title="' . $rt_social_text .': '. $rtatitle . '" class="rtsocial-fb-icon-link" href="http://www.facebook.com/sharer.php?u='.(urlencode(get_permalink($post->ID))).'" target= "_blank"></a></div>';
+            $fb_layout .= ' <div class="rtsocial-fb-' . $options['display_options_set'] . '-button"><a title="' . $rt_social_text .': '. $rtatitle . '" class="rtsocial-fb-icon-link" href="https://www.facebook.com/sharer.php?u='.(urlencode(get_permalink($post->ID))).'" target= "_blank"></a></div>';
         } else if( $options['display_options_set'] == 'icon-count' ) {
             $fb_layout = '<div class="rtsocial-fb-icon" class="' . $rt_fb_style . '">';
             $fb_count = (!isset($options['hide_count']) || $options['hide_count'] != 1) ? '<div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-fb-count"></span></div>':'';
-            $fb_layout .= ' <div class="rtsocial-fb-icon-button"><a title="' . $rt_social_text .': '. $rtatitle . '" class="rtsocial-fb-icon-link" href="http://www.facebook.com/sharer.php?u='.(urlencode(get_permalink($post->ID))).'" target= "_blank"></a></div>'.$fb_count;
+            $fb_layout .= ' <div class="rtsocial-fb-icon-button"><a title="' . $rt_social_text .': '. $rtatitle . '" class="rtsocial-fb-icon-link" href="https://www.facebook.com/sharer.php?u='.(urlencode(get_permalink($post->ID))).'" target= "_blank"></a></div>'.$fb_count;
         }
         $fb_layout .= '</div>';
         $active_services[$fb] = $fb_layout;
@@ -492,15 +492,15 @@ function rtsocial_counter( $content = '' ) {
 
         $pin_layout = '<div class="rtsocial-pinterest-' . $options['display_options_set'] . '">';
         if($options['display_options_set'] == 'horizontal'){
-            $pin_layout .= '<div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><a class="rtsocial-pinterest-button" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" rel="nofollow" target="_blank" title="Pin: '. $rtatitle .'"></a></div>'.$pin_count;
+            $pin_layout .= '<div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><a class="rtsocial-pinterest-button" href= "https://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" rel="nofollow" target="_blank" title="Pin: '. $rtatitle .'"></a></div>'.$pin_count;
         } else if( $options['display_options_set'] == 'vertical' ){
-            $pin_layout .= $pin_count.'<div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><a class="rtsocial-pinterest-button" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" rel="nofollow" target="_blank" title="Pin: '. $rtatitle .'"></a></div>';
+            $pin_layout .= $pin_count.'<div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><a class="rtsocial-pinterest-button" href= "https://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" rel="nofollow" target="_blank" title="Pin: '. $rtatitle .'"></a></div>';
         } else if( $options['display_options_set'] == 'icon' ) {
-            $pin_layout .= ' <div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><a class="rtsocial-pinterest-icon-link" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" target= "_blank" title="Pin: '. $rtatitle .'"></a></div>';
+            $pin_layout .= ' <div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><a class="rtsocial-pinterest-icon-link" href= "https://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" target= "_blank" title="Pin: '. $rtatitle .'"></a></div>';
         } else if( $options['display_options_set'] == 'icon-count' ) {
             $pin_layout = '<div class="rtsocial-pinterest-icon">';
             $pin_count = (!isset($options['hide_count']) || $options['hide_count'] != 1) ? '<div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-pinterest-count"></span></div>':'';
-            $pin_layout .= ' <div class="rtsocial-pinterest-icon-button"><a class="rtsocial-pinterest-icon-link" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" target= "_blank" title="Pin: '. $rtatitle .'"></a></div>'.$pin_count;
+            $pin_layout .= ' <div class="rtsocial-pinterest-icon-button"><a class="rtsocial-pinterest-icon-link" href= "https://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" target= "_blank" title="Pin: '. $rtatitle .'"></a></div>'.$pin_count;
         }
         $pin_layout .= '</div>';
         $active_services[$pin] = $pin_layout;
@@ -514,15 +514,15 @@ function rtsocial_counter( $content = '' ) {
 
         $lin_layout = '<div class="rtsocial-linkedin-' . $options['display_options_set'] . '">';
         if($options['display_options_set'] == 'horizontal'){
-            $lin_layout .= '<div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-button" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" rel="nofollow" target="_blank" title="Share: '. $rtatitle .'"></a></div>'.$lin_count;
+            $lin_layout .= '<div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-button" href= "https://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" rel="nofollow" target="_blank" title="Share: '. $rtatitle .'"></a></div>'.$lin_count;
         } else if( $options['display_options_set'] == 'vertical' ) {
-            $lin_layout .= $lin_count.' <div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-button" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" rel="nofollow" target="_blank" title="Share: '. $rtatitle .'"></a></div>';
+            $lin_layout .= $lin_count.' <div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-button" href= "https://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" rel="nofollow" target="_blank" title="Share: '. $rtatitle .'"></a></div>';
         } else if( $options['display_options_set'] == 'icon' ) {
-            $lin_layout .= ' <div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-icon-link" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" target= "_blank" title="Share: '. $rtatitle .'"></a></div>';
+            $lin_layout .= ' <div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-icon-link" href= "https://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" target= "_blank" title="Share: '. $rtatitle .'"></a></div>';
         } else if( $options['display_options_set'] == 'icon-count' ) {
             $lin_layout = '<div class="rtsocial-linkedin-icon">';
             $lin_count = (!isset($options['hide_count']) || $options['hide_count'] != 1) ? '<div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-linkedin-count"></span></div>' : '';
-            $lin_layout .= ' <div class="rtsocial-linkedin-icon-button"><a class="rtsocial-linkedin-icon-link" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" target= "_blank" title="Share: '. $rtatitle .'"></a></div>'.$lin_count;
+            $lin_layout .= ' <div class="rtsocial-linkedin-icon-button"><a class="rtsocial-linkedin-icon-link" href= "https://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" target= "_blank" title="Share: '. $rtatitle .'"></a></div>'.$lin_count;
         }
         $lin_layout .= '</div>';
         $active_services[$lin] = $lin_layout;
@@ -616,15 +616,15 @@ function rtsocial($args=array()) {
 
         $tw_layout = '<div class="rtsocial-twitter-' . $options['display_options_set'] . '">';
         if ( $options['display_options_set'] == 'horizontal' ) {
-            $tw_layout .= '<div class="rtsocial-twitter-' . $options['display_options_set'] . '-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-button" href= "http://twitter.com/share?text=' . $rtstitle . $handle_string.'" rel="nofollow" target="_blank"></a></div>'.$tw_count;
+            $tw_layout .= '<div class="rtsocial-twitter-' . $options['display_options_set'] . '-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-button" href= "https://twitter.com/share?text=' . $rtstitle . $handle_string.'&url='.$rtslink.'" rel="nofollow" target="_blank"></a></div>'.$tw_count;
         } else if ( $options['display_options_set'] == 'vertical' ) {
-            $tw_layout .= $tw_count.'<div class="rtsocial-twitter-' . $options['display_options_set'] . '-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-button" href= "http://twitter.com/share?text=' . $rtstitle . $handle_string.'" target= "_blank"></a></div>';
+            $tw_layout .= $tw_count.'<div class="rtsocial-twitter-' . $options['display_options_set'] . '-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-button" href= "https://twitter.com/share?text=' . $rtstitle . $handle_string.'&url='.$rtslink.'" target= "_blank"></a></div>';
         } else if ( $options['display_options_set'] == 'icon' ) {
-            $tw_layout .= ' <div class="rtsocial-twitter-' . $options['display_options_set'] . '-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-icon-link" href= "http://twitter.com/share?text=' . $rtstitle . $handle_string.'" target= "_blank"></a></div>';
+            $tw_layout .= ' <div class="rtsocial-twitter-' . $options['display_options_set'] . '-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-icon-link" href= "https://twitter.com/share?text=' . $rtstitle . $handle_string.'&url='.$rtslink.'" target= "_blank"></a></div>';
         } else if ( $options['display_options_set'] == 'icon-count' ) {
             $tw_layout = '<div class="rtsocial-twitter-icon">';
             $tw_count = (!isset($options['hide_count']) || $options['hide_count'] != 1) ? '<div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-twitter-count"></span></div>' : '';
-            $tw_layout .= ' <div class="rtsocial-twitter-icon-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-icon-link" href= "http://twitter.com/share?text=' . $rtstitle . $handle_string.'&url='.$rtslink.'" target= "_blank"></a></div>'.$tw_count;
+            $tw_layout .= ' <div class="rtsocial-twitter-icon-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-icon-link" href= "https://twitter.com/share?text=' . $rtstitle . $handle_string.'&url='.$rtslink.'" target= "_blank"></a></div>'.$tw_count;
         }
         $tw_layout .= '</div>';
         $active_services[$tw] = $tw_layout;
@@ -667,15 +667,15 @@ function rtsocial($args=array()) {
         }
 
         if ( $options['display_options_set'] == 'horizontal' ) {
-            $fb_layout .= '<div class="rtsocial-fb-' . $options['display_options_set'] . '-button"><a title="' . $rt_social_text .': '. $rtatitle . '" class="rtsocial-fb-button ' . $class . '" href="http://www.facebook.com/sharer.php?u='.(urlencode(get_permalink($post->ID))).'" rel="nofollow" target="_blank"></a></div>'.$fb_count;
+            $fb_layout .= '<div class="rtsocial-fb-' . $options['display_options_set'] . '-button"><a title="' . $rt_social_text .': '. $rtatitle . '" class="rtsocial-fb-button ' . $class . '" href="https://www.facebook.com/sharer.php?u='.(urlencode(get_permalink($post->ID))).'" rel="nofollow" target="_blank"></a></div>'.$fb_count;
         } else if ( $options['display_options_set'] == 'vertical' ) {
-            $fb_layout .= $fb_count.'<div class="rtsocial-fb-' . $options['display_options_set'] . '-button"><a title="' . $rt_social_text .': '.  $rtatitle . '" class="rtsocial-fb-button ' . $class . '" href="http://www.facebook.com/sharer.php?u='.(urlencode(get_permalink($post->ID))).'" rel="nofollow" target="_blank"></a></div>';
+            $fb_layout .= $fb_count.'<div class="rtsocial-fb-' . $options['display_options_set'] . '-button"><a title="' . $rt_social_text .': '.  $rtatitle . '" class="rtsocial-fb-button ' . $class . '" href="https://www.facebook.com/sharer.php?u='.(urlencode(get_permalink($post->ID))).'" rel="nofollow" target="_blank"></a></div>';
         } else if( $options['display_options_set'] == 'icon' ) {
-            $fb_layout .= ' <div class="rtsocial-fb-' . $options['display_options_set'] . '-button"><a title="' . $rt_social_text .': '. $rtatitle . '" class="rtsocial-fb-icon-link" href="http://www.facebook.com/sharer.php?u='.(urlencode(get_permalink($post->ID))).'" target= "_blank"></a></div>';
+            $fb_layout .= ' <div class="rtsocial-fb-' . $options['display_options_set'] . '-button"><a title="' . $rt_social_text .': '. $rtatitle . '" class="rtsocial-fb-icon-link" href="https://www.facebook.com/sharer.php?u='.(urlencode(get_permalink($post->ID))).'" target= "_blank"></a></div>';
         } else if( $options['display_options_set'] == 'icon-count' ) {
             $fb_layout = '<div class="rtsocial-fb-icon" class="' . $rt_fb_style . '">';
             $fb_count = (!isset($options['hide_count']) || $options['hide_count'] != 1) ? '<div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-fb-count"></span></div>':'';
-            $fb_layout .= ' <div class="rtsocial-fb-icon-button"><a title="' . $rt_social_text .': '. $rtatitle . '" class="rtsocial-fb-icon-link" href="http://www.facebook.com/sharer.php?u='.(urlencode(get_permalink($post->ID))).'" target= "_blank"></a></div>'.$fb_count;
+            $fb_layout .= ' <div class="rtsocial-fb-icon-button"><a title="' . $rt_social_text .': '. $rtatitle . '" class="rtsocial-fb-icon-link" href="https://www.facebook.com/sharer.php?u='.(urlencode(get_permalink($post->ID))).'" target= "_blank"></a></div>'.$fb_count;
         }
         $fb_layout .= '</div>';
         $active_services[$fb] = $fb_layout;
@@ -702,15 +702,15 @@ function rtsocial($args=array()) {
 
         $pin_layout = '<div class="rtsocial-pinterest-' . $options['display_options_set'] . '">';
         if($options['display_options_set'] == 'horizontal'){
-            $pin_layout .= '<div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><a class="rtsocial-pinterest-button" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" rel="nofollow" target="_blank" title="Pin: '. $rtatitle .'"></a></div>'.$pin_count;
+            $pin_layout .= '<div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><a class="rtsocial-pinterest-button" href= "https://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" rel="nofollow" target="_blank" title="Pin: '. $rtatitle .'"></a></div>'.$pin_count;
         } else if( $options['display_options_set'] == 'vertical' ){
-            $pin_layout .= $pin_count.'<div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><a class="rtsocial-pinterest-button" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" rel="nofollow" target="_blank" title="Pin: '. $rtatitle .'"></a></div>';
+            $pin_layout .= $pin_count.'<div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><a class="rtsocial-pinterest-button" href= "https://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" rel="nofollow" target="_blank" title="Pin: '. $rtatitle .'"></a></div>';
         } else if( $options['display_options_set'] == 'icon' ) {
-            $pin_layout .= ' <div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><a class="rtsocial-pinterest-icon-link" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" target= "_blank" title="Pin: '. $rtatitle .'"></a></div>';
+            $pin_layout .= ' <div class="rtsocial-pinterest-' . $options['display_options_set'] . '-button"><a class="rtsocial-pinterest-icon-link" href= "https://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" target= "_blank" title="Pin: '. $rtatitle .'"></a></div>';
         } else if( $options['display_options_set'] == 'icon-count' ) {
             $pin_layout = '<div class="rtsocial-pinterest-icon">';
             $pin_count = (!isset($options['hide_count']) || $options['hide_count'] != 1) ? '<div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-pinterest-count"></span></div>':'';
-            $pin_layout .= ' <div class="rtsocial-pinterest-icon-button"><a class="rtsocial-pinterest-icon-link" href= "http://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" target= "_blank" title="Pin '. $rtatitle .'"></a></div>'.$pin_count;
+            $pin_layout .= ' <div class="rtsocial-pinterest-icon-button"><a class="rtsocial-pinterest-icon-link" href= "https://pinterest.com/pin/create/button/?url=' . get_permalink($post->ID) . '&media='.$thumb_src.'&description='.$title.'" target= "_blank" title="Pin '. $rtatitle .'"></a></div>'.$pin_count;
         }
         $pin_layout .= '</div>';
         $active_services[$pin] = $pin_layout;
@@ -724,15 +724,15 @@ function rtsocial($args=array()) {
 
         $lin_layout = '<div class="rtsocial-linkedin-' . $options['display_options_set'] . '">';
         if($options['display_options_set'] == 'horizontal'){
-            $lin_layout .= '<div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-button" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" rel="nofollow" target="_blank" title="Share: '. $rtatitle .'"></a></div>'.$lin_count;
+            $lin_layout .= '<div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-button" href= "https://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" rel="nofollow" target="_blank" title="Share: '. $rtatitle .'"></a></div>'.$lin_count;
         } else if( $options['display_options_set'] == 'vertical' ) {
-            $lin_layout .= $lin_count.' <div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-button" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" rel="nofollow" target="_blank" title="Share: '. $rtatitle .'"></a></div>';
+            $lin_layout .= $lin_count.' <div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-button" href= "https://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" rel="nofollow" target="_blank" title="Share: '. $rtatitle .'"></a></div>';
         } else if( $options['display_options_set'] == 'icon' ) {
-            $lin_layout .= ' <div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-icon-link" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" target= "_blank" title="Share: '. $rtatitle .'"></a></div>';
+            $lin_layout .= ' <div class="rtsocial-linkedin-' . $options['display_options_set'] . '-button"><a class="rtsocial-linkedin-icon-link" href= "https://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" target= "_blank" title="Share: '. $rtatitle .'"></a></div>';
         } else if( $options['display_options_set'] == 'icon-count' ) {
             $lin_layout = '<div class="rtsocial-linkedin-icon">';
             $lin_count = (!isset($options['hide_count']) || $options['hide_count'] != 1) ? '<div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-linkedin-count"></span></div>' : '';
-            $lin_layout .= ' <div class="rtsocial-linkedin-icon-button"><a class="rtsocial-linkedin-icon-link" href= "http://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" target= "_blank" title="Share: '. $rtatitle .'"></a></div>'.$lin_count;
+            $lin_layout .= ' <div class="rtsocial-linkedin-icon-button"><a class="rtsocial-linkedin-icon-link" href= "https://www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_permalink($post->ID)).'&title='.urlencode(get_the_title( $post->ID )).'" target= "_blank" title="Share: '. $rtatitle .'"></a></div>'.$lin_count;
         }
         $lin_layout .= '</div>';
         $active_services[$lin] = $lin_layout;
@@ -815,7 +815,7 @@ function rtsocial_assets() {
         wp_enqueue_script( 'dashboard' );
         wp_enqueue_style( 'dashboard' );
         wp_enqueue_script( 'jquery-ui-sortable' );
-        wp_enqueue_script( 'rt-fb-share', ('http://static.ak.fbcdn.net/connect.php/js/FB.Share'), '', '', true );
+        wp_enqueue_script( 'rt-fb-share', ('https://static.ak.fbcdn.net/connect.php/js/FB.Share'), '', '', true );
     }
 
     //Plugin CSS
@@ -958,7 +958,7 @@ function rtsocial_gplus_handler(){
 /*
  * Google Plus shares count handled via CURL
  */
-function rtsocial_get_feeds($feed_url = 'http://rtcamp.com/blog/category/rtsocial/feed/') {
+function rtsocial_get_feeds($feed_url = 'https://rtcamp.com/blog/category/rtsocial/feed/') {
 	// Get RSS Feed(s)
 	require_once( ABSPATH . WPINC . '/feed.php' );
 	$maxitems = 0;
