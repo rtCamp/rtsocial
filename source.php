@@ -4,7 +4,7 @@ Plugin Name: rtSocial
 Plugin URI: http://rtcamp.com/rtsocial/
 Author: rtCamp, rahul286, rutwick, saurabhshukla, HarishChaudhari, faishal, 5um17, JoshuaAbenazer
 Author URI: http://rtcamp.com/
-Version: 2.1.10
+Version: 2.1.11
 Description: It is the lightest social sharing plugin, uses non-blocking Javascript and a single sprite to get rid of all the clutter that comes along with the sharing buttons.
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
 */
@@ -388,9 +388,10 @@ function rtsocial_counter( $content = '' ) {
 
     $options = get_option( 'rtsocial_plugin_options' );
     global $post;
+	$rtslink = urlencode(get_permalink($post->ID));
     $rtstitle = rt_url_encode( get_the_title( $post->ID ) );
     $rtatitle   = get_the_title( $post->ID );
-    
+
     //Ordered buttons array
     $active_services = array();
 
@@ -413,7 +414,7 @@ function rtsocial_counter( $content = '' ) {
         } else if ( $options['display_options_set'] == 'icon-count' ) {
             $tw_layout = '<div class="rtsocial-twitter-icon">';
             $tw_count = (!isset($options['hide_count']) || $options['hide_count'] != 1) ? '<div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-twitter-count"></span></div>' : '';
-            $tw_layout .= ' <div class="rtsocial-twitter-icon-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-icon-link" href= "http://twitter.com/share?text=' . $rtstitle . $handle_string.'" target= "_blank"></a></div>'.$tw_count;
+            $tw_layout .= ' <div class="rtsocial-twitter-icon-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-icon-link" href= "http://twitter.com/share?text=' . $rtstitle . $handle_string.'&url='.$rtslink.'" target= "_blank"></a></div>'.$tw_count;
         }
         $tw_layout .= '</div>';
         $active_services[$tw] = $tw_layout;
@@ -597,6 +598,7 @@ function rtsocial($args=array()) {
         return;
 
     global $post;
+	$rtslink = urlencode(get_permalink($post->ID));
     $rtstitle = rt_url_encode( get_the_title( $post->ID ) );
     $rtatitle   = get_the_title( $post->ID );
 
@@ -622,7 +624,7 @@ function rtsocial($args=array()) {
         } else if ( $options['display_options_set'] == 'icon-count' ) {
             $tw_layout = '<div class="rtsocial-twitter-icon">';
             $tw_count = (!isset($options['hide_count']) || $options['hide_count'] != 1) ? '<div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-twitter-count"></span></div>' : '';
-            $tw_layout .= ' <div class="rtsocial-twitter-icon-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-icon-link" href= "http://twitter.com/share?text=' . $rtstitle . $handle_string.'" target= "_blank"></a></div>'.$tw_count;
+            $tw_layout .= ' <div class="rtsocial-twitter-icon-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-icon-link" href= "http://twitter.com/share?text=' . $rtstitle . $handle_string.'&url='.$rtslink.'" target= "_blank"></a></div>'.$tw_count;
         }
         $tw_layout .= '</div>';
         $active_services[$tw] = $tw_layout;

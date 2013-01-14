@@ -60,6 +60,9 @@ No. Right now you cannot.
 
 ## Changelog ##
 
+#### 2.1.11 ####
+* Fixed Tweet button. URLs were missing in the tweet.
+
 #### 2.1.10 ####
 * Fixed facebook share button.
 
@@ -120,5 +123,5 @@ No. Right now you cannot.
 #### 1.0 ####
 * Initial Release
 
-#### 2.1.10 ####
-Fixed Facebook Share.
+#### 2.1.11 ####
+Fixed Tweet button.
