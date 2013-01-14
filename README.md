@@ -60,6 +60,9 @@ No. Right now you cannot.
 
 ## Changelog ##
 
+#### 2.1.12 ####
+* Fixed Tweet button and changed protocol to https.
+
 #### 2.1.11 ####
 * Fixed Tweet button. URLs were missing in the tweet.
 
@@ -123,5 +126,5 @@ No. Right now you cannot.
 #### 1.0 ####
 * Initial Release
 
-#### 2.1.11 ####
-Fixed Tweet button.
+#### 2.1.12 ####
+Fixed Tweet button. Switched Protocols.
