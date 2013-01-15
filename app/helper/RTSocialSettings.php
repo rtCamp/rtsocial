@@ -31,7 +31,9 @@ if (!class_exists('RTSocialSettings')) {
             /* Twitter Setting section */
             add_settings_section( 'rts-tw-settings', __('<h3 class="hndle">Twitter Button Settings</h3>', RTSOCIAL_TXT_DOMAIN), '', 'rtsocial-revised-options' );
             /* Twitter handle */
-            add_settings_field('rts-tw-handle', __('Twitter Handle', RTSOCIAL_TXT_DOMAIN), array($this, 'text'), 'rtsocial-revised-options', 'rts-settings', array('option' => 'tw_handle', 'input' => '', 'default' => '' ) );
+            add_settings_field('rts-tw-handle', __('Twitter Handle', RTSOCIAL_TXT_DOMAIN), array($this, 'text'), 'rtsocial-revised-options', 'rts-tw-settings', array('option' => 'tw_handle', 'input' => '', 'default' => '' ) );
+            /* Related Twitter Handle setting field */
+            add_settings_field('rts-related-tw-handle', __('Related twitter handle', RTSOCIAL_TXT_DOMAIN), array($this, 'text'), 'rtsocial-revised-options', 'rts-tw-settings', array('option' => 'related_tw_handle', 'input' => '', 'default' => '' ) );
             register_setting( 'rtsocial_settings', 'rtsocial_options', array($this, 'sanitize') );
         }
 
@@ -39,27 +41,12 @@ if (!class_exists('RTSocialSettings')) {
          * Sanitizes the settings
          */
         public function sanitize($input) {
-
-            /* Save button placement data */
-            if( isset( $_POST['rtsocial_settings']['button_placement'] ) ){
-
-                add_settings_error('Success', 'rts-update-success', __('Settings saved successfully', RTSOCIAL_TXT_DOMAIN ), 'updated');
-                $input['button_placement'] = $_POST['rtsocial_settings']['button_placement'];
-            }
-            /* Save button placement data */
-            if( isset( $_POST['rtsocial_settings']['button_style'] ) ){
-                add_settings_error('Success', 'rts-update-success', __('Settings saved successfully', RTSOCIAL_TXT_DOMAIN ), 'updated');
-                $input['button_style'] = $_POST['rtsocial_settings']['button_style'];
-            }
-            if( isset( $_POST['rtsocial_settings']['hide_count'] ) ){
-                add_settings_error('Success', 'rts-update-success', __('Settings saved successfully', RTSOCIAL_TXT_DOMAIN ), 'updated');
-                $input['hide_count'] = $_POST['rtsocial_settings']['hide_count'];
-            }
+            
             return $input;
         }
 
-        public function input($args){
-            
+        public function text($args){
+
             global $rtSocial;
             $options = $rtSocial->options;
             $defaults = array(
@@ -68,14 +55,15 @@ if (!class_exists('RTSocialSettings')) {
                 'default' => ''
             );
             $args = wp_parse_args($args, $defaults);
+            extract($args);
             if (empty($option)) {
                 trigger_error(__('Please provide "option" value ( required ) in the argument. Pass argument to add_settings_field in the follwoing format array( \'option\' => \'option_name\' ) ', RTSOCIAL_TXT_DOMAIN));
                 return;
             }
-            if (!isset($options[$option]))
+            if ( !isset($options[$option]) )
                 $options[$option] = ''; ?>
             <label for="<?php echo $option; ?>">
-                <input name="rtsocial_settings[<?php echo $option; ?>]" id="<?php echo $option; ?>" value="<?php echo $options[$option]; ?>" type="text" />
+                <input name="rtsocial_options[<?php echo $option; ?>]" id="<?php echo $option; ?>" value="<?php echo $options[$option]; ?>" type="text" />
             </label><?php
         }
 
@@ -102,7 +90,7 @@ if (!class_exists('RTSocialSettings')) {
             if (!isset($options[$option]))
                 $options[$option] = ''; ?>
             <label for="<?php echo $option; ?>">
-                <input<?php checked($options[$option]); ?> name="rtsocial_settings[<?php echo $option; ?>]" id="<?php echo $option; ?>" value="1" type="checkbox" />                
+                <input<?php checked($options[$option]); ?> name="rtsocial_options[<?php echo $option; ?>]" id="<?php echo $option; ?>" value="1" type="checkbox" />                
             </label><?php
         }
 
@@ -133,7 +121,7 @@ if (!class_exists('RTSocialSettings')) {
                 $options[$option] = $default;
             }
             foreach ($radios as $value => $desc) { ?>
-                <label for="<?php echo sanitize_title($desc); ?>"><input<?php checked($options[$option], $value); ?> value='<?php echo $value; ?>' name='rtsocial_settings[<?php echo $option; ?>]' id="<?php echo sanitize_title($desc); ?>" type='radio' /><?php echo $desc; ?></label><br /><?php
+                <label for="<?php echo sanitize_title($desc); ?>"><input<?php checked($options[$option], $value); ?> value='<?php echo $value; ?>' name='rtsocial_options[<?php echo $option; ?>]' id="<?php echo sanitize_title($desc); ?>" type='radio' /><?php echo $desc; ?></label><br /><?php
             }
         }
 

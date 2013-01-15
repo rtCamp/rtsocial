@@ -7,11 +7,10 @@
 if (!class_exists('rtSocialAdmin')) {
 
     class rtSocialAdmin{
-		
+
         public $rtSocial_upgrade;
         public $rtSocial_settings;
         public $rtSocial_options;
-        
 
         public function __construct() {
 
@@ -41,7 +40,8 @@ if (!class_exists('rtSocialAdmin')) {
          * @global string RTSOCIAL_TXT_DOMAIN
          */
         public function menu() {
-            add_menu_page(__('RTSocial', RTSOCIAL_TXT_DOMAIN), __('RTSocial', RTSOCIAL_TXT_DOMAIN), 'manage_options', 'rtsocial-revised-options', array($this, 'settings_page') );
+
+            add_options_page('RTSocial', 'RTSocial Setting', 'manage_options', 'rtsocial-revised-options', array( $this, 'settings_page' ) );
         }
 
         /**
@@ -66,6 +66,5 @@ if (!class_exists('rtSocialAdmin')) {
                 </form>
             </div><?php
         }
-
     }
 } ?>
