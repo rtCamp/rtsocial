@@ -21,6 +21,7 @@ function rtsocial_autoloader( $class_name ) {
 		'app/admin/' . $class_name . '.php',
 		'app/main/' . $class_name . '.php'
 	);
+        
 	foreach ( $rtlibpath as $i => $path ) {
 		$path = RTSOCIAL_PATH . $path;
 		if ( file_exists( $path ) ) {
@@ -31,5 +32,6 @@ function rtsocial_autoloader( $class_name ) {
 }
 spl_autoload_register( 'rtsocial_autoloader' );
 
-global $rtSocial;
+global $rtSocial, $rtSocialAdmin;
 $rtSocial = new rtSocial();
+$rtSocialAdmin = new rtSocialAdmin();
