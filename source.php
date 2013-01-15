@@ -4,7 +4,7 @@ Plugin Name: rtSocial
 Plugin URI: https://rtcamp.com/rtsocial/
 Author: rtCamp, rahul286, rutwick, saurabhshukla, HarishChaudhari, faishal, 5um17, JoshuaAbenazer
 Author URI: https://rtcamp.com/
-Version: 2.1.12
+Version: 2.1.13
 Description: It is the lightest social sharing plugin, uses non-blocking Javascript and a single sprite to get rid of all the clutter that comes along with the sharing buttons.
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
 */
@@ -839,26 +839,33 @@ function rtsocial_localize_script($handle){
 
     $args['button_style'] = $options['display_options_set'];
     $args['hide_count'] = (isset($options['hide_count']) && $options['hide_count'] == 1) ? 1:0;
+	$args['twitter'] = false;
+	$args['facebook'] = false;
+	$args['pinterest'] = false;
+	$args['linkedin'] = false;
+	$args['gplus'] = false;
+	
+	if(is_array($options['active']){
+	    if(in_array('tw', $options['active'])){
+		$args['twitter'] = true;
+	    }
 
-    if(in_array('tw', $options['active'])){
-        $args['twitter'] = true;
-    }
+	    if(in_array('fb', $options['active'])){
+		$args['facebook'] = true;
+	    }
 
-    if(in_array('fb', $options['active'])){
-        $args['facebook'] = true;
-    }
+	    if(in_array('pin', $options['active'])){
+		$args['pinterest'] = true;
+	    }
 
-    if(in_array('pin', $options['active'])){
-        $args['pinterest'] = true;
-    }
+	    if(in_array('lin', $options['active'])){
+		$args['linkedin'] = true;
+	    }
 
-    if(in_array('lin', $options['active'])){
-        $args['linkedin'] = true;
-    }
-
-    if(in_array('gplus', $options['active'])){
-        $args['gplus'] = true;
-    }
+	    if(in_array('gplus', $options['active'])){
+		$args['gplus'] = true;
+	    }
+	}
 
     $args['path'] = plugins_url( 'images/', __FILE__ );
     wp_localize_script( $handle, 'args', $args );

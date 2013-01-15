@@ -60,6 +60,9 @@ No. Right now you cannot.
 
 ## Changelog ##
 
+#### 2.1.13 ####
+* Fixed bug when no buttons are active.
+
 #### 2.1.12 ####
 * Fixed Tweet button and changed protocol to https.
 
@@ -126,5 +129,5 @@ No. Right now you cannot.
 #### 1.0 ####
 * Initial Release
 
-#### 2.1.12 ####
-Fixed Tweet button. Switched Protocols.
+#### 2.1.13 ####
+Fixed bug when no buttons are active.

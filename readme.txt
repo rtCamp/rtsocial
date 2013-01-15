@@ -3,7 +3,7 @@ Contributors: rtcamp, rahul286, rutwick, saurabhshukla, HarishChaudhari, faishal
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
 Requires at least: 3.0
 Tested up to: 3.5
-Stable tag: 2.1.12
+Stable tag: 2.1.13
 License: GPLv2 or later (of-course)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate Link: http://rtcamp.com/donate/
@@ -59,6 +59,9 @@ No. Right now you cannot.
 
 
 == Changelog ==
+
+= 2.1.13 =
+* Fixed bug when no buttons are active.
 
 = 2.1.12 =
 * Fixed Tweet button and changed protocol to https.
@@ -128,5 +131,5 @@ No. Right now you cannot.
 
 == Upgrade Notice ==
 
-= 2.1.12 =
-Fixed Tweet button. Switched Protocols.
+= 2.1.13 =
+Fixed bug when no buttons are active.
