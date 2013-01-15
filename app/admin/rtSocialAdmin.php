@@ -16,13 +16,13 @@ if (!class_exists('rtSocialAdmin')) {
         public function __construct() {
 
             if (is_admin()) {
-                add_action( 'admin_init', array($this,'rtsocial_register_setting') );
+
                 add_action( 'admin_enqueue_scripts', array($this, 'ui') );
-                add_action( 'admin_menu', array($this, 'menu'),9 );
+                add_action( 'admin_menu', array($this, 'menu') );
             }
             $this->rtSocial_settings = new RTSocialSettings();
         }
-        
+
         /**
          * Generates the Admin UI
          *
@@ -54,23 +54,17 @@ if (!class_exists('rtSocialAdmin')) {
         /**
          * Renders the setting page
          */
-        public function render_page(){ ?>
+        public function render_page($page){ ?>
+
+            <h2><?php _e( 'RTSocial Options', RTSOCIAL_TXT_DOMAIN ); ?></h2>
             <div class="wrap rtsocial-admin">
-                <h2><?php _e( 'RTSocial Options' ); ?></h2>
+                <div title="Click to toggle" class="handlediv"><br></div>                
                 <form method="post" action="options.php" name="rtsocial_setting_form" id="rtsocial_setting_form"><?php
                     settings_fields( 'rtsocial_settings' );
-                    do_settings_sections( __FILE__ ); 
+                    do_settings_sections( $page );
                     submit_button(); ?>
                 </form>
             </div><?php
-        }
-        
-        /**
-         * Register Settings
-         */
-        public function rtsocial_register_setting(){
-            
-            register_setting( 'rtsocial_plugin_options', 'rtsocial_plugin_options' );
         }
 
     }

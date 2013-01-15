@@ -13,11 +13,12 @@ if ( ! defined( 'ABSPATH' ) )
 	
 	public $text_domain = 'rtsocial';
 	public $support_email = 'support@rtcamp.com';
-        public $options='';
+        public $options;
 	
 	public function __construct() {
             /* Define all the required constants */
             $this->constants();
+            $this->get_option();
 	}
 	
 	/**
@@ -35,6 +36,10 @@ if ( ! defined( 'ABSPATH' ) )
             /* Current Version. */
             if ( ! defined( 'RTSOCIAL_VERSION' ) )
                     define( 'RTSOCIAL_VERSION', '3.0' );
+    }
+    
+    public function get_option() {
+            $this->options = get_option( 'rtsocial_options' );
     }
 
 }
