@@ -11,6 +11,73 @@ if (!class_exists('rtSocialAdmin')) {
         public $rtSocial_upgrade;
         public $rtSocial_settings;
         public $rtSocial_options;
+        
+        public $default_buttons = array(
+		array(
+			'type' => 'fb-share',
+			'callback' => 'facebook.com/sharer.php',
+			'post_obj' => null,
+			'query' => array(
+				'href' => '%permalink%'
+			),
+			'prefix' => 'share',
+			'suffix' => 'on facebook',
+			'network' => 'facebook'
+		),
+		array(
+			'type' => 'twitter',
+			'callback' => 'twitter.com/share',
+			'post_obj' => null,
+			'query' => array(
+				'url' => '%permalink%',
+				'text' => '%title%',
+				'via' => '',
+				'related' => '',
+				'hashtags' => '%rt_s_tw_hashtag%'
+			),
+			'prefix' => 'Tweet',
+			'suffix' => '',
+			'network' => 'twitter'
+		),
+		array(
+			'type' => 'linked-in',
+			'callback' => 'linkedin.com/shareArticle',
+			'post_obj' => null,
+			'query' => array(
+				'mini' => true,
+				'url' => '%permalink%',
+				'title' => '%title%',
+				'summary' => '%excerpt'
+			),
+			'prefix' => 'Share',
+			'suffix' => 'on Linked In',
+			'network' => 'linked in'
+		),
+		array(
+			'type' => 'google',
+			'callback' => 'plus.google.com/share',
+			'post_obj' => null,
+			'query' => array(
+				'url' => '%permalink%'
+			),
+			'prefix' => 'Plus 1',
+			'suffix' => 'on Google+',
+			'network' => 'google +'
+		),
+		array(
+			'type' => 'pinterest',
+			'callback' => 'pinterest.com/pin/create/button/',
+			'post_obj' => null,
+			'query' => array(
+				'url' => '%permalink%',
+				'media' => '%thumb%',
+				'description' => '%title%'
+			),
+			'prefix' => 'Pin',
+			'suffix' => 'on your Pinterest Board',
+			'network' => 'pinterest'
+		)
+	);
 
         public function __construct() {
 
