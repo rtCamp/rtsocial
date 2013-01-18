@@ -15,10 +15,12 @@ if (!class_exists('rtSocialAdmin')) {
         public $default_buttons = array(
 		array(
 			'type' => 'fb-share',
-			'callback' => 'facebook.com/sharer.php',
+			'callback' => 'https://facebook.com/dialog/feed',
 			'post_obj' => null,
 			'query' => array(
-				'href' => '%permalink%'
+                                'app_id'=>'549391231755239',
+				'link' => '%permalink%',
+                                'redirect_uri'=>'http://abhishek.rtcamp.info'
 			),
 			'prefix' => 'share',
 			'suffix' => 'on facebook',
@@ -26,14 +28,14 @@ if (!class_exists('rtSocialAdmin')) {
 		),
 		array(
 			'type' => 'twitter',
-			'callback' => 'twitter.com/share',
+			'callback' => 'https://twitter.com/share',
 			'post_obj' => null,
 			'query' => array(
-				'url' => '%permalink%',
-				'text' => '%title%',
-				'via' => '',
-				'related' => '',
-				'hashtags' => '%rt_s_tw_hashtag%'
+                            'url' => '%permalink%',
+                            'text' => '%title%',
+                            'via' => '%tweethandle%',
+                            'related' => '%relatedacc%',
+                            'hashtags' => '%rt_s_tw_hashtag%'
 			),
 			'prefix' => 'Tweet',
 			'suffix' => '',
@@ -41,13 +43,14 @@ if (!class_exists('rtSocialAdmin')) {
 		),
 		array(
 			'type' => 'linked-in',
-			'callback' => 'linkedin.com/shareArticle',
+			'callback' => 'http://linkedin.com/shareArticle',
 			'post_obj' => null,
 			'query' => array(
 				'mini' => true,
 				'url' => '%permalink%',
 				'title' => '%title%',
-				'summary' => '%excerpt'
+                                'source'=>'%source%',
+				'summary' => '%excerpt%'
 			),
 			'prefix' => 'Share',
 			'suffix' => 'on Linked In',
@@ -55,7 +58,7 @@ if (!class_exists('rtSocialAdmin')) {
 		),
 		array(
 			'type' => 'google',
-			'callback' => 'plus.google.com/share',
+			'callback' => 'https://plus.google.com/share',
 			'post_obj' => null,
 			'query' => array(
 				'url' => '%permalink%'
@@ -66,11 +69,11 @@ if (!class_exists('rtSocialAdmin')) {
 		),
 		array(
 			'type' => 'pinterest',
-			'callback' => 'pinterest.com/pin/create/button/',
+			'callback' => 'http://pinterest.com/pin/create/button/',
 			'post_obj' => null,
 			'query' => array(
 				'url' => '%permalink%',
-				'media' => '%thumb%',
+				'media' => '%mediathumb%',
 				'description' => '%title%'
 			),
 			'prefix' => 'Pin',
@@ -108,7 +111,17 @@ if (!class_exists('rtSocialAdmin')) {
          */
         public function menu() {
 
-            add_options_page('RTSocial', 'RTSocial Setting', 'manage_options', 'rtsocial-revised-options', array( $this, 'settings_page' ) );
+            $this->pagehook = add_options_page('RTSocial', 'RTSocial Setting', 'manage_options', 'rtsocial-revised-options', array( $this, 'settings_page' ) );
+            add_action( 'load-'.$this->pagehook, array($this,'custom_func') );
+        }
+        
+        public function custom_func(){
+            
+                wp_enqueue_script('common');
+		wp_enqueue_script('wp-lists');
+		wp_enqueue_script('postbox');
+                
+                add_meta_box('howto-metaboxes-sidebox-1', 'Sidebox 1 Title', array(new RTSocialSettings(), 'settings'), $this->pagehook, 'side', 'core');
         }
 
         /**

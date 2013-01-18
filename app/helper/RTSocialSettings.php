@@ -19,7 +19,7 @@ if (!class_exists('RTSocialSettings')) {
          */
         public function settings() {
             
-            global $rtSocialAdmin;
+            global $rtSocialAdmin, $rtSocial;
             
             add_settings_section( 'rts-settings', __('<h3 class="hndle">RTSocial settings</h3>', RTSOCIAL_TXT_DOMAIN), '', 'rtsocial-revised-options' );
             /* Button placement radio buttons */
@@ -38,7 +38,6 @@ if (!class_exists('RTSocialSettings')) {
             add_settings_field('rts-tw-handle', __('Twitter Handle', RTSOCIAL_TXT_DOMAIN), array($this, 'text'), 'rtsocial-revised-options', 'rts-tw-settings', array('option' => 'tw_handle', 'input' => '', 'default' => '' ) );
             /* Related Twitter Handle setting field */
             add_settings_field('rts-related-tw-handle', __('Related twitter handle', RTSOCIAL_TXT_DOMAIN), array($this, 'text'), 'rtsocial-revised-options', 'rts-tw-settings', array('option' => 'related_tw_handle', 'input' => '', 'default' => '' ) );
-
             register_setting( 'rtsocial_settings', 'rtsocial_options', array($this, 'sanitize') );
         }
 
