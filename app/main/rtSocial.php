@@ -19,9 +19,7 @@ if ( ! defined( 'ABSPATH' ) )
 
 		'%permalink%' => '',
 		'%title%' => 'post_title',
-		'%thumb%' => '',
-		'%excerpt%' => 'post_excerpt',
-		'%content%' => 'post_content'
+		'%thumb%' => ''
 	);
 
         /**
@@ -61,8 +59,8 @@ if ( ! defined( 'ABSPATH' ) )
          */
         public function rtsocial_add_scripts(){
 
-            wp_enqueue_script( 'rtsocial-main-css', RTSOCIAL_CSS_URL.'/main.css' , array(), false, true );
-            wp_enqueue_script( 'rtsocial-main-js', RTSOCIAL_JS_URL.'/main.js' , array(), false, true );
+            wp_enqueue_style ( 'rtsocial-main-css', RTSOCIAL_CSS_URL.'/main.css' , array(), false, 'all' );
+            wp_enqueue_script ( 'rtsocial-main-js', RTSOCIAL_JS_URL.'/main.js' , array(), false, true );
         }
 
         /**
@@ -71,23 +69,24 @@ if ( ! defined( 'ABSPATH' ) )
          * @return type
         */
         public function render_button($content) {
+            
+            /* Get how to render buttons */
+            $button_style = $this->options['button_style'];
 
             $rtSocial_options = get_option( 'rtsocial_options' );
-            if( isset($rtSocial_options['button']) ){            
+            if( isset($rtSocial_options['button']) ){
                 $markup = '';
 
-                $markup = '<ul>';
-                foreach($rtSocial_options['button'] as $index=>$button){
+                $markup .= '<ul class="rtsocial-list">';
+                foreach($rtSocial_options['button'] as $button){
 
-                    $markup .= '<li>'.$this->rtsocial_render_button($button).'</li>';
+                    $markup .= '<li class="rtsocial-button-wrap ' . $button[ 'type' ] . ' ' . sanitize_title($button_style . $button[ 'network' ]) . ' ' .'">'.$this->rtsocial_render_button($button).'</li>';
                 }
                 $markup .= '</ul>';
-            }        
-            return $content.$markup;
+            }
 
-            return $content;
+            return $content.$markup;
         }
-    
     
         /**
          * Append valid parameters to the query url.
@@ -129,12 +128,6 @@ if ( ! defined( 'ABSPATH' ) )
                 }
 
                 $qappend  = str_replace( '%25thumb%25', ( $src_thumb ), $qappend );
-                /*if( $test['type']=='linked-in' ){
-                    print_r($qappend);
-                    exit;
-                }*/
-                $qappend  = str_replace( '%25excerpt%25', htmlentities( $post_obj->post_excerpt ), $qappend );
-
                 return $qappend;
         }
 
@@ -146,7 +139,6 @@ if ( ! defined( 'ABSPATH' ) )
         */
         function rtsocial_render_button( $button_args = false ) {
 
-                    $button_args[ 'style' ] = 'light';
                     if ( ! is_array( $button_args ) && count( $button_args ) <= 0 ) {
                             return;
                     }
@@ -175,15 +167,15 @@ if ( ! defined( 'ABSPATH' ) )
 
                     // why use switch? because we will extend this!
                     switch ( $button_args[ 'style' ] ) {
-                            case 'naked' :
+                            case 'rt-naked' :
                                     $buttoncontent = $button_args[ 'network' ];
                                     break;
 
-                            case 'light' :
+                            case 'rt-light' :
 
-                            case 'large' :
+                            case 'rt-large' :
 
-                            case 'icon' :
+                            case 'rt-icon' :
 
                                     break;
                     }
@@ -195,11 +187,7 @@ if ( ! defined( 'ABSPATH' ) )
                     }
 
                     $buttoncontent = $button_args[ 'network' ];
-                    $button = '<div class="rtsocial-button-wrap ' . $button_args[ 'type' ] . ' ' . $button_args[ 'style' ] . $button_args[ 'network' ] . ' ' . '">';
-                    $button .= '<div class="rtsocial-button">';
                     $button .= '<a class="rtsocial-button-link" target="_blank" href="'.$href.'" title="' . $button_args[ 'prefix' ] .' '. $title .' '. $button_args[ 'suffix' ] . '">'.$buttoncontent.'</a>';
-                    $button .= '</div>';
-                    $button .= '</div>';
                     return $button;
         }
 }

@@ -17,13 +17,21 @@ if ( ! defined( 'RTSOCIAL_PATH' ) )
 if ( ! defined( 'RTSOCIAL_URL' ) )
 	define( 'RTSOCIAL_URL', plugin_dir_url( __FILE__ ) );
 
+/* Define assets url */
+if ( ! defined( 'RTSOCIAL_ASSETS' ) )
+    define( 'RTSOCIAL_ASSETS', plugin_dir_url( __FILE__ ).'app/assets' );
+
 /* Define plugins javascript directory path */
 if ( ! defined( 'RTSOCIAL_JS_URL' ) )
-	define( 'RTSOCIAL_JS_URL', plugin_dir_url( __FILE__ ).'app/assets/js' );
+	define( 'RTSOCIAL_JS_URL', RTSOCIAL_ASSETS.'/js' );
 
 /* Define plugins css directory path */
 if ( ! defined( 'RTSOCIAL_CSS_URL' ) )
-	define( 'RTSOCIAL_CSS_URL', plugin_dir_url( __FILE__ ).'app/assets/css' );
+	define( 'RTSOCIAL_CSS_URL', RTSOCIAL_ASSETS.'/css' );
+
+/* Define plugin img directory url */
+if ( ! defined( 'RTSOCIAL_IMG' ) )
+	define( 'RTSOCIAL_IMG', RTSOCIAL_ASSETS.'/img' );
 
 function rtsocial_autoloader( $class_name ) {
 	$rtlibpath = array(

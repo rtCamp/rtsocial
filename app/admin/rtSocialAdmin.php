@@ -14,7 +14,7 @@ if (!class_exists('rtSocialAdmin')) {
         
         public $default_buttons = array(
 		array(
-			'type' => 'fb-share',
+			'type' => 'rt-fb-share',
 			'callback' => 'https://facebook.com/dialog/feed',
 			'post_obj' => null,
 			'query' => array(
@@ -27,7 +27,7 @@ if (!class_exists('rtSocialAdmin')) {
 			'network' => 'facebook'
 		),
 		array(
-			'type' => 'twitter',
+			'type' => 'rt-twitter',
 			'callback' => 'https://twitter.com/share',
 			'post_obj' => null,
 			'query' => array(
@@ -42,22 +42,21 @@ if (!class_exists('rtSocialAdmin')) {
 			'network' => 'twitter'
 		),
 		array(
-			'type' => 'linked-in',
+			'type' => 'rt-linked-in',
 			'callback' => 'http://linkedin.com/shareArticle',
 			'post_obj' => null,
 			'query' => array(
 				'mini' => true,
 				'url' => '%permalink%',
 				'title' => '%title%',
-                                'source'=>'%source%',
-				'summary' => '%excerpt%'
+                                'source'=>'%source%'
 			),
 			'prefix' => 'Share',
 			'suffix' => 'on Linked In',
 			'network' => 'linked in'
 		),
 		array(
-			'type' => 'google',
+			'type' => 'rt-google',
 			'callback' => 'https://plus.google.com/share',
 			'post_obj' => null,
 			'query' => array(
@@ -68,7 +67,7 @@ if (!class_exists('rtSocialAdmin')) {
 			'network' => 'google +'
 		),
 		array(
-			'type' => 'pinterest',
+			'type' => 'rt-pinterest',
 			'callback' => 'http://pinterest.com/pin/create/button/',
 			'post_obj' => null,
 			'query' => array(
@@ -99,6 +98,7 @@ if (!class_exists('rtSocialAdmin')) {
          */
         public function ui($hook) {
             $admin_ajax = admin_url('admin-ajax.php');
+            wp_enqueue_script( 'jquery-ui-sortable' );
             wp_enqueue_script('rtsocial-admin', RTSOCIAL_URL . 'app/assets/js/admin.js');
             wp_localize_script('rtsocial-admin', 'rtsocial_admin_ajax', $admin_ajax);
             wp_enqueue_style('rtsocial-admin', RTSOCIAL_URL . 'app/assets/css/admin.css');
@@ -120,8 +120,6 @@ if (!class_exists('rtSocialAdmin')) {
                 wp_enqueue_script('common');
 		wp_enqueue_script('wp-lists');
 		wp_enqueue_script('postbox');
-                
-                add_meta_box('howto-metaboxes-sidebox-1', 'Sidebox 1 Title', array(new RTSocialSettings(), 'settings'), $this->pagehook, 'side', 'core');
         }
 
         /**

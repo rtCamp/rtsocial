@@ -25,7 +25,7 @@ if (!class_exists('RTSocialSettings')) {
             /* Button placement radio buttons */
             add_settings_field('rts-placement', __('Placement', RTSOCIAL_TXT_DOMAIN), array($this, 'radio'), 'rtsocial-revised-options', 'rts-settings', array('option' => 'button_placement', 'radios' => array( 'top' => __('TOP<br/>Social-media sharing buttons will appear below post-title and above post-content', RTSOCIAL_TXT_DOMAIN) ,'bottom' => __('BOTTOM<br/>Social-media sharing buttons will appear after (below) post-content', RTSOCIAL_TXT_DOMAIN), 'custom' => __('MANUAL<br/>For manual placement, please use this function call in your template', RTSOCIAL_TXT_DOMAIN)), 'default' => 1 ) );
             /* Button style radio buttons */
-            add_settings_field('rts-button-style', __('Button Style', RTSOCIAL_TXT_DOMAIN), array($this, 'radio'), 'rtsocial-revised-options', 'rts-settings', array('option' => 'button_style', 'radios' => array( 'naked' => __('Naked', RTSOCIAL_TXT_DOMAIN),'light' => __('Light', RTSOCIAL_TXT_DOMAIN) ,'large' => __('Large', RTSOCIAL_TXT_DOMAIN), 'icon' => __('Icon', RTSOCIAL_TXT_DOMAIN)), 'default' => 3 ) );
+            add_settings_field('rts-button-style', __('Button Style', RTSOCIAL_TXT_DOMAIN), array($this, 'radio'), 'rtsocial-revised-options', 'rts-settings', array('option' => 'button_style', 'radios' => array( 'rt-naked' => __('Naked', RTSOCIAL_TXT_DOMAIN),'rt-light' => __('Light', RTSOCIAL_TXT_DOMAIN) ,'rt-large' => __('Large', RTSOCIAL_TXT_DOMAIN), 'rt-icon' => __('Icon', RTSOCIAL_TXT_DOMAIN)), 'default' => 3 ) );
             /* Button alignment radio buttons */
             add_settings_field('rts-alignment', __('Alignment Settings', RTSOCIAL_TXT_DOMAIN), array($this, 'radio'), 'rtsocial-revised-options', 'rts-settings', array('option' => 'button_alignment', 'radios' => array( 'left' => __('Left', RTSOCIAL_TXT_DOMAIN),'right' => __('Right', RTSOCIAL_TXT_DOMAIN) ,'center' => __('Center', RTSOCIAL_TXT_DOMAIN), 'none' => __('None', RTSOCIAL_TXT_DOMAIN)), 'default' => 3 ) );
             /* Hide count checkbox */
@@ -38,6 +38,7 @@ if (!class_exists('RTSocialSettings')) {
             add_settings_field('rts-tw-handle', __('Twitter Handle', RTSOCIAL_TXT_DOMAIN), array($this, 'text'), 'rtsocial-revised-options', 'rts-tw-settings', array('option' => 'tw_handle', 'input' => '', 'default' => '' ) );
             /* Related Twitter Handle setting field */
             add_settings_field('rts-related-tw-handle', __('Related twitter handle', RTSOCIAL_TXT_DOMAIN), array($this, 'text'), 'rtsocial-revised-options', 'rts-tw-settings', array('option' => 'related_tw_handle', 'input' => '', 'default' => '' ) );
+
             register_setting( 'rtsocial_settings', 'rtsocial_options', array($this, 'sanitize') );
         }
 

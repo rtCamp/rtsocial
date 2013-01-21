@@ -1,0 +1,21 @@
+/*
+* RTSocial Style Sheet
+*/
+
+.rtsocial-list li { list-style: none; display: inline-block }
+    .rtsocial-list li a { display: block; height: 21px; line-height: 30px; padding: 0 5px; text-indent: -9999px; text-transform: uppercase; /* IE7 fix */; width: 65px; }
+    
+/* Facebook button style */
+.rtsocial-list .rt-lightfacebook a { background: url('../img/rtsocial-sprite1.png') no-repeat; background-position: 0px -120px; }
+
+/* Twitter button styling */
+.rtsocial-list .rt-lighttwitter a { background: url('../img/rtsocial-sprite1.png') no-repeat; background-position: 0px 0px; text-indent: -9999px; text-transform: uppercase; }
+
+/* LinkedIn button styling */
+.rtsocial-list .rt-lightlinked-in a{ background: url('../img/rtsocial-sprite1.png') no-repeat; background-position: 0px -80px; text-indent: -9999px; text-transform: uppercase; }
+
+/* Google button styling */
+.rtsocial-list .rt-lightgoogle a{ background: url('../img/rtsocial-sprite1.png') no-repeat; background-position: 0px -40px; text-indent: -9999px; text-transform: uppercase; }
+
+/* Pinterest button styling */
+.rtsocial-list .rt-lightpinterest a{ background: url('../img/rtsocial-sprite1.png') no-repeat; background-position: 0px -160px; text-indent: -9999px; text-transform: uppercase; }
