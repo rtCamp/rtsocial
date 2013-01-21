@@ -29,7 +29,10 @@ if ( ! defined( 'ABSPATH' ) )
             /* Define all the required constants */
             $this->constants();
             $this->get_option();
+
             add_action('the_excerpt', array($this,'render_button') );
+            add_action('the_content', array($this,'render_button') );
+
             add_action( 'wp_enqueue_scripts', array( $this , 'rtsocial_add_scripts' ) );
 	}
 
@@ -69,7 +72,7 @@ if ( ! defined( 'ABSPATH' ) )
          * @return type
         */
         public function render_button($content) {
-            
+
             /* Get how to render buttons */
             $button_style = $this->options['button_style'];
 
@@ -77,24 +80,25 @@ if ( ! defined( 'ABSPATH' ) )
             if( isset($rtSocial_options['button']) ){
                 $markup = '';
 
-                $markup .= '<ul class="rtsocial-list">';
+                $markup .= '<ul class="rtsocial-list '.$button_style.'">';
                 foreach($rtSocial_options['button'] as $button){
 
                     $markup .= '<li class="rtsocial-button-wrap ' . $button[ 'type' ] . ' ' . sanitize_title($button_style . $button[ 'network' ]) . ' ' .'">'.$this->rtsocial_render_button($button).'</li>';
                 }
+                $markup .='<li class="perma-link"><a href="'.  get_permalink(get_the_ID()).'">'.  get_the_title(get_the_ID()).'</a></li>';
                 $markup .= '</ul>';
             }
 
             return $content.$markup;
         }
-    
+
         /**
          * Append valid parameters to the query url.
          * @param type $qappend
          * @param type $post_obj
          * @return type
         */
-        function map_query( $qappend, $post_obj, $button ) {
+        function map_query( $qappend, $post_obj ) {
 
                 /* Get setting data into a variable */
                 $rtSocial_data = $this->options;
@@ -142,11 +146,17 @@ if ( ! defined( 'ABSPATH' ) )
                     if ( ! is_array( $button_args ) && count( $button_args ) <= 0 ) {
                             return;
                     }
+
                     $sharable = $button_args[ 'post_obj' ];
+                    $button_style = $this->options['button_style'];
+                    
                     if ( ! $sharable ) {
                             global $post;
                             $sharable = $post;
                     }
+                    
+                    /* Check whether to show count */
+                    $count_show = empty($this->options['hide_count'])? 'rts-count-show' : '';
 
                     if ( $button_args[ 'query' ] && is_array( $button_args[ 'query' ] ) ) {
 
@@ -166,7 +176,7 @@ if ( ! defined( 'ABSPATH' ) )
                     $excerpt = esc_attr( $sharable->post_excerpt );
 
                     // why use switch? because we will extend this!
-                    switch ( $button_args[ 'style' ] ) {
+                    switch (trim($button_style) ) {
                             case 'rt-naked' :
                                     $buttoncontent = $button_args[ 'network' ];
                                     break;
@@ -187,7 +197,13 @@ if ( ! defined( 'ABSPATH' ) )
                     }
 
                     $buttoncontent = $button_args[ 'network' ];
-                    $button .= '<a class="rtsocial-button-link" target="_blank" href="'.$href.'" title="' . $button_args[ 'prefix' ] .' '. $title .' '. $button_args[ 'suffix' ] . '">'.$buttoncontent.'</a>';
+                    $button = '<a class="rtsocial-button-link '.$count_show.'" target="_blank" href="'.$href.'" title="' . $button_args[ 'prefix' ] .' '. $title .' '. $button_args[ 'suffix' ] . '">'.$buttoncontent.'</a>';
+                    //$button .= '<a class="perma-link" rel="nofollow" href="'.  get_permalink($sharable->ID).'">'.  get_the_title($sharable->ID).'</a>';
+                    
+                    /* If count has to be shown , then append div for count */
+                    if( empty($this->options['hide_count']) ){
+                        $button .= '<div class="rts-count rtsocial-'.$button_style.'-count"><div class="rts-notch rts-'.$button_style.'-notch"></div><div class="rts-span-count rts-'.  sanitize_title($button_args['type']).'-count">0</div></div>';
+                    }
                     return $button;
         }
 }

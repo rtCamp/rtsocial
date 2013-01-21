@@ -112,14 +112,6 @@ if (!class_exists('rtSocialAdmin')) {
         public function menu() {
 
             $this->pagehook = add_options_page('RTSocial', 'RTSocial Setting', 'manage_options', 'rtsocial-revised-options', array( $this, 'settings_page' ) );
-            add_action( 'load-'.$this->pagehook, array($this,'custom_func') );
-        }
-        
-        public function custom_func(){
-            
-                wp_enqueue_script('common');
-		wp_enqueue_script('wp-lists');
-		wp_enqueue_script('postbox');
         }
 
         /**

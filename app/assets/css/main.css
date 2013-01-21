@@ -1,21 +1,37 @@
 /*
 * RTSocial Style Sheet
 */
+.rtsocial-list { margin: 10px 0; }
+.rtsocial-list li { list-style: none; display: inline-block; margin-right: 10px; overflow: hidden; *display: inline;/* IE7 hack */; zoom : 1  }
 
-.rtsocial-list li { list-style: none; display: inline-block }
-    .rtsocial-list li a { display: block; height: 21px; line-height: 30px; padding: 0 5px; text-indent: -9999px; text-transform: uppercase; /* IE7 fix */; width: 65px; }
-    
+    .rtsocial-list li a { background: url('../img/rtsocial-sprite1.png') no-repeat; display: block; height: 21px; line-height: 30px; text-indent: -9999px; text-transform: uppercase; /* IE7 fix */; width: 65px; }
+    .rtsocial-list.rt-icon li a{ width: 25px; height: 26px; }
+    .rtsocial-list li .rts-count-show { float: left }
+
 /* Facebook button style */
-.rtsocial-list .rt-lightfacebook a { background: url('../img/rtsocial-sprite1.png') no-repeat; background-position: 0px -120px; }
+.rtsocial-list .rt-lightfacebook a { background-position: 0px -120px; }
+.rtsocial-list .rt-iconfacebook a { background-position: 0px -244px; }
 
 /* Twitter button styling */
-.rtsocial-list .rt-lighttwitter a { background: url('../img/rtsocial-sprite1.png') no-repeat; background-position: 0px 0px; text-indent: -9999px; text-transform: uppercase; }
+.rtsocial-list .rt-lighttwitter a { background-position: 0px 0px; }
+.rtsocial-list .rt-icontwitter a { background-position: 0px -289px; }
 
 /* LinkedIn button styling */
-.rtsocial-list .rt-lightlinked-in a{ background: url('../img/rtsocial-sprite1.png') no-repeat; background-position: 0px -80px; text-indent: -9999px; text-transform: uppercase; }
+.rtsocial-list .rt-lightlinked-in a{ background-position: 0px -80px; }
+.rtsocial-list .rt-iconlinked-in a{ background-position: 0px -379px; }
 
 /* Google button styling */
-.rtsocial-list .rt-lightgoogle a{ background: url('../img/rtsocial-sprite1.png') no-repeat; background-position: 0px -40px; text-indent: -9999px; text-transform: uppercase; }
+.rtsocial-list .rt-lightgoogle a{ background-position: 0px -40px; }
+.rtsocial-list .rt-icongoogle a{ background-position: 0px -424px; }
 
 /* Pinterest button styling */
-.rtsocial-list .rt-lightpinterest a{ background: url('../img/rtsocial-sprite1.png') no-repeat; background-position: 0px -160px; text-indent: -9999px; text-transform: uppercase; }
+.rtsocial-list .rt-lightpinterest a{ background-position: 0px -160px; }
+.rtsocial-list .rt-iconpinterest a{ background-position: 0px -334px; }
+
+/* Count div styling */
+.rts-count{ float: left; padding-left: 10px; position: relative; visibility: hidden }
+.rts-span-count { padding: 1px 10px; border: 1px solid #DDD; }
+    .rts-notch { background: url('../img/rtsocial-sprite1.png') no-repeat; position: absolute; width: 7px; height: 15px; background-position: 0px -687px; top: -8%; left: 4px; }
+    
+/* Other stylings */
+.rtsocial-list li.perma-link, .rtsocial-list li.perma-link a { display: none }
