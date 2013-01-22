@@ -34,6 +34,10 @@ if ( ! defined( 'ABSPATH' ) )
             add_action('the_content', array($this,'render_button') );
 
             add_action( 'wp_enqueue_scripts', array( $this , 'rtsocial_add_scripts' ) );
+
+            /* for handling g+ count via curl */
+            add_action( 'wp_ajax_rtsocial_gplus', array($this,'rtsocial_gplus_handler') );
+            add_action( 'wp_ajax_nopriv_rtsocial_gplus', array($this,'rtsocial_gplus_handler') );
 	}
 
 	/**
@@ -56,7 +60,7 @@ if ( ! defined( 'ABSPATH' ) )
         public function get_option() {
             $this->options = get_option( 'rtsocial_options' );
         }
-        
+
         /**
          * Add scripts and styles.
          */
@@ -64,6 +68,7 @@ if ( ! defined( 'ABSPATH' ) )
 
             wp_enqueue_style ( 'rtsocial-main-css', RTSOCIAL_CSS_URL.'/main.css' , array(), false, 'all' );
             wp_enqueue_script ( 'rtsocial-main-js', RTSOCIAL_JS_URL.'/main.js' , array(), false, true );
+            wp_localize_script('rtsocial-main-js','rts_ajax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
         }
 
         /**
@@ -205,5 +210,29 @@ if ( ! defined( 'ABSPATH' ) )
                         $button .= '<div class="rts-count rtsocial-'.$button_style.'-count"><div class="rts-notch rts-'.$button_style.'-notch"></div><div class="rts-span-count rts-'.  sanitize_title($button_args['type']).'-count">0</div></div>';
                     }
                     return $button;
+        }
+        
+        /**
+         * Function to get G+ count value via curl         * 
+         */
+        function rtsocial_gplus_handler(){
+            echo '23';
+            die(1);
+            if (isset($_POST['action']) && $_POST['action'] == 'rtsocial_gplus') {
+                $url = $_POST['url'];
+                $curl = curl_init();
+                curl_setopt($curl, CURLOPT_URL, "https://clients6.google.com/rpc");
+                curl_setopt($curl, CURLOPT_POST, 1);
+                curl_setopt($curl, CURLOPT_POSTFIELDS, '[{"method":"pos.plusones.get","id":"p","params":{"nolog":true,"id":"' . $url . '","source":"widget","userId":"@viewer","groupId":"@self"},"jsonrpc":"2.0","key":"p","apiVersion":"v1"}]');
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
+                $curl_results = curl_exec ($curl);
+                curl_close ($curl);
+
+                $json = json_decode($curl_results, true);
+
+                echo intval( $json[0]['result']['metadata']['globalCounts']['count'] );
+                die(1);
+            }
         }
 }
