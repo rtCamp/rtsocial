@@ -216,8 +216,7 @@ if ( ! defined( 'ABSPATH' ) )
          * Function to get G+ count value via curl         * 
          */
         function rtsocial_gplus_handler(){
-            echo '23';
-            die(1);
+
             if (isset($_POST['action']) && $_POST['action'] == 'rtsocial_gplus') {
                 $url = $_POST['url'];
                 $curl = curl_init();
