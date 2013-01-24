@@ -5,7 +5,7 @@
 jQuery(document).ready(function(){
 
     /* Get G+ count via ajax */
-    if( jQuery('.rt-google').length > 0 ){
+    if( jQuery('.rt-google').length > 0 && rts_ajax.hide_ct == 0 ){
         
         jQuery('.rtsocial-list').each(function(){
 
@@ -29,97 +29,52 @@ jQuery(document).ready(function(){
     }
 
     /* If facebook is present then get the count for it. */
-    if( jQuery('.rt-fb-share').length > 0 ){
+    if( jQuery('.rt-fb-share').length > 0 && rts_ajax.hide_ct == 0 ){
 
-        jQuery('.rtsocial-list').each(function(){
-            
-            /* Initialise share count variable to 0 */
-            var share_ct = 0;
-            var permlink_elem = jQuery(this).find('.perma-link a').attr('href');
-            var current_list = jQuery(this);
-            var rtsocial_fburl =  'https://api.facebook.com/method/fql.query?callback=?&query=select share_count from link_stat where url in("'+permlink_elem+'")&format=json';
-
-            jQuery.getJSON( rtsocial_fburl, function(data){
-
-                share_ct = data[0].share_count;
-                jQuery(current_list).find('.rts-rt-fb-share-count').html(share_ct);
-            } );
-
-        })
+        var param_arr = new Array();
+        param_arr['id'] = '';        
+        share_count_handler( '.rts-rt-fb-share-count', 'http://graph.facebook.com', param_arr, 1 );        
     }
 
     /* Get twitter counts */
-    if( jQuery('.rt-twitter').length > 0 ){
-        
-        jQuery('.rtsocial-list').each(function(){
+    if( jQuery('.rt-twitter').length > 0 && rts_ajax.hide_ct == 0 ){
 
-            /* Initialise share count variable to 0 */
-            var share_ct = 0;
-            var permlink_elem = jQuery(this).find('.perma-link a').attr('href');
-            var current_list = jQuery(this);
-            var rtsocial_twurl =  'https://urls.api.twitter.com/1/urls/count.json?callback=?&url='+permlink_elem;
-
-            jQuery.getJSON( 'http://cdn.api.twitter.com/1/urls/count.json?callback=?&url='+permlink_elem, function(data){
-
-                share_ct = data.count
-                jQuery(current_list).find('.rts-rt-twitter-count').html(share_ct);
-            } );
-            
-        })
-    }
-
-    /* Get linkedIn counts */
-    if( jQuery('.rt-linked-in').length > 0 ){
-        
-        jQuery('.rtsocial-list').each(function(){
-
-            /* Initialise share count variable to 0 */
-            var share_ct = 0;
-            var permlink_elem = jQuery(this).find('.perma-link a').attr('href');
-            var current_list = jQuery(this);
-            var rtsocial_linkdinurl =  'http://www.linkedin.com/countserv/count/share?callback=?&format=jsonp&url='+permlink_elem;
-
-            jQuery.getJSON( rtsocial_linkdinurl, function(data){
-
-                share_ct = data.count
-                jQuery(current_list).find('.rts-rt-linked-in-count').html(share_ct);
-            } );
-            
-        })
-    }
-
-    /* Get Pinterest counts */
-    if( jQuery('.rt-pinterest').length > 0 ){
-        
-        jQuery('.rtsocial-list').each(function(){
-
-            /* Initialise share count variable to 0 */
-            var share_ct = 0;
-            var permlink_elem = jQuery(this).find('.perma-link a').attr('href');
-            var current_list = jQuery(this);
-            var rtsocial_pintrsturl =  'http://api.pinterest.com/v1/urls/count.json?callback=?&url='+permlink_elem;
-
-            jQuery.getJSON( rtsocial_pintrsturl, function(data){
-
-                share_ct = data.count
-                jQuery(current_list).find('.rts-rt-pinterest-count').html(share_ct);
-            } );
-            
-        })
-
-        /*var param_arr = new Array();
+        var param_arr = new Array();
         param_arr['callback'] = '?';
         param_arr['url'] = '';
         
-        share_count_handler( '.rts-rt-pinterest-count', 'http://api.pinterest.com/v1/urls/count.json', param_arr ); */
+        share_count_handler( '.rts-rt-twitter-count', 'http://cdn.api.twitter.com/1/urls/count.json', param_arr, 0 );
+
+    }
+
+    /* Get linkedIn counts */
+    if( jQuery('.rt-linked-in').length > 0 && rts_ajax.hide_ct == 0 ){
         
+        var param_arr = new Array();
+        param_arr['callback'] = '?';
+        param_arr['format'] = 'jsonp';
+        param_arr['url'] = '';
+        
+        share_count_handler( '.rts-rt-linked-in-count', 'http://www.linkedin.com/countserv/count/share', param_arr, 0 );
+
+    }
+
+    /* Get Pinterest counts */
+    if( jQuery('.rt-pinterest').length > 0 && rts_ajax.hide_ct == 0 ){
+
+        var param_arr = new Array();
+        param_arr['callback'] = '?';
+        param_arr['url'] = '';
+        
+        share_count_handler( '.rts-rt-pinterest-count', 'http://api.pinterest.com/v1/urls/count.json', param_arr, 0 );
+ 
     }
 
 
 });/* Document.ready ends here */
 
 /* Function to handle counts of various buttons */
-function share_count_handler( counter_div, reqst_url, param_arr ){
+function share_count_handler( counter_div, reqst_url, param_arr, is_fb ){
 
     jQuery('.rtsocial-list').each(function(){
 
@@ -131,28 +86,38 @@ function share_count_handler( counter_div, reqst_url, param_arr ){
             if( typeof(param_arr['url']) != 'undefined' ){
                 
                 param_arr['url'] = permlink_elem;
+            }else
+                if( typeof(param_arr['id']) != 'undefined' && is_fb==1 ){
+                param_arr['id'] = permlink_elem;
             }
             
             /* Build query string from array */
-
             var query_str = ''; // query string
             var flag = true; // for adding parameters
             var len = jQuery(param_arr).length; // total length of array
+            var counter = 1;
 
-            jQuery(param_arr).each(function(){
-                
-                if( !query_str )
-                query_str
-            })
+            for( key in param_arr ){
+
+                if( query_str=='' ){
+
+                    query_str = query_str + '?' + key + '=' + param_arr[key];
+                }else{
+                    query_str = query_str + '&' + key + '=' + param_arr[key];
+                }
+                counter++;
+            }
+
+            var rts_share_cnt_url =  reqst_url+query_str;
             
-            var rts_share_cnt_url =  reqst_url+'?callback=?&url='+permlink_elem;
-
             jQuery.getJSON( rts_share_cnt_url, function(data){
-
-                share_ct = data.count
-                jQuery(current_list).find('.rts-rt-pinterest-count').html(share_ct);
+                
+                if( is_fb==1 )
+                    share_ct = data.shares;
+                else
+                    share_ct = data.count;
+                jQuery(current_list).find(counter_div).html(share_ct);
             } );
-            
     });
 }
 
