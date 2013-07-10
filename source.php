@@ -845,7 +845,7 @@ function rtsocial_localize_script($handle){
 	$args['linkedin'] = false;
 	$args['gplus'] = false;
 	
-	if(is_array($options['active']){
+	if(is_array($options['active'])){
 	    if(in_array('tw', $options['active'])){
 		$args['twitter'] = true;
 	    }
