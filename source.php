@@ -30,7 +30,7 @@ function rtsocial_admin() {
 function rtsocial_admin_fn() { ?>
     <div class="wrap">
         <h2><?php _e( 'rtSocial Options' ); ?></h2>
-        <p class="clear"></p>
+        <p class="rt_clear"></p>
         <div id="content_block" class="align_left">
             <form action="options.php" method="post"><?php
                 settings_fields( 'rtsocial_plugin_options' );
@@ -316,7 +316,7 @@ function rtsocial_admin_fn() { ?>
                                     <a href="https://twitter.com/share" title="rtSocial: Simple, Smarter & Swifter Social Sharing WordPress Plugin" class="twitter-share-button" data-text="rtSocial: Simple, Smarter & Swifter Social Sharing #WordPress #Plugin" data-url="https://rtcamp.com/rtsocial/" data-count="vertical" data-via="rtCamp">Tweet</a>
                                     <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
                                 </div>
-                                <div class="clear"></div>
+                                <div class="rt_clear"></div>
                             </div>
                         </div><!-- end of .inside -->
                     </div>
