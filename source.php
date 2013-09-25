@@ -388,7 +388,7 @@ function rtsocial_counter( $content = '' ) {
 
     $options = get_option( 'rtsocial_plugin_options' );
     global $post;
-	$rtslink = urlencode(get_permalink($post->ID));
+    $rtslink = urlencode( apply_filters("rtsocial_permalink",get_permalink($post->ID),$post->ID,$post));
     $rtstitle = rt_url_encode( get_the_title( $post->ID ) );
     $rtatitle   = get_the_title( $post->ID );
 
@@ -845,7 +845,7 @@ function rtsocial_localize_script($handle){
 	$args['linkedin'] = false;
 	$args['gplus'] = false;
 	
-	if(is_array($options['active']){
+	if(is_array($options['active'])){
 	    if(in_array('tw', $options['active'])){
 		$args['twitter'] = true;
 	    }
