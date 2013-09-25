@@ -60,6 +60,9 @@ No. Right now you cannot.
 
 ## Changelog ##
 
+#### 2.1.14 ####
+* Add filter for permalink.
+
 #### 2.1.13 ####
 * Fixed bug when no buttons are active.
 
@@ -129,5 +132,5 @@ No. Right now you cannot.
 #### 1.0 ####
 * Initial Release
 
-#### 2.1.13 ####
-Fixed bug when no buttons are active.
+#### 2.1.14 ####
+Add filter for permalink.
