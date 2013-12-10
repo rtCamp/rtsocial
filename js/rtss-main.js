@@ -10,7 +10,7 @@ jQuery( document ).ready( function() {
         jQuery( '.rtsocial-container' ).each( function() {
             var paNode = this;
             var key = jQuery( this ).find( '.perma-link' ).attr( 'href' );
-            var rtsocial_twiturl =  'http://urls.api.twitter.com/1/urls/count.json?url=' + key + '&callback=?';
+            var rtsocial_twiturl =  ('https:' == document.location.protocol ? 'https://' : 'http://') + 'urls.api.twitter.com/1/urls/count.json?url=' + key + '&callback=?';
             var url = jQuery( this ).find( '.rtsocial-twitter-button' ).attr( 'href' );
             jQuery.getJSON( rtsocial_twiturl,function( twitres ) {
                 url += '&url=' + twitres['url'];
@@ -69,7 +69,7 @@ jQuery( document ).ready( function() {
         jQuery( '.rtsocial-container' ).each( function() {
             var paNode = this;
             var rtsocial_linurl = jQuery( this ).find( '.perma-link' ).attr( 'href' );
-            var rtsocial_lincount_url = 'http://www.linkedin.com/countserv/count/share?callback=?&url='+rtsocial_linurl;
+            var rtsocial_lincount_url = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.linkedin.com/countserv/count/share?callback=?&url='+rtsocial_linurl;
             jQuery.getJSON( rtsocial_lincount_url, function( pinres ) {
                 jQuery('.rtsocial-linkedin-count', paNode).text( ( pinres['count'] ) ? ( pinres['count'] ) : '0' );
             });
@@ -100,7 +100,7 @@ jQuery( document ).ready( function() {
         var twit_url_split = twit_url_full.split( '&' );
         var twit_url_arr = twit_url_split[3].split( '=' );
         var twit_url = twit_url_arr[1];
-        var twit_data_url = 'http://urls.api.twitter.com/1/urls/count.json?url=' + twit_url + '&callback=?';
+        var twit_data_url = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'urls.api.twitter.com/1/urls/count.json?url=' + twit_url + '&callback=?';
         jQuery.getJSON( twit_data_url, function( twitres ) {
             jQuery( '#rtsocial-display-vertical-sample span.rtsocial-twitter-count' ).text( ( twitres['count'] ) ? ( twitres['count'] ) : '0' );
             jQuery( '#rtsocial-display-horizontal-sample span.rtsocial-twitter-count' ).text( ( twitres['count'] ) ? ( twitres['count'] ) : '0' );
