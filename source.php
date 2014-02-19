@@ -598,7 +598,7 @@ function rtsocial($args=array()) {
         return;
 
     global $post;
-	$rtslink = urlencode(get_permalink($post->ID));
+    $rtslink = urlencode( apply_filters("rtsocial_permalink",get_permalink($post->ID),$post->ID,$post));
     $rtstitle = rt_url_encode( get_the_title( $post->ID ) );
     $rtatitle   = get_the_title( $post->ID );
 
