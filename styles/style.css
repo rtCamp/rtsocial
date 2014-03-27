@@ -282,7 +282,7 @@ div#content_block { width: 70% }
 #rtsocial-twitter { background-position: 0 -973px; display: block; float: left; height: 34px; overflow: hidden; width: 122px; }
 #rtsocial-facebook { background-position: 0 -1029px; display: block; float: left; height: 34px; overflow: hidden; width: 122px; }
 #rtsocial-pinterest { background-position: 0 -1007px; display: block; float: left; height: 34px; overflow: hidden; width: 122px; }
-#rtsocial-linkedin { background-position: 0 -837px; display: block; height: 36px; width: 122px; float: left; height: 36px; overflow: hidden;}
+#rtsocial-linkedin { background-position: 0 -837px; display: block; height: 36px; width: 122px; float: left; overflow: hidden;}
 #rtsocial-gplus { background-position: -4px -1062px; display: block; float: left; height: 37px; overflow: hidden; width: 119px; }
 
 .fb_row input#rtsocial-like-light-input { float: left; margin: 6px 6px 0 0; }
