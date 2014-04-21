@@ -763,7 +763,8 @@ function rtsocial( $args = array() ) {
 
 	global $post;
 	$post_obj = apply_filters( "rtsocial_post_object", $post );
-	$rtslink  = urlencode( apply_filters( "rtsocial_permalink", get_permalink( $post_obj->ID ), $post_obj->ID, $post_obj ) );
+	$rts_permalink  = apply_filters( "rtsocial_permalink", get_permalink( $post_obj->ID ), $post_obj->ID, $post_obj );
+	$rtslink  = urlencode($rts_permalink);
 	$rtatitle = apply_filters( "rtsocial_title", get_the_title( $post_obj->ID ) );
 	$rtstitle = rt_url_encode( $rtatitle );
 
@@ -977,7 +978,7 @@ function rtsocial( $args = array() ) {
 	$layout .= $active_services;
 
 	//Hidden permalink
-	$layout .= '<a title="' . esc_attr( $rtatitle ) . '" rel="nofollow" class="perma-link" href="' . $rtslink . '"></a></div>';
+	$layout .= '<a title="' . esc_attr( $rtatitle ) . '" rel="nofollow" class="perma-link" href="' . $rts_permalink . '"></a></div>';
 
 	return $layout;
 }
