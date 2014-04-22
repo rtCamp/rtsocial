@@ -883,7 +883,7 @@ function rtsocial( $args = array() ) {
 			//Else use a default image
 			$thumb_src = plugins_url( 'images/default-pinterest.png', __FILE__ );
 		}
-
+		$thumb_src = apply_filters( 'rtsocial_pinterest_thumb', $thumb_src, $post_obj->ID );
 		//Set Pinterest description
 		$title = $post_obj->post_title;
 
