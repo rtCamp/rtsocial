@@ -875,9 +875,9 @@ function rtsocial( $args = array() ) {
 		$pin_count = ( ! isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '<div class="rtsocial-' . $options[ 'display_options_set' ] . '-count"><div class="rtsocial-' . $options[ 'display_options_set' ] . '-notch"></div><span class="rtsocial-pinterest-count"></span></div>' : '';
 
 		//Set Pinterest media image
-		if ( has_post_thumbnail( $post->ID ) ){
+		if ( has_post_thumbnail( $post_obj->ID ) ){
 			//Use post thumbnail if set
-			$thumb_details = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );
+			$thumb_details = wp_get_attachment_image_src( get_post_thumbnail_id( $post_obj->ID ), 'thumbnail' );
 			$thumb_src     = $thumb_details[ 0 ];
 		} else {
 			//Else use a default image
@@ -885,7 +885,7 @@ function rtsocial( $args = array() ) {
 		}
 
 		//Set Pinterest description
-		$title = $post->post_title;
+		$title = $post_obj->post_title;
 
 		$pin_layout = '<div class="rtsocial-pinterest-' . $options[ 'display_options_set' ] . '">';
 		if ( $options[ 'display_options_set' ] == 'horizontal' ){
