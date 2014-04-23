@@ -2,7 +2,7 @@
 
 # rtSocial #
 
-* **Contributors:** [rtcamp] (http://profiles.wordpress.org/rtcamp), [rahul286] (http://profiles.wordpress.org/rahul286), [rutwick] (http://profiles.wordpress.org/rutwick), [saurabhshukla] (http://profiles.wordpress.org/saurabhshukla), [HarishChaudhari] (http://profiles.wordpress.org/HarishChaudhari), [faishal] (http://profiles.wordpress.org/faishal), [5um17] (http://profiles.wordpress.org/5um17), [JoshuaAbenazer] (http://profiles.wordpress.org/JoshuaAbenazer),
+* **Contributors:** [rtcamp] (http://profiles.wordpress.org/rtcamp), [rahul286] (http://profiles.wordpress.org/rahul286), [faishal] (http://profiles.wordpress.org/faishal), [rittesh.patel] (http://profiles.wordpress.org/rittesh.patel), [UmeshSingla] (http://profiles.wordpress.org/UmeshSingla), [rutwick] (http://profiles.wordpress.org/rutwick), [saurabhshukla] (http://profiles.wordpress.org/saurabhshukla), [HarishChaudhari] (http://profiles.wordpress.org/HarishChaudhari), [5um17] (http://profiles.wordpress.org/5um17), [JoshuaAbenazer] (http://profiles.wordpress.org/JoshuaAbenazer), [paddyohanlon] (http://profiles.wordpress.org/paddyohanlon),
 
 * **License:** [GPL v2 or later] ( http://www.gnu.org/licenses/gpl-2.0.html)
 
@@ -59,6 +59,12 @@ No. Right now you cannot.
 
 
 ## Changelog ##
+
+#### 2.1.15 ####
+* Add additional filters
+* Fix https issue
+* Fix CSS prefix conflict
+* Fix other minor issue
 
 #### 2.1.14 ####
 * Add filter for permalink.
@@ -132,5 +138,5 @@ No. Right now you cannot.
 #### 1.0 ####
 * Initial Release
 
-#### 2.1.14 ####
-Add filter for permalink.
+#### 2.1.15 ####
+Add additional filters, Fix https issue, CSS prefix conflict and other minor issues
