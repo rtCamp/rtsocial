@@ -144,4 +144,4 @@ No. Right now you cannot.
 == Upgrade Notice ==
 
 = 2.1.16 =
-Update compatible update
+Update compatible upto
