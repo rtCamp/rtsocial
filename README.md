@@ -60,6 +60,9 @@ No. Right now you cannot.
 
 ## Changelog ##
 
+#### 2.1.16 ####
+* Updated compatible upto
+
 #### 2.1.15 ####
 * Add additional filters
 * Fix https issue
@@ -138,5 +141,5 @@ No. Right now you cannot.
 #### 1.0 ####
 * Initial Release
 
-#### 2.1.15 ####
-Add additional filters, Fix https issue, CSS prefix conflict and other minor issues
+#### 2.1.16 ####
+Update compatible upto
