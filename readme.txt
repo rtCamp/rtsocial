@@ -2,8 +2,8 @@
 Contributors: rtcamp, rahul286, faishal, rittesh.patel, UmeshSingla, rutwick, saurabhshukla, HarishChaudhari, 5um17, JoshuaAbenazer, paddyohanlon
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
 Requires at least: 3.0
-Tested up to: 3.9
-Stable tag: 2.1.15
+Tested up to: 4.0
+Stable tag: 2.1.16
 License: GPLv2 or later (of-course)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate Link: http://rtcamp.com/donate/
@@ -59,6 +59,9 @@ No. Right now you cannot.
 
 
 == Changelog ==
+
+= 2.1.16 =
+* Updated compatible upto
 
 = 2.1.15 =
 * Add additional filters
@@ -140,5 +143,5 @@ No. Right now you cannot.
 
 == Upgrade Notice ==
 
-= 2.1.15 =
-Add additional filters, Fix https issue, CSS prefix conflict and other minor issues
+= 2.1.16 =
+Update compatible update
