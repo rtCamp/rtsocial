@@ -1156,9 +1156,7 @@ add_action( 'wp_ajax_rtsocial_gplus', 'rtsocial_gplus_handler' );
 add_action( 'wp_ajax_nopriv_rtsocial_gplus', 'rtsocial_gplus_handler' );
 function rtsocial_gplus_handler() {
 	if ( isset( $_POST[ 'action' ] ) && $_POST[ 'action' ] == 'rtsocial_gplus' ){
-		
 		$url  = $_POST[ 'url' ];
-
 		$response = wp_remote_request('https://clients6.google.com/rpc',
 						array(
 								'method'    => 'POST',
@@ -1172,7 +1170,6 @@ function rtsocial_gplus_handler() {
 				$result = json_decode( wp_remote_retrieve_body( $response ) );
 			}
 		}
-		error_log(var_export(wp_remote_retrieve_response_code( $response ), true));
 		echo intval( $result[ 0 ]->result->metadata->globalCounts->count );
 		die( 1 );
 	}
