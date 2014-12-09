@@ -1150,25 +1150,30 @@ function rtsocial_ajaxurl() {
 }
 
 /*
- * Google Plus shares count handled via CURL
+ * Google Plus shares count handled via HTTP API
  */
 add_action( 'wp_ajax_rtsocial_gplus', 'rtsocial_gplus_handler' );
 add_action( 'wp_ajax_nopriv_rtsocial_gplus', 'rtsocial_gplus_handler' );
 function rtsocial_gplus_handler() {
 	if ( isset( $_POST[ 'action' ] ) && $_POST[ 'action' ] == 'rtsocial_gplus' ){
+		
 		$url  = $_POST[ 'url' ];
-		$curl = curl_init();
-		curl_setopt( $curl, CURLOPT_URL, "https://clients6.google.com/rpc" );
-		curl_setopt( $curl, CURLOPT_POST, 1 );
-		curl_setopt( $curl, CURLOPT_POSTFIELDS, '[{"method":"pos.plusones.get","id":"p","params":{"nolog":true,"id":"' . $url . '","source":"widget","userId":"@viewer","groupId":"@self"},"jsonrpc":"2.0","key":"p","apiVersion":"v1"}]' );
-		curl_setopt( $curl, CURLOPT_RETURNTRANSFER, true );
-		curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 'Content-type: application/json' ) );
-		$curl_results = curl_exec( $curl );
-		curl_close( $curl );
 
-		$json = json_decode( $curl_results, true );
-
-		echo intval( $json[ 0 ][ 'result' ][ 'metadata' ][ 'globalCounts' ][ 'count' ] );
+		$response = wp_remote_request('https://clients6.google.com/rpc',
+						array(
+								'method'    => 'POST',
+								'body'      => '[{"method":"pos.plusones.get","id":"p","params":{"nolog":true,"id":"'.rawurldecode($url).'","source":"widget","userId":"@viewer","groupId":"@self"},"jsonrpc":"2.0","key":"AIzaSyADUv3zcyQ5MSXXB5aiLc-qzK8JsJ7Yra4","apiVersion":"v1"}]',
+								'headers' => array('Content-Type' => 'application/json')
+						));
+		
+		// check the response status code
+		if ( 200 == wp_remote_retrieve_response_code( $response ) ) {
+			if( !empty( $response ) ) {
+				$result = json_decode( wp_remote_retrieve_body( $response ) );
+			}
+		}
+		error_log(var_export(wp_remote_retrieve_response_code( $response ), true));
+		echo intval( $result[ 0 ]->result->metadata->globalCounts->count );
 		die( 1 );
 	}
 }
