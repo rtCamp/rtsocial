@@ -33,7 +33,7 @@ function rtsocial_facebook(){
         } );
         rtsocial_fburl += '")&format=json'; // ending part fql query
         /* End of .rtsocial-container */
-
+		
         /**
          * Facebook Data
          */
@@ -78,9 +78,13 @@ function rtsocial_gplus(){
         jQuery( '.rtsocial-container' ).each( function() {
             var paNode = this;
             var rtsocial_gplusurl = jQuery( this ).find( '.perma-link' ).attr( 'href' );
-            var rtsocial_gplusdata = {
+			var rtsocial_gplusid = jQuery( this ).find( '.rts_id' ).val();
+            var rtsocial_gplus_nonce = jQuery( this ).find( '#rts_media_nonce' ).val();
+			var rtsocial_gplusdata = {
                 action: 'rtsocial_gplus',
-                url: rtsocial_gplusurl
+                url: rtsocial_gplusurl,
+                id: rtsocial_gplusid,
+				nonce: rtsocial_gplus_nonce
             };
 
             jQuery.post( ajaxurl, rtsocial_gplusdata, function( gplusres ) {
@@ -168,6 +172,13 @@ jQuery( document ).ready( function() {
                 }
                 //came from inactive
                 else if(ui.item.parent().attr('id') == 'rtsocial-sorter-active') {
+					if(ui.item.context.id == 'rtsocial-ord-gplus'){
+						if(jQuery( '#google_api_key' ).val().length == 0) {
+							alert('Please enter Google API key to activate g+ share');
+							jQuery(this).sortable('cancel');
+							die(1);
+						}
+					}
                     ui.item.find('input').attr('name', 'rtsocial_plugin_options[active][]');
                 }
             }
