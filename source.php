@@ -33,7 +33,7 @@ function rtsocial_admin() {
  *  Admin notice for Goggle API key
  */
 function rts_gplus_notice() {
-	if ( !is_rt_admin() ) {
+	if ( class_exists( 'RTMedia' ) && !is_rt_admin() ) {
 		return;
 	}
 	if( is_multisite() ) {
