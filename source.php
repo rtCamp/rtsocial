@@ -551,7 +551,13 @@ function rtsocial_check( $args ) {
         } else {
             update_site_option( "rts_g_plus_notice", "show" );
         }
-    }
+    } else {
+		if( is_multisite() ) {
+			update_option( "rts_g_plus_notice", "hide" );
+		} else {
+			update_site_option( "rts_g_plus_notice", "hide" );
+		}
+	}
 	if( ! isset( $args[ 'google_api_key' ] ) || empty( $args[ 'google_api_key' ] ) ) {		
 		$args[ 'active' ]   = array( 'tw', 'fb', 'lin', 'pin' );
 		$args[ 'inactive' ] = array( 'gplus' );
