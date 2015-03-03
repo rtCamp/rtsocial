@@ -33,7 +33,8 @@ function rtsocial_admin() {
  *  Admin notice for Goggle API key
  */
 function rts_gplus_notice() {
-	if ( class_exists( 'RTMedia' ) && !is_rt_admin() ) {
+	if ( ! current_user_can( 'manage_options' )
+		|| ( isset( $_GET['page'] ) && $_GET['page'] == 'rtsocial-options' ) ) {
 		return;
 	}
 	if( is_multisite() ) {
@@ -50,8 +51,7 @@ function rts_gplus_notice() {
 ?>
 	<div class="error rts_g_plus_notice">
 		<p>
-			<?php echo '<b>rtSocial:</b> This update needs you to add google API key under rtSocial admin settings to display google+ count.';
-			?>
+			<b>rtSocial:</b> You need to add Google API key under <a href="<?php echo admin_url( 'options-general.php?page=rtsocial-options' ); ?>">rtSocial admin settings</a> to display google+ count.
 			<a href="#" onclick="rts_g_plus_override_notice();" style="float:right">Dismiss</a>
 		</p>
 	</div>
