@@ -1249,7 +1249,7 @@ function rtsocial_ajaxurl() {
  * Google Plus shares count handled via HTTP API
  */
 add_action( 'wp_ajax_rtsocial_gplus', 'rtsocial_gplus_handler' );
-//add_action( 'wp_ajax_nopriv_rtsocial_gplus', 'rtsocial_gplus_handler' );
+add_action( 'wp_ajax_nopriv_rtsocial_gplus', 'rtsocial_gplus_handler' );
 function rtsocial_gplus_handler() {
 	if ( isset( $_POST[ 'action' ] ) && $_POST[ 'action' ] == 'rtsocial_gplus' ) {
 		$url  = $_POST[ 'url' ];
