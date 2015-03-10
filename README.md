@@ -60,6 +60,10 @@ No. Right now you cannot.
 
 ## Changelog ##
 
+#### 2.1.18 ####
+* Bug fix for invalid markup
+* Bug fix for Google+ button
+
 #### 2.1.17 ####
 * Use Google api key for Google+
 * Use wp_remote_request instead of CURL
@@ -145,5 +149,5 @@ No. Right now you cannot.
 #### 1.0 ####
 * Initial Release
 
-#### 2.1.17 ####
-Use Google api key for Google+, use wp_remote_request instead of CURL
+#### 2.1.18 ####
+Bug fix for invalid markup, bug fix for Google+ button
