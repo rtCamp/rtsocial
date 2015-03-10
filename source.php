@@ -558,10 +558,13 @@ function rtsocial_check( $args ) {
 			update_site_option( "rts_g_plus_notice", "hide" );
 		}
 	}
-	if( ! isset( $args[ 'google_api_key' ] ) || empty( $args[ 'google_api_key' ] ) ) {		
-		$args[ 'active' ]   = array( 'tw', 'fb', 'lin', 'pin' );
-		$args[ 'inactive' ] = array( 'gplus' );
-		
+	if( ! isset( $args[ 'google_api_key' ] ) || empty( $args[ 'google_api_key' ] ) ) {
+		if(($key = array_search('gplus', $args[ 'active' ])) !== false) {
+			unset($args[ 'active' ][$key]);
+		}
+		if(!in_array('gplus', $args[ 'inactive' ], true)){
+			array_push($args[ 'inactive' ], 'gplus' );
+		}
 		if( is_multisite() ) {
 			update_option( "rts_g_plus_notice", "show" );
 		} else {
@@ -817,7 +820,7 @@ function rtsocial_counter( $content = '' ) {
 	$layout .= $active_services;
 
 	//Hidden permalink
-	$layout .= '<a rel="nofollow" class="perma-link" href="' . get_permalink( $post->ID ) . '" title="' . esc_attr( get_the_title( $post->ID ) ) . '"></a><input type="hidden" name="rts_id" class="rts_id" value="' . $post->ID . '" />' . wp_nonce_field( 'rts_media_' . $post->ID, 'rts_media_nonce' ) . '</div>';
+	$layout .= '<a rel="nofollow" class="perma-link" href="' . get_permalink( $post->ID ) . '" title="' . esc_attr( get_the_title( $post->ID ) ) . '"></a><input type="hidden" name="rts_id" class="rts_id" value="' . $post->ID . '" />' . wp_nonce_field( 'rts_media_' . $post->ID, 'rts_media_nonce', true, false ) . '</div>';
 	if ( $options[ 'placement_options_set' ] == 'top' ){
 		return $layout . $content;
 	} else {
@@ -1071,7 +1074,7 @@ function rtsocial( $args = array() ) {
 	$layout .= $active_services;
 
 	//Hidden permalink
-	$layout .= '<a title="' . esc_attr( $rtatitle ) . '" rel="nofollow" class="perma-link" href="' . $rts_permalink . '"></a><input type="hidden" name="rts_id" class="rts_id" value="' . $post_obj->ID . '" />' . wp_nonce_field( 'rts_media_' . $post_obj->ID, 'rts_media_nonce' ) . '</div>';
+	$layout .= '<a title="' . esc_attr( $rtatitle ) . '" rel="nofollow" class="perma-link" href="' . $rts_permalink . '"></a><input type="hidden" name="rts_id" class="rts_id" value="' . $post_obj->ID . '" />' . wp_nonce_field( 'rts_media_' . $post_obj->ID, 'rts_media_nonce', true, false ) . '</div>';
 
 	return $layout;
 }
