@@ -558,19 +558,27 @@ function rtsocial_check( $args ) {
 			update_site_option( "rts_g_plus_notice", "hide" );
 		}
 	}
+
+	// put g-plus in inactive state if google api key is not provided
 	if( ! isset( $args[ 'google_api_key' ] ) || empty( $args[ 'google_api_key' ] ) ) {
-		if(($key = array_search('gplus', $args[ 'active' ])) !== false) {
+
+		// google api key is not set and if gplus is in active state put it in inactive state
+		if( ( $key = array_search( 'gplus', $args[ 'active' ] ) ) !== false ){
 			unset($args[ 'active' ][$key]);
+
+			if( !isset( $args[ 'inactive' ] ) ){
+				$args[ 'inactive' ] = array();
+			}
+			$args[ 'inactive' ][] = 'gplus';
 		}
-		if(!in_array('gplus', $args[ 'inactive' ], true)){
-			array_push($args[ 'inactive' ], 'gplus' );
-		}
+
 		if( is_multisite() ) {
 			update_option( "rts_g_plus_notice", "show" );
 		} else {
 			update_site_option( "rts_g_plus_notice", "show" );
 		}
 	}
+
 	return $args;
 }
 
