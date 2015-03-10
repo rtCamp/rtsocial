@@ -3,7 +3,7 @@ Contributors: rtcamp, rahul286, faishal, rittesh.patel, pranalipatel, UmeshSingl
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
 Requires at least: 3.0
 Tested up to: 4.0
-Stable tag: 2.1.17
+Stable tag: 2.1.18
 License: GPLv2 or later (of-course)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate Link: http://rtcamp.com/donate/
@@ -59,6 +59,10 @@ No. Right now you cannot.
 
 
 == Changelog ==
+
+= 2.1.18 =
+* Bug fix for invalid markup
+* Bug fix for Google+ button
 
 = 2.1.17 =
 * Use Google api key for Google+
@@ -147,5 +151,5 @@ No. Right now you cannot.
 
 == Upgrade Notice ==
 
-= 2.1.17 =
-Use Google api key for Google+, use wp_remote_request instead of CURL
+= 2.1.18 =
+Bug fix for invalid markup, bug fix for Google+ button
