@@ -3,11 +3,11 @@
  */
  
 /* Buttons container styles frontend */
-.rtsocial-container { overflow: hidden;  padding: 5px 0; }
+.rtsocial-container { overflow: hidden;  padding: 5px 0; clear: both; }
 .rtsocial-container p { margin: 0 }
     
 .rtsocial-container-align-left { float: left; margin: 0 5px 0 0;  text-align: left; }
-.rtsocial-container-align-right { margin: 0 0 0 5px; float: right; text-align: right; }
+.rtsocial-container-align-right { margin: 0 0 0 5px; text-align: right; }
 .rtsocial-container-align-center { text-align: center }
 
 .rtsocial-container-align-right .rtsocial-twitter-vertical,
@@ -131,7 +131,7 @@ div#content_block { width: 70% }
 .rtsocial-fb-icon,
 .rtsocial-pinterest-icon,
 .rtsocial-linkedin-icon,
-.rtsocial-gplus-icon{ float: left; margin: 0 10px 0 0; position: relative; }
+.rtsocial-gplus-icon{ margin: 0 10px 0 0; position: relative; display: inline-block; }
 
 
 /* Counts display styles */
