@@ -622,7 +622,7 @@ function rtsocial_counter( $content = '' ) {
 	$active_services = array();
 
 	//Twitter
-	if ( in_array( 'tw', $options[ 'active' ] ) ){
+	if ( isset( $options ) && !empty( $options ) && isset( $options[ 'active' ] ) && !empty( $options[ 'active' ] ) && in_array( 'tw', $options[ 'active' ] ) ){
 		$tw       = array_search( 'tw', $options[ 'active' ] );
 		$tw_count = ( ! isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '<div class="rtsocial-' . $options[ 'display_options_set' ] . '-count"><div class="rtsocial-' . $options[ 'display_options_set' ] . '-notch"></div><span class="rtsocial-twitter-count"></span></div>' : '';
 
@@ -654,7 +654,7 @@ function rtsocial_counter( $content = '' ) {
 	//Twitter End
 
 	//Facebook
-	if ( in_array( 'fb', $options[ 'active' ] ) ){
+	if ( isset( $options ) && !empty( $options ) && isset( $options[ 'active' ] ) && !empty( $options[ 'active' ] ) && in_array( 'fb', $options[ 'active' ] ) ){
 		$fb       = array_search( 'fb', $options[ 'active' ] );
 		$fb_count = ( ! isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '<div class="rtsocial-' . $options[ 'display_options_set' ] . '-count"><div class="rtsocial-' . $options[ 'display_options_set' ] . '-notch"></div><span class="rtsocial-fb-count"></span></div>' : '';
 		$path     = '';
@@ -719,7 +719,7 @@ function rtsocial_counter( $content = '' ) {
 	//Facebook End
 
 	//Pinterest
-	if ( in_array( 'pin', $options[ 'active' ] ) ){
+	if ( isset( $options ) && !empty( $options ) && isset( $options[ 'active' ] ) && !empty( $options[ 'active' ] ) && in_array( 'pin', $options[ 'active' ] ) ){
 		$pin       = array_search( 'pin', $options[ 'active' ] );
 		$pin_count = ( ! isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '<div class="rtsocial-' . $options[ 'display_options_set' ] . '-count"><div class="rtsocial-' . $options[ 'display_options_set' ] . '-notch"></div><span class="rtsocial-pinterest-count"></span></div>' : '';
 
@@ -760,7 +760,7 @@ function rtsocial_counter( $content = '' ) {
 	//Pinterest End
 
 	//LinkedIn
-	if ( in_array( 'lin', $options[ 'active' ] ) ){
+	if ( isset( $options ) && !empty( $options ) && isset( $options[ 'active' ] ) && !empty( $options[ 'active' ] ) && in_array( 'lin', $options[ 'active' ] ) ){
 		$lin       = array_search( 'lin', $options[ 'active' ] );
 		$lin_count = ( ! isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '<div class="rtsocial-' . $options[ 'display_options_set' ] . '-count"><div class="rtsocial-' . $options[ 'display_options_set' ] . '-notch"></div><span class="rtsocial-linkedin-count"></span></div>' : '';
 
@@ -788,7 +788,7 @@ function rtsocial_counter( $content = '' ) {
 	//Linked In End
 
 	//G+ Share Button
-	if ( in_array( 'gplus', $options[ 'active' ] ) && isset( $options[ 'google_api_key' ] ) && $options[ 'google_api_key' ] != '' ) {
+	if ( isset( $options ) && !empty( $options ) && isset( $options[ 'active' ] ) && !empty( $options[ 'active' ] ) && in_array( 'gplus', $options[ 'active' ] ) && isset( $options[ 'google_api_key' ] ) && $options[ 'google_api_key' ] != '' ) {
 		$gplus       = array_search( 'gplus', $options[ 'active' ] );
 		$gplus_count = ( ! isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '<div class="rtsocial-' . $options[ 'display_options_set' ] . '-count"><div class="rtsocial-' . $options[ 'display_options_set' ] . '-notch"></div><span class="rtsocial-gplus-count"></span></div>' : '';
 
@@ -861,7 +861,7 @@ function rtsocial( $args = array() ) {
 	$options = wp_parse_args( $args, $options );
 
 	//If manual mode is selected then avoid this code
-	if ( $options[ 'placement_options_set' ] != 'manual' ){
+	if ( isset( $options ) && !empty( $options ) && $options[ 'placement_options_set' ] != 'manual' ){
 		return;
 	}
 
@@ -877,7 +877,7 @@ function rtsocial( $args = array() ) {
 	$active_services = array();
 
 	//Twitter
-	if ( in_array( 'tw', $options[ 'active' ] ) ){
+	if ( isset( $options ) && !empty( $options ) && isset( $options[ 'active' ] ) && !empty( $options[ 'active' ] ) && in_array( 'tw', $options[ 'active' ] ) ){
 		$tw       = array_search( 'tw', $options[ 'active' ] );
 		$tw_count = ( ! isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '<div class="rtsocial-' . $options[ 'display_options_set' ] . '-count"><div class="rtsocial-' . $options[ 'display_options_set' ] . '-notch"></div><span class="rtsocial-twitter-count"></span></div>' : '';
 
@@ -909,7 +909,7 @@ function rtsocial( $args = array() ) {
 	//Twitter End
 
 	//Facebook
-	if ( in_array( 'fb', $options[ 'active' ] ) ){
+	if ( isset( $options ) && !empty( $options ) && isset( $options[ 'active' ] ) && !empty( $options[ 'active' ] ) && in_array( 'fb', $options[ 'active' ] ) ){
 		$fb       = array_search( 'fb', $options[ 'active' ] );
 		$fb_count = ( ! isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '<div class="rtsocial-' . $options[ 'display_options_set' ] . '-count"><div class="rtsocial-' . $options[ 'display_options_set' ] . '-notch"></div><span class="rtsocial-fb-count"></span></div>' : '';
 		$path     = '';
@@ -974,7 +974,7 @@ function rtsocial( $args = array() ) {
 	//Facebook End
 
 	//Pinterest
-	if ( in_array( 'pin', $options[ 'active' ] ) ){
+	if ( isset( $options ) && !empty( $options ) && isset( $options[ 'active' ] ) && !empty( $options[ 'active' ] ) && in_array( 'pin', $options[ 'active' ] ) ){
 		$pin       = array_search( 'pin', $options[ 'active' ] );
 		$pin_count = ( ! isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '<div class="rtsocial-' . $options[ 'display_options_set' ] . '-count"><div class="rtsocial-' . $options[ 'display_options_set' ] . '-notch"></div><span class="rtsocial-pinterest-count"></span></div>' : '';
 
@@ -1015,7 +1015,7 @@ function rtsocial( $args = array() ) {
 	//Pinterest End
 
 	//LinkedIn
-	if ( in_array( 'lin', $options[ 'active' ] ) ){
+	if ( isset( $options ) && !empty( $options ) && isset( $options[ 'active' ] ) && !empty( $options[ 'active' ] ) && in_array( 'lin', $options[ 'active' ] ) ){
 		$lin       = array_search( 'lin', $options[ 'active' ] );
 		$lin_count = ( ! isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '<div class="rtsocial-' . $options[ 'display_options_set' ] . '-count"><div class="rtsocial-' . $options[ 'display_options_set' ] . '-notch"></div><span class="rtsocial-linkedin-count"></span></div>' : '';
 
@@ -1043,7 +1043,7 @@ function rtsocial( $args = array() ) {
 	//Linked In End
 
 	//G+ Share Button
-	if ( in_array( 'gplus', $options[ 'active' ] ) && isset( $options[ 'google_api_key' ] ) && $options[ 'google_api_key' ] != '' ) {
+	if ( isset( $options ) && !empty( $options ) && isset( $options[ 'active' ] ) && !empty( $options[ 'active' ] ) && in_array( 'gplus', $options[ 'active' ] ) && isset( $options[ 'google_api_key' ] ) && $options[ 'google_api_key' ] != '' ) {
 		$gplus       = array_search( 'gplus', $options[ 'active' ] );
 		$gplus_count = ( ! isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '<div class="rtsocial-' . $options[ 'display_options_set' ] . '-count"><div class="rtsocial-' . $options[ 'display_options_set' ] . '-notch"></div><span class="rtsocial-gplus-count"></span></div>' : '';
 
