@@ -4,7 +4,7 @@
   Plugin URI: https://rtcamp.com/rtsocial/
   Author: rtCamp
   Author URI: https://rtcamp.com/
-  Version: 2.1.18
+  Version: 2.1.19
   Description: It is the lightest social sharing plugin, uses non-blocking Javascript and a single sprite to get rid of all the clutter that comes along with the sharing buttons.
   Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
  */

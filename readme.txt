@@ -1,9 +1,9 @@
 === rtSocial ===
-Contributors: rtcamp, rahul286, faishal, rittesh.patel, pranalipatel, UmeshSingla, rutwick, saurabhshukla, HarishChaudhari, 5um17, JoshuaAbenazer, paddyohanlon
+Contributors: rtcamp, rahul286, faishal, rittesh.patel, sanketparmar, pranalipatel, UmeshSingla, rutwick, saurabhshukla, HarishChaudhari, 5um17, JoshuaAbenazer, paddyohanlon
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
 Requires at least: 3.0
-Tested up to: 4.0
-Stable tag: 2.1.18
+Tested up to: 4.2.2
+Stable tag: 2.1.19
 License: GPLv2 or later (of-course)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate Link: http://rtcamp.com/donate/
@@ -27,12 +27,12 @@ With just 1 image (CSS-sprite), 1 JavaScript and 1 CSS file loaded from WordPres
 
 = Useful Links =
 * [rtSocial Plugin's Homepage](http://rtcamp.com/rtsocial/)
-* [Free Support Forum](http://rtcamp.com/support/forum/rtsocial/)
+* [Free Support Forum](http://community.rtcamp.com/c/rtsocial)
 
 == Installation ==
 Install rtSocial plugin from the 'Plugins' section in your dashboard (Plugins > Add New > Search for rtSocial).
 
-Alternatively you can [download latest version](http://downloads.wordpress.org/plugin/rtsocial.2.0.1.zip) of rtSocial plugin from the repository. Unzip it and upload it to the plugins folder of your WordPress installation (wp-content/plugins/ directory of your WordPress installation).
+Alternatively you can [download latest version](https://downloads.wordpress.org/plugin/rtsocial.2.1.19.zip) of rtSocial plugin from the repository. Unzip it and upload it to the plugins folder of your WordPress installation (wp-content/plugins/ directory of your WordPress installation).
 
 Activate it through the 'Plugins' section.
 
@@ -59,6 +59,10 @@ No. Right now you cannot.
 
 
 == Changelog ==
+
+= 2.1.19 =
+* Bug fix for network activation in multisite
+* CSS fixes
 
 = 2.1.18 =
 * Bug fix for invalid markup
@@ -151,5 +155,5 @@ No. Right now you cannot.
 
 == Upgrade Notice ==
 
-= 2.1.18 =
-Bug fix for invalid markup, bug fix for Google+ button
+= 2.1.19 =
+Bug fix for network activation in multisite, CSS fixes
