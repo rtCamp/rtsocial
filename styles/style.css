@@ -247,7 +247,7 @@ div#content_block { width: 70% }
 #rtsocial-ord-fb label:hover{ background-position: 0 -478px; }
 
 /*Twitter button styles frontend*/
-.rtsocial-twitter-vertical-button { text-align: center; }
+.rtsocial-twitter-vertical-button { text-align: center; padding-top: 45px; }
 .rtsocial-twitter-button,
 #rtsocial-ord-tw label { background-position: 0 -557px;  display: block; float: left; height: 21px; margin: 0; padding: 0; width: 58px; text-indent: -9999px; }
 
