@@ -154,15 +154,6 @@ function rtsocial_admin_fn() {
                                                         </td>
                                                         <td>
                                                             <div id="rtsocial-display-vertical-sample" class="rtsocial-vertical rtsocial-container-align-none">
-                                                                <div class="rtsocial-twitter-vertical">
-                                                                    <div class="rtsocial-vertical-count">
-                                                                        <span class="rtsocial-twitter-count"></span>
-                                                                        <div class="rtsocial-vertical-notch"></div>
-                                                                    </div>
-                                                                    <div class="rtsocial-twitter-vertical-button">
-                                                                        <a class="rtsocial-twitter-button" href='https://twitter.com/share?via=<?php echo $options[ 'tw_handle' ] . "&related=" . $options[ 'tw_related_handle' ] . "&text=" . esc_attr( "rtSocial... Share Fast!" ) . "&url=https://rtpanel.com/support/forum/plugin/"; ?>' rel="nofollow" target="_blank"></a>
-                                                                    </div>
-                                                                </div>
                                                                 <div class="rtsocial-fb-vertical">
                                                                     <div class="rtsocial-vertical-count">
                                                                         <span class="rtsocial-fb-count"></span>
@@ -170,6 +161,11 @@ function rtsocial_admin_fn() {
                                                                     </div>
                                                                     <div class="rtsocial-fb-vertical-button">
                                                                         <a class="rtsocial-fb-button rtsocial-fb-like-light" href="https://www.facebook.com/sharer.php?u=https://rtpanel.com/support/forum/plugin/" rel="nofollow" target="_blank">Like</a>
+                                                                    </div>
+                                                                </div>
+                                                                 <div class="rtsocial-twitter-vertical">
+                                                                    <div class="rtsocial-twitter-vertical-button">
+                                                                        <a class="rtsocial-twitter-button" href='https://twitter.com/share?via=<?php echo $options[ 'tw_handle' ] . "&related=" . $options[ 'tw_related_handle' ] . "&text=" . esc_attr( "rtSocial... Share Fast!" ) . "&url=https://rtpanel.com/support/forum/plugin/"; ?>' rel="nofollow" target="_blank"></a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -193,10 +189,6 @@ function rtsocial_admin_fn() {
                                                                 <div class="rtsocial-twitter-horizontal">
                                                                     <div class="rtsocial-twitter-horizontal-button">
                                                                         <a class="rtsocial-twitter-button" href="https://twitter.com/share?via=<?php echo $options[ 'tw_handle' ] . "&related=" . $options[ 'tw_related_handle' ] . "&text=" . esc_attr( "rtSocial... Share Fast!" ) . "&url=https://rtpanel.com/support/forum/plugin/"; ?>" rel="nofollow" target="_blank"></a>
-                                                                    </div>
-                                                                    <div class="rtsocial-horizontal-count">
-                                                                        <div class="rtsocial-horizontal-notch"></div>
-                                                                        <span class="rtsocial-twitter-count"></span>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -238,10 +230,6 @@ function rtsocial_admin_fn() {
                                                                 </div>
                                                                 <div class="rtsocial-twitter-icon">
                                                                     <div class="rtsocial-twitter-icon-button"><a class="rtsocial-twitter-icon-link" href="https://twitter.com/share?via=<?php echo $options[ 'tw_handle' ] . "&related=" . $options[ 'tw_related_handle' ] . "&text=" . esc_attr( "rtSocial... Share Fast!" ) . "&url=https://rtpanel.com/support/forum/plugin/"; ?>" rel="nofollow" target="_blank">Tweet</a>
-                                                                    </div>
-                                                                    <div class="rtsocial-horizontal-count">
-                                                                        <div class="rtsocial-horizontal-notch"></div>
-                                                                        <span class="rtsocial-twitter-count"></span>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -603,7 +591,7 @@ function rtsocial_counter( $content = '' ) {
     //Twitter
     if ( isset( $options ) && !empty( $options ) && isset( $options[ 'active' ] ) && !empty( $options[ 'active' ] ) && in_array( 'tw', $options[ 'active' ] ) ) {
         $tw = array_search( 'tw', $options[ 'active' ] );
-        $tw_count = (!isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '<div class="rtsocial-' . $options[ 'display_options_set' ] . '-count"><div class="rtsocial-' . $options[ 'display_options_set' ] . '-notch"></div><span class="rtsocial-twitter-count"></span></div>' : '';
+        $tw_count = (!isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '' : '';
         $handle_string = '';
         $handle_string .= ( isset( $options[ 'tw_handle' ] ) && $options[ 'tw_handle' ] != '' ) ? '&via=' . $options[ 'tw_handle' ] : '';
         $handle_string .= ( isset( $options[ 'tw_related_handle' ] ) && $options[ 'tw_related_handle' ] != '' ) ? '&related=' . $options[ 'tw_related_handle' ] : '';
@@ -613,14 +601,14 @@ function rtsocial_counter( $content = '' ) {
             $tw_layout .= '<div class="rtsocial-twitter-' . $options[ 'display_options_set' ] . '-button"><a title= "Tweet: ' . $rtatitle . '" class="rtsocial-twitter-button" href= "https://twitter.com/share?text=' . $rtstitle . $handle_string . '&url=' . $rtslink . '" rel="nofollow" target="_blank"></a></div>' . $tw_count;
         } else {
             if ( $options[ 'display_options_set' ] == 'vertical' ) {
-                $tw_layout .= $tw_count . '<div class="rtsocial-twitter-' . $options[ 'display_options_set' ] . '-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-button" href= "https://twitter.com/share?text=' . $rtstitle . $handle_string . '&url=' . $rtslink . '" target= "_blank"></a></div>';
+                $tw_layout .= $tw_count . '<div class="rtsocial-twitter-' . $options[ 'display_options_set' ] . '-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocia-twitter-button" href= "https://twitter.com/share?text=' . $rtstitle . $handle_string . '&url=' . $rtslink . '" target= "_blank"></a></div>';
             } else {
                 if ( $options[ 'display_options_set' ] == 'icon' ) {
-                    $tw_layout .= ' <div class="rtsocial-twitter-' . $options[ 'display_options_set' ] . '-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-icon-link" href= "https://twitter.com/share?text=' . $rtstitle . $handle_string . '&url=' . $rtslink . '" target= "_blank"></a></div>';
+                    $tw_layout .= ' <div class="rltsocial-twitter-' . $options[ 'display_options_set' ] . '-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-icon-link" href= "https://twitter.com/share?text=' . $rtstitle . $handle_string . '&url=' . $rtslink . '" target= "_blank"></a></div>';
                 } else {
                     if ( $options[ 'display_options_set' ] == 'icon-count' ) {
                         $tw_layout = '<div class="rtsocial-twitter-icon">';
-                        $tw_count = (!isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '<div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-twitter-count"></span></div>' : '';
+                        $tw_count = (!isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '' : '';
                         $tw_layout .= ' <div class="rtsocial-twitter-icon-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-icon-link" href= "https://twitter.com/share?text=' . $rtstitle . $handle_string . '&url=' . $rtslink . '" target= "_blank"></a></div>' . $tw_count;
                     }
                 }
@@ -857,7 +845,7 @@ function rtsocial( $args = array() ) {
     //Twitter
     if ( isset( $options ) && !empty( $options ) && isset( $options[ 'active' ] ) && !empty( $options[ 'active' ] ) && in_array( 'tw', $options[ 'active' ] ) ) {
         $tw = array_search( 'tw', $options[ 'active' ] );
-        $tw_count = (!isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '<div class="rtsocial-' . $options[ 'display_options_set' ] . '-count"><div class="rtsocial-' . $options[ 'display_options_set' ] . '-notch"></div><span class="rtsocial-twitter-count"></span></div>' : '';
+        $tw_count = (!isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '' : '';
         $handle_string = '';
         $handle_string .= ( isset( $options[ 'tw_handle' ] ) && $options[ 'tw_handle' ] != '' ) ? '&via=' . $options[ 'tw_handle' ] : '';
         $handle_string .= ( isset( $options[ 'tw_related_handle' ] ) && $options[ 'tw_related_handle' ] != '' ) ? '&related=' . $options[ 'tw_related_handle' ] : '';
@@ -874,7 +862,7 @@ function rtsocial( $args = array() ) {
                 } else {
                     if ( $options[ 'display_options_set' ] == 'icon-count' ) {
                         $tw_layout = '<div class="rtsocial-twitter-icon">';
-                        $tw_count = (!isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '<div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-twitter-count"></span></div>' : '';
+                        $tw_count = (!isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '' : '';
                         $tw_layout .= ' <div class="rtsocial-twitter-icon-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-icon-link" href= "https://twitter.com/share?text=' . $rtstitle . $handle_string . '&url=' . $rtslink . '" target= "_blank"></a></div>' . $tw_count;
                     }
                 }
