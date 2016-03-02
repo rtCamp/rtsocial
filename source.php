@@ -154,6 +154,15 @@ function rtsocial_admin_fn() {
                                                         </td>
                                                         <td>
                                                             <div id="rtsocial-display-vertical-sample" class="rtsocial-vertical rtsocial-container-align-none">
+<<<<<<< HEAD
+=======
+                                                                <div class="rtsocial-twitter-vertical">
+                                                                   
+                                                                    <div class="rtsocial-twitter-vertical-button">
+                                                                        <a class="rtsocial-twitter-button" href='https://twitter.com/share?via=<?php echo $options[ 'tw_handle' ] . "&related=" . $options[ 'tw_related_handle' ] . "&text=" . esc_attr( "rtSocial... Share Fast!" ) . "&url=https://rtpanel.com/support/forum/plugin/"; ?>' rel="nofollow" target="_blank"></a>
+                                                                    </div>
+                                                                </div>
+>>>>>>> twiter-api
                                                                 <div class="rtsocial-fb-vertical">
                                                                     <div class="rtsocial-vertical-count">
                                                                         <span class="rtsocial-fb-count"></span>
@@ -190,6 +199,10 @@ function rtsocial_admin_fn() {
                                                                     <div class="rtsocial-twitter-horizontal-button">
                                                                         <a class="rtsocial-twitter-button" href="https://twitter.com/share?via=<?php echo $options[ 'tw_handle' ] . "&related=" . $options[ 'tw_related_handle' ] . "&text=" . esc_attr( "rtSocial... Share Fast!" ) . "&url=https://rtpanel.com/support/forum/plugin/"; ?>" rel="nofollow" target="_blank"></a>
                                                                     </div>
+<<<<<<< HEAD
+=======
+                                                                    
+>>>>>>> twiter-api
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -231,6 +244,10 @@ function rtsocial_admin_fn() {
                                                                 <div class="rtsocial-twitter-icon">
                                                                     <div class="rtsocial-twitter-icon-button"><a class="rtsocial-twitter-icon-link" href="https://twitter.com/share?via=<?php echo $options[ 'tw_handle' ] . "&related=" . $options[ 'tw_related_handle' ] . "&text=" . esc_attr( "rtSocial... Share Fast!" ) . "&url=https://rtpanel.com/support/forum/plugin/"; ?>" rel="nofollow" target="_blank">Tweet</a>
                                                                     </div>
+<<<<<<< HEAD
+=======
+                                                                    
+>>>>>>> twiter-api
                                                                 </div>
                                                             </div>
                                                         </td>
