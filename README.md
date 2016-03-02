@@ -2,7 +2,7 @@
 
 # rtSocial #
 
-* **Contributors:** [rtcamp] (http://profiles.wordpress.org/rtcamp), [rahul286] (http://profiles.wordpress.org/rahul286), [faishal] (http://profiles.wordpress.org/faishal), [rittesh.patel] (http://profiles.wordpress.org/rittesh.patel), [UmeshSingla] (http://profiles.wordpress.org/UmeshSingla), [rutwick] (http://profiles.wordpress.org/rutwick), [saurabhshukla] (http://profiles.wordpress.org/saurabhshukla), [HarishChaudhari] (http://profiles.wordpress.org/HarishChaudhari), [5um17] (http://profiles.wordpress.org/5um17), [JoshuaAbenazer] (http://profiles.wordpress.org/JoshuaAbenazer), [paddyohanlon] (http://profiles.wordpress.org/paddyohanlon),
+* **Contributors:** [rtcamp] (http://profiles.wordpress.org/rtcamp), [rahul286] (http://profiles.wordpress.org/rahul286), [faishal] (http://profiles.wordpress.org/faishal), [rittesh.patel] (http://profiles.wordpress.org/rittesh.patel), [sanketparmar] (http://profiles.wordpress.org/sanketparmar), [pranalipatel] (http://profiles.wordpress.org/pranalipatel), [UmeshSingla] (http://profiles.wordpress.org/UmeshSingla), [rutwick] (http://profiles.wordpress.org/rutwick), [saurabhshukla] (http://profiles.wordpress.org/saurabhshukla), [HarishChaudhari] (http://profiles.wordpress.org/HarishChaudhari), [5um17] (http://profiles.wordpress.org/5um17), [JoshuaAbenazer] (http://profiles.wordpress.org/JoshuaAbenazer), [paddyohanlon] (http://profiles.wordpress.org/paddyohanlon),
 
 * **License:** [GPL v2 or later] ( http://www.gnu.org/licenses/gpl-2.0.html)
 
@@ -27,12 +27,12 @@ With just 1 image (CSS-sprite), 1 JavaScript and 1 CSS file loaded from WordPres
 
 #### Useful Links ####
 * [rtSocial Plugin's Homepage](http://rtcamp.com/rtsocial/)
-* [Free Support Forum](http://rtcamp.com/support/forum/rtsocial/)
+* [Free Support Forum](http://community.rtcamp.com/c/rtsocial)
 
 ## Installation ##
 Install rtSocial plugin from the 'Plugins' section in your dashboard (Plugins > Add New > Search for rtSocial).
 
-Alternatively you can [download latest version](http://downloads.wordpress.org/plugin/rtsocial.2.0.1.zip) of rtSocial plugin from the repository. Unzip it and upload it to the plugins folder of your WordPress installation (wp-content/plugins/ directory of your WordPress installation).
+Alternatively you can [download latest version](https://downloads.wordpress.org/plugin/rtsocial.2.1.19.zip) of rtSocial plugin from the repository. Unzip it and upload it to the plugins folder of your WordPress installation (wp-content/plugins/ directory of your WordPress installation).
 
 Activate it through the 'Plugins' section.
 
@@ -59,6 +59,18 @@ No. Right now you cannot.
 
 
 ## Changelog ##
+
+#### 2.1.19 ####
+* Bug fix for network activation in multisite
+* CSS fixes
+
+#### 2.1.18 ####
+* Bug fix for invalid markup
+* Bug fix for Google+ button
+
+#### 2.1.17 ####
+* Use Google api key for Google+
+* Use wp_remote_request instead of CURL
 
 #### 2.1.16 ####
 * Updated compatible upto
@@ -141,5 +153,5 @@ No. Right now you cannot.
 #### 1.0 ####
 * Initial Release
 
-#### 2.1.16 ####
-Update compatible upto
+#### 2.1.19 ####
+Bug fix for network activation in multisite, CSS fixes
