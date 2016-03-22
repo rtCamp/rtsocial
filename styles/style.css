@@ -306,10 +306,10 @@ div#content_block { width: 70% }
 .fb_row input#rtsocial-share-input { float: left; margin: 6px 6px 0 0; }
 #rtsocial-share-plain { background-position: 0 -478px; display: block; height: 20px; width: 59px; float: left; }
 .rt_clear { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
-.clearfix:before,
+/*.clearfix:before,
 .clearfix:after { content: "."; display: block; height: 0; overflow: hidden; }
 .clearfix:after { clear: both; }
-
+*/
 .rt-social-connect { text-align: center; overflow: hidden; }
 .rt-social-connect a { display: inline-block; font-size: 0; height: 32px; line-height: 0; overflow: hidden; text-indent: -9999px; text-transform: uppercase; width: 32px; }
 .rt-social-connect a.rt-sidebar-facebook { background-position: -123px -52px; }
