@@ -98,7 +98,7 @@ function rtsocial_init_counters(){
     /**
      * If Twitter is checked, get Twitter Counts
      */
-    rtsocial_twitter();
+    //rtsocial_twitter();
     /* End of Twitter */
 
     /**
