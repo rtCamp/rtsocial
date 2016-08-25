@@ -21,29 +21,27 @@ function rtsocial_twitter(){
 function rtsocial_facebook(){
     if ( args.facebook == 1 && args.button_style != 'icon' && args.hide_count != 1) {
         var rtsocial_urls = {}; /* create an associative array of url as key and counts*/
-        var rtsocial_fburl =  'https://api.facebook.com/method/fql.query?callback=?&query=select url,share_count from link_stat where url in(';
         var sep='"'; // URL separatore initial value
         var tempFbUrl=""; // temp variable for url
-        // Genrating fql query for url and also creat associative array with initial value 0 for particular url
-        jQuery( '.rtsocial-container' ).each( function() {
-            tempFbUrl= jQuery( 'a.perma-link', this ).attr( 'href' );
-            rtsocial_urls[tempFbUrl] = 0;
-            rtsocial_fburl += sep + tempFbUrl;
-            sep='","';
-        } );
-        rtsocial_fburl += '")&format=json'; // ending part fql query
-        /* End of .rtsocial-container */
 		
-        /**
-         * Facebook Data
-         */
-        jQuery.getJSON( rtsocial_fburl, function( fbres ) {
-            jQuery.each( fbres, function( key, value ) { //processing fql response
-                rtsocial_urls[value.url] = value.share_count; // adding value of cout in associative array
-            } );
-            rtsocial_update_fbcount( rtsocial_urls ); // passing count for update
-        } );
-        /* End of Callback function in JSON */
+		jQuery( '.rtsocial-container' ).each( function () {
+			var facebookSocial = this;
+            tempFbUrl = jQuery( 'a.perma-link', this ).attr( 'href' );
+			if ( tempFbUrl != '' || tempFbUrl != 'undefined' ) {
+				//Fetch share count by Facebook Graph API
+				var rtsocial_fburl = 'https://graph.facebook.com/?id=' + tempFbUrl;
+				/**
+				 * Facebook Data
+				 */
+				jQuery.getJSON( rtsocial_fburl, function ( fbres ) {
+
+					rtsocial_url_count = fbres.share.share_count; // Setting value 
+					jQuery( facebookSocial ).find( '.rtsocial-fb-count' ).text( ( ( rtsocial_url_count ) ? ( rtsocial_url_count ) : '0' ) );
+					//				rtsocial_update_fbcount( rtsocial_url_count ); // passing count for update
+				} );/* End of Callback function in JSON */
+			}
+        } );       
+        /* End of .rtsocial-container */
     }
 }
 
