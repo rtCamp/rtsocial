@@ -26,7 +26,8 @@ function rtsocial_facebook(){
 		
 		jQuery( '.rtsocial-container' ).each( function () {
 			var facebookSocial = this;
-            tempFbUrl = jQuery( 'a.perma-link', this ).attr( 'href' );
+			var rtsocial_url_count = 0;
+            tempFbUrl = jQuery( this ).find( 'a.perma-link' ).attr( 'href' );
 			if ( tempFbUrl != '' || tempFbUrl != 'undefined' ) {
 				//Fetch share count by Facebook Graph API
 				var rtsocial_fburl = 'https://graph.facebook.com/?id=' + tempFbUrl;
@@ -34,10 +35,11 @@ function rtsocial_facebook(){
 				 * Facebook Data
 				 */
 				jQuery.getJSON( rtsocial_fburl, function ( fbres ) {
-
-					rtsocial_url_count = fbres.share.share_count; // Setting value 
+					if ( fbres.share.share_count != 'undefined' ) {
+						rtsocial_url_count = fbres.share.share_count; // Setting value
+					}
 					jQuery( facebookSocial ).find( '.rtsocial-fb-count' ).text( ( ( rtsocial_url_count ) ? ( rtsocial_url_count ) : '0' ) );
-					//				rtsocial_update_fbcount( rtsocial_url_count ); // passing count for update
+//				rtsocial_update_fbcount( rtsocial_url_count ); // passing count for update
 				} );/* End of Callback function in JSON */
 			}
         } );       
@@ -187,17 +189,6 @@ jQuery( document ).ready( function() {
 } );
 /* End of document.ready */
 
-/* Facebook Count Update */
-function rtsocial_update_fbcount( rtsocial_fbcounts ) {
-    jQuery( '.rtsocial-container' ).each( function() {
-        key = jQuery( this ).find( 'a.perma-link' ).attr( 'href' );
-//        var url = jQuery( this ).find( '.rtsocial-fb-button' ).attr( 'href' );
-//        url += 'u=' + key;
-//        jQuery( this ).find( '.rtsocial-fb-button' ).attr( 'href', url );
-        jQuery( this ).find( '.rtsocial-fb-count' ).text( ( ( rtsocial_fbcounts[key] ) ? ( rtsocial_fbcounts[key] ) : '0' ) );
-    } );
-    /* End of "each" */
-}
 /* End of Function */
 
 /*
