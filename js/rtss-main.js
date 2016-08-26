@@ -98,7 +98,7 @@ function rtsocial_init_counters(){
     /**
      * If Twitter is checked, get Twitter Counts
      */
-    rtsocial_twitter();
+    /* rtsocial_twitter(); */
     /* End of Twitter */
 
     /**
@@ -123,6 +123,7 @@ jQuery( document ).ready( function() {
     /*
      * Showing the Tweet Count in the Admin Panel
      */
+	/*
     var twit_url_full = jQuery( '#rtsocial-display-vertical-sample .rtsocial-twitter-button' ).attr( 'href' );
     if ( twit_url_full ) {
         var twit_url_split = twit_url_full.split( '&' );
@@ -134,7 +135,7 @@ jQuery( document ).ready( function() {
             jQuery( '#rtsocial-display-horizontal-sample span.rtsocial-twitter-count' ).text( ( twitres['count'] ) ? ( twitres['count'] ) : '0' );
         } );
     }
-
+	*/
     /*
      * Showing the Facebook Share in the Admin Panel
      */
