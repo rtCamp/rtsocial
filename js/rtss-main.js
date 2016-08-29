@@ -21,29 +21,29 @@ function rtsocial_twitter(){
 function rtsocial_facebook(){
     if ( args.facebook == 1 && args.button_style != 'icon' && args.hide_count != 1) {
         var rtsocial_urls = {}; /* create an associative array of url as key and counts*/
-        var rtsocial_fburl =  'https://api.facebook.com/method/fql.query?callback=?&query=select url,share_count from link_stat where url in(';
         var sep='"'; // URL separatore initial value
         var tempFbUrl=""; // temp variable for url
-        // Genrating fql query for url and also creat associative array with initial value 0 for particular url
-        jQuery( '.rtsocial-container' ).each( function() {
-            tempFbUrl= jQuery( 'a.perma-link', this ).attr( 'href' );
-            rtsocial_urls[tempFbUrl] = 0;
-            rtsocial_fburl += sep + tempFbUrl;
-            sep='","';
-        } );
-        rtsocial_fburl += '")&format=json'; // ending part fql query
-        /* End of .rtsocial-container */
 		
-        /**
-         * Facebook Data
-         */
-        jQuery.getJSON( rtsocial_fburl, function( fbres ) {
-            jQuery.each( fbres, function( key, value ) { //processing fql response
-                rtsocial_urls[value.url] = value.share_count; // adding value of cout in associative array
-            } );
-            rtsocial_update_fbcount( rtsocial_urls ); // passing count for update
-        } );
-        /* End of Callback function in JSON */
+		jQuery( '.rtsocial-container' ).each( function () {
+			var facebookSocial = this;
+			var rtsocial_url_count = 0;
+            tempFbUrl = jQuery( this ).find( 'a.perma-link' ).attr( 'href' );
+			if ( tempFbUrl != '' || tempFbUrl != 'undefined' ) {
+				//Fetch share count by Facebook Graph API
+				var rtsocial_fburl = 'https://graph.facebook.com/?id=' + tempFbUrl;
+				/**
+				 * Facebook Data
+				 */
+				jQuery.getJSON( rtsocial_fburl, function ( fbres ) {
+					if ( fbres.share.share_count != 'undefined' ) {
+						rtsocial_url_count = fbres.share.share_count; // Setting value
+					}
+					jQuery( facebookSocial ).find( '.rtsocial-fb-count' ).text( ( ( rtsocial_url_count ) ? ( rtsocial_url_count ) : '0' ) );
+//				rtsocial_update_fbcount( rtsocial_url_count ); // passing count for update
+				} );/* End of Callback function in JSON */
+			}
+        } );       
+        /* End of .rtsocial-container */
     }
 }
 
@@ -98,7 +98,7 @@ function rtsocial_init_counters(){
     /**
      * If Twitter is checked, get Twitter Counts
      */
-    rtsocial_twitter();
+    /* rtsocial_twitter(); */
     /* End of Twitter */
 
     /**
@@ -123,6 +123,7 @@ jQuery( document ).ready( function() {
     /*
      * Showing the Tweet Count in the Admin Panel
      */
+	/*
     var twit_url_full = jQuery( '#rtsocial-display-vertical-sample .rtsocial-twitter-button' ).attr( 'href' );
     if ( twit_url_full ) {
         var twit_url_split = twit_url_full.split( '&' );
@@ -134,7 +135,7 @@ jQuery( document ).ready( function() {
             jQuery( '#rtsocial-display-horizontal-sample span.rtsocial-twitter-count' ).text( ( twitres['count'] ) ? ( twitres['count'] ) : '0' );
         } );
     }
-
+	*/
     /*
      * Showing the Facebook Share in the Admin Panel
      */
@@ -189,17 +190,6 @@ jQuery( document ).ready( function() {
 } );
 /* End of document.ready */
 
-/* Facebook Count Update */
-function rtsocial_update_fbcount( rtsocial_fbcounts ) {
-    jQuery( '.rtsocial-container' ).each( function() {
-        key = jQuery( this ).find( 'a.perma-link' ).attr( 'href' );
-//        var url = jQuery( this ).find( '.rtsocial-fb-button' ).attr( 'href' );
-//        url += 'u=' + key;
-//        jQuery( this ).find( '.rtsocial-fb-button' ).attr( 'href', url );
-        jQuery( this ).find( '.rtsocial-fb-count' ).text( ( ( rtsocial_fbcounts[key] ) ? ( rtsocial_fbcounts[key] ) : '0' ) );
-    } );
-    /* End of "each" */
-}
 /* End of Function */
 
 /*

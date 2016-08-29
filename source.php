@@ -891,6 +891,7 @@ function rtsocial_counter( $content = '' ) {
  *  'fb_style' = 'like_light', 'like_dark', 'recommend_light', 'recommend_dark', 'share'
  */
 
+
 function rtsocial( $args = array() ) {
     //Working issue on attachment page
     if ( is_attachment() ) {
