@@ -646,14 +646,20 @@ function rtsocial_dyna( $content ) {
 }
 
 function rtsocial_counter( $content = '' ) {
+	global $post;
+	
     //Working issue on attachment page
     if ( is_attachment() ) {
         return;
     }
+	
+	//Check for excluded page
+ 	$is_visible = get_post_meta( $post->ID, '_rtsocial_visibility', true );
+ 	if( ! empty( $is_visible ) ) {
+ 		return;
+	}
 
     $options = get_option( 'rtsocial_plugin_options' );
-    
-    global $post;
     
     $rtslink = urlencode( apply_filters( "rtsocial_permalink", get_permalink( $post->ID ), $post->ID, $post ) );
     $rtstitle = rt_url_encode( get_the_title( $post->ID ) );
@@ -1430,4 +1436,103 @@ function rtsocial_get_feeds( $feed_url = 'https://rtcamp.com/blog/category/rtsoc
     <?php
 }
 
-//The php closing tag is absent on purpose! Please don't add it
+/**
+ * Adds a box to the main column on the Post and Page edit screens.
+ */
+function rtsocial_add_meta_box() {
+
+	$screens = array( 'post', 'page' );
+
+	foreach ( $screens as $screen ) {
+
+		add_meta_box(
+			'rtsocial_sectionid',
+			__( 'rtSocial', 'myplugin_textdomain' ),
+			'rtsocial_meta_box_callback',
+			$screen,
+			'side',
+			'low'
+		);
+	}
+}
+add_action( 'add_meta_boxes', 'rtsocial_add_meta_box' );
+
+/**
+ * Prints the box content.
+ *
+ * @param WP_Post $post The object for the current post/page.
+ */
+function rtsocial_meta_box_callback( $post ) {
+
+	// Add a nonce field so we can check for it later.
+	wp_nonce_field( 'rtsocial_meta_box', 'rtsocial_meta_box_nonce' );
+
+	/*
+	 * Use get_post_meta() to retrieve an existing value
+	 * from the database and use the value for the form.
+	 */
+	$value = get_post_meta( $post->ID, '_rtsocial_visibility', true ); ?>
+
+	<input type="checkbox" id="rtsocial_visibility" name="rtsocial_visibility" value="1" <?php checked( '1', $value ) ?> />
+	<label for="rtsocial_visibility">
+	<?php _e( 'Exclude this page', 'rtsocial' ) ?>
+	</label>
+<?php }
+
+/**
+ * When the post is saved, saves our custom data.
+ *
+ * @param int $post_id The ID of the post being saved.
+ */
+function rtsocial_save_meta_box_data( $post_id ) {
+
+	/*
+	 * We need to verify this came from our screen and with proper authorization,
+	 * because the save_post action can be triggered at other times.
+	 */
+
+
+	// Check if our nonce is set.
+	if ( ! isset( $_POST['rtsocial_meta_box_nonce'] ) ) {
+		return;
+	}
+
+	// Verify that the nonce is valid.
+	if ( ! wp_verify_nonce( $_POST['rtsocial_meta_box_nonce'], 'rtsocial_meta_box' ) ) {
+		return;
+	}
+
+	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+
+	// Check the user's permissions.
+	if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
+
+		if ( ! current_user_can( 'edit_page', $post_id ) ) {
+			return;
+		}
+
+	} else {
+
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			return;
+		}
+	}
+
+	/* OK, it's safe for us to save the data now. */
+
+	// Make sure that it is set.
+	if ( ! isset( $_POST['rtsocial_visibility'] ) ) {
+		delete_post_meta( $post_id, '_rtsocial_visibility' );
+		return;
+	}
+
+	// Sanitize user input.
+	$my_data = sanitize_text_field( $_POST['rtsocial_visibility'] );
+
+	// Update the meta field in the database.
+	update_post_meta( $post_id, '_rtsocial_visibility', $my_data );
+}
+add_action( 'save_post', 'rtsocial_save_meta_box_data' );
