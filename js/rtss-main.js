@@ -35,10 +35,10 @@ function rtsocial_facebook(){
 				 * Facebook Data
 				 */
 				jQuery.getJSON( rtsocial_fburl, function ( fbres ) {
-					if ( fbres.share.share_count != 'undefined' ) {
+					if ( fbres.share && fbres.share.share_count ) {
 						rtsocial_url_count = fbres.share.share_count; // Setting value
 					}
-					jQuery( facebookSocial ).find( '.rtsocial-fb-count' ).text( ( ( rtsocial_url_count ) ? ( rtsocial_url_count ) : '0' ) );
+					jQuery( facebookSocial ).find( '.rtsocial-fb-count' ).text( rtsocial_url_count );
 //				rtsocial_update_fbcount( rtsocial_url_count ); // passing count for update
 				} );/* End of Callback function in JSON */
 			}
