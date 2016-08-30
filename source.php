@@ -1462,7 +1462,7 @@ function rtsocial_meta_box_callback( $post ) {
 
 	<input type="checkbox" id="rtsocial_visibility" name="rtsocial_visibility" value="1" <?php checked( '1', $value ) ?> />
 	<label for="rtsocial_visibility">
-	<?php _e( 'Exclude this page', 'rtsocial' ) ?>
+	<?php esc_html_e( 'Exclude Social Sharing Icons', 'rtsocial' ) ?>
 	</label>
 <?php }
 
