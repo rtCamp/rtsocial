@@ -650,13 +650,13 @@ function rtsocial_counter( $content = '' ) {
 	
     //Working issue on attachment page
     if ( is_attachment() ) {
-        return;
+        return $content;
     }
 	
 	//Check for excluded page
  	$is_visible = get_post_meta( $post->ID, '_rtsocial_visibility', true );
  	if( ! empty( $is_visible ) ) {
- 		return;
+ 		return $content;
 	}
 
     $options = get_option( 'rtsocial_plugin_options' );
