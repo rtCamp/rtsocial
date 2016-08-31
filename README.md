@@ -61,9 +61,9 @@ No. Right now you cannot.
 ## Changelog ##
 
 #### 2.2.0 ####
+* Use new object structure for Facebook share count
 * Remove Twitter count
-* Add option to show social-media sharing buttons on individual BuddyPress Activity
-* Add option on post/page to exclude social-media sharing buttons
+* Add a new option on post/page to remove social-media sharing buttons
 
 #### 2.1.19 ####
 * Bug fix for network activation in multisite
@@ -161,6 +161,6 @@ No. Right now you cannot.
 ## Upgrade Notice ##
 
 #### 2.2.0 ####
+* Use new object structure for Facebook share count
 * Remove Twitter count
-* Add option to show social-media sharing buttons on individual BuddyPress Activity
-* Add option on post/page to exclude social-media sharing buttons
+* Add a new option on post/page to remove social-media sharing buttons
