@@ -1,9 +1,9 @@
 === rtSocial ===
-Contributors: rtcamp, rahul286, faishal, rittesh.patel, sanketparmar, pranalipatel, UmeshSingla, rutwick, saurabhshukla, HarishChaudhari, 5um17, JoshuaAbenazer, paddyohanlon
+Contributors: rtcamp, rahul286, faishal, rittesh.patel, sanketparmar, pranalipatel, UmeshSingla, rutwick, saurabhshukla, HarishChaudhari, 5um17, JoshuaAbenazer, paddyohanlon, chandrapatel
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
 Requires at least: 3.0
-Tested up to: 4.4
-Stable tag: 2.1.19
+Tested up to: 4.6
+Stable tag: 2.2.0
 License: GPLv2 or later (of-course)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate Link: http://rtcamp.com/donate/
@@ -59,6 +59,11 @@ No. Right now you cannot.
 
 
 == Changelog ==
+
+= 2.2.0 =
+* Remove Twitter count
+* Add option to show social-media sharing buttons on individual BuddyPress Activity
+* Add option on post/page to exclude social-media sharing buttons
 
 = 2.1.19 =
 * Bug fix for network activation in multisite
@@ -155,5 +160,7 @@ No. Right now you cannot.
 
 == Upgrade Notice ==
 
-= 2.1.19 =
-Bug fix for network activation in multisite, CSS fixes
+= 2.2.0 =
+* Remove Twitter count
+* Add option to show social-media sharing buttons on individual BuddyPress Activity
+* Add option on post/page to exclude social-media sharing buttons
