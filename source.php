@@ -318,22 +318,6 @@ function rtsocial_admin_fn() {
                                                 </fieldset>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <th scope="row">BuddyPress Support <sup>+</sup>:</th>
-                                            <td>
-                                                <fieldset>
-                                                    <label>
-                                                        <input value="1" name='rtsocial_plugin_options[enable_bp_support]' id="enable_bp_support_check" type="checkbox" <?php echo ( isset( $options[ 'enable_bp_support' ] ) && ( $options[ 'enable_bp_support' ] == 1 ) ) ? ' checked="checked" ' : ''; ?> />
-                                                        <span>Yes</span>
-                                                    </label>
-                                                </fieldset>
-                                            </td>
-                                        </tr>
-	                                    <tr>
-		                                    <td colspan="2">
-			                                    <span class="description">+ Enable this option to display rtSocial widget on individual BuddyPress Activity. It lets users share the BuddyPress Activity URL on social networks. Rest of the settings work as expected.</span>
-		                                    </td>
-	                                    </tr>
                                     </table>
                                 </div>
                             </div>
@@ -579,51 +563,6 @@ function rtsocial_get_errors() {
 
 add_filter( 'the_content', 'rtsocial_counter' );
 add_filter( 'the_excerpt', 'rtsocial_counter' );
-
-/*
- * BuddyPress Support
- * Inject the widget in BuddyPress Activity Meta section
- */
-add_action( 'bp_activity_entry_meta', 'rtsocial_bp_activity_meta' );
-
-function rtsocial_bp_activity_meta() {
-	$options = get_option( 'rtsocial_plugin_options' );
-	if ( isset( $options[ 'enable_bp_support' ] ) && $options[ 'enable_bp_support' ] == 1 ) {
-
-		// If BP Support is enabled then only apply filters for Title & URL - Used in Share Message & Share URL.
-		add_filter( 'rtsocial_permalink', 'rtsocial_bp_activity_share_url', 10, 3 );
-		add_filter( 'rtsocial_title', 'rtsocial_bp_activity_share_title', 10, 1 );
-
-		// Display the widget.
-		echo rtsocial();
-
-		// Remove filter after filtering the share URL & share message
-		remove_filter( 'rtsocial_permalink', 'rtsocial_bp_activity_share_url', 10, 3 );
-		remove_filter( 'rtsocial_title', 'rtsocial_bp_activity_share_title', 10, 1 );
-	}
-}
-
-function rtsocial_bp_activity_share_url( $url, $post_id, $post ) {
-	if ( function_exists( 'bp_get_activity_id' ) && function_exists( 'bp_activity_get_permalink' ) ) {
-		$id = bp_get_activity_id();
-		// Check if Activity Loop is running and the activity is available.
-		if ( ! empty( $id ) ) {
-			$url = bp_activity_get_permalink( $id );
-		}
-	}
-	return $url;
-}
-
-function rtsocial_bp_activity_share_title( $title ) {
-	if ( function_exists( 'bp_get_activity_id' ) && function_exists( 'bp_get_activity_action' ) ) {
-		$id = bp_get_activity_id();
-		// Check if Activity Loop is running and the activity is available.
-		if ( ! empty( $id ) ) {
-			$title = strip_tags( bp_get_activity_action() );
-		}
-	}
-	return $title;
-}
 
 function rtsocial_dyna( $content ) {
     if ( is_single() ) {
