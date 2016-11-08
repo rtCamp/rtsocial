@@ -17,7 +17,16 @@ add_action( 'admin_notices', 'rts_gplus_notice' );
 add_action( 'wp_ajax_rts_hide_g_plus_notice', 'rts_hide_g_plus_notice' );
 
 register_activation_hook( __FILE__, 'rtsocial_set_defaults' );
-register_deactivation_hook( __FILE__, 'rtsocial_reset_defaults' );
+/**
+* Commenting delete option code on plugin deactivate because user losting setting on plugin reactivate which is wrong 
+*/
+
+//register_deactivation_hook( __FILE__, 'rtsocial_reset_defaults' );
+
+/**
+* Enableing delete option on plugin delete
+*/
+register_uninstall_hook( __FILE__, 'rtsocial_reset_defaults' );
 
 /*
  * Settings Page
