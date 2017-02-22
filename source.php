@@ -1291,7 +1291,7 @@ function rtsocial_gplus_handler() {
     if ( isset( $_POST[ 'action' ] ) && $_POST[ 'action' ] == 'rtsocial_gplus' ) {
         $url = $_POST[ 'url' ];
         $options = get_option( 'rtsocial_plugin_options' );
-        
+
         if ( isset( $options[ 'google_api_key' ] ) && $options[ 'google_api_key' ] != '' ) {
             $key = $options[ 'google_api_key' ];
 
@@ -1466,74 +1466,72 @@ add_action( 'save_post', 'rtsocial_save_meta_box_data' );
 /**
  * Fetch google plus count from google API.
  */
-function rtmedia_wp_footer_callback(){
+function rtmedia_wp_footer_callback() {
 
-    /* Check if user is logged-in. */
-    if( ! is_user_logged_in() ){
-        /* Get option settings of the rtSocial plugin. */
-        $options = get_option( 'rtsocial_plugin_options' );
-        /* Check if the google API key exists. */
-        if ( isset( $options[ 'google_api_key' ] ) && $options[ 'google_api_key' ] != '' ) {
-            ?>
-            <script type="text/javascript" charset="utf-8">
-                jQuery( document ).ready( function( $ ){
-                    jQuery.ajaxPrefilter( function( options, originalOptions, jqXHR ) {
-                            /* Modify options, control originalOptions, store jqXHR, etc */
-                            try {
-                                if ( originalOptions.data == null || typeof ( originalOptions.data ) == 'undefined' || typeof ( originalOptions.data.action ) == 'undefined' ) {
-                                    return true;
-                                }
-                            } catch ( e ) {
+    /* Get option settings of the rtSocial plugin. */
+    $options = get_option( 'rtsocial_plugin_options' );
+    /* Check if the google API key exists. */
+    if ( isset( $options[ 'google_api_key' ] ) && $options[ 'google_api_key' ] != '' ) {
+        ?>
+        <script type="text/javascript" charset="utf-8">
+            jQuery( document ).ready( function( $ ) {
+                jQuery.ajaxPrefilter( function( options, originalOptions, jqXHR ) {
+                        /* Modify options, control originalOptions, store jqXHR, etc */
+                        try {
+                            if ( originalOptions.data == null || typeof ( originalOptions.data ) == 'undefined' || typeof ( originalOptions.data.action ) == 'undefined' ) {
                                 return true;
                             }
-                            /* Check if ajax action is rtsocial_gplus */
-                            if ( originalOptions.data.action == 'rtsocial_gplus' ) {
-                                options.beforeSend = function() {
-                                    if ( originalOptions.data.action == 'rtsocial_gplus' ) {
-                                        /* URL of the media */
-                                        var rtsocial_gplusurl = originalOptions.data.url;
-                                        /* ID of the media */
-                                        var rtsocial_gplusid = originalOptions.data.id;
-                                        /* Social Share: Google Plus JSON */
-                                        var data = {
-                                            "method":"pos.plusones.get",
-                                            "id":"p",
-                                            "params":{
-                                                "nolog":true,
-                                                "id": rtsocial_gplusurl,
-                                                "source":"widget",
-                                                "userId":"@viewer",
-                                                "groupId":"@self"
-                                            },
-                                            "jsonrpc":"2.0",
-                                            "key": "<?php echo $options[ 'google_api_key' ]; ?>",
-                                            "apiVersion":"v1"
-                                        };
-                                        /* Sending a request to google for count */
-                                        $.ajax({
-                                            type: "POST",
-                                            url: "https://clients6.google.com/rpc",
-                                            processData: true,
-                                            contentType: 'application/json',
-                                            data: JSON.stringify(data),
-                                            success: function(r){
-                                                /* Check if the html exists */
-                                                if( jQuery( '.rts_id:input[value="'+rtsocial_gplusid+'"]' ).length > 0 ){
-                                                    /* Add the count in the google count view */
-                                                    jQuery( '.rts_id:input[value="'+rtsocial_gplusid+'"]' ).closest( '.rtsocial-container' ).find( '.rtsocial-horizontal-count .rtsocial-gplus-count' ).text( ( r.result.metadata.globalCounts.count ) ? ( r.result.metadata.globalCounts.count ) : '0' );
-                                                }
+                        } catch ( e ) {
+                            return true;
+                        }
+                        /* Check if ajax action is rtsocial_gplus */
+                        if ( originalOptions.data.action == 'rtsocial_gplus' ) {
+                            options.beforeSend = function() {
+                                if ( originalOptions.data.action == 'rtsocial_gplus' ) {
+                                    /* URL of the media */
+                                    var rtsocial_gplusurl = originalOptions.data.url;
+                                    /* ID of the media */
+                                    var rtsocial_gplusid = originalOptions.data.id;
+                                    /* Social Share: Google Plus JSON */
+                                    var data = {
+                                        "method":"pos.plusones.get",
+                                        "id":"p",
+                                        "params":{
+                                            "nolog":true,
+                                            "id": rtsocial_gplusurl,
+                                            "source":"widget",
+                                            "userId":"@viewer",
+                                            "groupId":"@self"
+                                        },
+                                        "jsonrpc":"2.0",
+                                        "key": "<?php echo $options[ 'google_api_key' ]; ?>",
+                                        "apiVersion":"v1"
+                                    };
+                                    /* Sending a request to google for count */
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "https://clients6.google.com/rpc",
+                                        processData: true,
+                                        contentType: 'application/json',
+                                        data: JSON.stringify(data),
+                                        success: function(r){
+                                            /* Check if the html exists */
+                                            if( jQuery( '.rts_id:input[value="'+rtsocial_gplusid+'"]' ).length > 0 ){
+                                                /* Add the count in the google count view */
+                                                jQuery( '.rts_id:input[value="'+rtsocial_gplusid+'"]' ).closest( '.rtsocial-container' ).find( '.rtsocial-horizontal-count .rtsocial-gplus-count' ).text( ( r.result.metadata.globalCounts.count ) ? ( r.result.metadata.globalCounts.count ) : '0' );
                                             }
-                                        });
-                                        /* Stop the previous ajax */
-                                        return false;
-                                    }
-                                };
-                            }
-                    } );
-                });
-            </script>
-        <?php
-        }
+                                        }
+                                    });
+                                    /* Stop the previous ajax */
+                                    return false;
+                                }
+                            };
+                        }
+                } );
+            });
+        </script>
+    <?php
     }
+
 }
 add_action( 'wp_footer', 'rtmedia_wp_footer_callback', 1000 );
