@@ -4,7 +4,7 @@
   Plugin URI: https://rtcamp.com/rtsocial/
   Author: rtCamp
   Author URI: https://rtcamp.com/
-  Version: 2.2.0
+  Version: 2.2.1
   Description: It is the lightest social sharing plugin, uses non-blocking Javascript and a single sprite to get rid of all the clutter that comes along with the sharing buttons.
   Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
  */
@@ -39,13 +39,13 @@ function rts_gplus_notice() {
     if ( !current_user_can( 'manage_options' ) || ( isset( $_GET[ 'page' ] ) && $_GET[ 'page' ] == 'rtsocial-options' ) ) {
         return;
     }
-    
+
     if ( is_multisite() ) {
         $site_option = get_option( "rts_g_plus_notice" );
     } else {
         $site_option = get_site_option( "rts_g_plus_notice" );
     }
-    
+
     if ( ( !$site_option || $site_option != "hide" ) ) {
         if ( is_multisite() ) {
             update_option( "rts_g_plus_notice", "show" );
@@ -91,7 +91,7 @@ function rts_hide_g_plus_notice() {
     } else {
         echo "0";
     }
-    
+
     die();
 }
 
@@ -1126,6 +1126,9 @@ function rtsocial_reset_defaults() {
 add_action( 'wp_enqueue_scripts', 'rtsocial_assets' );
 
 function rtsocial_assets() {
+
+    // Get all options for rtsocial add on
+    $options = get_option( 'rtsocial_plugin_options' );
     //Dashboard JS and CSS for admin side only
     if ( is_admin() ) {
         wp_enqueue_script( 'dashboard' );
@@ -1138,6 +1141,9 @@ function rtsocial_assets() {
     wp_enqueue_style( 'styleSheet', plugins_url( 'styles/style.css', __FILE__ ) );
     //Plugin JS
     wp_enqueue_script( 'rtss-main', plugins_url( '/js/rtss-main.js', __FILE__ ), array( 'jquery' ), '1.0', true );
+
+    // Set variable for google api key
+    wp_localize_script( 'rtss-main', 'google_api_key', $options[ 'google_api_key' ] );
     //Localize Script
     rtsocial_localize_script( 'rtss-main' );
 }
@@ -1291,7 +1297,7 @@ function rtsocial_gplus_handler() {
     if ( isset( $_POST[ 'action' ] ) && $_POST[ 'action' ] == 'rtsocial_gplus' ) {
         $url = $_POST[ 'url' ];
         $options = get_option( 'rtsocial_plugin_options' );
-        
+
         if ( isset( $options[ 'google_api_key' ] ) && $options[ 'google_api_key' ] != '' ) {
             $key = $options[ 'google_api_key' ];
 

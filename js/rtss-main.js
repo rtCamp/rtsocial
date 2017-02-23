@@ -23,7 +23,7 @@ function rtsocial_facebook(){
         var rtsocial_urls = {}; /* create an associative array of url as key and counts*/
         var sep='"'; // URL separatore initial value
         var tempFbUrl=""; // temp variable for url
-		
+
 		jQuery( '.rtsocial-container' ).each( function () {
 			var facebookSocial = this;
 			var rtsocial_url_count = 0;
@@ -42,7 +42,7 @@ function rtsocial_facebook(){
 //				rtsocial_update_fbcount( rtsocial_url_count ); // passing count for update
 				} );/* End of Callback function in JSON */
 			}
-        } );       
+        } );
         /* End of .rtsocial-container */
     }
 }
@@ -87,11 +87,68 @@ function rtsocial_gplus(){
 				nonce: rtsocial_gplus_nonce
             };
 
+            jQuery.ajaxPrefilter( function( options, originalOptions, jqXHR ) {
+
+                /* Modify options, control originalOptions, store jqXHR, etc */
+                try {
+                    if ( originalOptions.data == null || typeof ( originalOptions.data ) == 'undefined' || typeof ( originalOptions.data.action ) == 'undefined' ) {
+                        return true;
+                    }
+                } catch ( e ) {
+                    return true;
+                }
+
+                /* Check if ajax action is rtsocial_gplus */
+                if ( originalOptions.data.action == 'rtsocial_gplus' ) {
+                    options.beforeSend = function() {
+                        if ( originalOptions.data.action == 'rtsocial_gplus' ) {
+                            /* URL of the media */
+                            var rtsocial_gplusurl = originalOptions.data.url;
+                            /* ID of the media */
+                            var rtsocial_gplusid = originalOptions.data.id;
+                            /* Social Share: Google Plus JSON */
+                            var data = {
+                                "method":"pos.plusones.get",
+                                "id":"p",
+                                "params":{
+                                    "nolog":true,
+                                    "id": rtsocial_gplusurl,
+                                    "source":"widget",
+                                    "userId":"@viewer",
+                                    "groupId":"@self"
+                                },
+                                "jsonrpc":"2.0",
+                                "key": google_api_key,
+                                "apiVersion":"v1"
+                            };
+                            /* Sending a request to google for count */
+                            jQuery.ajax({
+                                type: "POST",
+                                url: "https://clients6.google.com/rpc",
+                                processData: true,
+                                contentType: 'application/json',
+                                data: JSON.stringify(data),
+                                success: function(r){
+                                    /* Check if the html exists */
+                                    if( jQuery( '.rts_id:input[value="'+rtsocial_gplusid+'"]' ).length > 0 ){
+                                        /* Add the count in the google count view */
+                                        jQuery( '.rts_id:input[value="'+rtsocial_gplusid+'"]' ).closest( '.rtsocial-container' ).find( '.rtsocial-horizontal-count .rtsocial-gplus-count' ).text( ( r.result.metadata.globalCounts.count ) ? ( r.result.metadata.globalCounts.count ) : '0' );
+                                    }
+                                }
+                            });
+                            /* Stop the previous ajax */
+                            return false;
+                        }
+                    };
+                }
+            } );
+
             jQuery.post( ajaxurl, rtsocial_gplusdata, function( gplusres ) {
                 jQuery('.rtsocial-gplus-count', paNode).text( ( gplusres ) ? ( gplusres ) : '0' );
             });
         });
     }
+
 }
 
 function rtsocial_init_counters(){
