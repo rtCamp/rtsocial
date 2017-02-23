@@ -1144,7 +1144,7 @@ function rtsocial_assets() {
     }
 
     //Plugin CSS
-    wp_enqueue_style( 'styleSheet', plugins_url( 'styles/style.css', __FILE__ ) );
+    wp_enqueue_style( 'rtsocial-styleSheet', plugins_url( 'styles/style.css', __FILE__ ) );
     //Plugin JS
     wp_enqueue_script( 'rtss-main', plugins_url( '/js/rtss-main.js', __FILE__ ), array( 'jquery' ), '1.0', true );
 
