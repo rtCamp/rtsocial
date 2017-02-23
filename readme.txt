@@ -1,5 +1,5 @@
 === rtSocial ===
-Contributors: rtcamp, rahul286, faishal, rittesh.patel, sanketparmar, pranalipatel, UmeshSingla, rutwick, saurabhshukla, HarishChaudhari, 5um17, JoshuaAbenazer, paddyohanlon, chandrapatel
+Contributors: rtcamp, rahul286, faishal, rittesh.patel, sanketparmar, pranalipatel, UmeshSingla, rutwick, saurabhshukla, HarishChaudhari, 5um17, JoshuaAbenazer, paddyohanlon, chandrapatel, 1naveengiri, bhargavbhandari90
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
 Requires at least: 3.0
 Tested up to: 4.7.2
@@ -62,6 +62,8 @@ No. Right now you cannot.
 
 = 2.2.1 =
 * Bug fix for google plus counter
+* Bug fix for stylesheet not loading if other plugins uses the same stylesheet handler - Thanks to [mahathun] (https://github.com/mahathun)
+* Fixed - Plugin settings used to get deleted when plug in deactivated
 
 = 2.2.0 =
 * Use new object structure for Facebook share count
@@ -165,3 +167,5 @@ No. Right now you cannot.
 
 = 2.2.1 =
 * Bug fix for google plus counter
+* Bug fix for stylesheet not loading if other plugins uses the same stylesheet handler
+* Fixed - Plugin settings used to get deleted upon plugin deactivation
