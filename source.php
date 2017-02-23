@@ -1126,6 +1126,9 @@ function rtsocial_reset_defaults() {
 add_action( 'wp_enqueue_scripts', 'rtsocial_assets' );
 
 function rtsocial_assets() {
+
+    // Get all options for rtsocial add on
+    $options = get_option( 'rtsocial_plugin_options' );
     //Dashboard JS and CSS for admin side only
     if ( is_admin() ) {
         wp_enqueue_script( 'dashboard' );
@@ -1138,6 +1141,9 @@ function rtsocial_assets() {
     wp_enqueue_style( 'styleSheet', plugins_url( 'styles/style.css', __FILE__ ) );
     //Plugin JS
     wp_enqueue_script( 'rtss-main', plugins_url( '/js/rtss-main.js', __FILE__ ), array( 'jquery' ), '1.0', true );
+
+    // Set variable for google api key
+    wp_localize_script( 'rtss-main', 'google_api_key', $options[ 'google_api_key' ] );
     //Localize Script
     rtsocial_localize_script( 'rtss-main' );
 }
