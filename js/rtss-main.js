@@ -277,7 +277,7 @@ jQuery( '#fb_chk' ).click( function() {
     }
 } );
 
-jQuery( '.fb_color' ).live( 'click', function() {
+jQuery( 'body' ).on( 'click', '.fb_color' ,function() {
     if ( jQuery( this ).attr( 'value' ) == 'light' ) {
         jQuery( '#fb_like' ).attr( 'src', args.path + 'fb_like.gif' );
         jQuery( '#fb_recommend' ).attr( 'src', args.path + 'fb_recommend.gif' );
