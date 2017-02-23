@@ -18,10 +18,8 @@ add_action( 'wp_ajax_rts_hide_g_plus_notice', 'rts_hide_g_plus_notice' );
 
 register_activation_hook( __FILE__, 'rtsocial_set_defaults' );
 /**
-* Commenting delete option code on plugin deactivate because user losting setting on plugin reactivate which is wrong 
+* Commenting delete option code on plugin deactivate because user losting setting on plugin reactivate which is wrong
 */
-
-//register_deactivation_hook( __FILE__, 'rtsocial_reset_defaults' );
 
 /**
 * Enableing delete option on plugin delete
@@ -114,7 +112,7 @@ function rtsocial_admin_fn() {
                 <?php
                 settings_fields( 'rtsocial_plugin_options' );
                 do_settings_sections( __FILE__ );
-                
+
                 $options = get_option( 'rtsocial_plugin_options' );
                 $labels = array( 'tw' => 'Twitter', 'fb' => 'Facebook', 'lin' => 'LinkedIn', 'pin' => 'Pinterest', 'gplus' => 'Google+' );
                 ?>
@@ -514,11 +512,11 @@ function rtsocial_check( $args ) {
     //Just in case the JavaScript for avoiding deactivation of all services fails, this will fix it! ;)
     if ( !isset( $args[ 'active' ] ) || empty( $args[ 'active' ] ) ) {
         add_settings_error( 'rtsocial_plugin_options', 'all_inactive', 'All options inactive! Resetting all as active.', $type = 'error' );
-        
+
         $args[ 'active' ] = array( 'tw', 'fb', 'lin', 'pin', 'gplus' );
         $args[ 'inactive' ] = array();
     }
-    
+
     if ( isset( $args[ 'active' ] ) && in_array( 'gplus', $args[ 'active' ] ) && $args[ 'google_api_key' ] == '' ) {
         if ( is_multisite() ) {
             update_option( "rts_g_plus_notice", "show" );
@@ -542,7 +540,7 @@ function rtsocial_check( $args ) {
             if ( !isset( $args[ 'inactive' ] ) ) {
                 $args[ 'inactive' ] = array();
             }
-            
+
             $args[ 'inactive' ][] = 'gplus';
         }
 
@@ -562,7 +560,6 @@ function rtsocial_check( $args ) {
 
 function rtsocial_get_errors() {
     $errors = get_settings_errors();
-    
     echo $errors;
 }
 
@@ -583,12 +580,12 @@ function rtsocial_dyna( $content ) {
 
 function rtsocial_counter( $content = '' ) {
 	global $post;
-	
+
     //Working issue on attachment page
     if ( is_attachment() ) {
         return $content;
     }
-	
+
 	//Check for excluded page
  	$is_visible = get_post_meta( $post->ID, '_rtsocial_visibility', true );
  	if( ! empty( $is_visible ) ) {
@@ -596,7 +593,7 @@ function rtsocial_counter( $content = '' ) {
 	}
 
     $options = get_option( 'rtsocial_plugin_options' );
-    
+
     $rtslink = urlencode( apply_filters( "rtsocial_permalink", get_permalink( $post->ID ), $post->ID, $post ) );
     $rtstitle = rt_url_encode( strip_tags( get_the_title( $post->ID ) ) );
     $rtatitle = strip_tags( get_the_title( $post->ID ) );
@@ -606,12 +603,12 @@ function rtsocial_counter( $content = '' ) {
     //Twitter
     if ( isset( $options ) && !empty( $options ) && isset( $options[ 'active' ] ) && !empty( $options[ 'active' ] ) && in_array( 'tw', $options[ 'active' ] ) ) {
         $tw = array_search( 'tw', $options[ 'active' ] );
-        
+
         $handle_string = '';
         $handle_string .= ( isset( $options[ 'tw_handle' ] ) && $options[ 'tw_handle' ] != '' ) ? '&via=' . $options[ 'tw_handle' ] : '';
         $handle_string .= ( isset( $options[ 'tw_related_handle' ] ) && $options[ 'tw_related_handle' ] != '' ) ? '&related=' . $options[ 'tw_related_handle' ] : '';
         $tw_layout = '<div class="rtsocial-twitter-' . $options[ 'display_options_set' ] . '">';
-        
+
         if ( $options[ 'display_options_set' ] == 'horizontal' ) {
             $tw_layout .= '<div class="rtsocial-twitter-' . $options[ 'display_options_set' ] . '-button"><a title= "Tweet: ' . $rtatitle . '" class="rtsocial-twitter-button" href= "https://twitter.com/share?text=' . $rtstitle . $handle_string . '&url=' . $rtslink . '" rel="nofollow" target="_blank"></a></div>';
         } else {
@@ -628,7 +625,7 @@ function rtsocial_counter( $content = '' ) {
                 }
             }
         }
-        
+
         $tw_layout .= '</div>';
         $active_services[ $tw ] = $tw_layout;
     }
@@ -641,7 +638,7 @@ function rtsocial_counter( $content = '' ) {
         $class = '';
         $rt_fb_style = '';
         $path = plugins_url( 'images/', __FILE__ );
-        
+
         if ( $options[ 'fb_style' ] == 'like_dark' ) {
             $class = 'rtsocial-fb-like-dark';
             $rt_fb_style = 'fb-dark';
@@ -666,7 +663,7 @@ function rtsocial_counter( $content = '' ) {
 
         $fb_layout = '<div class="rtsocial-fb-' . $options[ 'display_options_set' ] . ' ' . $rt_fb_style . '">';
         $rt_social_text = '';
-        
+
         if ( $options[ 'fb_style' ] == 'like_light' || $options[ 'fb_style' ] == 'like_dark' ) {
             $rt_social_text = 'Like';
         } else {
@@ -694,7 +691,7 @@ function rtsocial_counter( $content = '' ) {
                 }
             }
         }
-        
+
         $fb_layout .= '</div>';
         $active_services[ $fb ] = $fb_layout;
     }
@@ -717,7 +714,7 @@ function rtsocial_counter( $content = '' ) {
         //Set Pinterest description
         $title = $post->post_title;
         $pin_layout = '<div class="rtsocial-pinterest-' . $options[ 'display_options_set' ] . '">';
-        
+
         if ( $options[ 'display_options_set' ] == 'horizontal' ) {
             $pin_layout .= '<div class="rtsocial-pinterest-' . $options[ 'display_options_set' ] . '-button"><a class="rtsocial-pinterest-button" href= "https://pinterest.com/pin/create/button/?url=' . get_permalink( $post->ID ) . '&media=' . $thumb_src . '&description=' . $title . '" rel="nofollow" target="_blank" title="Pin: ' . $rtatitle . '"></a></div>' . $pin_count;
         } else {
@@ -735,7 +732,7 @@ function rtsocial_counter( $content = '' ) {
                 }
             }
         }
-        
+
         $pin_layout .= '</div>';
         $active_services[ $pin ] = $pin_layout;
     }
@@ -745,7 +742,7 @@ function rtsocial_counter( $content = '' ) {
         $lin = array_search( 'lin', $options[ 'active' ] );
         $lin_count = (!isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '<div class="rtsocial-' . $options[ 'display_options_set' ] . '-count"><div class="rtsocial-' . $options[ 'display_options_set' ] . '-notch"></div><span class="rtsocial-linkedin-count"></span></div>' : '';
         $lin_layout = '<div class="rtsocial-linkedin-' . $options[ 'display_options_set' ] . '">';
-        
+
         if ( $options[ 'display_options_set' ] == 'horizontal' ) {
             $lin_layout .= '<div class="rtsocial-linkedin-' . $options[ 'display_options_set' ] . '-button"><a class="rtsocial-linkedin-button" href= "https://www.linkedin.com/shareArticle?mini=true&url=' . urlencode( get_permalink( $post->ID ) ) . '&title=' . urlencode( $rtatitle ) . '" rel="nofollow" target="_blank" title="Share: ' . $rtatitle . '"></a></div>' . $lin_count;
         } else {
@@ -763,7 +760,7 @@ function rtsocial_counter( $content = '' ) {
                 }
             }
         }
-        
+
         $lin_layout .= '</div>';
         $active_services[ $lin ] = $lin_layout;
     }
@@ -774,7 +771,7 @@ function rtsocial_counter( $content = '' ) {
         $gplus_count = (!isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '<div class="rtsocial-' . $options[ 'display_options_set' ] . '-count"><div class="rtsocial-' . $options[ 'display_options_set' ] . '-notch"></div><span class="rtsocial-gplus-count"></span></div>' : '';
 
         $gplus_layout = '<div class="rtsocial-gplus-' . $options[ 'display_options_set' ] . '">';
-        
+
         if ( $options[ 'display_options_set' ] == 'horizontal' ) {
             $gplus_layout .= '<div class="rtsocial-gplus-' . $options[ 'display_options_set' ] . '-button"><a class="rtsocial-gplus-button" href= "https://plus.google.com/share?url=' . urlencode( get_permalink( $post->ID ) ) . '" rel="nofollow" target="_blank" title="+1: ' . $rtatitle . '"></a></div>' . $gplus_count;
         } else {
@@ -792,7 +789,7 @@ function rtsocial_counter( $content = '' ) {
                 }
             }
         }
-        
+
         $gplus_layout .= '</div>';
         $active_services[ $gplus ] = $gplus_layout;
     }
@@ -808,7 +805,7 @@ function rtsocial_counter( $content = '' ) {
     $layout .= $active_services;
     //Hidden permalink
     $layout .= '<a rel="nofollow" class="perma-link" href="' . get_permalink( $post->ID ) . '" title="' . esc_attr( get_the_title( $post->ID ) ) . '"></a><input type="hidden" name="rts_id" class="rts_id" value="' . $post->ID . '" />' . wp_nonce_field( 'rts_media_' . $post->ID, 'rts_media_nonce', true, false ) . '</div>';
-    
+
     if ( $options[ 'placement_options_set' ] == 'top' ) {
         return $layout . $content;
     } else {
@@ -848,7 +845,7 @@ function rtsocial( $args = array() ) {
     }
 
     global $post;
-    
+
     $post_obj = apply_filters( "rtsocial_post_object", $post );
     $rts_permalink = apply_filters( "rtsocial_permalink", get_permalink( $post_obj->ID ), $post_obj->ID, $post_obj );
     $rtslink = urlencode( $rts_permalink );
@@ -861,12 +858,12 @@ function rtsocial( $args = array() ) {
     //Twitter
     if ( isset( $options ) && !empty( $options ) && isset( $options[ 'active' ] ) && !empty( $options[ 'active' ] ) && in_array( 'tw', $options[ 'active' ] ) ) {
         $tw = array_search( 'tw', $options[ 'active' ] );
-        
+
         $handle_string = '';
         $handle_string .= ( isset( $options[ 'tw_handle' ] ) && $options[ 'tw_handle' ] != '' ) ? '&via=' . $options[ 'tw_handle' ] : '';
         $handle_string .= ( isset( $options[ 'tw_related_handle' ] ) && $options[ 'tw_related_handle' ] != '' ) ? '&related=' . $options[ 'tw_related_handle' ] : '';
         $tw_layout = '<div class="rtsocial-twitter-' . $options[ 'display_options_set' ] . '">';
-        
+
         if ( $options[ 'display_options_set' ] == 'horizontal' ) {
             $tw_layout .= '<div class="rtsocial-twitter-' . $options[ 'display_options_set' ] . '-button"><a title="Tweet: ' . $rtatitle . '" class="rtsocial-twitter-button" href= "https://twitter.com/share?text=' . $rtstitle . $handle_string . '&url=' . $rtslink . '" rel="nofollow" target="_blank"></a></div>';
         } else {
@@ -883,7 +880,7 @@ function rtsocial( $args = array() ) {
                 }
             }
         }
-        
+
         $tw_layout .= '</div>';
         $active_services[ $tw ] = $tw_layout;
     }
@@ -896,7 +893,7 @@ function rtsocial( $args = array() ) {
         $class = '';
         $rt_fb_style = '';
         $path = plugins_url( 'images/', __FILE__ );
-        
+
         if ( $options[ 'fb_style' ] == 'like_dark' ) {
             $class = 'rtsocial-fb-like-dark';
             $rt_fb_style = 'fb-dark';
@@ -921,7 +918,7 @@ function rtsocial( $args = array() ) {
 
         $fb_layout = '<div class="rtsocial-fb-' . $options[ 'display_options_set' ] . ' ' . $rt_fb_style . '">';
         $rt_social_text = '';
-        
+
         if ( $options[ 'fb_style' ] == 'like_light' || $options[ 'fb_style' ] == 'like_dark' ) {
             $rt_social_text = 'Like';
         } else {
@@ -967,12 +964,12 @@ function rtsocial( $args = array() ) {
             //Else use a default image
             $thumb_src = plugins_url( 'images/default-pinterest.png', __FILE__ );
         }
-        
+
         $thumb_src = apply_filters( 'rtsocial_pinterest_thumb', $thumb_src, $post_obj->ID );
         //Set Pinterest description
         $title = $post_obj->post_title;
         $pin_layout = '<div class="rtsocial-pinterest-' . $options[ 'display_options_set' ] . '">';
-        
+
         if ( $options[ 'display_options_set' ] == 'horizontal' ) {
             $pin_layout .= '<div class="rtsocial-pinterest-' . $options[ 'display_options_set' ] . '-button"><a class="rtsocial-pinterest-button" href= "https://pinterest.com/pin/create/button/?url=' . $rtslink . '&media=' . $thumb_src . '&description=' . $title . '" rel="nofollow" target="_blank" title="Pin: ' . $rtatitle . '"></a></div>' . $pin_count;
         } else {
@@ -990,7 +987,7 @@ function rtsocial( $args = array() ) {
                 }
             }
         }
-        
+
         $pin_layout .= '</div>';
         $active_services[ $pin ] = $pin_layout;
     }
@@ -1000,7 +997,7 @@ function rtsocial( $args = array() ) {
         $lin = array_search( 'lin', $options[ 'active' ] );
         $lin_count = (!isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '<div class="rtsocial-' . $options[ 'display_options_set' ] . '-count"><div class="rtsocial-' . $options[ 'display_options_set' ] . '-notch"></div><span class="rtsocial-linkedin-count"></span></div>' : '';
         $lin_layout = '<div class="rtsocial-linkedin-' . $options[ 'display_options_set' ] . '">';
-        
+
         if ( $options[ 'display_options_set' ] == 'horizontal' ) {
             $lin_layout .= '<div class="rtsocial-linkedin-' . $options[ 'display_options_set' ] . '-button"><a class="rtsocial-linkedin-button" href= "https://www.linkedin.com/shareArticle?mini=true&url=' . $rtslink . '&title=' . $rtstitle . '" rel="nofollow" target="_blank" title="Share: ' . $rtatitle . '"></a></div>' . $lin_count;
         } else {
@@ -1018,7 +1015,7 @@ function rtsocial( $args = array() ) {
                 }
             }
         }
-        
+
         $lin_layout .= '</div>';
         $active_services[ $lin ] = $lin_layout;
     }
@@ -1028,7 +1025,7 @@ function rtsocial( $args = array() ) {
         $gplus = array_search( 'gplus', $options[ 'active' ] );
         $gplus_count = (!isset( $options[ 'hide_count' ] ) || $options[ 'hide_count' ] != 1 ) ? '<div class="rtsocial-' . $options[ 'display_options_set' ] . '-count"><div class="rtsocial-' . $options[ 'display_options_set' ] . '-notch"></div><span class="rtsocial-gplus-count"></span></div>' : '';
         $gplus_layout = '<div class="rtsocial-gplus-' . $options[ 'display_options_set' ] . '">';
-        
+
         if ( $options[ 'display_options_set' ] == 'horizontal' ) {
             $gplus_layout .= '<div class="rtsocial-gplus-' . $options[ 'display_options_set' ] . '-button"><a class="rtsocial-gplus-button" href= "https://plus.google.com/share?url=' . $rtslink . '" rel="nofollow" target="_blank" title="+1: ' . $rtatitle . '"></a></div>' . $gplus_count;
         } else {
@@ -1046,7 +1043,7 @@ function rtsocial( $args = array() ) {
                 }
             }
         }
-        
+
         $gplus_layout .= '</div>';
         $active_services[ $gplus ] = $gplus_layout;
     }
@@ -1074,7 +1071,7 @@ function rtsocial_set_defaults() {
     if( is_multisite() ) {
         foreach( wp_get_sites() as $i => $site ) {
             switch_to_blog( $site[ 'blog_id' ] );
-            
+
             $defaults = array(
                 'fb_style' => 'like_light',
                 'tw_handle' => '',
@@ -1089,7 +1086,7 @@ function rtsocial_set_defaults() {
             if ( !get_option( 'rtsocial_plugin_options' ) ) {
                 update_option( 'rtsocial_plugin_options', $defaults );
             }
-            
+
             restore_current_blog();
         }
     } else {
@@ -1118,9 +1115,9 @@ function rtsocial_reset_defaults() {
     if( is_multisite() && is_plugin_active_for_network( 'rtsocial/source.php' ) ) {
         foreach( wp_get_sites() as $i => $site ) {
             switch_to_blog( $site[ 'blog_id' ] );
-            
+
             delete_option( 'rtsocial_plugin_options' );
-            
+
             restore_current_blog();
         }
     } else {
@@ -1196,7 +1193,7 @@ function rtsocial_localize_script( $handle ) {
     }
 
     $args[ 'path' ] = plugins_url( 'images/', __FILE__ );
-    
+
     wp_localize_script( $handle, 'args', $args );
 }
 
@@ -1208,14 +1205,14 @@ add_filter( 'plugin_action_links', 'rtsocial_actlinks', 10, 2 );
 function rtsocial_actlinks( $links, $file ) {
     // Static so we don't call plugin_basename on every plugin row.
     static $this_plugin;
-    
+
     if ( !$this_plugin ) {
         $this_plugin = plugin_basename( __FILE__ );
     }
-    
+
     if ( $file == $this_plugin ) {
         $settings_link = '<a href="' . admin_url( 'options-general.php?page=rtsocial-options' ) . '">' . __( 'Settings' ) . '</a>';
-        
+
         array_unshift( $links, $settings_link ); // before other links
     }
 
@@ -1235,7 +1232,7 @@ function rtsocial_plugin_activate() {
 function rtsocial_plugin_redirect() {
     if ( get_option( 'rtsocial_plugin_do_activation_redirect', false ) ) {
         delete_option( 'rtsocial_plugin_do_activation_redirect' );
-        
+
         if ( !function_exists( 'is_plugin_active_for_network' ) )
             require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
             // Makes sure the plugin is defined before trying to use it
@@ -1334,7 +1331,7 @@ function rtsocial_gplus_handler() {
                 echo $count;
             }
         }
-        
+
         die( 1 );
     }
 }
@@ -1346,11 +1343,11 @@ function rtsocial_gplus_handler() {
 function rtsocial_get_feeds( $feed_url = 'https://rtcamp.com/blog/category/rtsocial/feed/' ) {
     // Get RSS Feed(s)
     require_once( ABSPATH . WPINC . '/feed.php' );
-    
+
     $maxitems = 0;
     // Get a SimplePie feed object from the specified feed source.
     $rss = fetch_feed( $feed_url );
-    
+
     if ( !is_wp_error( $rss ) ) { // Checks that the object is created correctly
         // Figure out how many total items there are, but limit it to 5.
         $maxitems = $rss->get_item_quantity( 5 );
