@@ -1149,8 +1149,8 @@ function rtsocial_assets() {
     wp_enqueue_script( 'rtss-main', plugins_url( '/js/rtss-main.js', __FILE__ ), array( 'jquery' ), '1.0', true );
 
     // Set variable for google api key
-    wp_localize_script( 'rtss-main', 'google_api_key', $options[ 'google_api_key' ] );
-    //Localize Script
+    wp_localize_script( 'rtss-main', 'google_api_key', isset( $options[ 'google_api_key' ] ) ? $options[ 'google_api_key' ] : ''  );
+	//Localize Script
     rtsocial_localize_script( 'rtss-main' );
 }
 
