@@ -181,13 +181,6 @@
 										</td>
 									</tr>
 									<tr>
-										<th><?php esc_html_e( 'Your google API key', 'rtSocial' ); ?>:</th>
-										<td>
-											<input type="text" value="<?php echo ( ! empty( $options['google_api_key'] ) ) ? ( esc_attr( $options['google_api_key'] ) ) : ''; ?>" id="google_api_key" name="rtsocial_plugin_options[google_api_key]" />
-											<a href="https://developers.google.com/+/api/oauth" target="blank"><?php esc_html_e( 'How to create API key?', 'rtSocial' ); ?></a>
-										</td>
-									</tr>
-									<tr>
 										<th scope="row"><?php esc_html_e( 'Active Buttons', 'rtSocial' ); ?> <sup>#</sup>:</th>
 										<td>
 											<ul id="rtsocial-sorter-active" class="connectedSortable">

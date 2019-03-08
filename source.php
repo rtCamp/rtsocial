@@ -27,7 +27,6 @@ if ( ! defined( 'RTSOCIAL_PLUGIN_PATH' ) ) {
  * Initial Actions
  */
 add_action( 'admin_menu', 'rtsocial_admin' );
-add_action( 'admin_notices', 'rts_gplus_notice' );
 add_action( 'wp_ajax_rts_hide_g_plus_notice', 'rts_hide_g_plus_notice' );
 
 register_activation_hook( __FILE__, 'rtsocial_set_defaults' );
@@ -50,77 +49,6 @@ function rtsocial_admin() {
 
 	// Enqueue CSS and JS for the options page.
 	add_action( 'admin_print_scripts-' . $hook, 'rtsocial_assets' );
-}
-
-/**
- * Admin notice for Goggle API key
- */
-function rts_gplus_notice() {
-
-	if ( ! empty( $_GET['rtnonce'] )
-	&& ! wp_verify_nonce( sanitize_key( $_GET['rtnonce'] ), 'rtnonce' ) ) {
-		return;
-	}
-
-	if ( ! current_user_can( 'manage_options' )
-	|| ( ! empty( $_GET['page'] )
-	&& 'rtsocial-options' === $_GET['page'] ) ) {
-		return;
-	}
-
-	if ( is_multisite() ) {
-		$site_option = get_option( 'rts_g_plus_notice' );
-	} else {
-		$site_option = get_site_option( 'rts_g_plus_notice' );
-	}
-
-	if ( ( ! $site_option
-	|| 'hide' !== $site_option ) ) {
-		if ( is_multisite() ) {
-			update_option( 'rts_g_plus_notice', 'show' );
-		} else {
-			update_site_option( 'rts_g_plus_notice', 'show' );
-		}
-		?>
-		<div class="error rts_g_plus_notice">
-			<p>
-				<b><?php esc_html_e( 'rtSocial', 'rtSocial' ); ?>:</b> <?php esc_html_e( 'You need to add Google API key under', 'rtSocial' ); ?> <a href="<?php echo esc_url( admin_url( 'options-general.php?page=rtsocial-options&rtnonce=' . wp_create_nonce( 'rtnonce' ) ) ); ?>"><?php esc_html_e( 'rtSocial admin settings', 'rtSocial' ); ?></a> <?php esc_html_e( 'to display google+ count.', 'rtSocial' ); ?>
-				<a href="#" onclick="rts_g_plus_override_notice();" style="float:right"><?php esc_html_e( 'Dismiss', 'rtSocial' ); ?></a>
-			</p>
-		</div>
-		<script type="text/javascript">
-			function rts_g_plus_override_notice() {
-				var data = {action: 'rts_hide_g_plus_notice'};
-
-				jQuery.post(ajaxurl, data, function ( response ) {
-					response = response.trim();
-
-					if (response === "1")
-						jQuery('.rts_g_plus_notice').remove();
-				} );
-			}
-		</script>
-		<?php
-	}
-}
-
-/**
- * Hide Admin notice for Goggle API key
- */
-function rts_hide_g_plus_notice() {
-	if ( is_multisite() ) {
-		$update_site_option = update_option( 'rts_g_plus_notice', 'hide' );
-	} else {
-		$update_site_option = update_site_option( 'rts_g_plus_notice', 'hide' );
-	}
-
-	if ( $update_site_option ) {
-		echo '1';
-	} else {
-		echo '0';
-	}
-
-	die();
 }
 
 /**
@@ -154,44 +82,6 @@ function rtsocial_check( $args ) {
 
 		$args['active']   = array( 'tw', 'fb', 'lin', 'pin', 'gplus' );
 		$args['inactive'] = array();
-	}
-
-	if ( ! empty( $args['active'] )
-	&& in_array( 'gplus', $args['active'], true )
-	&& empty( $args['google_api_key'] ) ) {
-		if ( is_multisite() ) {
-			update_option( 'rts_g_plus_notice', 'show' );
-		} else {
-			update_site_option( 'rts_g_plus_notice', 'show' );
-		}
-	} else {
-		if ( is_multisite() ) {
-			update_option( 'rts_g_plus_notice', 'hide' );
-		} else {
-			update_site_option( 'rts_g_plus_notice', 'hide' );
-		}
-	}
-
-	// Put g-plus in inactive state if google api key is not provided.
-	if ( ! isset( $args['google_api_key'] )
-	|| empty( $args['google_api_key'] ) ) {
-		// Google api key is not set and if gplus is in active state put it in inactive state.
-		$key = array_search( 'gplus', $args['active'], true );
-		if ( false !== ( $key ) ) {
-			unset( $args['active'][ $key ] );
-
-			if ( empty( $args['inactive'] ) ) {
-				$args['inactive'] = array();
-			}
-
-			$args['inactive'][] = 'gplus';
-		}
-
-		if ( is_multisite() ) {
-			update_option( 'rts_g_plus_notice', 'show' );
-		} else {
-			update_site_option( 'rts_g_plus_notice', 'show' );
-		}
 	}
 
 	return $args;
@@ -457,20 +347,17 @@ function rtsocial_counter( $content = '' ) {
 	// G+ Share Button.
 	if ( ! empty( $options )
 	&& ! empty( $options['active'] )
-	&& in_array( 'gplus', $options['active'], true )
-	&& ! empty( $options['google_api_key'] ) ) {
+	&& in_array( 'gplus', $options['active'], true ) ) {
 		$gplus = array_search( 'gplus', $options['active'], true );
-
-		$gplus_count = ( empty( $options['hide_count'] ) || 1 !== (int) $options['display_options_set'] ) ? '<div class="rtsocial-' . $options['display_options_set'] . '-count"><div class="rtsocial-' . $options['display_options_set'] . '-notch"></div><span class="rtsocial-gplus-count"></span></div>' : '';
 
 		$gplus_layout = '<div class="rtsocial-gplus-' . $options['display_options_set'] . '">';
 
 		if ( 'horizontal' === $options['display_options_set'] ) {
-			$gplus_layout .= '<div class="rtsocial-gplus-' . $options['display_options_set'] . '-button"><a class="rtsocial-gplus-button" href= "https://plus.google.com/share?url=' . rawurlencode( get_permalink( $post->ID ) ) . '" rel="nofollow" target="_blank" title="+1: ' . $rtatitle . '"></a></div>' . $gplus_count;
+			$gplus_layout .= '<div class="rtsocial-gplus-' . $options['display_options_set'] . '-button"><a class="rtsocial-gplus-button" href= "https://plus.google.com/share?url=' . rawurlencode( get_permalink( $post->ID ) ) . '" rel="nofollow" target="_blank" title="+1: ' . $rtatitle . '"></a></div>';
 		} else {
 
 			if ( 'vertical' === $options['display_options_set'] ) {
-				$gplus_layout .= $gplus_count . '<div class="rtsocial-gplus-' . $options['display_options_set'] . '-button"><a class="rtsocial-gplus-button" href= "https://plus.google.com/share?url=' . rawurlencode( get_permalink( $post->ID ) ) . '" rel="nofollow" target="_blank" title="+1: ' . $rtatitle . '"></a></div>';
+				$gplus_layout .= '<div class="rtsocial-gplus-' . $options['display_options_set'] . '-button"><a class="rtsocial-gplus-button" href= "https://plus.google.com/share?url=' . rawurlencode( get_permalink( $post->ID ) ) . '" rel="nofollow" target="_blank" title="+1: ' . $rtatitle . '"></a></div>';
 			} else {
 
 				if ( 'icon' === $options['display_options_set'] ) {
@@ -479,8 +366,7 @@ function rtsocial_counter( $content = '' ) {
 
 					if ( 'icon-count' === $options['display_options_set'] ) {
 						$gplus_layout  = '<div class="rtsocial-gplus-icon">';
-						$gplus_count   = ( empty( $options['hide_count'] ) || 1 !== $options['hide_count'] ) ? '<div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-gplus-count"></span></div>' : '';
-						$gplus_layout .= ' <div class="rtsocial-gplus-icon-button"><a class="rtsocial-gplus-icon-link" href= "https://plus.google.com/share?url=' . rawurlencode( get_permalink( $post->ID ) ) . '" target= "_blank" title="+1: ' . $rtatitle . '"></a></div>' . $gplus_count;
+						$gplus_layout .= ' <div class="rtsocial-gplus-icon-button"><a class="rtsocial-gplus-icon-link" href= "https://plus.google.com/share?url=' . rawurlencode( get_permalink( $post->ID ) ) . '" target= "_blank" title="+1: ' . $rtatitle . '"></a></div>';
 					}
 				}
 			}
@@ -760,20 +646,17 @@ function rtsocial( $args = array() ) {
 	// G+ Share Button.
 	if ( ! empty( $options )
 	&& ! empty( $options['active'] )
-	&& in_array( 'gplus', $options['active'], true )
-	&& ! empty( $options['google_api_key'] ) ) {
+	&& in_array( 'gplus', $options['active'], true ) ) {
 		$gplus = array_search( 'gplus', $options['active'], true );
-
-		$gplus_count = ( empty( $options['hide_count'] ) || 1 !== (int) $options['hide_count'] ) ? '<div class="rtsocial-' . $options['display_options_set'] . '-count"><div class="rtsocial-' . $options['display_options_set'] . '-notch"></div><span class="rtsocial-gplus-count"></span></div>' : '';
 
 		$gplus_layout = '<div class="rtsocial-gplus-' . $options['display_options_set'] . '">';
 
 		if ( 'horizontal' === $options['display_options_set'] ) {
-			$gplus_layout .= '<div class="rtsocial-gplus-' . $options['display_options_set'] . '-button"><a class="rtsocial-gplus-button" href= "https://plus.google.com/share?url=' . $rtslink . '" rel="nofollow" target="_blank" title="+1: ' . $rtatitle . '"></a></div>' . $gplus_count;
+			$gplus_layout .= '<div class="rtsocial-gplus-' . $options['display_options_set'] . '-button"><a class="rtsocial-gplus-button" href= "https://plus.google.com/share?url=' . $rtslink . '" rel="nofollow" target="_blank" title="+1: ' . $rtatitle . '"></a></div>';
 		} else {
 
 			if ( 'vertical' === $options['display_options_set'] ) {
-				$gplus_layout .= $gplus_count . '<div class="rtsocial-gplus-' . $options['display_options_set'] . '-button"><a class="rtsocial-gplus-button" href= "https://plus.google.com/share?url=' . $rtslink . '" rel="nofollow" target="_blank" title="+1: ' . $rtatitle . '"></a></div>';
+				$gplus_layout .= '<div class="rtsocial-gplus-' . $options['display_options_set'] . '-button"><a class="rtsocial-gplus-button" href= "https://plus.google.com/share?url=' . $rtslink . '" rel="nofollow" target="_blank" title="+1: ' . $rtatitle . '"></a></div>';
 			} else {
 
 				if ( 'icon' === $options['display_options_set'] ) {
@@ -782,8 +665,7 @@ function rtsocial( $args = array() ) {
 
 					if ( 'icon-count' === $options['display_options_set'] ) {
 						$gplus_layout  = '<div class="rtsocial-gplus-icon">';
-						$gplus_count   = ( empty( $options['hide_count'] ) || 1 !== (int) $options['hide_count'] ) ? '<div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-gplus-count"></span></div>' : '';
-						$gplus_layout .= ' <div class="rtsocial-gplus-icon-button"><a class="rtsocial-gplus-icon-link" href= "https://plus.google.com/share?url=' . $rtslink . '" target= "_blank" title="+1: ' . $rtatitle . '"></a></div>' . $gplus_count;
+						$gplus_layout .= ' <div class="rtsocial-gplus-icon-button"><a class="rtsocial-gplus-icon-link" href= "https://plus.google.com/share?url=' . $rtslink . '" target= "_blank" title="+1: ' . $rtatitle . '"></a></div>';
 					}
 				}
 			}
@@ -911,9 +793,6 @@ function rtsocial_assets() {
 
 	// Plugin JS.
 	wp_enqueue_script( 'rtss-main', plugins_url( '/js/rtss-main.js', __FILE__ ), array( 'jquery' ), get_file_modified_time( RTSOCIAL_PLUGIN_PATH . 'js/rtss-main.js' ), true );
-
-	// Set variable for google api key.
-	wp_localize_script( 'rtss-main', 'google_api_key', $options['google_api_key'] );
 
 	// Localize Script.
 	rtsocial_localize_script( 'rtss-main' );
@@ -1062,52 +941,6 @@ function rtsocial_ajaxurl() {
 		var ajaxurl = '<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>';
 	</script>
 	<?php
-}
-
-add_action( 'wp_ajax_rtsocial_gplus', 'rtsocial_gplus_handler' );
-add_action( 'wp_ajax_nopriv_rtsocial_gplus', 'rtsocial_gplus_handler' );
-/**
- * Google Plus shares count handled via HTTP API
- */
-function rtsocial_gplus_handler() {
-	if ( ! empty( $_POST['action'] )
-	&& 'rtsocial_gplus' === $_POST['action'] ) {
-		$url = sanitize_text_field( wp_unslash( $_POST['url'] ) );
-
-		$options = get_option( 'rtsocial_plugin_options' );
-
-		if ( ! empty( $options['google_api_key'] ) ) {
-			$key = $options['google_api_key'];
-
-			// Check for transient.
-			$count = get_transient( 'g_plus_count_' . md5( $url ) );
-			if ( false === ( $count ) ) {
-				$response = wp_remote_request(
-					'https://clients6.google.com/rpc',
-					array(
-						'method'  => 'POST',
-						'body'    => '[{"method":"pos.plusones.get","id":"p","params":{"nolog":true,"id":"' . rawurldecode( $url ) . '","source":"widget","userId":"@viewer","groupId":"@self"},"jsonrpc":"2.0","key":"' . $key . '","apiVersion":"v1"}]',
-						'headers' => array( 'Content-Type' => 'application/json' ),
-					)
-				);
-
-				// check the response status code.
-				if ( ! empty( $response ) && 200 === (int) wp_remote_retrieve_response_code( $response ) ) {
-					$result = json_decode( wp_remote_retrieve_body( $response ) );
-					$count  = intval( $result[0]->result->metadata->globalCounts->count );
-
-					// Set transient to expire every 10 minutes.
-					set_transient( 'g_plus_count_' . md5( $url ), absint( $count ), 1 * MINUTE_IN_SECONDS );
-					echo esc_html( $count );
-				} else {
-					echo 0;
-				}
-			} else {
-				echo esc_html( $count );
-			}
-		}
-		die( 1 );
-	}
 }
 
 /**
