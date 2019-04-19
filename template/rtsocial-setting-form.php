@@ -18,11 +18,10 @@
 			$options = get_option( 'rtsocial_plugin_options' );
 
 			$labels = array(
-				'tw'    => 'Twitter',
-				'fb'    => 'Facebook',
-				'lin'   => 'LinkedIn',
-				'pin'   => 'Pinterest',
-				'gplus' => 'Google+',
+				'tw'  => 'Twitter',
+				'fb'  => 'Facebook',
+				'lin' => 'LinkedIn',
+				'pin' => 'Pinterest',
 			);
 			?>
 			<div class="metabox-holder align_left rtsocial" id="rtsocial">

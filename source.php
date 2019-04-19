@@ -15,7 +15,7 @@
  * License:     GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Description: It is the lightest social sharing plugin, uses non-blocking Javascript and a single sprite to get rid of all the clutter that comes along with the sharing buttons.
- * Tags:        rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
+ * Tags:        rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, plus one button, social share, social sharing
  */
 
 if ( ! defined( 'RTSOCIAL_PLUGIN_PATH' ) ) {
@@ -80,7 +80,7 @@ function rtsocial_check( $args ) {
 	if ( empty( $args['active'] ) ) {
 		add_settings_error( 'rtsocial_plugin_options', 'all_inactive', 'All options inactive! Resetting all as active.', $type = 'error' );
 
-		$args['active']   = array( 'tw', 'fb', 'lin', 'pin', 'gplus' );
+		$args['active']   = array( 'tw', 'fb', 'lin', 'pin' );
 		$args['inactive'] = array();
 	}
 
@@ -476,39 +476,6 @@ function rtsocial_counter( $content = '' ) {
 		$active_services[ $lin ] = $lin_layout;
 	}
 	// Linked In End.
-	// G+ Share Button.
-	if ( ! empty( $options )
-	&& ! empty( $options['active'] )
-	&& in_array( 'gplus', $options['active'], true ) ) {
-		$gplus = array_search( 'gplus', $options['active'], true );
-
-		$gplus_layout = '<div class="rtsocial-gplus-' . $options['display_options_set'] . '">';
-
-		if ( 'horizontal' === $options['display_options_set'] ) {
-			$gplus_layout .= '<div class="rtsocial-gplus-' . $options['display_options_set'] . '-button"><a class="rtsocial-gplus-button" href= "https://plus.google.com/share?url=' . rawurlencode( get_permalink( $post->ID ) ) . '" rel="nofollow" target="_blank" title="+1: ' . $rtatitle . '"></a></div>';
-		} else {
-
-			if ( 'vertical' === $options['display_options_set'] ) {
-				$gplus_layout .= '<div class="rtsocial-gplus-' . $options['display_options_set'] . '-button"><a class="rtsocial-gplus-button" href= "https://plus.google.com/share?url=' . rawurlencode( get_permalink( $post->ID ) ) . '" rel="nofollow" target="_blank" title="+1: ' . $rtatitle . '"></a></div>';
-			} else {
-
-				if ( 'icon' === $options['display_options_set'] ) {
-					$gplus_layout .= ' <div class="rtsocial-gplus-' . $options['display_options_set'] . '-button"><a class="rtsocial-gplus-icon-link" href= "https://plus.google.com/share?url=' . rawurlencode( get_permalink( $post->ID ) ) . '" target= "_blank" title="+1: ' . $rtatitle . '"></a></div>';
-				} else {
-
-					if ( 'icon-count' === $options['display_options_set'] ) {
-						$gplus_layout  = '<div class="rtsocial-gplus-icon">';
-						$gplus_layout .= ' <div class="rtsocial-gplus-icon-button"><a class="rtsocial-gplus-icon-link" href= "https://plus.google.com/share?url=' . rawurlencode( get_permalink( $post->ID ) ) . '" target= "_blank" title="+1: ' . $rtatitle . '"></a></div>';
-					}
-				}
-			}
-		}
-
-		$gplus_layout .= '</div>';
-
-		$active_services[ $gplus ] = $gplus_layout;
-	}
-	// G+ Share Button End.
 	// Sort by indexes.
 	ksort( $active_services );
 
@@ -552,7 +519,7 @@ function rtsocial_counter( $content = '' ) {
  * @param array $args Arguments.
  *
  * Possible options.
- * 'active' = array('tw', 'fb', 'lin', 'pin', 'gplus');
+ * 'active' = array('tw', 'fb', 'lin', 'pin');
  * 'display_options_set' = 'horizontal', 'vertical', 'icon', 'icon-count'
  * 'alignment_options_set' = 'left', 'right', 'center', 'none'
  * 'tw_handle' = 'whateveryouwant'
@@ -921,39 +888,6 @@ function rtsocial( $args = array() ) {
 		$active_services[ $lin ] = $lin_layout;
 	}
 	// Linked In End.
-	// G+ Share Button.
-	if ( ! empty( $options )
-	&& ! empty( $options['active'] )
-	&& in_array( 'gplus', $options['active'], true ) ) {
-		$gplus = array_search( 'gplus', $options['active'], true );
-
-		$gplus_layout = '<div class="rtsocial-gplus-' . $options['display_options_set'] . '">';
-
-		if ( 'horizontal' === $options['display_options_set'] ) {
-			$gplus_layout .= '<div class="rtsocial-gplus-' . $options['display_options_set'] . '-button"><a class="rtsocial-gplus-button" href= "https://plus.google.com/share?url=' . $rtslink . '" rel="nofollow" target="_blank" title="+1: ' . $rtatitle . '"></a></div>';
-		} else {
-
-			if ( 'vertical' === $options['display_options_set'] ) {
-				$gplus_layout .= '<div class="rtsocial-gplus-' . $options['display_options_set'] . '-button"><a class="rtsocial-gplus-button" href= "https://plus.google.com/share?url=' . $rtslink . '" rel="nofollow" target="_blank" title="+1: ' . $rtatitle . '"></a></div>';
-			} else {
-
-				if ( 'icon' === $options['display_options_set'] ) {
-					$gplus_layout .= ' <div class="rtsocial-gplus-' . $options['display_options_set'] . '-button"><a class="rtsocial-gplus-icon-link" href= "https://plus.google.com/share?url=' . $rtslink . '" target= "_blank" title="+1: ' . $rtatitle . '"></a></div>';
-				} else {
-
-					if ( 'icon-count' === $options['display_options_set'] ) {
-						$gplus_layout  = '<div class="rtsocial-gplus-icon">';
-						$gplus_layout .= ' <div class="rtsocial-gplus-icon-button"><a class="rtsocial-gplus-icon-link" href= "https://plus.google.com/share?url=' . $rtslink . '" target= "_blank" title="+1: ' . $rtatitle . '"></a></div>';
-					}
-				}
-			}
-		}
-
-		$gplus_layout .= '</div>';
-
-		$active_services[ $gplus ] = $gplus_layout;
-	}
-	// G+ Share Button End.
 	// Sort by indexes.
 	ksort( $active_services );
 
@@ -998,7 +932,7 @@ function rtsocial_set_defaults() {
 				'display_options_set'   => 'horizontal',
 				'alignment_options_set' => 'right',
 				'active'                => array( 'tw', 'fb', 'lin', 'pin' ),
-				'inactive'              => array( 'gplus' ),
+				'inactive'              => array(),
 			);
 
 			if ( ! get_option( 'rtsocial_plugin_options' ) ) {
@@ -1016,7 +950,7 @@ function rtsocial_set_defaults() {
 			'display_options_set'   => 'horizontal',
 			'alignment_options_set' => 'right',
 			'active'                => array( 'tw', 'fb', 'lin', 'pin' ),
-			'inactive'              => array( 'gplus' ),
+			'inactive'              => array(),
 		);
 
 		if ( ! get_option( 'rtsocial_plugin_options' ) ) {
@@ -1087,7 +1021,6 @@ function rtsocial_localize_script( $handle ) {
 	$args['facebook']     = false;
 	$args['pinterest']    = false;
 	$args['linkedin']     = false;
-	$args['gplus']        = false;
 
 	if ( is_array( $options['active'] ) ) {
 		if ( in_array( 'tw', $options['active'], true ) ) {
@@ -1104,10 +1037,6 @@ function rtsocial_localize_script( $handle ) {
 
 		if ( in_array( 'lin', $options['active'], true ) ) {
 			$args['linkedin'] = true;
-		}
-
-		if ( in_array( 'gplus', $options['active'], true ) ) {
-			$args['gplus'] = true;
 		}
 	}
 
@@ -1227,7 +1156,7 @@ function rtsocial_ajaxurl() {
 }
 
 /**
- * Google Plus shares count handled via CURL.
+ * Latest news of rtcamp.
  *
  * @param string $feed_url Feed URL.
  */
