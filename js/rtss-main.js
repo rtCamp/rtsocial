@@ -177,9 +177,7 @@ jQuery( '#fb_chk' ).click(
 /**
  * Toggle FB Share from Dark to Light.
  */
-jQuery( '.fb_color' ).live(
-	'click',
-	function () {
+jQuery( 'body' ).on( 'click', '.fb_color' ,function() {
 		if ( 'light' === jQuery( this ).attr( 'value' ) ) {
 			jQuery( '#fb_like' ).attr( 'src', args.path + 'fb_like.gif' );
 			jQuery( '#fb_recommend' ).attr( 'src', args.path + 'fb_recommend.gif' );
