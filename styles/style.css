@@ -192,7 +192,6 @@ div#content_block { width: 70% }
 #rtsocial-recommend-light,
 #rtsocial-recommend-dark,
 #rtsocial-share-plain,
-#rtsocial-ord-gplus label,
 #rtsocial-ord-tw label,
 #rtsocial-ord-fb label,
 #rtsocial-ord-lin label,
@@ -269,13 +268,6 @@ div#content_block { width: 70% }
 
 .rtsocial-linkedin-button:hover,
 #rtsocial-ord-lin label:hover{ background-position: 0 -720px; border-color: #ababab #9a9a9a #787878; }
-
-/* G+ Share Button */
-.rtsocial-gplus-button,
-#rtsocial-ord-gplus label{ background-position: 0 -758px; display: block; height: 20px; width: 59px; text-indent: -9999px; }
-#rtsocial-ord-gplus label{ display: inline-block; }
-.rtsocial-gplus-button:hover,
-#rtsocial-ord-gplus label:hover{ background-position: 0 -798px; }
 
 #display_manual_th { vertical-align: middle }
 
