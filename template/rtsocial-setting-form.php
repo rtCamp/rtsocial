@@ -28,7 +28,7 @@
 				<div class="postbox-container">
 					<div class="meta-box-sortables ui-sortable">
 						<div class="postbox">
-							<div title="Click to toggle" class="handlediv"><br/></div>
+							<div title="<?php esc_attr_e( 'Click to toggle', 'rtSocial' ); ?>" class="handlediv"><br/></div>
 							<h3 class="hndle"><?php esc_html_e( 'rtSocial Settings', 'rtSocial' ); ?></h3>
 							<div class="inside">
 								<table class="form-table">
@@ -231,7 +231,7 @@
 						</div>
 						<!--Twitter-->
 						<div class="postbox" id="tw_box">
-							<div title="Click to toggle" class="handlediv"><br/></div>
+							<div title="<?php esc_attr_e( 'Click to toggle', 'rtSocial' ); ?>" class="handlediv"><br/></div>
 							<h3 class="hndle"><?php esc_html_e( 'Twitter Button Settings', 'rtSocial' ); ?></h3>
 							<div class="inside">
 								<table class="form-table">
@@ -259,7 +259,7 @@
 						</div>
 						<!--Facebook-->
 						<div class="postbox">
-							<div title="Click to toggle" class="handlediv"><br/></div>
+							<div title="<?php esc_attr_e( 'Click to toggle', 'rtSocial' ); ?>" class="handlediv"><br/></div>
 							<h3 class="hndle"> <?php esc_html_e( 'Facebook Button Settings', 'rtSocial' ); ?> </h3>
 							<div class="inside">
 								<table class="form-table">
@@ -323,7 +323,7 @@
 		<div class="postbox-container">
 			<div class="meta-box-sortables ui-sortable">
 				<div class="postbox" id="social">
-					<div title="Click to toggle" class="handlediv"><br/></div>
+					<div title="<?php esc_attr_e( 'Click to toggle', 'rtSocial' ); ?>" class="handlediv"><br/></div>
 					<h3 class="hndle">
 						<span>
 							<strong><?php esc_html_e( 'Getting Social is Good', 'rtSocial' ); ?></strong>
@@ -336,14 +336,14 @@
 					</div>
 				</div>
 				<div class="postbox" id="donations">
-					<div title="Click to toggle" class="handlediv"><br/></div>
+					<div title="<?php esc_attr_e( 'Click to toggle', 'rtSocial' ); ?>" class="handlediv"><br/></div>
 					<h3 class="hndle">
 						<span>
 							<strong><?php esc_html_e( 'Promote, Donate, Share...', 'rtSocial' ); ?></strong>
 						</span>
 					</h3>
 					<div class="inside">
-						<?php esc_html_e( 'Buy coffee/beer for team behind', 'rtSocial' ); ?> <a href="https://rtcamp.com/rtsocial/" title="rtSocial Plugin">rtSocial</a>.
+						<?php esc_html_e( 'Buy coffee/beer for team behind', 'rtSocial' ); ?> <a href="https://rtcamp.com/rtsocial/" title="<?php esc_attr_e( 'rtSocial Plugin', 'rtSocial' ); ?>">rtSocial</a>.
 						<br/><br/>
 						<div class="rt-paypal" style="text-align:center">
 							<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
@@ -354,16 +354,16 @@
 								<input type="hidden" name="no_note" value="0" />
 								<input type="hidden" name="currency_code" value="USD" />
 								<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest" />
-								<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!" />
+								<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="<?php esc_attr_e( 'PayPal - The safer, easier way to pay online!', 'rtSocial' ); ?>" />
 								<img border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" alt="pixel" />
 							</form>
 						</div>
 						<div class="rtsocial-share" style="text-align:center; width: 127px; margin: 2px auto">
 							<div class="rt-facebook" style="float:left; margin-right:5px;">
-								<a style=" text-align:center;" name="fb_share" type="box_count" title="rtSocial: Simple, Smarter & Swifter Social Sharing WordPress Plugin" share_url="https://rtcamp.com/rtsocial/"></a>
+								<a style=" text-align:center;" name="fb_share" type="box_count" title="<?php esc_attr_e( 'rtSocial: Simple, Smarter & Swifter Social Sharing WordPress Plugin', 'rtSocial' ); ?>" share_url="https://rtcamp.com/rtsocial/"></a>
 							</div>
 							<div class="rt-twitter">
-								<a href="https://twitter.com/share" title="rtSocial: Simple, Smarter & Swifter Social Sharing WordPress Plugin" class="twitter-share-button" data-text="rtSocial: Simple, Smarter & Swifter Social Sharing #WordPress #Plugin" data-url="https://rtcamp.com/rtsocial/" data-count="vertical" data-via="rtCamp"><?php esc_html_e( 'Tweet', 'rtSocial' ); ?></a>
+								<a href="https://twitter.com/share" title="<?php esc_attr_e( 'rtSocial: Simple, Smarter & Swifter Social Sharing WordPress Plugin', 'rtSocial' ); ?>" class="twitter-share-button" data-text="<?php esc_attr_e( 'rtSocial: Simple, Smarter & Swifter Social Sharing #WordPress #Plugin', 'rtSocial' ); ?>" data-url="https://rtcamp.com/rtsocial/" data-count="vertical" data-via="rtCamp"><?php esc_html_e( 'Tweet', 'rtSocial' ); ?></a>
 							</div>
 							<div class="rt_clear"></div>
 						</div>
@@ -371,16 +371,16 @@
 					<!-- end of .inside -->
 				</div>
 				<div class="postbox" id="support">
-					<div title="Click to toggle" class="handlediv"><br/></div>
+					<div title="<?php esc_attr_e( 'Click to toggle', 'rtSocial' ); ?>" class="handlediv"><br/></div>
 					<h3 class="hndle">
 						<span>
 							<strong><?php esc_html_e( 'Free Support', 'rtSocial' ); ?></strong>
 						</span>
 					</h3>
-					<div class="inside"><?php esc_html_e( 'If you have any problems with this plugin or good ideas for improvements, please talk about them in the', 'rtSocial' ); ?> <a href="https://rtcamp.com/support/forum/rtsocial/" rel="nofollow" target="_blank" title="free support forums"><?php esc_html_e( 'free support forums.', 'rtSocial' ); ?></a></div>
+					<div class="inside"><?php esc_html_e( 'If you have any problems with this plugin or good ideas for improvements, please talk about them in the', 'rtSocial' ); ?> <a href="https://rtcamp.com/support/forum/rtsocial/" rel="nofollow" target="_blank" title="<?php esc_attr_e( 'free support forums', 'rtSocial' ); ?>"><?php esc_html_e( 'free support forums.', 'rtSocial' ); ?></a></div>
 				</div>
 				<div class="postbox" id="latest_news">
-					<div title="Click to toggle" class="handlediv"><br/></div>
+					<div title="<?php esc_attr_e( 'Click to toggle', 'rtSocial' ); ?>" class="handlediv"><br/></div>
 					<h3 class="hndle">
 						<span>
 							<strong><?php esc_html_e( 'Latest News', 'rtSocial' ); ?></strong>
