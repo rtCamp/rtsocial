@@ -21,7 +21,6 @@ With just 1 image (CSS-sprite), 1 JavaScript and 1 CSS file loaded from WordPres
 #### Supported Social Channels ####
 * Facebook
 * Twitter
-* Google+
 * LinkedIn
 * Pinterest
 
