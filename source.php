@@ -11,7 +11,7 @@
  * Author URI:  https://rtcamp.com/
  * Text Domain: rtSocial
  * Domain Path: /languages
- * Version:     2.2.1
+ * Version:     2.2.2
  * License:     GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Description: It is the lightest social sharing plugin, uses non-blocking Javascript and a single sprite to get rid of all the clutter that comes along with the sharing buttons.
@@ -21,7 +21,6 @@
 if ( ! defined( 'RTSOCIAL_PLUGIN_PATH' ) ) {
 	define( 'RTSOCIAL_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 }
-
 
 /**
  * Initial Actions
@@ -45,7 +44,7 @@ register_uninstall_hook( __FILE__, 'rtsocial_reset_defaults' );
  */
 function rtsocial_admin() {
 	// Add settings page.
-	$hook = add_options_page( 'rtSocial Options Page', 'rtSocial Options', 'manage_options', 'rtsocial-options', 'rtsocial_admin_fn' );
+	$hook = add_options_page( esc_html__( 'rtSocial Options Page', 'rtSocial' ), esc_html__( 'rtSocial Options', 'rtSocial' ), 'manage_options', 'rtsocial-options', 'rtsocial_admin_fn' );
 
 	// Enqueue CSS and JS for the options page.
 	add_action( 'admin_print_scripts-' . $hook, 'rtsocial_assets' );
@@ -78,7 +77,7 @@ function rtsocial_options_init_fn() {
 function rtsocial_check( $args ) {
 	// Just in case the JavaScript for avoiding deactivation of all services fails, this will fix it! ;).
 	if ( empty( $args['active'] ) ) {
-		add_settings_error( 'rtsocial_plugin_options', 'all_inactive', 'All options inactive! Resetting all as active.', $type = 'error' );
+		add_settings_error( 'rtsocial_plugin_options', 'all_inactive', esc_html__( 'All options inactive! Resetting all as active.', 'rtSocial' ), $type = 'error' );
 
 		$args['active']   = array( 'tw', 'fb', 'lin', 'pin' );
 		$args['inactive'] = array();
@@ -254,14 +253,14 @@ function rtsocial_counter( $content = '' ) {
 
 		if ( 'like_light' === $options['fb_style']
 		|| 'like_dark' === $options['fb_style'] ) {
-			$rt_social_text = 'Like';
+			$rt_social_text = esc_html__( 'Like', 'rtSocial' );
 		} else {
 
 			if ( 'recommend_light' === $options['fb_style']
 			|| 'recommend_dark' === $options['fb_style'] ) {
-				$rt_social_text = 'Recommend';
+				$rt_social_text = esc_html__( 'Recommend', 'rtSocial' );
 			} else {
-				$rt_social_text = 'Share';
+				$rt_social_text = esc_html__( 'Share', 'rtSocial' );
 			}
 		}
 
@@ -426,19 +425,17 @@ function rtsocial_counter( $content = '' ) {
 
 		if ( 'horizontal' === $options['display_options_set'] ) {
 			$lin_layout .= sprintf(
-				'<div class="rtsocial-linkedin-%1$s-button"><a class="rtsocial-linkedin-button" href= "https://www.linkedin.com/shareArticle?mini=true&url=%2$s&title=%3$s" rel="nofollow" target="_blank" title="Share: %4$s"></a></div>%5$s',
+				'<div class="rtsocial-linkedin-%1$s-button"><a class="rtsocial-linkedin-button" href= "https://www.linkedin.com/shareArticle?mini=true&url=%2$s&title=%3$s" rel="nofollow" target="_blank" title="Share: %4$s"></a></div>',
 				$options['display_options_set'],
 				rawurlencode( get_permalink( $post->ID ) ),
 				rawurlencode( $rtatitle ),
-				$rtatitle,
-				$lin_count
+				$rtatitle
 			);
 		} else {
 
 			if ( 'vertical' === $options['display_options_set'] ) {
 				$lin_layout .= sprintf(
-					'%1$s <div class="rtsocial-linkedin-%2$s-button"><a class="rtsocial-linkedin-button" href= "https://www.linkedin.com/shareArticle?mini=true&url=%3$s&title=%4$s" rel="nofollow" target="_blank" title="Share: %5$s"></a></div>',
-					$lin_count,
+					'<div class="rtsocial-linkedin-%1$s-button"><a class="rtsocial-linkedin-button" href= "https://www.linkedin.com/shareArticle?mini=true&url=%2$s&title=%3$s" rel="nofollow" target="_blank" title="Share: %4$s"></a></div>',
 					$options['display_options_set'],
 					rawurlencode( get_permalink( $post->ID ) ),
 					rawurlencode( $rtatitle ),
@@ -458,13 +455,11 @@ function rtsocial_counter( $content = '' ) {
 
 					if ( 'icon-count' === $options['display_options_set'] ) {
 						$lin_layout  = '<div class="rtsocial-linkedin-icon">';
-						$lin_count   = ( empty( $options['hide_count'] ) || 1 !== (int) $options['hide_count'] ) ? '<div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-linkedin-count"></span></div>' : '';
 						$lin_layout .= sprintf(
-							' <div class="rtsocial-linkedin-icon-button"><a class="rtsocial-linkedin-icon-link" href= "https://www.linkedin.com/shareArticle?mini=true&url=%1$s&title=%2$s" target= "_blank" title="Share: %3$s"></a></div>%4$s',
+							'<div class="rtsocial-linkedin-icon-button"><a class="rtsocial-linkedin-icon-link" href= "https://www.linkedin.com/shareArticle?mini=true&url=%1$s&title=%2$s" target= "_blank" title="Share: %3$s"></a></div>',
 							rawurlencode( get_permalink( $post->ID ) ),
 							rawurlencode( $rtatitle ),
-							$rtatitle,
-							$lin_count
+							$rtatitle
 						);
 					}
 				}
@@ -667,14 +662,14 @@ function rtsocial( $args = array() ) {
 
 		if ( 'like_light' === $options['fb_style']
 		|| 'like_dark' === $options['fb_style'] ) {
-			$rt_social_text = 'Like';
+			$rt_social_text = esc_html__( 'Like', 'rtSocial' );
 		} else {
 
 			if ( 'recommend_light' === $options['fb_style']
 			|| 'recommend_dark' === $options['fb_style'] ) {
-				$rt_social_text = 'Recommend';
+				$rt_social_text = esc_html__( 'Recommend', 'rtSocial' );
 			} else {
-				$rt_social_text = 'Share';
+				$rt_social_text = esc_html__( 'Share', 'rtSocial' );
 			}
 		}
 
@@ -992,7 +987,6 @@ function rtsocial_assets() {
 
 		wp_enqueue_script( 'dashboard' );
 		wp_enqueue_script( 'jquery-ui-sortable' );
-		wp_enqueue_script( 'rt-fb-share', ( 'https://static.ak.fbcdn.net/connect.php/js/FB.Share' ), array(), true, true );
 		wp_enqueue_script( 'twitter-widget', ( 'https://platform.twitter.com/widgets.js' ), array(), true, true );
 	}
 
@@ -1207,7 +1201,7 @@ function rtsocial_add_meta_box() {
 
 		add_meta_box(
 			'rtsocial_sectionid',
-			__( 'rtSocial', 'myplugin_textdomain' ),
+			esc_html__( 'rtSocial', 'rtSocial' ),
 			'rtsocial_meta_box_callback',
 			$screen,
 			'side',

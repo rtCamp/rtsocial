@@ -1,4 +1,4 @@
-![alt text](https://plugins.svn.wordpress.org/rtsocial//assets/banner-772x250.jpg)
+![alt text](https://ps.w.org/rtsocial/assets/banner-772x250.jpg?rev=479169)
 
 # rtSocial #
 
@@ -21,7 +21,6 @@ With just 1 image (CSS-sprite), 1 JavaScript and 1 CSS file loaded from WordPres
 #### Supported Social Channels ####
 * Facebook
 * Twitter
-* Google+
 * LinkedIn
 * Pinterest
 
@@ -59,6 +58,12 @@ No. Right now you cannot.
 
 
 ## Changelog ##
+
+#### 2.2.2 ####
+* Remove   - Google Plus Icons and functions.
+* Improved - Improved code with phpcs.
+* Removed  - Twitter commented code.
+* Updated  - Plain texts to WPi18n functions.
 
 #### 2.2.1 ####
 * Bug fix for google plus counter
@@ -163,7 +168,11 @@ No. Right now you cannot.
 #### 1.0 ####
 * Initial Release
 
-#### 2.2.1 ####
-* Bug fix for google plus counter
-* Bug fix for stylesheet not loading if other plugins uses the same stylesheet handler
-* Fixed - Plugin settings used to get deleted upon plugin deactivation
+
+## Upgrade Notice ##
+
+### 2.2.2 ###
+* Remove   - Google Plus Icons and functions.
+* Improved - Improved code with phpcs.
+* Removed  - Twitter commented code.
+* Updated  - Plain texts to WPi18n functions.
