@@ -1,0 +1,21 @@
+name: Deploy
+on:
+  push:
+    tags:
+      - '*'
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: WordPress Plugin Deploy
+      uses: rtCamp/action-wordpress-org-plugin-deploy@master
+      env:
+        ASSETS_DIR: wpassets
+        EXCLUDE_LIST: .bowerrc .gitattributes .gitignore .jshintrc .travis.yml CONTRIBUTING.md
+          Gruntfile.js README.md deploy.sh package-lock.json package.json phpcs.xml phpunit.xml
+          tests .babelrc .eslintignore .eslintrc .jscsrc .jshintignore .npmrc .nvmrc webpack.config.js
+          deploy.sh readme.sh .git .gitattributes .gitignore map.conf nginx.log
+        SLUG: rtsocial
+        WORDPRESS_PASSWORD: ${{ secrets.WORDPRESS_PASSWORD }}
+        WORDPRESS_USERNAME: ${{ secrets.WORDPRESS_USERNAME }}
