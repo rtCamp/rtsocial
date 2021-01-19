@@ -26,7 +26,6 @@ if ( ! defined( 'RTSOCIAL_PLUGIN_PATH' ) ) {
  * Initial Actions
  */
 add_action( 'admin_menu', 'rtsocial_admin' );
-add_action( 'wp_ajax_rts_hide_g_plus_notice', 'rts_hide_g_plus_notice' );
 
 register_activation_hook( __FILE__, 'rtsocial_set_defaults' );
 
