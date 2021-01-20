@@ -203,7 +203,9 @@
 												<?php
 												if ( ! empty( $options['inactive'] ) ) {
 													foreach ( $options['inactive'] as $inactive ) {
-														echo '<li id="rtsocial-ord-' . esc_attr( $inactive ) . '" style="cursor: pointer;"><input id="rtsocial-act-' . esc_attr( $inactive ) . '" style="display: none;" type="checkbox" name="rtsocial_plugin_options[inactive][]" value="' . esc_attr( $inactive ) . '" checked="checked" /><label for="rtsocial-act-' . esc_attr( $inactive ) . '">' . esc_html( $labels[ $inactive ] ) . '</label></li>';
+														if ( ! empty( $labels[ $inactive ] ) ) {
+															echo '<li id="rtsocial-ord-' . esc_attr( $inactive ) . '" style="cursor: pointer;"><input id="rtsocial-act-' . esc_attr( $inactive ) . '" style="display: none;" type="checkbox" name="rtsocial_plugin_options[inactive][]" value="' . esc_attr( $inactive ) . '" checked="checked" /><label for="rtsocial-act-' . esc_attr( $inactive ) . '">' . esc_html( $labels[ $inactive ] ) . '</label></li>';
+														}
 													}
 												}
 												?>
