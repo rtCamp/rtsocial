@@ -177,13 +177,12 @@ jQuery( '#fb_chk' ).click(
 /**
  * Toggle FB Share from Dark to Light.
  */
-jQuery( 'body' ).on( 'click', '.fb_color' ,function() {
-		if ( 'light' === jQuery( this ).attr( 'value' ) ) {
-			jQuery( '#fb_like' ).attr( 'src', args.path + 'fb_like.gif' );
-			jQuery( '#fb_recommend' ).attr( 'src', args.path + 'fb_recommend.gif' );
-		} else if ( 'dark' === jQuery( this ).attr( 'value' ) ) {
-			jQuery( '#fb_like' ).attr( 'src', args.path + 'fb_like_dark.gif' );
-			jQuery( '#fb_recommend' ).attr( 'src', args.path + 'fb_recommend_dark.gif' );
-		}
+jQuery( 'body' ).on( 'click', '.fb_color',function() {
+	if ( 'light' === jQuery( this ).attr( 'value' ) ) {
+		jQuery( '#fb_like' ).attr( 'src', args.path + 'fb_like.gif' );
+		jQuery( '#fb_recommend' ).attr( 'src', args.path + 'fb_recommend.gif' );
+	} else if ( 'dark' === jQuery( this ).attr( 'value' ) ) {
+		jQuery( '#fb_like' ).attr( 'src', args.path + 'fb_like_dark.gif' );
+		jQuery( '#fb_recommend' ).attr( 'src', args.path + 'fb_recommend_dark.gif' );
 	}
-);
+} );
