@@ -1,8 +1,8 @@
-![alt text](https://plugins.svn.wordpress.org/rtsocial//assets/banner-772x250.jpg)
+![alt text](https://ps.w.org/rtsocial/assets/banner-772x250.jpg?rev=479169)
 
 # rtSocial #
 
-* **Contributors:** [rtcamp] (http://profiles.wordpress.org/rtcamp), [rahul286] (http://profiles.wordpress.org/rahul286), [faishal] (http://profiles.wordpress.org/faishal), [rittesh.patel] (http://profiles.wordpress.org/rittesh.patel), [sanketparmar] (http://profiles.wordpress.org/sanketparmar), [pranalipatel] (http://profiles.wordpress.org/pranalipatel), [UmeshSingla] (http://profiles.wordpress.org/UmeshSingla), [rutwick] (http://profiles.wordpress.org/rutwick), [saurabhshukla] (http://profiles.wordpress.org/saurabhshukla), [HarishChaudhari] (http://profiles.wordpress.org/HarishChaudhari), [5um17] (http://profiles.wordpress.org/5um17), [JoshuaAbenazer] (http://profiles.wordpress.org/JoshuaAbenazer), [paddyohanlon] (http://profiles.wordpress.org/paddyohanlon), [chandrapatel] (http://profiles.wordpress.org/chandrapatel), [1naveengiri] (http://profiles.wordpress.org/1naveengiri), [bhargavbhandari90] (http://profiles.wordpress.org/bhargavbhandari90),
+* **Contributors:** [rtcamp] (http://profiles.wordpress.org/rtcamp), [rahul286] (http://profiles.wordpress.org/rahul286), [faishal] (http://profiles.wordpress.org/faishal), [rittesh.patel] (http://profiles.wordpress.org/rittesh.patel), [sanketparmar] (http://profiles.wordpress.org/sanketparmar), [pranalipatel] (http://profiles.wordpress.org/pranalipatel), [UmeshSingla] (http://profiles.wordpress.org/UmeshSingla), [rutwick] (http://profiles.wordpress.org/rutwick), [saurabhshukla] (http://profiles.wordpress.org/saurabhshukla), [HarishChaudhari] (http://profiles.wordpress.org/HarishChaudhari), [5um17] (http://profiles.wordpress.org/5um17), [JoshuaAbenazer] (http://profiles.wordpress.org/JoshuaAbenazer), [paddyohanlon] (http://profiles.wordpress.org/paddyohanlon), [chandrapatel] (http://profiles.wordpress.org/chandrapatel), [1naveengiri] (http://profiles.wordpress.org/1naveengiri), [bhargavbhandari90] (http://profiles.wordpress.org/bhargavbhandari90), [vaishu.agola27] (https://profiles.wordpress.org/vaishuagola27/)
 
 * **License:** [GPL v2 or later] ( http://www.gnu.org/licenses/gpl-2.0.html)
 
@@ -21,7 +21,6 @@ With just 1 image (CSS-sprite), 1 JavaScript and 1 CSS file loaded from WordPres
 #### Supported Social Channels ####
 * Facebook
 * Twitter
-* Google+
 * LinkedIn
 * Pinterest
 
@@ -59,6 +58,12 @@ No. Right now you cannot.
 
 
 ## Changelog ##
+
+#### 2.2.2 ####
+* Remove   - Google Plus Icons and functions.
+* Improved - Improved code with phpcs.
+* Removed  - Twitter commented code.
+* Updated  - Plain texts to WPi18n functions.
 
 #### 2.2.1 ####
 * Bug fix for google plus counter
@@ -163,10 +168,13 @@ No. Right now you cannot.
 #### 1.0 ####
 * Initial Release
 
-#### 2.2.1 ####
-* Bug fix for google plus counter
-* Bug fix for stylesheet not loading if other plugins uses the same stylesheet handler
-* Fixed - Plugin settings used to get deleted upon plugin deactivation
+## Upgrade Notice ##
+
+### 2.2.2 ###
+* Remove   - Google Plus Icons and functions.
+* Improved - Improved code with phpcs.
+* Removed  - Twitter commented code.
+* Updated  - Plain texts to WPi18n functions.
 
 ## Does this interest you?
 

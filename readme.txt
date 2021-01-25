@@ -1,9 +1,9 @@
 === rtSocial ===
-Contributors: rtcamp, rahul286, faishal, rittesh.patel, sanketparmar, pranalipatel, UmeshSingla, rutwick, saurabhshukla, HarishChaudhari, 5um17, JoshuaAbenazer, paddyohanlon, chandrapatel, 1naveengiri, bhargavbhandari90
-Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, google plus, google plus share, gplus share, g+ button, g+ share, plus one button, social share, social sharing
+Contributors: rtcamp, rahul286, faishal, rittesh.patel, sanketparmar, pranalipatel, UmeshSingla, rutwick, saurabhshukla, HarishChaudhari, 5um17, JoshuaAbenazer, paddyohanlon, chandrapatel, 1naveengiri, bhargavbhandari90, coderboy007, vaishu.agola27
+Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, plus one button, social share, social sharing
 Requires at least: 3.0
-Tested up to: 4.7.2
-Stable tag: 2.2.1
+Tested up to: 5.6
+Stable tag: 2.2.2
 License: GPLv2 or later (of-course)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate Link: http://rtcamp.com/donate/
@@ -21,7 +21,6 @@ With just 1 image (CSS-sprite), 1 JavaScript and 1 CSS file loaded from WordPres
 = Supported Social Channels =
 * Facebook
 * Twitter
-* Google+
 * LinkedIn
 * Pinterest
 
@@ -59,6 +58,12 @@ No. Right now you cannot.
 
 
 == Changelog ==
+
+= 2.2.2 =
+* Remove   - Google Plus Icons and functions.
+* Improved - Improved code with phpcs.
+* Removed  - Twitter commented code.
+* Updated  - Plain texts to WPi18n functions.
 
 = 2.2.1 =
 * Bug fix for google plus counter
@@ -165,7 +170,8 @@ No. Right now you cannot.
 
 == Upgrade Notice ==
 
-= 2.2.1 =
-* Bug fix for google plus counter
-* Bug fix for stylesheet not loading if other plugins uses the same stylesheet handler
-* Fixed - Plugin settings used to get deleted upon plugin deactivation
+= 2.2.2 =
+* Remove   - Google Plus Icons and functions.
+* Improved - Improved code with phpcs.
+* Removed  - Twitter commented code.
+* Updated  - Plain texts to WPi18n functions.
