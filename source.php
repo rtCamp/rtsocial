@@ -76,7 +76,7 @@ function rtsocial_options_init_fn() {
 function rtsocial_check( $args ) {
 	// Just in case the JavaScript for avoiding deactivation of all services fails, this will fix it! ;).
 	if ( empty( $args['active'] ) ) {
-		add_settings_error( 'rtsocial_plugin_options', 'all_inactive', esc_html__( 'All options inactive! Resetting all as active.', 'rtSocial' ), $type = 'error' );
+		add_settings_error( 'rtsocial_plugin_options', 'all_inactive', esc_html__( 'All options inactive! Resetting all as active.', 'rtSocial' ), 'error' );
 
 		$args['active']   = array( 'tw', 'fb', 'lin', 'pin' );
 		$args['inactive'] = array();
@@ -1059,7 +1059,7 @@ function rtsocial_actlinks( $links, $file ) {
 		$settings_link = sprintf(
 			'<a href="%1$s">%2$s</a>',
 			admin_url( 'options-general.php?page=rtsocial-options&rtnonce=' . wp_create_nonce( 'rtnonce' ) ),
-			__( 'Settings' )
+			__( 'Settings', 'rtSocial' )
 		);
 
 		array_unshift( $links, $settings_link ); // before other links.
@@ -1228,7 +1228,7 @@ function rtsocial_meta_box_callback( $post ) {
 
 	<input type="checkbox" id="rtsocial_visibility" name="rtsocial_visibility" value="1" <?php checked( '1', $value ); ?> />
 	<label for="rtsocial_visibility">
-	<?php esc_html_e( 'Exclude Social Sharing Icons', 'rtsocial' ); ?>
+	<?php esc_html_e( 'Exclude Social Sharing Icons', 'rtSocial' ); ?>
 	</label>
 	<?php
 }
