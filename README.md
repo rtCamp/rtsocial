@@ -64,6 +64,7 @@ No. Right now you cannot.
 * Improved - Improved code with phpcs.
 * Removed  - Twitter commented code.
 * Updated  - Plain texts to WPi18n functions.
+* Compatibility testing with 5.6.
 
 #### 2.2.1 ####
 * Bug fix for google plus counter
@@ -175,6 +176,7 @@ No. Right now you cannot.
 * Improved - Improved code with phpcs.
 * Removed  - Twitter commented code.
 * Updated  - Plain texts to WPi18n functions.
+* Compatibility testing with 5.6.
 
 ## Does this interest you?
 
