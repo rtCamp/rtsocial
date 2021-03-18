@@ -1,8 +1,8 @@
 === rtSocial ===
-Contributors: rtcamp, rahul286, faishal, rittesh.patel, sanketparmar, pranalipatel, UmeshSingla, rutwick, saurabhshukla, HarishChaudhari, 5um17, JoshuaAbenazer, paddyohanlon, chandrapatel, 1naveengiri, bhargavbhandari90, coderboy007, vaishu.agola27
+Contributors: rtcamp, rahul286, faishal, rittesh.patel, sanketparmar, pranalipatel, UmeshSingla, rutwick, saurabhshukla, HarishChaudhari, 5um17, JoshuaAbenazer, paddyohanlon, chandrapatel, 1naveengiri, bhargavbhandari90, coderboy007, vaishu.agola27, pooja1210, milindmore22
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, plus one button, social share, social sharing
 Requires at least: 3.0
-Tested up to: 5.6
+Tested up to: 5.7
 Stable tag: 2.2.2
 License: GPLv2 or later (of-course)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -64,6 +64,7 @@ No. Right now you cannot.
 * Improved - Improved code with phpcs.
 * Removed  - Twitter commented code.
 * Updated  - Plain texts to WPi18n functions.
+* Compatibility testing with 5.6.
 
 = 2.2.1 =
 * Bug fix for google plus counter
@@ -175,3 +176,4 @@ No. Right now you cannot.
 * Improved - Improved code with phpcs.
 * Removed  - Twitter commented code.
 * Updated  - Plain texts to WPi18n functions.
+* Compatibility testing with 5.6.
