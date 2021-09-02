@@ -6,8 +6,6 @@
 
 * **License:** [GPL v2 or later] ( http://www.gnu.org/licenses/gpl-2.0.html)
 
-* **Donate Link:** http://rtcamp.com/donate/
-
 
 This plugin uses non-blocking JavaScript to display social media sharing counters on posts/pages
 
@@ -25,20 +23,20 @@ With just 1 image (CSS-sprite), 1 JavaScript and 1 CSS file loaded from WordPres
 * Pinterest
 
 #### Useful Links ####
-* [rtSocial Plugin's Homepage](http://rtcamp.com/rtsocial/)
-* [Free Support Forum](http://community.rtcamp.com/c/rtsocial)
+* [rtSocial Plugin's Homepage](https://wordpress.org/plugins/rtsocial/)
+* [Free Support Forum](https://wordpress.org/support/plugin/rtsocial/)
 
 ## Installation ##
 Install rtSocial plugin from the 'Plugins' section in your dashboard (Plugins > Add New > Search for rtSocial).
 
-Alternatively you can [download latest version](https://downloads.wordpress.org/plugin/rtsocial.2.1.19.zip) of rtSocial plugin from the repository. Unzip it and upload it to the plugins folder of your WordPress installation (wp-content/plugins/ directory of your WordPress installation).
+Alternatively you can [download latest version](https://downloads.wordpress.org/plugin/rtsocial.2.2.2.zip) of rtSocial plugin from the repository. Unzip it and upload it to the plugins folder of your WordPress installation (wp-content/plugins/ directory of your WordPress installation).
 
 Activate it through the 'Plugins' section.
 
 Adjust the plugin settings from the settings section (Settings > rtSocial Options).
 
 ## Screenshots ##
-Please visit [rtSocial Plugin's Homepage](http://rtcamp.com/rtsocial/)
+Please visit [rtSocial Plugin's Homepage](https://wordpress.org/plugins/rtsocial/)
 
 ## Frequently Asked Questions ##
 
