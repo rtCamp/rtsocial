@@ -210,6 +210,7 @@ div#content_block { width: 70% }
 
 /*Facebook Button Frontend Styles*/
 .rtsocial-fb-button{ background-position: 0 -172px; display: block; height: 24px; width: 50px; text-indent: -9999px; text-transform: uppercase; margin: 0 auto;}
+.rtsocial-fb-button:focus  {background: url('../images/rtsocial-sprite-image.png') 0 -172px no-repeat !important;}
 .rtsocial-fb-button:hover{ background-position: 0 -128px }
 
 .rtsocial-fb-like-dark { background-position: 0 -260px }
@@ -230,6 +231,7 @@ div#content_block { width: 70% }
 .rtsocial-twitter-vertical-button { text-align: center; }
 .rtsocial-twitter-button,
 #rtsocial-ord-tw label { background-position: 0 -557px;  display: block; float: left; height: 21px; margin: 0; padding: 0; width: 58px; text-indent: -9999px; }
+.rtsocial-twitter-button:focus  {background: url('../images/rtsocial-sprite-image.png') 0 -557px no-repeat !important;}
 
 #rtsocial-ord-tw label{ float: none; display: inline-block; }
 
@@ -239,6 +241,7 @@ div#content_block { width: 70% }
 /* Pinterest Button */
 .rtsocial-pinterest-button,
 #rtsocial-ord-pin label { background-position: 0 -598px; border: 1px solid #c9c5c5; border-color: #E8E4E4 #C9C5C5 #C9C5C5; border-radius: 4px 4px 4px 4px; display: block; height: 22px; text-indent: -9999px; text-transform: uppercase; width: 47px; margin: 0 auto; }
+.rtsocial-pinterest-button:focus  {background: url('../images/rtsocial-sprite-image.png') 0 -598px no-repeat !important;}
 
 .rtsocial-pinterest-button:hover,
 #rtsocial-ord-pin label:hover{ background-position: 0 -640px; border: 1px solid #B8B4B4; }
@@ -246,6 +249,7 @@ div#content_block { width: 70% }
 /* Linked In Button */
 .rtsocial-linkedin-button,
 #rtsocial-ord-lin label{ background-position: 0 -682px; border-color: #E2E2E2 #BFBFBF #B9B9B9; border-style: solid; border-width: 1px; border-radius: 2px; display: block; height: 18px; margin: 0 auto; text-indent: -9999px; text-transform: uppercase; width: 59px; }
+.rtsocial-linkedin-button:focus  {background: url('../images/rtsocial-sprite-image.png') 0 -682px no-repeat !important;}
 
 .rtsocial-linkedin-button:hover,
 #rtsocial-ord-lin label:hover{ background-position: 0 -720px; border-color: #ababab #9a9a9a #787878; }
@@ -331,6 +335,8 @@ div#content_block { width: 70% }
 .rtsocial-pinterest-icon-link{ background-position: -130px -442px; }
 
 .rtsocial-linkedin-icon-link{ background-position: -130px -398px; }
+
+/* .rtsocial-container a:focus {background: url('../images/rtsocial-sprite-image.png') no-repeat !important;} */
 
 /**
  * End of rtSocial Plugin Style
