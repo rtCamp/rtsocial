@@ -1324,7 +1324,7 @@ function rtss_wp_get_shares() {
 		$response = wp_remote_get(
 			add_query_arg(
 				array(
-					'id'           => urlencode( get_permalink( $post_id ) ),
+					'id'           => rawurlencode( get_permalink( $post_id ) ),
 					'access_token' => $access_token,
 					'fields'       => 'engagement',
 				),
