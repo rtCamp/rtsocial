@@ -2,9 +2,9 @@
 
 # rtSocial #
 
-* **Contributors:** [rtcamp] (http://profiles.wordpress.org/rtcamp), [rahul286] (http://profiles.wordpress.org/rahul286), [faishal] (http://profiles.wordpress.org/faishal), [rittesh.patel] (http://profiles.wordpress.org/rittesh.patel), [sanketparmar] (http://profiles.wordpress.org/sanketparmar), [pranalipatel] (http://profiles.wordpress.org/pranalipatel), [UmeshSingla] (http://profiles.wordpress.org/UmeshSingla), [rutwick] (http://profiles.wordpress.org/rutwick), [saurabhshukla] (http://profiles.wordpress.org/saurabhshukla), [HarishChaudhari] (http://profiles.wordpress.org/HarishChaudhari), [5um17] (http://profiles.wordpress.org/5um17), [JoshuaAbenazer] (http://profiles.wordpress.org/JoshuaAbenazer), [paddyohanlon] (http://profiles.wordpress.org/paddyohanlon), [chandrapatel] (http://profiles.wordpress.org/chandrapatel), [1naveengiri] (http://profiles.wordpress.org/1naveengiri), [bhargavbhandari90] (http://profiles.wordpress.org/bhargavbhandari90), [vaishu.agola27] (https://profiles.wordpress.org/vaishuagola27/), [pooja1210] (https://profiles.wordpress.org/pooja1210/), [milindmore22](https://profiles.wordpress.org/milindmore22)
+* **Contributors:** [rtcamp](http://profiles.wordpress.org/rtcamp), [rahul286](http://profiles.wordpress.org/rahul286), [faishal](http://profiles.wordpress.org/faishal), [rittesh.patel](http://profiles.wordpress.org/rittesh.patel), [sanketparmar](http://profiles.wordpress.org/sanketparmar), [pranalipatel](http://profiles.wordpress.org/pranalipatel), [UmeshSingla](http://profiles.wordpress.org/UmeshSingla), [rutwick](http://profiles.wordpress.org/rutwick), [saurabhshukla](http://profiles.wordpress.org/saurabhshukla), [HarishChaudhari](http://profiles.wordpress.org/HarishChaudhari), [5um17](http://profiles.wordpress.org/5um17), [JoshuaAbenazer](http://profiles.wordpress.org/JoshuaAbenazer), [paddyohanlon](http://profiles.wordpress.org/paddyohanlon), [chandrapatel](http://profiles.wordpress.org/chandrapatel), [1naveengiri](http://profiles.wordpress.org/1naveengiri), [bhargavbhandari90](http://profiles.wordpress.org/bhargavbhandari90), [vaishu.agola27](https://profiles.wordpress.org/vaishuagola27/), [pooja1210](https://profiles.wordpress.org/pooja1210/), [milindmore22](https://profiles.wordpress.org/milindmore22)
 
-* **License:** [GPL v2 or later] ( http://www.gnu.org/licenses/gpl-2.0.html)
+* **License:** [GPL v2 or later]( http://www.gnu.org/licenses/gpl-2.0.html)
 
 
 This plugin uses non-blocking JavaScript to display social media sharing counters on posts/pages
@@ -66,7 +66,7 @@ No. Right now you cannot.
 
 #### 2.2.1 ####
 * Bug fix for google plus counter
-* Bug fix for stylesheet not loading if other plugins uses the same stylesheet handler - Thanks to [mahathun] (https://github.com/mahathun)
+* Bug fix for stylesheet not loading if other plugins uses the same stylesheet handler - Thanks to [mahathun](https://github.com/mahathun)
 * Fixed - Plugin settings used to get deleted when plug in deactivated
 
 #### 2.2.0 ####
