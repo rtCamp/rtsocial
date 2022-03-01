@@ -1297,13 +1297,13 @@ function rtsocial_save_meta_box_data( $post_id ) {
  */
 function rtss_wp_get_shares() {
 	if ( isset( $_GET['security'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-		$security = wp_unslash( $_GET['security'] );
+		$security = sanitize_text_field( wp_unslash( $_GET['security'] ) );
 	} else {
 		$security = '';
 	}
 
 	if ( isset( $_GET['post_id'] ) ) {
-		$post_id = wp_unslash ( $_GET['post_id'] );
+		$post_id = sanitize_text_field( wp_unslash( $_GET['post_id'] ) );
 	} else {
 		$post_id = '';
 	}
