@@ -1294,17 +1294,16 @@ function rtsocial_save_meta_box_data( $post_id ) {
 
 /**
  * Display number of shares using WordPress HTTP API
- *
  */
 function rtss_wp_get_shares() {
-	if ( isset( $_GET['security'] ) ) { // WPCS: CSRF ok.
-		$security = wp_unslash( sanitize_text_field( $_GET['security'] ) );
+	if ( isset( $_GET['security'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$security = wp_unslash( $_GET['security'] );
 	} else {
 		$security = '';
 	}
 
 	if ( isset( $_GET['post_id'] ) ) {
-		$post_id = wp_unslash ( sanitize_text_field( $_GET['post_id'] ) );
+		$post_id = wp_unslash ( $_GET['post_id'] );
 	} else {
 		$post_id = '';
 	}
