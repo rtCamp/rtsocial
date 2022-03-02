@@ -245,14 +245,14 @@
 									<tr class="tw_row">
 										<th><?php esc_html_e( 'Twitter Handle', 'rtSocial' ); ?>:</th>
 										<td>
-											<input type="text" value="<?php echo esc_attr( $options['tw_handle'] ); ?>" id="tw_handle" name="rtsocial_plugin_options[tw_handle]" />
+											<b>@</b> <input type="text" value="<?php echo esc_attr( $options['tw_handle'] ); ?>" id="tw_handle" name="rtsocial_plugin_options[tw_handle]" />
 										</td>
 										<td>&nbsp;</td>
 									</tr>
 									<tr class="tw_row">
 										<th><?php esc_html_e( 'Related Twitter Handle', 'rtSocial' ); ?>:</th>
 										<td>
-											<input type="text" value="<?php echo esc_attr( $options['tw_related_handle'] ); ?>" id="tw_related_handle" name="rtsocial_plugin_options[tw_related_handle]" />
+											<b>@</b> <input type="text" value="<?php echo esc_attr( $options['tw_related_handle'] ); ?>" id="tw_related_handle" name="rtsocial_plugin_options[tw_related_handle]" />
 										</td>
 										<td>&nbsp;</td>
 									</tr>
