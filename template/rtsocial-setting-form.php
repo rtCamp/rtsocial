@@ -317,6 +317,14 @@
 										</td>
 										<td>&nbsp;</td>
 									</tr>
+									<tr>
+										<th>&nbsp;</th>
+										<td colspan="2">
+											<b>Format:</b> App ID|App Secret <br/>
+											<b>Example:</b> 3245678987646576|dfghjhg4564768jjgvjvbnnh9876 <br/>
+											Follow these <a href="https://github.com/rtCamp/rtsocial/wiki#how-to-get-facebook-access-token" target="_blank">guideline</a> to generate your access token.
+										</td>
+									</tr>
 								</table>
 							</div>
 						</div>
