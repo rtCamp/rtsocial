@@ -1332,7 +1332,7 @@ function rtss_wp_get_shares() {
 			)
 		);
 		$body     = json_decode( $response['body'] );
-		if( isset( $body->engagement ) && isset(  $body->engagement->share_count ) ) {
+		if ( isset( $body->engagement ) && isset(  $body->engagement->share_count ) ) {
 			$count = $body->engagement->share_count;
 			set_transient( $cache_key, $count, 3600 ); // store value in cache for a 1 hour.
 		}
