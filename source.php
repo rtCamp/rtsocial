@@ -1312,7 +1312,7 @@ function rtss_wp_get_shares() {
 
 	$options      = get_option( 'rtsocial_plugin_options' );
 	$cache_key    = 'rtss_fb' . $post_id;
-	$access_token = $options['fb_access_token'];
+	$access_token = isset( $options['fb_access_token'] ) ? $options['fb_access_token'] : '';
 	$count        = get_transient( $cache_key ); // try to get value from WordPress cache.
 
 	if ( ! $access_token ) {
@@ -1320,7 +1320,7 @@ function rtss_wp_get_shares() {
 	}
 
 	// if no value in the cache.
-	if ( false === $count || 0 === count ) {
+	if ( false === $count || 0 === $count ) {
 		$response = wp_remote_get(
 			add_query_arg(
 				array(
@@ -1332,9 +1332,10 @@ function rtss_wp_get_shares() {
 			)
 		);
 		$body     = json_decode( $response['body'] );
-		$count    = intval( $body->engagement->share_count );
-
-		set_transient( $cache_key, $count, 3600 ); // store value in cache for a 1 hour.
+		if( isset( $body->engagement ) && isset(  $body->engagement->share_count ) ) {
+			$count = $body->engagement->share_count;
+			set_transient( $cache_key, $count, 3600 ); // store value in cache for a 1 hour.
+		}
 	}
 	echo esc_html( $count );
 	exit;
