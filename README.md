@@ -29,7 +29,7 @@ With just 1 image (CSS-sprite), 1 JavaScript and 1 CSS file loaded from WordPres
 ## Installation ##
 Install rtSocial plugin from the 'Plugins' section in your dashboard (Plugins > Add New > Search for rtSocial).
 
-Alternatively you can [download latest version](https://downloads.wordpress.org/plugin/rtsocial.2.2.2.zip) of rtSocial plugin from the repository. Unzip it and upload it to the plugins folder of your WordPress installation (wp-content/plugins/ directory of your WordPress installation).
+Alternatively you can [download latest version](https://downloads.wordpress.org/plugin/rtsocial.zip) of rtSocial plugin from the repository. Unzip it and upload it to the plugins folder of your WordPress installation (wp-content/plugins/ directory of your WordPress installation).
 
 Activate it through the 'Plugins' section.
 
