@@ -350,6 +350,8 @@ function rtsocial_counter( $content = '' ) {
 			$options['display_options_set']
 		);
 
+		echo $options['display_options_set'];
+
 		if ( 'horizontal' === $options['display_options_set'] ) {
 			$pin_layout .= sprintf(
 				'<div class="rtsocial-pinterest-%1$s-button"><a class="rtsocial-pinterest-button" href= "https://pinterest.com/pin/create/button/?url=%2$s&media=%3$s&description=%4$s" rel="nofollow" target="_blank" title="Pin: %5$s"></a></div>%6$s',
