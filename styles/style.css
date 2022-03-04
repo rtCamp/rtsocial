@@ -5,8 +5,8 @@
 .rtsocial-container { overflow: hidden;  padding: 5px 0; clear: both; }
 .rtsocial-container p { margin: 0 }
 
-.rtsocial-container-align-left { margin: 0 5px 0 0;  text-align: left; }
-.rtsocial-container-align-right { margin: 0 0 0 5px; text-align: right; }
+.rtsocial-container-align-left { margin: 0 5px 0 0;  text-align: left; width: 100%; }
+.rtsocial-container-align-right { margin: 0 0 0 5px; text-align: right; width: 100% }
 .rtsocial-container-align-center { text-align: center }
 
 .rtsocial-container-align-right .rtsocial-twitter-vertical,
@@ -121,8 +121,48 @@ div#content_block { width: 70% }
 .rtsocial-twitter-icon,
 .rtsocial-fb-icon,
 .rtsocial-pinterest-icon,
-.rtsocial-linkedin-icon{ margin: 0 10px 0 0; position: relative; display: inline-block; }
+.rtsocial-linkedin-icon{ margin: 0 15px 0 0; position: relative; display: inline-block; }
 
+.rtsocial-twitter-horizontal:hover,
+.rtsocial-fb-horizontal:hover,
+.rtsocial-pinterest-horizontal:hover,
+.rtsocial-linkedin-horizontal:hover,
+.rtsocial-twitter-icon:hover,
+.rtsocial-fb-icon:hover,
+.rtsocial-pinterest-icon:hover,
+.rtsocial-linkedin-icon:hover {
+    position: relative;
+    animation-name: wobble-up-down;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+@keyframes wobble-up-down {
+	16.65% {
+		transform: translateY(8px);
+	}
+
+	33.3% {
+		transform: translateY(-6px);
+	}
+
+	49.95% {
+		transform: translateY(4px);
+	}
+
+	66.6% {
+		transform: translateY(-2px);
+	}
+
+	83.25% {
+		transform: translateY(1px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
 
 /* Counts display styles */
 .rtsocial-vertical-count { background: #FFF; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; height: 37px; margin: 0 auto 5px; max-width: 55px; min-width: 55px; padding: 0; text-align: center; position: relative; }
