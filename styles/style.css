@@ -75,6 +75,7 @@ div#content_block { width: 70% }
 
 /* Metaboxes inner div */
 #rtsocial .inside { font-family: "Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif; line-height: 1.2em; }
+#rtsocial .inside .form-table th { padding: 16px 10px 20px 0; }
 
 /* Manual code info style */
 #rtsocial .inside span.rtsocial-manual-code { font-style: italic; font-weight: bold; }
@@ -331,6 +332,9 @@ div#content_block { width: 70% }
 .rtsocial-pinterest-icon-link{ background-position: -130px -442px; }
 
 .rtsocial-linkedin-icon-link{ background-position: -130px -398px; }
+
+.postbox .handle-order-higher, .postbox .handle-order-lower, .postbox .handlediv { display: none; }
+.postbox .handle-order-higher, .postbox .handle-order-lower, .postbox .ui-sortable-handle { font-size: 17px !important; padding: 15px 12px !important; font-weight: bold; }
 
 /**
  * End of rtSocial Plugin Style
