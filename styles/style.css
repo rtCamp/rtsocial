@@ -5,8 +5,8 @@
 .rtsocial-container { overflow: hidden;  padding: 5px 0; clear: both; }
 .rtsocial-container p { margin: 0 }
 
-.rtsocial-container-align-left { margin: 0 5px 0 0;  text-align: left; width: 100%; }
-.rtsocial-container-align-right { margin: 0 0 0 5px; text-align: right; width: 100% }
+.rtsocial-container-align-left { margin: 0 5px 0 0;  text-align: left; }
+.rtsocial-container-align-right { margin: 0 0 0 5px; text-align: right; }
 .rtsocial-container-align-center { text-align: center }
 
 .rtsocial-container-align-right .rtsocial-twitter-vertical,
