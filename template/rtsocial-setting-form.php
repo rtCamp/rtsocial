@@ -379,7 +379,7 @@
 							<strong><?php esc_html_e( 'Free Support', 'rtSocial' ); ?></strong>
 						</span>
 					</h3>
-					<div class="inside"><?php esc_html_e( 'If you have any problems with this plugin or good ideas for improvements, please talk about them in the', 'rtSocial' ); ?> <a href="https://rtcamp.com/support/forum/rtsocial/" rel="nofollow" target="_blank" title="<?php esc_attr_e( 'free support forums', 'rtSocial' ); ?>"><?php esc_html_e( 'free support forums.', 'rtSocial' ); ?></a></div>
+					<div class="inside"><?php esc_html_e( 'If you have any problems with this plugin or good ideas for improvements, please talk about them in the', 'rtSocial' ); ?> <a href="https://wordpress.org/support/plugin/rtsocial/" rel="nofollow" target="_blank" title="<?php esc_attr_e( 'free support forums', 'rtSocial' ); ?>"><?php esc_html_e( 'free support forums.', 'rtSocial' ); ?></a></div>
 				</div>
 				<div class="postbox" id="latest_news">
 					<div title="<?php esc_attr_e( 'Click to toggle', 'rtSocial' ); ?>" class="handlediv"><br/></div>
