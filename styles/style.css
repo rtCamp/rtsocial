@@ -334,7 +334,7 @@ div#content_block { width: 70% }
 .rtsocial-linkedin-icon-link{ background-position: -130px -398px; }
 
 .postbox .handle-order-higher, .postbox .handle-order-lower, .postbox .handlediv { display: none; }
-.postbox .handle-order-higher, .postbox .handle-order-lower, .postbox .ui-sortable-handle { font-size: 17px !important; padding: 15px 12px !important; font-weight: bold; }
+.postbox .handle-order-higher, .postbox .handle-order-lower, .postbox .ui-sortable-handle { font-size: 17px !important; padding: 8px 12px !important; font-weight: bold; }
 
 /**
  * End of rtSocial Plugin Style
