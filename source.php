@@ -1155,7 +1155,7 @@ function rtsocial_ajaxurl() {
  *
  * @param string $feed_url Feed URL.
  */
-function rtsocial_get_feeds( $feed_url = 'https://rtcamp.com/blog/category/rtsocial/feed/' ) {
+function rtsocial_get_feeds( $feed_url = 'https://rtcamp.com/blog/' ) {
 	// Get RSS Feed(s).
 	require_once ABSPATH . WPINC . '/feed.php';
 
