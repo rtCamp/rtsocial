@@ -927,6 +927,7 @@ function rtsocial_set_defaults() {
 				'alignment_options_set' => 'right',
 				'active'                => array( 'tw', 'fb', 'lin', 'pin' ),
 				'inactive'              => array(),
+				'fb_access_token'       => '',
 			);
 
 			if ( ! get_option( 'rtsocial_plugin_options' ) ) {
@@ -945,6 +946,7 @@ function rtsocial_set_defaults() {
 			'alignment_options_set' => 'right',
 			'active'                => array( 'tw', 'fb', 'lin', 'pin' ),
 			'inactive'              => array(),
+			'fb_access_token'       => '',
 		);
 
 		if ( ! get_option( 'rtsocial_plugin_options' ) ) {
@@ -1289,3 +1291,55 @@ function rtsocial_save_meta_box_data( $post_id ) {
 	// Update the meta field in the database.
 	update_post_meta( $post_id, '_rtsocial_visibility', $my_data );
 }
+
+/**
+ * Display number of shares using WordPress HTTP API
+ */
+function rtss_wp_get_shares() {
+	if ( isset( $_GET['security'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$security = sanitize_text_field( wp_unslash( $_GET['security'] ) );
+	} else {
+		$security = '';
+	}
+
+	if ( isset( $_GET['post_id'] ) ) {
+		$post_id = sanitize_text_field( wp_unslash( $_GET['post_id'] ) );
+	} else {
+		$post_id = '';
+	}
+
+	check_ajax_referer( 'rts_media_' . $post_id, 'security' );
+
+	$options      = get_option( 'rtsocial_plugin_options' );
+	$cache_key    = 'rtss_fb' . $post_id;
+	$access_token = isset( $options['fb_access_token'] ) ? $options['fb_access_token'] : '';
+	$count        = get_transient( $cache_key ); // try to get value from WordPress cache.
+
+	if ( ! $access_token ) {
+		$count = false;
+	}
+
+	// if no value in the cache.
+	if ( false === $count || 0 === $count ) {
+		$response = wp_remote_get(
+			add_query_arg(
+				array(
+					'id'           => rawurlencode( get_permalink( $post_id ) ),
+					'access_token' => $access_token,
+					'fields'       => 'engagement',
+				),
+				'https://graph.facebook.com/v3.0/'
+			)
+		);
+		$body     = json_decode( $response['body'] );
+		if ( isset( $body->engagement ) && isset( $body->engagement->share_count ) ) {
+			$count = $body->engagement->share_count;
+			set_transient( $cache_key, $count, 3600 ); // store value in cache for a 1 hour.
+		}
+	}
+	echo esc_html( $count );
+	exit;
+}
+
+add_action( 'wp_ajax_rtss_wp_get_shares', 'rtss_wp_get_shares' );
+add_action( 'wp_ajax_nopriv_rtss_wp_get_shares', 'rtss_wp_get_shares' );
