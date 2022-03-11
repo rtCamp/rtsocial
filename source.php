@@ -424,7 +424,7 @@ function rtsocial_counter( $content = '' ) {
 
 		if ( 'horizontal' === $options['display_options_set'] ) {
 			$lin_layout .= sprintf(
-				'<div class="rtsocial-linkedin-%1$s-button"><a class="rtsocial-linkedin-button" href= "https://www.linkedin.com/shareArticle?mini=true&url=%2$s&title=%3$s" rel="nofollow" target="_blank" title="Share: %4$s"></a></div>',
+				'<div class="rtsocial-linkedin-%1$s-button"><a class="rtsocial-linkedin-button" href= "https://linkedin.com/sharing/share-offsite/?url=%2$s" rel="nofollow" target="_blank" title="Share: %4$s"></a></div>',
 				$options['display_options_set'],
 				rawurlencode( get_permalink( $post->ID ) ),
 				rawurlencode( $rtatitle ),
@@ -434,7 +434,7 @@ function rtsocial_counter( $content = '' ) {
 
 			if ( 'vertical' === $options['display_options_set'] ) {
 				$lin_layout .= sprintf(
-					'<div class="rtsocial-linkedin-%1$s-button"><a class="rtsocial-linkedin-button" href= "https://www.linkedin.com/shareArticle?mini=true&url=%2$s&title=%3$s" rel="nofollow" target="_blank" title="Share: %4$s"></a></div>',
+					'<div class="rtsocial-linkedin-%1$s-button"><a class="rtsocial-linkedin-button" href= "https://linkedin.com/sharing/share-offsite/?url=%2$s" rel="nofollow" target="_blank" title="Share: %4$s"></a></div>',
 					$options['display_options_set'],
 					rawurlencode( get_permalink( $post->ID ) ),
 					rawurlencode( $rtatitle ),
@@ -444,7 +444,7 @@ function rtsocial_counter( $content = '' ) {
 
 				if ( 'icon' === $options['display_options_set'] ) {
 					$lin_layout .= sprintf(
-						' <div class="rtsocial-linkedin-%1$s-button"><a class="rtsocial-linkedin-icon-link" href= "https://www.linkedin.com/shareArticle?mini=true&url=%2$s&title=%3$s" target= "_blank" title="Share: %4$s"></a></div>',
+						' <div class="rtsocial-linkedin-%1$s-button"><a class="rtsocial-linkedin-icon-link" href= "https://linkedin.com/sharing/share-offsite/?url=%2$s" target= "_blank" title="Share: %4$s"></a></div>',
 						$options['display_options_set'],
 						rawurlencode( get_permalink( $post->ID ) ),
 						rawurlencode( $rtatitle ),
@@ -455,7 +455,7 @@ function rtsocial_counter( $content = '' ) {
 					if ( 'icon-count' === $options['display_options_set'] ) {
 						$lin_layout  = '<div class="rtsocial-linkedin-icon">';
 						$lin_layout .= sprintf(
-							'<div class="rtsocial-linkedin-icon-button"><a class="rtsocial-linkedin-icon-link" href= "https://www.linkedin.com/shareArticle?mini=true&url=%1$s&title=%2$s" target= "_blank" title="Share: %3$s"></a></div>',
+							'<div class="rtsocial-linkedin-icon-button"><a class="rtsocial-linkedin-icon-link" href= "https://linkedin.com/sharing/share-offsite/?url=%1$s" target= "_blank" title="Share: %3$s"></a></div>',
 							rawurlencode( get_permalink( $post->ID ) ),
 							rawurlencode( $rtatitle ),
 							$rtatitle
@@ -832,7 +832,7 @@ function rtsocial( $args = array() ) {
 
 		if ( 'horizontal' === $options['display_options_set'] ) {
 			$lin_layout .= sprintf(
-				'<div class="rtsocial-linkedin-%1$s-button"><a class="rtsocial-linkedin-button" href= "https://www.linkedin.com/shareArticle?mini=true&url=%2$s&title=%3$s" rel="nofollow" target="_blank" title="Share: %4$s"></a></div>%5$s',
+				'<div class="rtsocial-linkedin-%1$s-button"><a class="rtsocial-linkedin-button" href= "https://linkedin.com/sharing/share-offsite/?url=%3$s" rel="nofollow" target="_blank" title="Share: %4$s"></a></div>%5$s',
 				$options['display_options_set'],
 				$rtslink,
 				$rtstitle,
@@ -843,7 +843,7 @@ function rtsocial( $args = array() ) {
 
 			if ( 'vertical' === $options['display_options_set'] ) {
 				$lin_layout .= sprintf(
-					'%1$s <div class="rtsocial-linkedin-%2$s-button"><a class="rtsocial-linkedin-button" href= "https://www.linkedin.com/shareArticle?mini=true&url=%3$s&title=%4$s" rel="nofollow" target="_blank" title="Share: %5$s"></a></div>',
+					'%1$s <div class="rtsocial-linkedin-%2$s-button"><a class="rtsocial-linkedin-button" href= "https://linkedin.com/sharing/share-offsite/?url=%3$s" rel="nofollow" target="_blank" title="Share: %5$s"></a></div>',
 					$lin_count,
 					$options['display_options_set'],
 					$rtslink,
@@ -854,7 +854,7 @@ function rtsocial( $args = array() ) {
 
 				if ( 'icon' === $options['display_options_set'] ) {
 					$lin_layout .= sprintf(
-						' <div class="rtsocial-linkedin-%1$s-button"><a class="rtsocial-linkedin-icon-link" href= "https://www.linkedin.com/shareArticle?mini=true&url=%2$s&title=%3$s" target= "_blank" title="Share: %4$s"></a></div>',
+						' <div class="rtsocial-linkedin-%1$s-button"><a class="rtsocial-linkedin-icon-link" href= "https://linkedin.com/sharing/share-offsite/?url=%2$s" target= "_blank" title="Share: %4$s"></a></div>',
 						$options['display_options_set'],
 						$rtslink,
 						$rtstitle,
@@ -866,7 +866,7 @@ function rtsocial( $args = array() ) {
 						$lin_layout  = '<div class="rtsocial-linkedin-icon">';
 						$lin_count   = ( empty( $options['hide_count'] ) || 1 !== (int) $options['hide_count'] ) ? '<div class="rtsocial-horizontal-count"><div class="rtsocial-horizontal-notch"></div><span class="rtsocial-linkedin-count"></span></div>' : '';
 						$lin_layout .= sprintf(
-							' <div class="rtsocial-linkedin-icon-button"><a class="rtsocial-linkedin-icon-link" href= "https://www.linkedin.com/shareArticle?mini=true&url=%1$s&title=%2$s" target= "_blank" title="Share: %3$s"></a></div>%4$s',
+							' <div class="rtsocial-linkedin-icon-button"><a class="rtsocial-linkedin-icon-link" href= "https://linkedin.com/sharing/share-offsite/?url=%1$s" target= "_blank" title="Share: %3$s"></a></div>%4$s',
 							$rtslink,
 							$rtstitle,
 							$rtatitle,
