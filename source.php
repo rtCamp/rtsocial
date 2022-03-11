@@ -97,8 +97,6 @@ function rtsocial_get_errors() {
  * Inject the widget in the posts
  */
 add_filter( 'the_content', 'rtsocial_counter' );
-add_filter( 'the_excerpt', 'rtsocial_counter' );
-// To show rtSocial buttons in Twenty-Twenty-Two Theme.
 add_filter( 'get_the_excerpt', 'rtsocial_counter' );
 
 /**
