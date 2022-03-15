@@ -11,7 +11,7 @@
  * Author URI:  https://rtcamp.com/
  * Text Domain: rtSocial
  * Domain Path: /languages
- * Version:     2.2.2
+ * Version:     2.2.3
  * License:     GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Description: It is the lightest social sharing plugin, uses non-blocking Javascript and a single sprite to get rid of all the clutter that comes along with the sharing buttons.
