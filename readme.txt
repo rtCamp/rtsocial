@@ -1,9 +1,9 @@
 === rtSocial ===
-Contributors: rtcamp, rahul286, faishal, rittesh.patel, sanketparmar, pranalipatel, UmeshSingla, rutwick, saurabhshukla, HarishChaudhari, 5um17, JoshuaAbenazer, paddyohanlon, chandrapatel, 1naveengiri, bhargavbhandari90, coderboy007, vaishu.agola27, pooja1210, milindmore22
+Contributors: rtcamp, rahul286, faishal, rittesh.patel, sanketparmar, pranalipatel, UmeshSingla, rutwick, saurabhshukla, HarishChaudhari, 5um17, JoshuaAbenazer, paddyohanlon, chandrapatel, 1naveengiri, bhargavbhandari90, coderboy007, vaishu.agola27, pooja1210, milindmore22, pavanpatil1, Mukulsingh27
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, plus one button, social share, social sharing
 Requires at least: 3.0
-Tested up to: 5.8.1
-Stable tag: 2.2.2
+Tested up to: 5.9.1
+Stable tag: 2.2.3
 License: GPLv2 or later (of-course)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate Link: http://rtcamp.com/donate/
@@ -58,6 +58,19 @@ No. Right now you cannot.
 
 
 == Changelog ==
+
+= 2.2.3 =
+
+* ENHANCEMENTS
+
+ * Compatible with WordPress latest version v5.9.1.
+ * Provided setting options for Facebook APP-ID.
+ * Added support for print friendly plugin.
+
+* FIXED
+
+ * UI/UX issues
+ * Fixed support forum redirection link issue
 
 = 2.2.2 =
 * Remove   - Google Plus Icons and functions.
