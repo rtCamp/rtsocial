@@ -35,7 +35,6 @@ function rtsocial_facebook() {
 							jQuery( facebookSocial ).find( '.rtsocial-fb-count' ).text( data );
 						}
 					});
-					return false;
 				}
 			}
 		);
