@@ -22,7 +22,7 @@ function rtsocial_facebook() {
 				var rtsocial_url_count = 0;
 				tempPostId             = jQuery( this ).find( '.rts_id' ).val();
 				security               = jQuery( this ).find( '#rts_media_nonce' ).val();
-				if ( tempPostId !== '' || tempPostId !== 'undefined' ) {
+				if ( '' !== tempPostId || 'undefined' !== tempPostId ) {
 					jQuery.ajax({
 						type: 'GET',
 						url: ajaxurl,

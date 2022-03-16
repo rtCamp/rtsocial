@@ -1,5 +1,5 @@
 === rtSocial ===
-Contributors: rtcamp, rahul286, faishal, rittesh.patel, sanketparmar, pranalipatel, UmeshSingla, rutwick, saurabhshukla, HarishChaudhari, 5um17, JoshuaAbenazer, paddyohanlon, chandrapatel, 1naveengiri, bhargavbhandari90, coderboy007, vaishu.agola27, pooja1210, milindmore22, pavanpatil1, Mukulsingh27
+Contributors: rtcamp, rahul286, faishal, rittesh.patel, sanketparmar, pranalipatel, UmeshSingla, rutwick, saurabhshukla, HarishChaudhari, 5um17, JoshuaAbenazer, paddyohanlon, chandrapatel, 1naveengiri, bhargavbhandari90, coderboy007, vaishu.agola27, pooja1210, milindmore22, pavanpatil1, devanshijoshi9, Mukulsingh27
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, plus one button, social share, social sharing
 Requires at least: 3.0
 Tested up to: 5.9.1
