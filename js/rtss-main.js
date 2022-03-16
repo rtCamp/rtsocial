@@ -14,30 +14,27 @@ function rtsocial_facebook() {
 	if ( '1' === args.facebook && 'icon' !== args.button_style && '1' !== args.hide_count ) {
 		var rtsocial_urls = { }; // create an associative array of url as key and counts.
 		var sep           = '"'; // URL separatore initial value.
-		var tempFbUrl     = ""; // temp variable for url.
+		var tempPostId    = ""; // temp variable for post ID.
 
 		jQuery( '.rtsocial-container' ).each(
 			function () {
 				var facebookSocial     = this;
 				var rtsocial_url_count = 0;
-				tempFbUrl              = jQuery( this ).find( 'a.perma-link' ).attr( 'href' );
-				if ( tempFbUrl !== '' || tempFbUrl !== 'undefined' ) {
-
-					// Fetch share count by Facebook Graph API.
-					var rtsocial_fburl = 'https://graph.facebook.com/?id=' + tempFbUrl + '&fields=og_object{engagement}';
-
-					/**
-					 * Facebook Data.
-					 */
-					jQuery.getJSON(
-						rtsocial_fburl,
-						function ( fbres ) {
-							if ( typeof fbres.og_object !== 'undefined' && fbres.og_object.engagement.count ) {
-								rtsocial_url_count = fbres.og_object.engagement.count; // Setting value.
-							}
-							jQuery( facebookSocial ).find( '.rtsocial-fb-count' ).text( rtsocial_url_count );
+				tempPostId             = jQuery( this ).find( '.rts_id' ).val();
+				security               = jQuery( this ).find( '#rts_media_nonce' ).val();
+				if ( '' !== tempPostId || 'undefined' !== tempPostId ) {
+					jQuery.ajax({
+						type: 'GET',
+						url: ajaxurl,
+						data: {
+							"action"  : "rtss_wp_get_shares",
+							"post_id" : tempPostId,
+							"security": security
+						},
+						success: function(data){
+							jQuery( facebookSocial ).find( '.rtsocial-fb-count' ).text( data );
 						}
-					); /* End of Callback function in JSON. */
+					});
 				}
 			}
 		);

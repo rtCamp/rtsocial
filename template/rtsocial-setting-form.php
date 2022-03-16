@@ -310,6 +310,21 @@
 										</td>
 										<td>&nbsp;</td>
 									</tr>
+									<tr class="fb_row">
+										<th><?php esc_html_e( 'Facebook App Access Token', 'rtSocial' ); ?>:</th>
+										<td>
+											<input type="text" value="<?php echo esc_attr( $options['fb_access_token'] ); ?>" id="fb_access_token" name="rtsocial_plugin_options[fb_access_token]" />
+										</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<th>&nbsp;</th>
+										<td colspan="2">
+											<b>Format:</b> App ID|App Secret <br/>
+											<b>Example:</b> 3245678987646576|dfghjhg4564768jjgvjvbnnh9876 <br/>
+											Follow these <a href="https://github.com/rtCamp/rtsocial/wiki#how-to-get-facebook-access-token" target="_blank">guideline</a> to generate your access token.
+										</td>
+									</tr>
 								</table>
 							</div>
 						</div>
@@ -379,7 +394,7 @@
 							<strong><?php esc_html_e( 'Free Support', 'rtSocial' ); ?></strong>
 						</span>
 					</h3>
-					<div class="inside"><?php esc_html_e( 'If you have any problems with this plugin or good ideas for improvements, please talk about them in the', 'rtSocial' ); ?> <a href="https://rtcamp.com/support/forum/rtsocial/" rel="nofollow" target="_blank" title="<?php esc_attr_e( 'free support forums', 'rtSocial' ); ?>"><?php esc_html_e( 'free support forums.', 'rtSocial' ); ?></a></div>
+					<div class="inside"><?php esc_html_e( 'If you have any problems with this plugin or good ideas for improvements, please talk about them in the', 'rtSocial' ); ?> <a href="<?php echo esc_url( 'https://wordpress.org/support/plugin/rtsocial/' ); ?>" rel="nofollow" target="_blank" title="<?php esc_attr_e( 'free support forums', 'rtSocial' ); ?>"><?php esc_html_e( 'free support forums.', 'rtSocial' ); ?></a></div>
 				</div>
 				<div class="postbox" id="latest_news">
 					<div title="<?php esc_attr_e( 'Click to toggle', 'rtSocial' ); ?>" class="handlediv"><br/></div>

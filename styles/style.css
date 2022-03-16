@@ -75,6 +75,7 @@ div#content_block { width: 70% }
 
 /* Metaboxes inner div */
 #rtsocial .inside { font-family: "Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif; line-height: 1.2em; }
+#rtsocial .inside .form-table th { padding: 16px 10px 20px 0; }
 
 /* Manual code info style */
 #rtsocial .inside span.rtsocial-manual-code { font-style: italic; font-weight: bold; }
@@ -121,8 +122,60 @@ div#content_block { width: 70% }
 .rtsocial-twitter-icon,
 .rtsocial-fb-icon,
 .rtsocial-pinterest-icon,
-.rtsocial-linkedin-icon{ margin: 0 10px 0 0; position: relative; display: inline-block; }
+.rtsocial-linkedin-icon{ margin: 0 15px 0 0; position: relative; display: inline-block; }
 
+.rtsocial-twitter-horizontal:hover,
+.rtsocial-fb-horizontal:hover,
+.rtsocial-pinterest-horizontal:hover,
+.rtsocial-linkedin-horizontal:hover,
+.rtsocial-twitter-icon:hover,
+.rtsocial-fb-icon:hover,
+.rtsocial-pinterest-icon:hover,
+.rtsocial-linkedin-icon:hover,
+.rtsocial-container-align-right .rtsocial-twitter-vertical:hover,
+.rtsocial-container-align-right .rtsocial-fb-vertical:hover,
+.rtsocial-container-align-right .rtsocial-pinterest-vertical:hover,
+.rtsocial-container-align-right .rtsocial-linkedin-vertical:hover,
+.rtsocial-container-align-left .rtsocial-twitter-vertical:hover,
+.rtsocial-container-align-left .rtsocial-fb-vertical:hover,
+.rtsocial-container-align-left .rtsocial-pinterest-vertical:hover,
+.rtsocial-container-align-left .rtsocial-linkedin-vertical:hover,
+.rtsocial-container-align-none .rtsocial-twitter-vertical:hover,
+.rtsocial-container-align-none .rtsocial-fb-vertical:hover,
+.rtsocial-container-align-none .rtsocial-linkedin-vertical:hover,
+.rtsocial-container-align-none .rtsocial-pinterest-vertical:hover {
+    position: relative;
+    animation-name: wobble-up-down;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+@keyframes wobble-up-down {
+	16.65% {
+		transform: translateY(8px);
+	}
+
+	33.3% {
+		transform: translateY(-6px);
+	}
+
+	49.95% {
+		transform: translateY(4px);
+	}
+
+	66.6% {
+		transform: translateY(-2px);
+	}
+
+	83.25% {
+		transform: translateY(1px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
 
 /* Counts display styles */
 .rtsocial-vertical-count { background: #FFF; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; height: 37px; margin: 0 auto 5px; max-width: 55px; min-width: 55px; padding: 0; text-align: center; position: relative; }
@@ -210,6 +263,7 @@ div#content_block { width: 70% }
 
 /*Facebook Button Frontend Styles*/
 .rtsocial-fb-button{ background-position: 0 -172px; display: block; height: 24px; width: 50px; text-indent: -9999px; text-transform: uppercase; margin: 0 auto;}
+.rtsocial-fb-button:focus  {background: url('../images/rtsocial-sprite-image.png') 0 -172px no-repeat !important;}
 .rtsocial-fb-button:hover{ background-position: 0 -128px }
 
 .rtsocial-fb-like-dark { background-position: 0 -260px }
@@ -230,6 +284,7 @@ div#content_block { width: 70% }
 .rtsocial-twitter-vertical-button { text-align: center; }
 .rtsocial-twitter-button,
 #rtsocial-ord-tw label { background-position: 0 -557px;  display: block; float: left; height: 21px; margin: 0; padding: 0; width: 58px; text-indent: -9999px; }
+.rtsocial-twitter-button:focus  {background: url('../images/rtsocial-sprite-image.png') 0 -557px no-repeat !important;}
 
 #rtsocial-ord-tw label{ float: none; display: inline-block; }
 
@@ -239,6 +294,7 @@ div#content_block { width: 70% }
 /* Pinterest Button */
 .rtsocial-pinterest-button,
 #rtsocial-ord-pin label { background-position: 0 -598px; border: 1px solid #c9c5c5; border-color: #E8E4E4 #C9C5C5 #C9C5C5; border-radius: 4px 4px 4px 4px; display: block; height: 22px; text-indent: -9999px; text-transform: uppercase; width: 47px; margin: 0 auto; }
+.rtsocial-pinterest-button:focus  {background: url('../images/rtsocial-sprite-image.png') 0 -598px no-repeat !important;}
 
 .rtsocial-pinterest-button:hover,
 #rtsocial-ord-pin label:hover{ background-position: 0 -640px; border: 1px solid #B8B4B4; }
@@ -246,6 +302,7 @@ div#content_block { width: 70% }
 /* Linked In Button */
 .rtsocial-linkedin-button,
 #rtsocial-ord-lin label{ background-position: 0 -682px; border-color: #E2E2E2 #BFBFBF #B9B9B9; border-style: solid; border-width: 1px; border-radius: 2px; display: block; height: 18px; margin: 0 auto; text-indent: -9999px; text-transform: uppercase; width: 59px; }
+.rtsocial-linkedin-button:focus  {background: url('../images/rtsocial-sprite-image.png') 0 -682px no-repeat !important;}
 
 .rtsocial-linkedin-button:hover,
 #rtsocial-ord-lin label:hover{ background-position: 0 -720px; border-color: #ababab #9a9a9a #787878; }
@@ -331,6 +388,9 @@ div#content_block { width: 70% }
 .rtsocial-pinterest-icon-link{ background-position: -130px -442px; }
 
 .rtsocial-linkedin-icon-link{ background-position: -130px -398px; }
+
+.postbox .handle-order-higher, .postbox .handle-order-lower, .postbox .handlediv { display: none; }
+.postbox .handle-order-higher, .postbox .handle-order-lower, .postbox .ui-sortable-handle { font-size: 17px !important; padding: 8px 12px !important; font-weight: bold; }
 
 /**
  * End of rtSocial Plugin Style
