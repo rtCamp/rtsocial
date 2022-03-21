@@ -313,7 +313,7 @@
 									<tr class="fb_row">
 										<th><?php esc_html_e( 'Facebook App Access Token', 'rtSocial' ); ?>:</th>
 										<td>
-											<input type="text" value="<?php echo esc_attr( $options['fb_access_token'] ); ?>" id="fb_access_token" name="rtsocial_plugin_options[fb_access_token]" />
+										<input type="text" value="<?php echo ( ! empty( $options['fb_access_token'] ) ) ? esc_attr( $options['fb_access_token'] ) : ''; ?>" id="fb_access_token" name="rtsocial_plugin_options[fb_access_token]" />
 										</td>
 										<td>&nbsp;</td>
 									</tr>
