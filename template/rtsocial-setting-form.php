@@ -221,10 +221,11 @@
 										<th scope="row"><?php esc_html_e( 'Hide counts', 'rtSocial' ); ?>:</th>
 										<td>
 											<fieldset>
-												<label>
+												<label class="switch">
 													<input value="1" name='rtsocial_plugin_options[hide_count]' id="hide_count_check" type="checkbox" <?php echo ( ! empty( $options['hide_count'] ) && ( 1 === (int) $options['hide_count'] ) ) ? ' checked="checked" ' : ''; ?> />
-													<span><?php esc_html_e( 'Yes', 'rtSocial' ); ?></span>
+													<span class="slider round"></span>
 												</label>
+												<p><?php esc_html_e( 'Enable this option to hide counts for social-media sharing buttons', 'rtSocial' ); ?></p>
 											</fieldset>
 										</td>
 									</tr>
