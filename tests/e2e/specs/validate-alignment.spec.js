@@ -39,7 +39,7 @@ test.describe('Validate alginment is working with placement and buttons in the f
             page.locator('div.rtsocial-twitter-icon > div > a').click() // Opens a new tab
         ])
         await newPage.waitForLoadState();
-        await expect(newPage).toHaveURL(/test/);
+        await expect(newPage).toHaveURL(/twitter/);
     });
     test('Validate rtSocial Right alignment with fixed position and button style', async ({ context, page }) => {
         await page.locator("role=link[name='rtSocial Options'i]").click();
