@@ -14,7 +14,7 @@ on:
 jobs:
   Run-wpe2e-TestCase:
     # The type of runner that the job will run on
-    name: Run Wp-custom-menu fields 
+    name: Run rtsocial 
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -41,7 +41,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: report
-          path: ./tests/e2e-playwright/artifacts
+          path: ./tests/e2e/artifacts
 
       - name: Cleanup
         if: ${{ always() }}

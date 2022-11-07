@@ -59,7 +59,7 @@ function install_playwright(){
 
 # Run test for new deployed site
 function run_playwright_tests () {
-    cd $GITHUB_WORKSPACE/tests/e2e-playwright
+    cd $GITHUB_WORKSPACE/tests/e2e
     npm run test-e2e:playwright -- specs/
 }
 

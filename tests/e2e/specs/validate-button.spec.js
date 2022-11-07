@@ -80,6 +80,7 @@ test.describe('Validate button, alginment in the front end. ', () => {
         await Promise.all([
             page.click("#wp-admin-bar-site-name > a"),
         ]);
+        
         // Validate Placement By checking Position is as expected
         await page.focus(PlacementValidation.IconCount)
     });
