@@ -41,7 +41,7 @@ function create_and_configure_site () {
 # Install WPe2e dependency
 function install_playwright_package () {
 
-    cd $GITHUB_WORKSPACE/tests/e2e-playwright
+    cd $GITHUB_WORKSPACE/tests/e2e
     npm install
 
 }
