@@ -3,8 +3,6 @@
  */
 const { test, expect } = require('@wordpress/e2e-test-utils-playwright');
 const { Placement, ButtonStyle, Alignment, SaveSetting, PlacementValidation } = require("../utils/locator.js");
-
-
 test.describe('Validate button, alginment in the front end. ', () => {
     test.beforeEach(async ({ admin }) => {
         await admin.visitAdminPage('options-general.php');
@@ -82,7 +80,7 @@ test.describe('Validate button, alginment in the front end. ', () => {
         ]);
 
 
-        
+
         // Validate Placement By checking Position is as expected
         await page.focus(PlacementValidation.IconCount)
     });

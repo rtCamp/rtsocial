@@ -3,9 +3,7 @@
  */
 const { test, expect } = require('@wordpress/e2e-test-utils-playwright');
 const { Placement, ButtonStyle, Alignment, SaveSetting, PlacementValidation } = require("../utils/locator.js");
-
-
-test.describe('Validate alginment is working with placement and buttons in the front end. ', () => {
+test.describe('Validate Alignement with button functionality', () => {
     test.beforeEach(async ({ admin }) => {
         await admin.visitAdminPage('options-general.php');
     });
@@ -17,7 +15,7 @@ test.describe('Validate alginment is working with placement and buttons in the f
         expect(Alignment.None).not.toBeNull()
         expect(Alignment.Right).not.toBeNull()
     });
-    test('Validate rtSocial Left alignment with fixed position and button style', async ({ context, page, editor }) => {
+    test('Validate rtSocial Left alignment with fixed position and button style with button functionality', async ({ context, page, editor }) => {
         await page.locator("role=link[name='rtSocial Options'i]").click();
         //Select Placement Top+ Button Icon count 
         await page.locator(Placement.Top).check();

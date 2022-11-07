@@ -5,7 +5,7 @@ const { test, expect } = require('@wordpress/e2e-test-utils-playwright');
 const { Placement, ButtonStyle, Alignment, SaveSetting, PlacementValidation } = require("../utils/locator.js");
 
 
-test.describe('Validate Placement in the front end. ', () => {
+test.describe('Validate Placement and buttons functionality in the front end. ', () => {
     test.beforeEach(async ({ admin }) => {
         await admin.visitAdminPage('options-general.php');
     });
@@ -34,7 +34,7 @@ test.describe('Validate Placement in the front end. ', () => {
     });
     test(' Validate rtSocial Bottom placement settings with Vertical button style.', async ({ admin, page, editor }) => {
         await page.locator("role=link[name='rtSocial Options'i]").click();
-        //Select Placement Top+ Alignment center
+        //Select Placement bottom+ Alignment center
         await page.locator(Placement.Bottom).check();
         await page.locator(Alignment.Center).check();
         // Select button Vertical
