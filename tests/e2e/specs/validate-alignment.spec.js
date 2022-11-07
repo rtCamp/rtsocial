@@ -17,7 +17,7 @@ test.describe('Validate alginment is working with placement and buttons in the f
         expect(Alignment.None).not.toBeNull()
         expect(Alignment.Right).not.toBeNull()
     });
-    test('Validate rtSocial Left alignment with fixed position and button style', async ({ admin, page, editor }) => {
+    test('Validate rtSocial Left alignment with fixed position and button style', async ({ context, page, editor }) => {
         await page.locator("role=link[name='rtSocial Options'i]").click();
         //Select Placement Top+ Button Icon count 
         await page.locator(Placement.Top).check();
@@ -33,13 +33,20 @@ test.describe('Validate alginment is working with placement and buttons in the f
         ]);
         // Validate Placement By checking Position is as expected
         await page.focus(PlacementValidation.LeftAligned);
+        // Validate twitter
+        const [newPage] = await Promise.all([
+            context.waitForEvent('page'),
+            page.locator('div.rtsocial-twitter-icon > div > a').click() // Opens a new tab
+        ])
+        await newPage.waitForLoadState();
+        await expect(newPage).toHaveURL(/test/);
     });
-    test('Validate rtSocial Right alignment with fixed position and button style', async ({ admin, page, editor }) => {
+    test('Validate rtSocial Right alignment with fixed position and button style', async ({ context, page }) => {
         await page.locator("role=link[name='rtSocial Options'i]").click();
         //Select Placement Top+ Button Icon count 
         await page.locator(Placement.Top).check();
         await page.locator(ButtonStyle.IconCount).check()
-        // Select Alignment Left
+        // Select Alignment Right
         await page.locator(Alignment.Right).check();
         // Save Changes
         await page.locator(SaveSetting.Button).click();
@@ -50,6 +57,15 @@ test.describe('Validate alginment is working with placement and buttons in the f
         ]);
         // Validate Placement By checking Position is as expected
         await page.focus(PlacementValidation.RightAligned);
+
+        // Validate Facebook
+        const [newPage] = await Promise.all([
+            context.waitForEvent('page'),
+            page.locator('div.rtsocial-fb-icon-button > a').click() // Opens a new tab
+        ])
+        await newPage.waitForLoadState();
+        await expect(newPage).toHaveURL(/facebook/);
+
     });
 
 });
