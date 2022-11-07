@@ -48,12 +48,12 @@ function install_playwright_package () {
 
 #build packages
 function build_package(){
-    cd $GITHUB_WORKSPACE/tests/e2e-playwright
+    cd $GITHUB_WORKSPACE/tests/e2e
     npm run build
 }
 
 function install_playwright(){
-     cd $GITHUB_WORKSPACE/tests/e2e-playwright
+     cd $GITHUB_WORKSPACE/tests/e2e
     npx playwright install
 }
 
