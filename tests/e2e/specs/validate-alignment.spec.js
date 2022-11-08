@@ -34,7 +34,7 @@ test.describe('Validate Alignement with button functionality', () => {
         // Validate twitter
         const [newPage] = await Promise.all([
             context.waitForEvent('page'),
-            page.locator('div.rtsocial-twitter-icon > div > a').click() // Opens a new tab
+            page.locator('div.rtsocial-twitter-icon > div > a').first().click() // Opens a new tab
         ])
         await newPage.waitForLoadState();
         await expect(newPage).toHaveURL(/twitter/);
@@ -57,13 +57,19 @@ test.describe('Validate Alignement with button functionality', () => {
         await page.focus(PlacementValidation.RightAligned);
 
         // Validate Facebook
-        const [newPage] = await Promise.all([
+        const [newpage] = await Promise.all([
             context.waitForEvent('page'),
-            page.locator('div.rtsocial-fb-icon-button > a').click() // Opens a new tab
+            page.locator('div.rtsocial-fb-icon-button > a').first().click() // Opens a new tab // Opens a new tab
         ])
-        await newPage.waitForLoadState();
-        await expect(newPage).toHaveURL(/facebook/);
-
+        await newpage.waitForLoadState();
+        await expect(newpage).toHaveURL(/facebook/);
+        // login and share
+        await newpage.locator("input[name='email']").fill("qartcamp@gmail.com");
+        await newpage.locator("input[name='pass']").fill("xzBykf8zJrkeZV8S");
+        await newpage.locator("input[name='login']").click();
+        await expect(newpage).toHaveURL(/facebook/);
+        await newpage.pause();
+        await newpage.locator("button[name='__CONFIRM__']").click();
     });
 
 });
