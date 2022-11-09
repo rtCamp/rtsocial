@@ -1,11 +1,12 @@
-# e2e test for Wp-menu-custom-fields
+# e2e test for rtsocial
 
-name: CI for rtsocial Plugin Test cases
+name: CI for rtsocial
 
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-   branches: 
+  push:
+    branches: 
       - develop
       - master
   pull_request:
