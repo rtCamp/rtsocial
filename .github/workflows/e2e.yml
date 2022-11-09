@@ -1,6 +1,6 @@
 # e2e test for Wp-menu-custom-fields
 
-name: CI for rtsocial
+name: CI for rtsocial Plugin Test cases
 
 # Controls when the workflow will run
 on:

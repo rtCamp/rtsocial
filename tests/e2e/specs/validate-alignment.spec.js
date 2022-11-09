@@ -68,6 +68,7 @@ test.describe('Validate Alignement with button functionality', () => {
         await newpage.locator("input[name='pass']").fill("xzBykf8zJrkeZV8S");
         await newpage.locator("input[name='login']").click();
         await expect(newpage).toHaveURL(/facebook/);
+        // Share
         await newpage.locator("button[name='__CONFIRM__']").click();
     });
 

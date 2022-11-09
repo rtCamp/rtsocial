@@ -22,7 +22,6 @@ function start_services() {
     ee stack status --nginx --mysql --php74
 }
 
-
 # Create, setup and populate learn.rtcamp.com base site with data
 function create_and_configure_site () {
 
