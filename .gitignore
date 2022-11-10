@@ -1,3 +1,4 @@
 /nbproject/private/
 deploy.sh
 .idea/
+node_modules
