@@ -1094,7 +1094,9 @@ function rtsocial_plugin_redirect() {
 			// Makes sure the plugin is defined before trying to use it.
 		if ( ! is_plugin_active_for_network( 'rtsocial/source.php' ) ) {
 			// Plugin is activated.
-			wp_safe_redirect( admin_url( 'options-general.php?page=rtsocial-options&rtnonce=' . wp_create_nonce( 'rtnonce' ) ) );
+			if ( wp_safe_redirect( admin_url( 'options-general.php?page=rtsocial-options&rtnonce=' . wp_create_nonce( 'rtnonce' ) ) ) ) {
+				exit();
+			}
 		}
 	}
 }
@@ -1179,7 +1181,7 @@ function rtsocial_get_feeds( $feed_url = 'https://rtcamp.com/blog/' ) {
 			foreach ( $rss_items as $item ) {
 				?>
 				<li>
-					<a href='<?php echo esc_url( $item->get_permalink() ); ?>' title='<?php echo esc_html_e( 'Posted ', 'rtSocial' ) . esc_attr( $item->get_date( 'j F Y | g:i a' ) ); ?>'><?php echo esc_html( $item->get_title() ); ?></a>
+					<a href='<?php echo esc_url( $item->get_permalink() ); ?>' title='<?php echo esc_attr_e( 'Posted ', 'rtSocial' ) . esc_attr( $item->get_date( 'j F Y | g:i a' ) ); ?>'><?php echo esc_html( $item->get_title() ); ?></a>
 				</li>
 				<?php
 			}
