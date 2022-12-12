@@ -11,9 +11,7 @@
      path.join( process.cwd(), 'artifacts/storage-states/admin.json' );
  
  const config: PlaywrightTestConfig = {
-    //  reporter: process.env.CI
-    //      ? [ [ 'github' ], [ './config/flaky-tests-reporter.ts' ] ]
-    //      : 'list',
+    
      reporter: [
          ["html", { open: "never" }],
          ["junit", { outputFile: "playwright-report/results.xml" }],
