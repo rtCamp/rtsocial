@@ -1029,6 +1029,8 @@ function rtsocial_plugin_redirect() {
 		if ( ! is_plugin_active_for_network( 'rtsocial/source.php' ) ) {
 			// Plugin is activated.
 			wp_safe_redirect( admin_url( 'options-general.php?page=rtsocial-options&rtnonce=' . wp_create_nonce( 'rtnonce' ) ) );
+
+			exit; // `wp_safe_redirect()` should always be followed by a call to `exit;`
 		}
 	}
 }
@@ -1113,7 +1115,7 @@ function rtsocial_get_feeds( $feed_url = 'https://rtcamp.com/blog/' ) {
 			foreach ( $rss_items as $item ) {
 				?>
 				<li>
-					<a href='<?php echo esc_url( $item->get_permalink() ); ?>' title='<?php echo esc_html_e( 'Posted ', 'rtSocial' ) . esc_attr( $item->get_date( 'j F Y | g:i a' ) ); ?>'><?php echo esc_html( $item->get_title() ); ?></a>
+					<a href='<?php echo esc_url( $item->get_permalink() ); ?>' title='<?php echo ( esc_attr__( 'Posted ', 'rtSocial' ) . esc_attr( $item->get_date( 'j F Y | g:i a' ) ) ); ?>'><?php echo esc_html( $item->get_title() ); ?></a>
 				</li>
 				<?php
 			}
@@ -1253,7 +1255,7 @@ function rtss_wp_get_shares() {
 
 	// if no value in the cache.
 	if ( false === $count || 0 === $count ) {
-		$response = wp_remote_get(
+		$response = wp_remote_get( // phpcs:ignore -- WordPressVIPMinimum.Functions.RestrictedFunctions.wp_remote_get_wp_remote_get
 			add_query_arg(
 				array(
 					'id'           => rawurlencode( get_permalink( $post_id ) ),
