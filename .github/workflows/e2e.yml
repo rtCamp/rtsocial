@@ -1,6 +1,6 @@
 # e2e test for rtsocial
 
-name: CI for rtsocial
+name: End-to-End Tests
 
 # Controls when the workflow will run
 on:
@@ -18,12 +18,19 @@ on:
 jobs:
   Run-wpe2e-TestCase:
     # The type of runner that the job will run on
-    name: Run rtsocial 
+    name: Playwright Tests
     runs-on: ubuntu-latest
+    env: 
+      SHA: ${{ github.event.pull_request.head.sha }}
+      COMMIT_SHA: ${{ github.sha }}
+      PR_NUMBER: ${{ github.event.pull_request.number }}
+      working-directory: ./tests/e2e
+      TESRESULT_TOKEN: ${{ secrets.TESRESULT_TOKEN }}
+      TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
@@ -46,6 +53,11 @@ jobs:
         with:
           name: report
           path: ./tests/e2e/artifacts
+
+      - name: run PR status
+        if: ${{ always() }}
+        run: node ./tests/e2e/bin/pr-status.js
+        working-directory: ${{env.working_directory}}
 
       - name: Cleanup
         if: ${{ always() }}
