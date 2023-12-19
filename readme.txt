@@ -1,9 +1,9 @@
 === rtSocial ===
-Contributors: rtcamp, rahul286, faishal, rittesh.patel, sanketparmar, pranalipatel, UmeshSingla, rutwick, saurabhshukla, HarishChaudhari, 5um17, JoshuaAbenazer, paddyohanlon, chandrapatel, 1naveengiri, bhargavbhandari90, coderboy007, vaishu.agola27, pooja1210, milindmore22, pavanpatil1, devanshijoshi9, Mukulsingh27
+Contributors: rtcamp, rahul286, faishal, rittesh.patel, sanketparmar, pranalipatel, UmeshSingla, rutwick, saurabhshukla, HarishChaudhari, 5um17, JoshuaAbenazer, paddyohanlon, chandrapatel, 1naveengiri, bhargavbhandari90, coderboy007, vaishu.agola27, pooja1210, milindmore22, pavanpatil1, devanshijoshi9, Mukulsingh27, akrocks
 Tags: rtcamp, social, sharing, share, social links, twitter, facebook, pin it, pinterest, linkedin, linked in, linked in share, plus one button, social share, social sharing
 Requires at least: 3.0
-Tested up to: 6.1
-Stable tag: 2.2.3
+Tested up to: 6.4.2
+Stable tag: 2.2.4
 License: GPLv2 or later (of-course)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate Link: http://rtcamp.com/donate/
@@ -58,6 +58,17 @@ No. Right now you cannot.
 
 
 == Changelog ==
+
+= 2.2.4 =
+
+* ENHANCEMENTS
+
+ * Compatible with WordPress v6.4.2.
+ * Compatible with PHP v8.2.
+
+* FIXED
+
+ * Fixed phpcs issues.
 
 = 2.2.3 =
 
