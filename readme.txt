@@ -63,7 +63,7 @@ No. Right now you cannot.
 
 * ENHANCEMENTS
 
- * Updated hide count checkbox to toggle button in settings.
+ * Updated hide count checkbox to toggle button in plugin settings.
  * Added conditional check for Facebook access token.
  * Compatible with WordPress v6.4.2.
  * Compatible with PHP v8.2.
