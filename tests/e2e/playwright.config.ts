@@ -11,7 +11,6 @@
      path.join( process.cwd(), 'artifacts/storage-states/admin.json' );
  
  const config: PlaywrightTestConfig = {
-    
      reporter: [
          ["html", { open: "never" }],
          ["junit", { outputFile: "playwright-report/results.xml" }],
