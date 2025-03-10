@@ -1,0 +1,51 @@
+const selectors = {
+    adminBar: "#wp-admin-bar-site-name > a",
+    topPlacement: "input[value='top']",
+    bottomPlacement: "input[value='bottom']",
+
+    verticalButtonStyle: "input[id='display_vertical_input']",
+    horizontalButtonStyle: "input[id='display_horizontal_input']",
+    iconButtonStyle: "input[id='display_icon_input']",
+    iconCountButtonStyle: "input[id='display_icon_count_input']",
+
+    leftAlignment: "input[id='align_left_check']",
+    centerAlignment: "input[id='align_center_check']",
+    rightAlignment: "input[id='align_right_check']",
+    noneAlignment: "input[id='align_none_check']",
+
+    buttonSaveSetting: "role=button[name='Save Changes'i]",
+    messageSaveSetting: "#setting-error-settings_updated",
+
+    topValidate: "div[class='rtsocial-container rtsocial-container-align-center rtsocial-vertical']",
+    bottomValidate: "div[class='rtsocial-container rtsocial-container-align-center rtsocial-vertical']",
+    buttonHorizontalValidate: "div[class='rtsocial-container rtsocial-container-align-center rtsocial-horizontal']",
+    iconValidate: "div[class='rtsocial-container rtsocial-container-align-center rtsocial-icon']",
+    iconCountValidate: "div[class='rtsocial-container rtsocial-container-align-center rtsocial-icon-count']",
+    leftAlignedValidate: "div[class='rtsocial-container rtsocial-container-align-left rtsocial-icon']",
+    rightAlignedValidate: "div[class='rtsocial-container rtsocial-container-align-right rtsocial-icon-count']",
+
+    placementSettingsDiv: "#rtsocial-placement-settings-row > td > fieldset",
+    buttonStyleDiv: "table[id='rtsocial-button-style-inner']",
+    activeButtonDiv: "ul[id='rtsocial-sorter-active']",
+    twitterHandleInput: "input[id='tw_handle']",
+    faceBooktokenInput: "input[id='fb_access_token']",
+    frontEndTwitterIcon: 'div.rtsocial-twitter-icon > div > a',
+    frontEndFacebookIcon: 'div.rtsocial-fb-icon-button > a',
+    facebookInput: "input[name='email']",
+    userGmail: "qartcamp@gmail.com",
+    userPassword: "xzBykf8zJrkeZV8S",
+    facebookPassword: "input[name='pass']",
+    facbookSubmit: "input[name='login']",
+    facebookShareButton: "button[name='__CONFIRM__']",
+    pinterestIcon: 'div.rtsocial-pinterest-horizontal-button > a',
+    linkedinIcon: 'div.rtsocial-linkedin-icon > div > a',
+    activeSrcButton: "#rtsocial-ord-fb",
+    inactiveDestButton: "#rtsocial-sorter-inactive",
+    twitterHandle:"input[name='rtsocial_plugin_options[tw_handle]']",
+    twitterRaltedHandle:"input[name='rtsocial_plugin_options[tw_related_handle]']",
+    facebookHandleToken:"input[name='rtsocial_plugin_options[fb_access_token]']",
+    facbookHandleCheckbox: "input[name='rtsocial_plugin_options[fb_style]']",
+    facebookTokenValue: "110099221",
+}
+
+module.exports = { selectors }
