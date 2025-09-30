@@ -180,7 +180,7 @@
 										</td>
 									</tr>
 									<tr>
-										<th scope="row"><?php esc_html_e( 'Active Buttons', 'rtSocial' ); ?> <sup>#</sup>:</th>
+										<th scope="row"><?php esc_html_e( 'Active Buttons', 'rtSocial' ); ?> <sup>*</sup>:</th>
 										<td>
 											<ul id="rtsocial-sorter-active" class="connectedSortable">
 												<?php
